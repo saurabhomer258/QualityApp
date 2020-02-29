@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "848493345462",
+    "firebase_url": "https://qualityapp-34208.firebaseio.com",
+    "project_id": "qualityapp-34208",
+    "storage_bucket": "qualityapp-34208.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:848493345462:android:d7028a701ecc1eaf7e8417",
+        "android_client_info": {
+          "package_name": "com.example.saurabhomer.qualityapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "848493345462-fmakar1iecb5galk1u17rc4u4mhn56hp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAU1vMOpXv9z73sTptlsZiO4z6vg5ym28w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "848493345462-fmakar1iecb5galk1u17rc4u4mhn56hp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
