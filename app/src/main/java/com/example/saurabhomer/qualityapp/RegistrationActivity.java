@@ -5,11 +5,14 @@ package com.example.saurabhomer.qualityapp;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.service.autofill.UserData;
 import android.support.annotation.NonNull;
 
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatImageView;
+import android.util.Log;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -22,8 +25,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -65,7 +71,26 @@ public class RegistrationActivity extends AppCompatActivity {
 
     public void signIn(String username, String password)
     {
+        Log.d("data",username+"");
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference users = firebaseDatabase.getReference("users");
+        users.addValueEventListener(new ValueEventListener() {
+            @RequiresApi(api = 28)
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot childSnapshot: dataSnapshot.getChildren()) {
+                    UserProfile userProfile = childSnapshot.getValue(UserProfile.class);
+                    Log.d("Aaaa","dfsknl");
+                }
 
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("Aaaa","dfseweknl");
+            }
+
+        });
     }
 
 
