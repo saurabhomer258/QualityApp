@@ -13,6 +13,7 @@ import android.support.v7.widget.AppCompatImageView;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,28 +45,26 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
 
         initializeGUI();
+        View et_username = findViewById(R.id.et_username);
+        final EditText editText_username = et_username.findViewById(R.id.atvUsernameReg);
+        View et_password = findViewById(R.id.et_password);
+        final EditText editText_password = et_password.findViewById(R.id.atvUsernameReg);
 
-        signup.setOnClickListener(new View.OnClickListener() {
+        View signin_button = findViewById(R.id.bt_signin);
+        Button bt_signin_button= signin_button.findViewById(R.id.btnSignUp);
+        bt_signin_button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
-                final String inputName = username.getText().toString().trim();
-                final String inputPw = password.getText().toString().trim();
-                final String inputEmail = email.getText().toString().trim();
-
-                if(validateInput(inputName, inputPw, inputEmail))
-                         registerUser(inputName, inputPw, inputEmail);
-
+            public void onClick(View v) {
+                String username = editText_username.getText().toString();
+                String password = editText_password.getText().toString();
+                signIn(username,password);
             }
         });
+    }
 
 
-        signin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(RegistrationActivity.this,LoginActivity.class));
-            }
-        });
+    public void signIn(String username, String password)
+    {
 
     }
 
@@ -82,8 +81,8 @@ public class RegistrationActivity extends AppCompatActivity {
         AutoCompleteTextView password = passwordView.findViewById(R.id.atvUsernameReg);
         password.setHint("anhaand");
 
-        email =  (AutoCompleteTextView) findViewById(R.id.atvEmailReg);
-        password = (AutoCompleteTextView) findViewById(R.id.atvPasswordReg);
+//        email =  (AutoCompleteTextView) findViewById(R.id.atvEmailReg);
+//        password = (AutoCompleteTextView) findViewById(R.id.atvPasswordReg);
         signin = (TextView) findViewById(R.id.tvSignIn);
         signup = (Button) findViewById(R.id.btnSignUp);
         progressDialog = new ProgressDialog(this);
