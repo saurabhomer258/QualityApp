@@ -6,6 +6,7 @@
     android:layout_height="60dp">
     <AutoCompleteTextView
         android:id="@+id/atvUsernameReg"
+        android:singleLine="true"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginBottom="20dp"

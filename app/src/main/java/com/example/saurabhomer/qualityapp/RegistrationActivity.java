@@ -69,18 +69,20 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
 
-    public void signIn(String username, String password)
+    public void signIn(final String username, final String password)
     {
         Log.d("data",username+"");
         firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference users = firebaseDatabase.getReference("users");
         users.addValueEventListener(new ValueEventListener() {
-            @RequiresApi(api = 28)
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot childSnapshot: dataSnapshot.getChildren()) {
+
                     UserProfile userProfile = childSnapshot.getValue(UserProfile.class);
-                    Log.d("Aaaa","dfsknl");
+                    if (userProfile.getUsername().trim().toLowerCase().equals(userProfile.getUsername().trim().toLowerCase()) && password.trim().toLowerCase().equals(userProfile.getPassword().trim().toLowerCase())){
+
+                    }
                 }
 
             }
@@ -101,13 +103,11 @@ public class RegistrationActivity extends AppCompatActivity {
         View userNameView = findViewById(R.id.et_username);
 
         username = (AutoCompleteTextView) userNameView.findViewById(R.id.atvUsernameReg);
-        username.setHint("hhh");
+        username.setHint("username");
         View passwordView = findViewById(R.id.et_password);
         AutoCompleteTextView password = passwordView.findViewById(R.id.atvUsernameReg);
-        password.setHint("anhaand");
+        password.setHint("password");
 
-//        email =  (AutoCompleteTextView) findViewById(R.id.atvEmailReg);
-//        password = (AutoCompleteTextView) findViewById(R.id.atvPasswordReg);
         signin = (TextView) findViewById(R.id.tvSignIn);
         signup = (Button) findViewById(R.id.btnSignUp);
         progressDialog = new ProgressDialog(this);
