@@ -76,13 +76,11 @@ public class RegistrationActivity extends AppCompatActivity {
         View userNameView = findViewById(R.id.et_username);
 
         username = (AutoCompleteTextView) userNameView.findViewById(R.id.atvUsernameReg);
-        username.setHint("hhh");
+        username.setHint("username");
         View passwordView = findViewById(R.id.et_password);
         AutoCompleteTextView password = passwordView.findViewById(R.id.atvUsernameReg);
-        password.setHint("anhaand");
+        password.setHint("password");
 
-//        email =  (AutoCompleteTextView) findViewById(R.id.atvEmailReg);
-//        password = (AutoCompleteTextView) findViewById(R.id.atvPasswordReg);
         signin = (TextView) findViewById(R.id.tvSignIn);
         signup = (Button) findViewById(R.id.btnSignUp);
         progressDialog = new ProgressDialog(this);
