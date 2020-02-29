@@ -74,7 +74,14 @@ public class RegistrationActivity extends AppCompatActivity {
 
         logo = (ImageView) findViewById(R.id.ivRegLogo);
         joinus = (ImageView) findViewById(R.id.ivJoinUs);
-        username = (AutoCompleteTextView) findViewById(R.id.atvUsernameReg);
+        View userNameView = findViewById(R.id.et_username);
+
+        username = (AutoCompleteTextView) userNameView.findViewById(R.id.atvUsernameReg);
+        username.setHint("hhh");
+        View passwordView = findViewById(R.id.et_password);
+        AutoCompleteTextView password = passwordView.findViewById(R.id.atvUsernameReg);
+        password.setHint("anhaand");
+
         email =  (AutoCompleteTextView) findViewById(R.id.atvEmailReg);
         password = (AutoCompleteTextView) findViewById(R.id.atvPasswordReg);
         signin = (TextView) findViewById(R.id.tvSignIn);
