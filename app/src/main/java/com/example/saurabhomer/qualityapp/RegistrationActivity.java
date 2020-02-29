@@ -65,7 +65,8 @@ public class RegistrationActivity extends AppCompatActivity {
 
     public void signIn(String username, String password)
     {
-
+        Intent intent = new Intent(this,HomeActivity.class);
+        startActivity(intent);
     }
 
 
