@@ -4,6 +4,8 @@
     <string name="emailReg">Email</string>
     <string name="passwordReg">Password</string>
     <string name="sign_upReg">Sign up</string>
+    <string name="next_page">Next</string>
+    <string name="done">Done</string>
     <string name="sign_inLog">Sign in</string>
     <string name="signin_redirect">Already a member? Sign in!</string>
     <string name="forgot_password">Forgot password?</string>

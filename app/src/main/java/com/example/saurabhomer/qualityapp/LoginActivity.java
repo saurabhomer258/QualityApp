@@ -72,13 +72,10 @@ public class LoginActivity extends Activity {
             }
         });
 
-
-
     }
 
-
-
-    public void signUser(String email, String password){
+    public void signUser(String email, String password)
+    {
 
         progressDialog.setMessage("Verificating...");
         progressDialog.show();
