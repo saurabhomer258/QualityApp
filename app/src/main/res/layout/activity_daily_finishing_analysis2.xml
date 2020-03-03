@@ -807,10 +807,10 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="6"
-        android:orientation="horizontal">
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:weightSum="6"
+    android:orientation="horizontal">
     <customView.NextButton
         android:layout_width="0dp"
         android:padding="5dp"
@@ -824,7 +824,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="3"
         android:id="@+id/btn_done" />
-    </LinearLayout>
+</LinearLayout>
 </LinearLayout>
 
 

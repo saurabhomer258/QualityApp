@@ -62,7 +62,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
     public void signIn(String username, String password)
     {
-        Intent intent = new Intent(this,HomeActivity.class);
+        Intent intent = new Intent(this,SkuCheckReport.class);
         startActivity(intent);
     }
 
