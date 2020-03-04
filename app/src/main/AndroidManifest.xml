@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:remove="android:appComponentFactory">
+        <activity android:name=".SkuCheckReport"></activity>
+        <activity android:name=".DailyFinishingAnalysis2" />
+        <activity android:name=".DailyFinishingDefectAnalysis" />
         <activity
             android:name=".SignUpActivity"
             android:label="@string/title_activity_sign_up"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"

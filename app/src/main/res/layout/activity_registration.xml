@@ -3,7 +3,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/background"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/lib/com.example.saurabhomer.qualityapp"
    >
 
@@ -35,16 +35,16 @@
                 android:layout_marginBottom="55dp"
                 android:contentDescription="TODO"
                 android:scaleType="fitCenter"
-                android:src="@drawable/logo" />
+                android:src="@drawable/logo_noshadow_1" />
 
 
             <ImageView
                 android:id="@+id/ivJoinUs"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="100dp"
                 android:layout_marginBottom="15dp"
                 android:contentDescription="TODO"
-                android:src="@drawable/joinus_text" />
+                android:src="@drawable/login_logo" />
 
 
        <customView.LoginEditText

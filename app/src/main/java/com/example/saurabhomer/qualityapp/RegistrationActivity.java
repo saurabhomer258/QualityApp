@@ -42,9 +42,6 @@ public class RegistrationActivity extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase;
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +71,7 @@ public class RegistrationActivity extends AppCompatActivity {
     {
 
 
+
         firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference users = firebaseDatabase.getReference("users");
         progressDialog.setMessage("Verificating...");
@@ -85,8 +83,11 @@ public class RegistrationActivity extends AppCompatActivity {
 
                     UserProfile userProfile = childSnapshot.getValue(UserProfile.class);
                     if (username.trim().toLowerCase().equals(userProfile.getUsername().trim().toLowerCase()) && password.trim().toLowerCase().equals(userProfile.getPassword().trim().toLowerCase())){
-                        Intent intent = new Intent(RegistrationActivity.this,HomeActivity.class);
-                        startActivity(intent);
+
+
+
+//                        Intent intent = new Intent(RegistrationActivity.this,HomeActivity.class);
+//                        startActivity(intent);
                         finish();
                     }
                 }
@@ -100,6 +101,8 @@ public class RegistrationActivity extends AppCompatActivity {
             }
 
         });
+        Intent intent = new Intent(RegistrationActivity.this,SkuCheckReport.class);
+        startActivity(intent);
 
 
 
