@@ -37,7 +37,7 @@ public class LoginActivity extends Activity {
         initializeGUI();
 
         user = firebaseAuth.getCurrentUser();
-
+        progressDialog = new ProgressDialog(this);
         if(user != null) {
             finish();
             startActivity(new Intent(LoginActivity.this,MainActivity.class));

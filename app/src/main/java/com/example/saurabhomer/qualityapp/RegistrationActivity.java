@@ -51,6 +51,7 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
 
         initializeGUI();
+        progressDialog = new ProgressDialog(this);
         View et_username = findViewById(R.id.et_username);
         final EditText editText_username = et_username.findViewById(R.id.atvUsernameReg);
         View et_password = findViewById(R.id.et_password);
@@ -71,17 +72,22 @@ public class RegistrationActivity extends AppCompatActivity {
 
     public void signIn(final String username, final String password)
     {
-        Log.d("data",username+"");
+
+
         firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference users = firebaseDatabase.getReference("users");
-        users.addValueEventListener(new ValueEventListener() {
+        progressDialog.setMessage("Verificating...");
+        progressDialog.show();
+        users.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot childSnapshot: dataSnapshot.getChildren()) {
 
                     UserProfile userProfile = childSnapshot.getValue(UserProfile.class);
-                    if (userProfile.getUsername().trim().toLowerCase().equals(userProfile.getUsername().trim().toLowerCase()) && password.trim().toLowerCase().equals(userProfile.getPassword().trim().toLowerCase())){
-
+                    if (username.trim().toLowerCase().equals(userProfile.getUsername().trim().toLowerCase()) && password.trim().toLowerCase().equals(userProfile.getPassword().trim().toLowerCase())){
+                        Intent intent = new Intent(RegistrationActivity.this,HomeActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                 }
 
@@ -89,10 +95,14 @@ public class RegistrationActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Log.d("Aaaa","dfseweknl");
+                progressDialog.hide();
+
             }
 
         });
+
+
+
     }
 
 

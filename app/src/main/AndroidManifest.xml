@@ -4,14 +4,21 @@
     package="com.example.saurabhomer.qualityapp">
 
     <application
-        tools:remove="android:appComponentFactory"
         android:allowBackup="true"
         android:icon="@mipmap/logo_noshadow"
         android:label="@string/app_name"
-
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" ></activity>
+        android:theme="@style/AppTheme"
+        tools:remove="android:appComponentFactory">
+        <activity
+            android:name=".SignUpActivity"
+            android:label="@string/title_activity_sign_up"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".SplashScrActivity">
             <intent-filter>
@@ -24,7 +31,7 @@
         <activity android:name=".PWresetActivity" />
         <activity
             android:name=".Main2Activity"
-            android:label="@string/title_activity_main2"></activity>
+            android:label="@string/title_activity_main2" />
     </application>
 
 </manifest>
