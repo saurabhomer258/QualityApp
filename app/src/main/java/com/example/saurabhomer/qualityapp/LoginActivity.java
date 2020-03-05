@@ -86,7 +86,7 @@ public class LoginActivity extends Activity {
                 if(task.isSuccessful()){
                     progressDialog.dismiss();
                     Toast.makeText(LoginActivity.this,"Login Successful",Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                    startActivity(new Intent(LoginActivity.this,HomeActivity.class));
                 }
                 else{
                     progressDialog.dismiss();
