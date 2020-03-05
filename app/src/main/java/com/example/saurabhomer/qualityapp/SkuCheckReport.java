@@ -16,7 +16,7 @@ public class SkuCheckReport extends AppCompatActivity implements AdapterView.OnI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sku_check_report);
+        setContentView(R.layout.activity_sku_check_report100);
         DailyFinishingEditText edt_readyQuantity = findViewById(R.id.edt_readyquantity);
         DailyFinishingEditText edt_checkquantity = findViewById(R.id.edt_checkquantity);
         Spinner mdropdown = (Spinner) edt_readyQuantity.findViewById(R.id.spinner);
