@@ -11,18 +11,239 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_first_fragment"
-        app:layout_constraintBottom_toTopOf="@id/button_first"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/button_first"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_first" />
+
+        <android.support.v7.widget.CardView
+            app:cardCornerRadius="6dp"
+            android:id="@+id/cardView1"
+            android:layout_width="170dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="76dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView3"
+            app:cardBackgroundColor="@color/white"
+            tools:ignore="MissingConstraints">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/inside"
+                android:layout_gravity="top"
+                android:layout_marginBottom="30dp"
+                />
+
+            <TextView
+                android:id="@+id/Inside"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INSIDE"
+                android:textColor="@color/colorPrimary"
+                tools:layout_editor_absoluteX="1dp"
+                android:layout_gravity="center_horizontal|bottom"
+                tools:layout_editor_absoluteY="184dp" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_marginEnd="10dp"
+            android:id="@+id/cardView2"
+            android:layout_width="170dp"
+            android:layout_height="70dp"
+            app:cardCornerRadius="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints"
+            app:cardBackgroundColor="@color/white"
+
+            tools:layout_editor_absoluteY="73dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="top"
+                android:layout_marginBottom="30dp"
+
+                android:src="@drawable/outside" />
+
+            <TextView
+                android:id="@+id/info_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:layout_gravity="center_horizontal|bottom"
+                android:text="OUTSIDE" />
+
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_width="170dp"
+            android:layout_height="70dp"
+            app:cardCornerRadius="6dp"
+            android:layout_marginStart="10dp"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="73dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="top"
+                android:layout_marginBottom="30dp"
+
+                android:src="@drawable/getup" />
+
+            <TextView
+                android:id="@+id/getup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom|center"
+                android:text="GETUP"
+                android:textColor="@color/colorPrimary" />
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView4"
+            android:layout_width="150dp"
+            app:cardCornerRadius="6dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="284dp"
+            android:layout_marginTop="76dp"
+            app:layout_constraintStart_toStartOf="@+id/cardView1"
+            app:layout_constraintTop_toBottomOf="@+id/cardView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/meamntreport"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="MEASERMENT REPORT" />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView5"
+            android:layout_width="150dp"
+            app:cardCornerRadius="6dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintTop_toBottomOf="@+id/cardView1"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="1dp">
+
+            <TextView
+                android:id="@+id/metal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="METAL DEDECTION REPORT" />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView6"
+            android:layout_width="170dp"
+            android:layout_height="70dp"
+            app:cardCornerRadius="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/cardView4"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="10dp"
+            tools:ignore="MissingConstraints">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="top"
+                android:layout_marginBottom="30dp"
+
+                android:src="@drawable/sku" />
+
+            <TextView
+                android:id="@+id/skutest"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center|bottom"
+                android:text="SKU TEST" />
+
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView7"
+            android:layout_width="170dp"
+            app:cardCornerRadius="6dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="40dp"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/cardView5"
+            tools:ignore="MissingConstraints">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="top"
+                android:layout_marginBottom="30dp"
+
+                android:src="@drawable/cartun_adult" />
+
+            <TextView
+                android:id="@+id/cartoonaudit"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center|bottom"
+                android:text="CARTOON AUDIT" />
+
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView8"
+            android:layout_width="170dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="10dp"
+            app:cardCornerRadius="6dp"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView6"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:src="@drawable/cartun_adult"
+                />
+
+            <TextView
+                android:id="@+id/inline"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center|bottom"
+                android:textColor="@color/colorPrimary"
+                android:text="INLINE FINAL INSPECTION" />
+
+        </android.support.v7.widget.CardView>
+
+    </android.support.constraint.ConstraintLayout>
+
+
 </android.support.constraint.ConstraintLayout>

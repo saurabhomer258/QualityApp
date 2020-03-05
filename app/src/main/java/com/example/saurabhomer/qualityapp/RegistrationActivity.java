@@ -86,8 +86,8 @@ public class RegistrationActivity extends AppCompatActivity {
 
 
 
-//                        Intent intent = new Intent(RegistrationActivity.this,HomeActivity.class);
-//                        startActivity(intent);
+                        Intent intent = new Intent(RegistrationActivity.this,HomeActivity.class);
+                        startActivity(intent);
                         finish();
                     }
                 }
@@ -101,8 +101,6 @@ public class RegistrationActivity extends AppCompatActivity {
             }
 
         });
-        Intent intent = new Intent(RegistrationActivity.this,SkuCheckReport.class);
-        startActivity(intent);
 
 
 

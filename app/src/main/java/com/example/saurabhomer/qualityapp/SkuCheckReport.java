@@ -23,8 +23,7 @@ public class SkuCheckReport extends AppCompatActivity implements AdapterView.OnI
         Spinner checkquantity = (Spinner) edt_readyQuantity.findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.Data,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mdropdown.setAdapter(adapter);
-        mdropdown.setOnItemSelectedListener(this);
+
     }
 
     @Override
