@@ -53,7 +53,7 @@ public class SplashScrActivity extends Activity {
                         chmaraTech.setVisibility(View.VISIBLE);
 
                         finish();
-                        startActivity(new Intent(SplashScrActivity.this,RegistrationActivity.class));
+                        startActivity(new Intent(SplashScrActivity.this,MeasurementDescription.class));
                     }
 
                     @Override
@@ -61,19 +61,12 @@ public class SplashScrActivity extends Activity {
 
                     }
                 });
-
-
             }
-
             @Override
             public void onAnimationRepeat(Animation animation) {
 
             }
         });
-
-
-
-
     }
 
 

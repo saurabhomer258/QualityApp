@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Style No"
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/edt_style_no" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Buyer Name"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/edt_buyer_name" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Product Name"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/edt_product_name" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Order Quality"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/edt_order_quality" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Shipment Date"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/edt_shipment_date" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Colour"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/edt_color" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Size"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_marginLeft="80dp"
+                android:layout_height="fill_parent">
+                <CheckBox android:id="@+id/checkbox1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="40"
+                    android:onClick="onCheckboxClicked"/>
+                <CheckBox android:id="@+id/checkbox2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="42"
+                    android:onClick="onCheckboxClicked"/>
+                <CheckBox android:id="@+id/checkbox3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="44"
+                    android:onClick="onCheckboxClicked"/>
+                <CheckBox android:id="@+id/checkbox4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="46"
+                    android:onClick="onCheckboxClicked"/>
+                <CheckBox android:id="@+id/checkbox5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="48"
+                    android:onClick="onCheckboxClicked"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Fabric Description"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/edt_fabricdescription" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="6"
+            android:orientation="horizontal">
+            <customView.NextButton
+                android:layout_width="0dp"
+                android:padding="5dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:id="@+id/btn_next" />
+
+            <customView.DoneButton
+                android:layout_width="0dp"
+                android:padding="5dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:id="@+id/btn_done" />
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

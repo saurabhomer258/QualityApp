@@ -147,10 +147,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     }
                 }
             });
-
     }
-
-
     private void sendUserData(String username, String password){
 
         firebaseDatabase = FirebaseDatabase.getInstance();
