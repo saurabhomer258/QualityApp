@@ -34,6 +34,12 @@ public class HomeActivity extends BaseActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
+        if(LoginPref.getInstance(this).getAdmin().equals("0")){
+            fab.setVisibility(View.GONE);
+        }
+        else {
+            fab.setVisibility(View.VISIBLE);
+        }
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

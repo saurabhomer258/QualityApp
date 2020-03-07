@@ -77,13 +77,13 @@ public class RegistrationActivity extends AppCompatActivity {
         DatabaseReference users = firebaseDatabase.getReference("users");
         progressDialog.setMessage("Verificating...");
         progressDialog.show();
-        users.addListenerForSingleValueEvent(new ValueEventListener() {
+        users.child(username).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot childSnapshot: dataSnapshot.getChildren()) {
 
-                    UserProfile userProfile = childSnapshot.getValue(UserProfile.class);
-                    if (username.trim().toLowerCase().equals(userProfile.getUsername().trim().toLowerCase()) && password.trim().toLowerCase().equals(userProfile.getPassword().trim().toLowerCase())){
+
+                    UserProfile userProfile = dataSnapshot.getValue(UserProfile.class);
+                    if (userProfile!= null && userProfile.getUsername()!=null && username.trim().toLowerCase().equals(userProfile.getUsername().trim().toLowerCase()) && password.trim().toLowerCase().equals(userProfile.getPassword().trim().toLowerCase())){
 
                         LoginPref.getInstance(RegistrationActivity.this).setUsername(userProfile.getName(),userProfile.getIsAdmin());
 
@@ -91,7 +91,11 @@ public class RegistrationActivity extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                     }
-                }
+                    else {
+                        progressDialog.hide();
+
+                    }
+
 
             }
 

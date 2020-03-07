@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -39,6 +40,10 @@ public class SignUpActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(nametv.getText().toString().isEmpty() || edt_user.getText().toString().isEmpty() ||  edt_pass.getText().toString().isEmpty()){
+                    Toast.makeText(SignUpActivity.this,"Some this is worng please check your data.",Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 progressDialog = new ProgressDialog(SignUpActivity.this);
                 progressDialog.setMessage("Verificating...");
                 progressDialog.show();
@@ -69,7 +74,7 @@ public class SignUpActivity extends AppCompatActivity {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference users = firebaseDatabase.getReference("users");
 
-        users.push().setValue(userProfile);
+        users.child(userProfile.getUsername()).setValue(userProfile);
         finish();
         progressDialog.dismiss();
 
