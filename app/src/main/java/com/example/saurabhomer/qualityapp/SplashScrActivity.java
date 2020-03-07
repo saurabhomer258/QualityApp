@@ -11,6 +11,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.example.saurabhomer.qualityapp.pref.LoginPref;
+
 public class SplashScrActivity extends Activity {
 
     private ImageView logoSplash, chmaraTech, logoWhite;
@@ -53,7 +55,14 @@ public class SplashScrActivity extends Activity {
                         chmaraTech.setVisibility(View.VISIBLE);
 
                         finish();
-                        startActivity(new Intent(SplashScrActivity.this,RegistrationActivity.class));
+                        if(LoginPref.getInstance(SplashScrActivity.this).getUserName().isEmpty()) {
+                            startActivity(new Intent(SplashScrActivity.this, RegistrationActivity.class));
+                        }
+                        else
+                        {
+                            startActivity(new Intent(SplashScrActivity.this, HomeActivity.class));
+                        }
+
                     }
 
                     @Override

@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.example.saurabhomer.qualityapp.RegistrationActivity;
 import com.example.saurabhomer.qualityapp.pref.LoginPref;
 
 public class BaseActivity extends AppCompatActivity {
@@ -15,7 +16,7 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         if(LoginPref.getInstance(this).getUserName().isEmpty())
         {
-            Intent i = new Intent();
+            Intent i = new Intent(this, RegistrationActivity.class);
             startActivity(i);
             finish();
         }

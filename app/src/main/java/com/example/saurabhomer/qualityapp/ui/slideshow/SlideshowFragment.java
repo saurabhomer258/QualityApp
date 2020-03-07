@@ -12,6 +12,7 @@ import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 
 import com.example.saurabhomer.qualityapp.R;
+import com.example.saurabhomer.qualityapp.pref.LoginPref;
 
 public class SlideshowFragment extends Fragment {
 
@@ -19,6 +20,7 @@ public class SlideshowFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+        LoginPref.getInstance(getContext()).setUsername("","");
         slideshowViewModel =
                 ViewModelProviders.of(this).get(SlideshowViewModel.class);
         View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
