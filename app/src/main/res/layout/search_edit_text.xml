@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_height="60dp">
+    <AutoCompleteTextView
+        android:id="@+id/atvCommon"
+        android:singleLine="true"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/rounded_rect"
+        android:textColor="@color/white"
+        android:textColorHint="@color/gray"
+        android:paddingStart="20dp"
+        android:text="ds"
+        android:textSize="15sp"
+        tools:ignore="MissingConstraints" />
+
+</android.support.constraint.ConstraintLayout>
