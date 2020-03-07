@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ public class SignUpActivity extends AppCompatActivity {
     EditText emailtv;
     EditText edt_user;
     EditText edt_pass;
+    CheckBox adminCheck;
     private ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class SignUpActivity extends AppCompatActivity {
         emailtv =  findViewById(R.id.edt_email).findViewById(R.id.atvUsernameReg);
         edt_user =  findViewById(R.id.edt_user).findViewById(R.id.atvUsernameReg);;
         edt_pass =  findViewById(R.id.edt_pass).findViewById(R.id.atvUsernameReg);;
+        adminCheck =  (CheckBox)findViewById(R.id.adminCheck);
         Button submit =  findViewById(R.id.btnSignUp);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +49,13 @@ public class SignUpActivity extends AppCompatActivity {
                 userProfile.setUsername(edt_user.getText().toString());
                 userProfile.setName(nametv.getText().toString());
                 userProfile.setPassword(edt_pass.getText().toString());
+                if(adminCheck.isChecked())
+                {
+                    userProfile.setIsAdmin("1");
+                }
+                else {
+                    userProfile.setIsAdmin("0");
+                }
                 sendUserData(userProfile);
             }
         });

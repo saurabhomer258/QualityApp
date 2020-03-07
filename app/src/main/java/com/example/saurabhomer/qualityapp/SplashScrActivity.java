@@ -61,19 +61,12 @@ public class SplashScrActivity extends Activity {
 
                     }
                 });
-
-
             }
-
             @Override
             public void onAnimationRepeat(Animation animation) {
 
             }
         });
-
-
-
-
     }
 
 

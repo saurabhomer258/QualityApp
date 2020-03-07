@@ -10,7 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:remove="android:appComponentFactory">
-        <activity android:name=".MetelDetectionPage"></activity>
+
+        <activity android:name=".MeasurementDescription"></activity>
+        <activity android:name=".MainSheet" />
+        <activity android:name=".MetelDetectionPage" />
+
         <activity android:name=".SkuCheckReport100" />
         <activity android:name=".MeasurmentDescription" />
         <activity android:name=".DailyFinishingAnalysis2" />

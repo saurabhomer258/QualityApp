@@ -21,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.saurabhomer.qualityapp.pref.LoginPref;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -84,7 +85,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     UserProfile userProfile = childSnapshot.getValue(UserProfile.class);
                     if (username.trim().toLowerCase().equals(userProfile.getUsername().trim().toLowerCase()) && password.trim().toLowerCase().equals(userProfile.getPassword().trim().toLowerCase())){
 
-
+                        LoginPref.getInstance(RegistrationActivity.this).setUsername(userProfile.getName(),userProfile.getIsAdmin());
 
                         Intent intent = new Intent(RegistrationActivity.this,HomeActivity.class);
                         startActivity(intent);
@@ -147,10 +148,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     }
                 }
             });
-
     }
-
-
     private void sendUserData(String username, String password){
 
         firebaseDatabase = FirebaseDatabase.getInstance();

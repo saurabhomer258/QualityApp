@@ -8,6 +8,15 @@ public class UserProfile {
     private String mobileNumber;
     private String email;
     private String name;
+    private String isAdmin;
+
+    public String getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(String isAdmin) {
+        this.isAdmin = isAdmin;
+    }
 
     public String getMobileNumber() {
         return mobileNumber;
