@@ -55,7 +55,6 @@
 
         <customView.SignUpEditText
             android:id="@+id/edt_mobile"
-
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="7" />
@@ -134,7 +133,7 @@
 
         <customView.SignUpEditText
             android:id="@+id/edt_pass"
-
+            android:inputType="textPassword"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="7" />
@@ -149,8 +148,7 @@
         <CheckBox android:id="@+id/adminCheck"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="make Admin"
-            android:onClick="onCheckboxClicked"/>
+            android:text="make Admin" />
 
     </LinearLayout>
     <customView.SignUpButton
