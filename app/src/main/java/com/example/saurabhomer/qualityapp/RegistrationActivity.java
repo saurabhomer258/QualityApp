@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatImageView;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
@@ -22,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.saurabhomer.qualityapp.pref.LoginPref;
+import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -53,6 +55,7 @@ public class RegistrationActivity extends AppCompatActivity {
         View et_username = findViewById(R.id.et_username);
         final EditText editText_username = et_username.findViewById(R.id.atvUsernameReg);
         View et_password = findViewById(R.id.et_password);
+
         final EditText editText_password = et_password.findViewById(R.id.atvUsernameReg);
 
         View signin_button = findViewById(R.id.bt_signin);
@@ -70,7 +73,11 @@ public class RegistrationActivity extends AppCompatActivity {
 
     public void signIn(final String username, final String password)
     {
+            if(!NetworkUtils.isNetworkConnected(this))
+            {
 
+                return;
+            }
 
 
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -93,6 +100,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     }
                     else {
                         progressDialog.hide();
+                        Toast.makeText(RegistrationActivity.this,"User name or password is worng",Toast.LENGTH_LONG).show();
 
                     }
 
@@ -121,8 +129,8 @@ public class RegistrationActivity extends AppCompatActivity {
         username = (AutoCompleteTextView) userNameView.findViewById(R.id.atvUsernameReg);
         username.setHint("username");
         View passwordView = findViewById(R.id.et_password);
-        AutoCompleteTextView password = passwordView.findViewById(R.id.atvUsernameReg);
-        password.setHint("password");
+        EditText password = passwordView.findViewById(R.id.atvUsernameReg);
+
 
         signin = (TextView) findViewById(R.id.tvSignIn);
         signup = (Button) findViewById(R.id.btnSignUp);
