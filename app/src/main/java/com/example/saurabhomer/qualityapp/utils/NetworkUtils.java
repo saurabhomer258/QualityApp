@@ -5,7 +5,7 @@ import android.net.ConnectivityManager;
 import android.widget.Toast;
 
 public class NetworkUtils {
-
+    public  static String STYLENUMBER="";
     public static boolean isNetworkConnected(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 

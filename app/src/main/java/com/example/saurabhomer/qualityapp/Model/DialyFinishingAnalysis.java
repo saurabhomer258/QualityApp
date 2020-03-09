@@ -3,10 +3,41 @@ package com.example.saurabhomer.qualityapp.Model;
 import android.widget.Button;
 
 public class DialyFinishingAnalysis {
-    String mPrintingMRBO,mSlubs_Holes_NAR,mBrokenStitches,mSlipStitches,mSPI,mPukering,mLooseTensions,mSnapDefects,mNeedleMark,mOpenSeam,mPleats;
-    String mMissingStitches,mSkipRunOff,mIncorrectLabel,mWrongPlacement,mLooseNess,mCutDamage,mOthers,mStain,mOilMark,mStickers,mUncutThread,mOutOfSpec;
-    String mTotalDefect,mQualityOut,mProductionOut,mDamage,mDirty,mIron;
+    private String mPrintingMRBO,mSlubs_Holes_NAR,mBrokenStitches,mSlipStitches,mSPI,mPukering,mLooseTensions,mSnapDefects,mNeedleMark,mOpenSeam,mPleats;
+   private String mMissingStitches,mSkipRunOff,mIncorrectLabel,mWrongPlacement,mLooseNess,mCutDamage,mOthers,mStain,mOilMark,mStickers,mUncutThread,mOutOfSpec;
+    private String mTotalDefect,mQualityOut,mProductionOut,mDamage,mDirty,mIron;
 
+    public DialyFinishingAnalysis(String mPrintingMRBO, String mSlubs_Holes_NAR, String mBrokenStitches, String mSlipStitches, String mSPI, String mPukering, String mLooseTensions, String mSnapDefects, String mNeedleMark, String mOpenSeam, String mPleats, String mMissingStitches, String mSkipRunOff, String mIncorrectLabel, String mWrongPlacement, String mLooseNess, String mCutDamage, String mOthers, String mStain, String mOilMark, String mStickers, String mUncutThread, String mOutOfSpec, String mTotalDefect, String mQualityOut, String mProductionOut, String mDamage, String mDirty, String mIron) {
+        this.mPrintingMRBO = mPrintingMRBO;
+        this.mSlubs_Holes_NAR = mSlubs_Holes_NAR;
+        this.mBrokenStitches = mBrokenStitches;
+        this.mSlipStitches = mSlipStitches;
+        this.mSPI = mSPI;
+        this.mPukering = mPukering;
+        this.mLooseTensions = mLooseTensions;
+        this.mSnapDefects = mSnapDefects;
+        this.mNeedleMark = mNeedleMark;
+        this.mOpenSeam = mOpenSeam;
+        this.mPleats = mPleats;
+        this.mMissingStitches = mMissingStitches;
+        this.mSkipRunOff = mSkipRunOff;
+        this.mIncorrectLabel = mIncorrectLabel;
+        this.mWrongPlacement = mWrongPlacement;
+        this.mLooseNess = mLooseNess;
+        this.mCutDamage = mCutDamage;
+        this.mOthers = mOthers;
+        this.mStain = mStain;
+        this.mOilMark = mOilMark;
+        this.mStickers = mStickers;
+        this.mUncutThread = mUncutThread;
+        this.mOutOfSpec = mOutOfSpec;
+        this.mTotalDefect = mTotalDefect;
+        this.mQualityOut = mQualityOut;
+        this.mProductionOut = mProductionOut;
+        this.mDamage = mDamage;
+        this.mDirty = mDirty;
+        this.mIron = mIron;
+    }
 
     public String getmPrintingMRBO() {
         return mPrintingMRBO;
