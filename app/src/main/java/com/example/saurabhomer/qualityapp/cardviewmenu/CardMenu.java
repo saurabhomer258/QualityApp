@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.example.saurabhomer.qualityapp.DailyFinishingDefectAnalysis;
 import com.example.saurabhomer.qualityapp.MeasurementDescription;
+import com.example.saurabhomer.qualityapp.Measurment;
 import com.example.saurabhomer.qualityapp.MetelDetectionPage;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.SkuCheckReport100;
@@ -51,7 +52,7 @@ public class CardMenu extends AppCompatActivity {
         cardView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             Intent i = new Intent(CardMenu.this, MeasurementDescription.class);
+             Intent i = new Intent(CardMenu.this, Measurment.class);
              startActivity(i);
             }
         });

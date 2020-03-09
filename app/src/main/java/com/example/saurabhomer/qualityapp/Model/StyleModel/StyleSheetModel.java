@@ -83,7 +83,8 @@ public class StyleSheetModel {
         return fabricDescription;
     }
 
-    public void setFabricDescription(String fabricDescription) {
+    public void setFabricDescription(String fabricDescription)
+    {
         this.fabricDescription = fabricDescription;
     }
 }

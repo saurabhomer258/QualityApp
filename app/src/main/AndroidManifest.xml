@@ -14,7 +14,7 @@
         <activity android:name=".MainSheet" />
         <activity android:name=".MetelDetectionPage" />
         <activity android:name=".SkuCheckReport100" />
-        <activity android:name=".MeasurmentDescription" />
+        <activity android:name=".Measurment" />
         <activity android:name=".DailyFinishingAnalysis2" />
         <activity android:name=".DailyFinishingDefectAnalysis" />
         <activity
