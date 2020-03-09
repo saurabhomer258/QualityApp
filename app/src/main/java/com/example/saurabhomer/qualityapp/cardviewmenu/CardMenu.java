@@ -1,18 +1,16 @@
 package com.example.saurabhomer.qualityapp.cardviewmenu;
 
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
 
 import com.example.saurabhomer.qualityapp.DailyFinishingDefectAnalysis;
-import com.example.saurabhomer.qualityapp.MeasurementDescription;
-import com.example.saurabhomer.qualityapp.Measurment;
-import com.example.saurabhomer.qualityapp.MetelDetectionPage;
+import com.example.saurabhomer.qualityapp.Measurement.Measurment;
+import com.example.saurabhomer.qualityapp.MetelDetectionPage.MetelDetectionPage;
 import com.example.saurabhomer.qualityapp.R;
-import com.example.saurabhomer.qualityapp.SkuCheckReport100;
+import com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100;
 
 public class CardMenu extends AppCompatActivity {
 

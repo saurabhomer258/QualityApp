@@ -1,4 +1,4 @@
-package com.example.saurabhomer.qualityapp.Model;
+package com.example.saurabhomer.qualityapp.DailyFinishingAnalysis;
 
 import android.widget.Button;
 

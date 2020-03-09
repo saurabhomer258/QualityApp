@@ -1,4 +1,4 @@
-package com.example.saurabhomer.qualityapp.Model;
+package com.example.saurabhomer.qualityapp.Measurement;
 
 public class MeasurementModel {
     private String edt_measur;
@@ -12,18 +12,7 @@ public class MeasurementModel {
     private String next;
     private String done;
 
-    public MeasurementModel(String edt_measur, String edt_tolerance_plus, String edt_tolerance_minus, String check_40, String check_42, String check_44, String check_46, String check_48, String next, String done) {
-        this.edt_measur = edt_measur;
-        this.edt_tolerance_plus = edt_tolerance_plus;
-        this.edt_tolerance_minus = edt_tolerance_minus;
-        this.check_40 = check_40;
-        this.check_42 = check_42;
-        this.check_44 = check_44;
-        this.check_46 = check_46;
-        this.check_48 = check_48;
-        this.next = next;
-        this.done = done;
-    }
+
 
     public String getEdt_measur() {
         return edt_measur;
@@ -61,7 +50,8 @@ public class MeasurementModel {
         return check_42;
     }
 
-    public void setCheck_42(String check_42) {
+    public void setCheck_42(String check_42)
+    {
         this.check_42 = check_42;
     }
 

@@ -30,7 +30,8 @@ public class SignUpActivity extends AppCompatActivity {
     CheckBox adminCheck;
     private ProgressDialog progressDialog;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -48,7 +49,6 @@ public class SignUpActivity extends AppCompatActivity {
 
                 if(!NetworkUtils.isNetworkConnected(SignUpActivity.this))
                 {
-
                     return;
                 }
                 if(nametv.getText().toString().isEmpty() || edt_user.getText().toString().isEmpty() ||  edt_pass.getText().toString().isEmpty()){
@@ -91,12 +91,8 @@ public class SignUpActivity extends AppCompatActivity {
 
                     }
                 });
-
-
             }
         });
-
-
     }
 
 

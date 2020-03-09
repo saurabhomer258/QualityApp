@@ -12,9 +12,9 @@
         tools:remove="android:appComponentFactory">
         <activity android:name=".MeasurementDescription" />
         <activity android:name=".MainSheet" />
-        <activity android:name=".MetelDetectionPage" />
-        <activity android:name=".SkuCheckReport100" />
-        <activity android:name=".Measurment" />
+        <activity android:name=".MetelDetectionPage.MetelDetectionPage" />
+        <activity android:name=".SkuCheckReport.SkuCheckReport100" />
+        <activity android:name=".Measurement.Measurment" />
         <activity android:name=".DailyFinishingAnalysis2" />
         <activity android:name=".DailyFinishingDefectAnalysis" />
         <activity
@@ -36,9 +36,6 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".PWresetActivity" />
-        <activity
-            android:name=".Main2Activity"
-            android:label="@string/title_activity_main2" />
         <activity android:name=".cardviewmenu.CardMenu"></activity>
     </application>
 

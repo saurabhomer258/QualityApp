@@ -84,7 +84,8 @@ public class RegistrationActivity extends AppCompatActivity {
         DatabaseReference users = firebaseDatabase.getReference("users");
         progressDialog.setMessage("Verificating...");
         progressDialog.show();
-        users.child(username).addListenerForSingleValueEvent(new ValueEventListener() {
+        users.child(username).addListenerForSingleValueEvent(new ValueEventListener()
+        {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -101,10 +102,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     else {
                         progressDialog.hide();
                         Toast.makeText(RegistrationActivity.this,"User name or password is worng",Toast.LENGTH_LONG).show();
-
                     }
-
-
             }
 
             @Override

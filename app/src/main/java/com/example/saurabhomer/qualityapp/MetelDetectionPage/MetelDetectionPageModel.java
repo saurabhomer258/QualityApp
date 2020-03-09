@@ -1,4 +1,4 @@
-package com.example.saurabhomer.qualityapp.Model;
+package com.example.saurabhomer.qualityapp.MetelDetectionPage;
 
 public class MetelDetectionPageModel
 {
@@ -6,19 +6,10 @@ public class MetelDetectionPageModel
     private String done;
     private String edt_date;
     private String edt_time;
-    private String countryhasbeencheck;
+    private String edt_calibrated;
     private String edt_garment_pass;
     private String edt_garment;
 
-    public MetelDetectionPageModel(String next, String done, String edt_date, String edt_time, String countryhasbeencheck, String edt_garment_pass, String edt_garment) {
-        this.next = next;
-        this.done = done;
-        this.edt_date = edt_date;
-        this.edt_time = edt_time;
-        this.countryhasbeencheck = countryhasbeencheck;
-        this.edt_garment_pass = edt_garment_pass;
-        this.edt_garment = edt_garment;
-    }
 
     public String getNext() {
         return next;
@@ -53,11 +44,11 @@ public class MetelDetectionPageModel
     }
 
     public String getCountryhasbeencheck() {
-        return countryhasbeencheck;
+        return edt_calibrated;
     }
 
     public void setCountryhasbeencheck(String countryhasbeencheck) {
-        this.countryhasbeencheck = countryhasbeencheck;
+        this.edt_calibrated = countryhasbeencheck;
     }
 
     public String getEdt_garment_pass() {

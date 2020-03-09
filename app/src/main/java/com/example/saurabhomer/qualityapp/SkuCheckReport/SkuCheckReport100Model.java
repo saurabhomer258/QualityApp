@@ -1,4 +1,4 @@
-package com.example.saurabhomer.qualityapp.Model;
+package com.example.saurabhomer.qualityapp.SkuCheckReport;
 
 public class SkuCheckReport100Model {
     private String edt_readyquantity;
@@ -18,26 +18,6 @@ public class SkuCheckReport100Model {
     private String sizestickerhasbeencheck;
     private String next;
     private String done;
-
-    public SkuCheckReport100Model(String edt_readyquantity, String edt_checkquantity, String edt_size, String countryhasbeencheck, String labelhasbeencheck, String barcodehasbeencheck, String colorhasbeencheck, String polybaghasbeencheck, String polystikerhasbeencheck, String sizetaghasbeencheck, String hangerhasbeencheck, String hagertaghasbeencheck, String otherhasbeencheck, String packingmethodhasbeencheck, String sizestickerhasbeencheck, String next, String done) {
-        this.edt_readyquantity = edt_readyquantity;
-        this.edt_checkquantity = edt_checkquantity;
-        this.edt_size = edt_size;
-        this.countryhasbeencheck = countryhasbeencheck;
-        this.labelhasbeencheck = labelhasbeencheck;
-        this.barcodehasbeencheck = barcodehasbeencheck;
-        this.colorhasbeencheck = colorhasbeencheck;
-        this.polybaghasbeencheck = polybaghasbeencheck;
-        this.polystikerhasbeencheck = polystikerhasbeencheck;
-        this.sizetaghasbeencheck = sizetaghasbeencheck;
-        this.hangerhasbeencheck = hangerhasbeencheck;
-        this.hagertaghasbeencheck = hagertaghasbeencheck;
-        this.otherhasbeencheck = otherhasbeencheck;
-        this.packingmethodhasbeencheck = packingmethodhasbeencheck;
-        this.sizestickerhasbeencheck = sizestickerhasbeencheck;
-        this.next = next;
-        this.done = done;
-    }
 
     public String getEdt_readyquantity() {
         return edt_readyquantity;
@@ -99,7 +79,8 @@ public class SkuCheckReport100Model {
         return polybaghasbeencheck;
     }
 
-    public void setPolybaghasbeencheck(String polybaghasbeencheck) {
+    public void setPolybaghasbeencheck(String polybaghasbeencheck)
+    {
         this.polybaghasbeencheck = polybaghasbeencheck;
     }
 
@@ -107,7 +88,8 @@ public class SkuCheckReport100Model {
         return polystikerhasbeencheck;
     }
 
-    public void setPolystikerhasbeencheck(String polystikerhasbeencheck) {
+    public void setPolystikerhasbeencheck(String polystikerhasbeencheck)
+    {
         this.polystikerhasbeencheck = polystikerhasbeencheck;
     }
 

@@ -14,10 +14,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class DailyFinishingDefectAnalysis extends AppCompatActivity {
+public class DailyFinishingDefectAnalysis extends AppCompatActivity
+{
     static int DAILYFINISHINGPAGE =0;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         DAILYFINISHINGPAGE =0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_finishing_defect_analysis1);
@@ -64,9 +66,7 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity {
 
                             }
                         });
-
             }
         });
-
     }
 }
