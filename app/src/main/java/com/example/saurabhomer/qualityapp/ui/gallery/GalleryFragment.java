@@ -80,7 +80,12 @@ public class GalleryFragment extends Fragment {
                                                         orderNumber.getText().toString(),
                                                         shipDate.getText().toString(),
                                                         color.getText().toString(),
-                                                        "",
+                                                        size_40.toString()+","
+                                                        +size_42.toString()+","
+                                                        +size_44.toString()+","
+                                                        +size_46.toString()+","
+                                                        +size_48.toString()
+                                                        ,
                                                         fabicDes.getText().toString()
                                                 ));
 
