@@ -28,7 +28,7 @@ public class SkuCheckReport100 extends AppCompatActivity {
         final EditText editText_size = view_size.findViewById(R.id.atvCommon);
 
         View view_radio_hbc = findViewById(R.id.countryhasbeencheck);
-        final RadioGroup radio_country_hbc = view_radio_hbc.findViewById(R.id.common_radio_group);
+        final RadioButton radio_country_hbc = view_radio_hbc.findViewById(R.id.ok);
 
         View view_label_hbc = findViewById(R.id.labelhasbeenchecked);
         final RadioGroup radio_label_hbc = view_label_hbc.findViewById(R.id.common_radio_group);
@@ -75,7 +75,13 @@ public class SkuCheckReport100 extends AppCompatActivity {
                 skuCheckReport100Model.setEdt_readyquantity(editText_readyquantity.getText().toString());
                 skuCheckReport100Model.setEdt_checkquantity(editText_checkquantity.getText().toString());
                 skuCheckReport100Model.setEdt_size(editText_size.getText().toString());
+                skuCheckReport100Model.setColorhasbeencheck(getStringOfRedio(radio_country_hbc.isChecked()));
             }
         });
     }
+
+   private String getStringOfRedio(boolean okButton){
+        if(okButton) return "ok";
+        else return "notOk";
+   }
 }
