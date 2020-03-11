@@ -1,888 +1,900 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-<LinearLayout
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
+
+
+
     <LinearLayout
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Printing/MRBO"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
 
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="Hours"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
 
 
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
+            <customView.DailyFinishingEditText
+                android:id="@+id/edt_hours"
 
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_printing_mrbo" />
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
 
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Printing/MRBO"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_printing_mrbo"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Slubes/Holes/NAR"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_slubes_holes"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Color Shading"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_color_shading"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Broken Stitches"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+
+                android:id="@+id/edt_broken_stitches"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Slip Stitches"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+            <customView.DropDownSelect
+
+                android:id="@+id/edt_slip_stitches"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="SPI"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_spi"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Pukering"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_pukering"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Loose Tensions"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_loose_tensions"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Snap Defects"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_snap_defects"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="uneven /Rewedge"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_uneven"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Needle Mark"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_needle_mark"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Open Seam"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_open_seam"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Pleats"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_pleats"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Missing Stitches"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_missing_stitches"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Skip/Run/Off"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_skip_run_off"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Incorrect Label"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_incorrect_label"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Wrong Placement"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_wrong_placement"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Looseness"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_looseness"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Cut Damange"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_cut_damage"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Others"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_others"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Stain"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_stain"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Oil Marks"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_oil_marks"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Stickers"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_stickers"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Uncut Thread"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_uncut_thread"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Out of Spec"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_out_of_spec"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Total Defect"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_total_defects_1111"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Quality Out"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_quality_out"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Production Out"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_production_out"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Damage"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_damage"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Dirty"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_dirty"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Iron"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_iron"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="6">
+
+            <customView.NextButton
+                android:id="@+id/btn_next"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:padding="5dp" />
+
+            <customView.DoneButton
+                android:id="@+id/btn_done"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:padding="5dp" />
+        </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Slubes/Holes/NAR"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_slubes_holes" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Color Shading"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:id="@+id/edt_color_shading"
-
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="7" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Broken Stitches"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:id="@+id/edt_broken_stitches"
-
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="7" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Slip Stitches"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_slip_stitches" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="SPI"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_spi" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Pukering"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_pukering" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Loose Tensions"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_loose_tensions" />
-
-    </LinearLayout>
-
-
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Snap Defects"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_snap_defects" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="uneven /Rewedge"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_uneven" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Needle Mark"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_needle_mark" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Open Seam"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_open_seam"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Pleats"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_pleats" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Missing Stitches"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_missing_stitches" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Skip/Run/Off"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_skip_run_off" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Incorrect Label"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_incorrect_label" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Wrong Placement"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_wrong_placement" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Looseness"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_looseness" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Cut Damange"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_cut_damage" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Others"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_others" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Stain"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_stain" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Oil Marks"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_oil_marks" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Stickers"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_stickers"/>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Uncut Thread"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_uncut_thread" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Out of Spec"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_out_of_spec" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Total Defect"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_total_defects_1111" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Quality Out"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_quality_out" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Production Out"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_production_out" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Damage"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_damage" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Dirty"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_dirty" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Iron"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_iron" />
-
-    </LinearLayout>
-
-    <LinearLayout
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    android:weightSum="6"
-    android:orientation="horizontal">
-    <customView.NextButton
-        android:layout_width="0dp"
-        android:padding="5dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="3"
-        android:id="@+id/btn_next" />
-
-    <customView.DoneButton
-        android:layout_width="0dp"
-        android:padding="5dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="3"
-        android:id="@+id/btn_done" />
-</LinearLayout>
-</LinearLayout>
 
 
 </android.support.v4.widget.NestedScrollView>

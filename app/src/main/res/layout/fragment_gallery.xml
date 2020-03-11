@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -187,45 +191,24 @@
             xmlns:android="http://schemas.android.com/apk/res/android">
 
             <TextView
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
                 android:text="Size"
+
+                android:layout_weight="3"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_marginLeft="80dp"
-                android:layout_height="fill_parent">
-                <CheckBox android:id="@+id/size_40"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="40"
-                   />
-                <CheckBox android:id="@+id/size_42"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="42"
-                    />
-                <CheckBox android:id="@+id/size_44"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="44"
-           />
-                <CheckBox android:id="@+id/size_46"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="46"
-             />
-                <CheckBox android:id="@+id/size_48"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="48"
-                    />
-            </LinearLayout>
+            <customView.DailyFinishingEditText
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/edt_Size" />
+
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_height="wrap_content"
@@ -262,20 +245,16 @@
             android:layout_width="match_parent"
             android:weightSum="6"
             android:orientation="horizontal">
-            <customView.NextButton
-                android:layout_width="0dp"
-                android:padding="5dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:id="@+id/btn_next" />
+
 
             <customView.DoneButton
                 android:layout_width="0dp"
                 android:padding="5dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_weight="6"
                 android:id="@+id/btn_done1" />
         </LinearLayout>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>

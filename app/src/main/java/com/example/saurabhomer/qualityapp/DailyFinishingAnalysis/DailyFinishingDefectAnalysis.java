@@ -1,4 +1,4 @@
-package com.example.saurabhomer.qualityapp;
+package com.example.saurabhomer.qualityapp.DailyFinishingAnalysis;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,15 +8,24 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishingModel1;
+import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DailyFinishingDefectAnalysis extends AppCompatActivity
 {
     static int DAILYFINISHINGPAGE =0;
+    static String total_defect="";
+    static String total_Check="";
+    static String total_defect_per="";
+
+    static List<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -40,7 +49,8 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity
         bt_signin_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(DailyFinishingDefectAnalysis.this,DailyFinishingAnalysis2.class);
+                startActivity(intent);
                 FirebaseDatabase.getInstance().getReference("dailyFinishing")
                         .child(NetworkUtils.STYLENUMBER).child(0+"").
                         addListenerForSingleValueEvent(new ValueEventListener() {

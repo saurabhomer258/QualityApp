@@ -15,8 +15,8 @@
         <activity android:name=".MetelDetectionPage.MetelDetectionPage" />
         <activity android:name=".SkuCheckReport.SkuCheckReport100" />
         <activity android:name=".Measurement.Measurment" />
-        <activity android:name=".DailyFinishingAnalysis2" />
-        <activity android:name=".DailyFinishingDefectAnalysis" />
+        <activity android:name=".DailyFinishingAnalysis.DailyFinishingAnalysis2" />
+        <activity android:name=".DailyFinishingAnalysis.DailyFinishingDefectAnalysis" />
         <activity
             android:name=".SignUpActivity"
             android:label="@string/title_activity_sign_up"
@@ -36,7 +36,9 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".PWresetActivity" />
-        <activity android:name=".cardviewmenu.CardMenu"></activity>
+        <activity android:name=".cardviewmenu.CardMenu" />
+        <activity android:name=".ui.gallery.MainSeet2" />
+        <activity android:name=".ui.gallery.MainSheet"></activity>
     </application>
 
 </manifest>

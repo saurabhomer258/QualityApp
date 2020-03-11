@@ -15,14 +15,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
-            android:onClick="onRadioButtonClicked"
             android:text="Ok" />
 
         <RadioButton
             android:id="@+id/notok"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="onRadioButtonClicked"
+
             android:text="Not Ok" />
     </RadioGroup>
 
