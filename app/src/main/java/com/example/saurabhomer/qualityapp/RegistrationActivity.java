@@ -75,7 +75,6 @@ public class RegistrationActivity extends AppCompatActivity {
     {
             if(!NetworkUtils.isNetworkConnected(this))
             {
-
                 return;
             }
 

@@ -1,38 +1,46 @@
 package com.example.saurabhomer.qualityapp.ui.gallery;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.TextView;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProviders;
+import android.widget.Toast;
 
 import com.example.saurabhomer.qualityapp.Model.StyleModel.StyleSheetModel;
 import com.example.saurabhomer.qualityapp.R;
+import com.example.saurabhomer.qualityapp.ui.gallery.model.MainSeetModel2;
+import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class GalleryFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+
     AutoCompleteTextView styleNu;
     AutoCompleteTextView productName;
     AutoCompleteTextView orderNumber;
     AutoCompleteTextView shipDate;
     AutoCompleteTextView color;
-    AutoCompleteTextView size_42;
-    AutoCompleteTextView size_40;
-    AutoCompleteTextView size_44;
-    AutoCompleteTextView size_46;
-    AutoCompleteTextView size_48;
+    AutoCompleteTextView size;
+
     AutoCompleteTextView fabicDes;
     AutoCompleteTextView buyerName;
     Button submitBtn;
+    static StyleSheetModel styleSheetModel;
+    static ArrayList<MainSeetModel2> mainSeetModel2 = new ArrayList<>();
+    private ProgressDialog progressDialog;
     // this is new style
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -45,13 +53,11 @@ public class GalleryFragment extends Fragment {
         orderNumber = root.findViewById(R.id.edt_order_quality).findViewById(R.id.atvCommon);
         shipDate = root.findViewById(R.id.edt_shipment_date).findViewById(R.id.atvCommon);
         color = root.findViewById(R.id.edt_color).findViewById(R.id.atvCommon);
-        size_40 = root.findViewById(R.id.size_40).findViewById(R.id.atvCommon);
-        size_42 = root.findViewById(R.id.size_42).findViewById(R.id.atvCommon);
-        size_44 = root.findViewById(R.id.size_44).findViewById(R.id.atvCommon);
-        size_46 = root.findViewById(R.id.size_46).findViewById(R.id.atvCommon);
-        size_48 = root.findViewById(R.id.size_48).findViewById(R.id.atvCommon);
+        size = root.findViewById(R.id.edt_Size).findViewById(R.id.atvCommon);
+
         fabicDes = root.findViewById(R.id.edt_fabricdescription).findViewById(R.id.atvCommon);
         submitBtn = root.findViewById(R.id.btn_done1).findViewById(R.id.btnNext);
+        progressDialog = new ProgressDialog(getContext());
         return root;
     }
 
@@ -71,23 +77,57 @@ public class GalleryFragment extends Fragment {
                             @Override
                             public void onClick(View v) {
 
-                                FirebaseDatabase.getInstance().getReference("styles").
+                                if(!NetworkUtils.isNetworkConnected(getContext()))
+                                {
+                                    return;
+                                }
+                                progressDialog.setMessage("Verificating...");
+                                progressDialog.show();
+                                if(styleNu.getText().toString().trim().isEmpty() || size.getText().toString().trim().isEmpty())
+                                {
+                                    Toast.makeText(getActivity(),"style number or size should not empty",Toast.LENGTH_LONG).show();
+                                    progressDialog.hide();
+                                    return;
+                                }
+
+                                FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+                                DatabaseReference users = firebaseDatabase.getReference("styles");
+                                users.
                                         child(styleNu.getText().toString()).
-                                        setValue(
-                                                new StyleSheetModel(styleNu.getText().toString(),
-                                                        buyerName.getText().toString(),
-                                                        productName.getText().toString(),
-                                                        orderNumber.getText().toString(),
-                                                        shipDate.getText().toString(),
-                                                        color.getText().toString(),
-                                                        "",
-                                                        fabicDes.getText().toString()
-                                                ));
+                                        addListenerForSingleValueEvent(new ValueEventListener() {
+                                                                           @Override
+                                                                           public void onDataChange(DataSnapshot dataSnapshot) {
+                                                                               if (dataSnapshot.getValue() == null) {
+
+                                                                                   styleSheetModel = new StyleSheetModel(styleNu.getText().toString(),
+                                                                                           buyerName.getText().toString(),
+                                                                                           productName.getText().toString(),
+                                                                                           orderNumber.getText().toString(),
+                                                                                           shipDate.getText().toString(),
+                                                                                           color.getText().toString(),
+                                                                                           size.getText().toString(),
+                                                                                           fabicDes.getText().toString());
+                                                                                   //    ));
+                                                                                   startActivity(new Intent(getActivity(), MainSheet.class));
+
+                                                                                   progressDialog.hide();
+                                                                               }
+                                                                               else{
+                                                                                   Toast.makeText(getContext(),"Please check style Number. Style number should be unique.",Toast.LENGTH_LONG).show();;
+                                                                                   progressDialog.hide();
+                                                                               }
+
+                                                                           }
+
+                                                                           @Override
+                                                                           public void onCancelled(DatabaseError databaseError) {
+                                                                               progressDialog.hide();
+                                                                           }
+                                                                       }
+                                        );
 
                             }
-                        }
-                );
-
+                        });
     }
 
     @Override

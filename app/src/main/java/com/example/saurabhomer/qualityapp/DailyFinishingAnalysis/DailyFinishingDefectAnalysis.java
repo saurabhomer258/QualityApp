@@ -1,4 +1,4 @@
-package com.example.saurabhomer.qualityapp;
+package com.example.saurabhomer.qualityapp.DailyFinishingAnalysis;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,16 +7,32 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishingModel1;
+import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
+import com.example.saurabhomer.qualityapp.R;
+import com.example.saurabhomer.qualityapp.pref.LoginPref;
 import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.example.saurabhomer.qualityapp.cardviewmenu.CardMenu.STYLE_NUMBER;
+
 public class DailyFinishingDefectAnalysis extends AppCompatActivity
 {
     static int DAILYFINISHINGPAGE =0;
+    static String total_defect="";
+    static String total_Check="";
+    static String total_defect_per="";
+    static DailyFinishingModel1 model;
+    static DailyFinishinfModels dailyFinishinfModels = new DailyFinishinfModels();
+
+    static ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -33,7 +49,7 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity
         final EditText editText_edt_defects = view_edt_defects.findViewById(R.id.atvCommon);
 
         View view_edt_total_check = findViewById(R.id.edt_total_check);
-        final EditText editText_edt_total_check = view_edt_total_check.findViewById(R.id.atvCommon);
+        final EditText editText_edt_total_check = view_edt_total_check.findViewById(R.id.atvUsernameReg);
 
         View signin_button = findViewById(R.id.bt_next);
         Button bt_signin_button= signin_button.findViewById(R.id.btnNext);
@@ -42,23 +58,29 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity
             public void onClick(View v) {
 
                 FirebaseDatabase.getInstance().getReference("dailyFinishing")
-                        .child(NetworkUtils.STYLENUMBER).child(0+"").
+                        .child(STYLE_NUMBER).child(0+"").
                         addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
-                                if(dataSnapshot==null)
+                                if(dataSnapshot.getValue()==null)
                                 {
                                     DailyFinishingModel1 model = new DailyFinishingModel1(editText_hour.getText().toString(),
                                             editText_total_defects.getText().toString(),
                                             editText_edt_defects.getText().toString(),
                                             editText_edt_total_check.getText().toString()
                                     );
-                                    FirebaseDatabase.getInstance().getReference("dailyFinishing")
-                                            .child(NetworkUtils.STYLENUMBER).child(DAILYFINISHINGPAGE++ +"")
-                                            .setValue(model);
+                                    dailyFinishinfModels.setHours(editText_hour.getText().toString());
+                                    dailyFinishinfModels.setTotalDefect(editText_total_defects.getText().toString());
+                                    dailyFinishinfModels.setDefectInPercent(editText_edt_defects.getText().toString());
+                                    dailyFinishinfModels.setTotalDefect(editText_edt_total_check.getText().toString());
+
+
                                     Intent intent = new Intent(DailyFinishingDefectAnalysis.this,DailyFinishingAnalysis2.class);
                                     startActivity(intent);
+                                    finish();
                                 }
+
+
                             }
 
                             @Override
