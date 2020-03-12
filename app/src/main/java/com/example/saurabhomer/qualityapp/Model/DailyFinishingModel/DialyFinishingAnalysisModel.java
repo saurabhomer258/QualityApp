@@ -1,4 +1,4 @@
-package com.example.saurabhomer.qualityapp.DailyFinishingAnalysis;
+package com.example.saurabhomer.qualityapp.Model.DailyFinishingModel;
 
 import android.widget.Button;
 
@@ -7,6 +7,9 @@ public class DialyFinishingAnalysisModel {
    private String MissingStitches,SkipRunOff,IncorrectLabel,WrongPlacement,LooseNess,CutDamage,Others,Stain,OilMark,Stickers,UncutThread,OutOfSpec;
     private String TotalDefect,QualityOut,ProductionOut,Damage,Dirty,Iron;
     private String hours;
+
+    public DialyFinishingAnalysisModel() {
+    }
 
     public String getPrintingMRBO() {
         return PrintingMRBO;
@@ -238,6 +241,22 @@ public class DialyFinishingAnalysisModel {
 
     public void setIron(String iron) {
         Iron = iron;
+    }
+
+    public String getColorShading() {
+        return colorShading;
+    }
+
+    public void setColorShading(String colorShading) {
+        this.colorShading = colorShading;
+    }
+
+    public String getHours() {
+        return hours;
+    }
+
+    public void setHours(String hours) {
+        this.hours = hours;
     }
 
     public DialyFinishingAnalysisModel(String printingMRBO, String slubs_Holes_NAR, String colorShading, String brokenStitches, String slipStitches, String SPI, String pukering, String looseTensions, String snapDefects, String needleMark, String openSeam, String pleats, String missingStitches, String skipRunOff, String incorrectLabel, String wrongPlacement, String looseNess, String cutDamage, String others, String stain, String oilMark, String stickers, String uncutThread, String outOfSpec, String totalDefect, String qualityOut, String productionOut, String damage, String dirty, String iron, String hours) {

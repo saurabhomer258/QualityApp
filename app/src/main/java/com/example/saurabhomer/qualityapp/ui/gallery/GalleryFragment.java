@@ -76,11 +76,17 @@ public class GalleryFragment extends Fragment {
                         new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                progressDialog.setMessage("Verificating...");
-                                progressDialog.show();
 
                                 if(!NetworkUtils.isNetworkConnected(getContext()))
                                 {
+                                    return;
+                                }
+                                progressDialog.setMessage("Verificating...");
+                                progressDialog.show();
+                                if(styleNu.getText().toString().trim().isEmpty() || size.getText().toString().trim().isEmpty())
+                                {
+                                    Toast.makeText(getActivity(),"style number or size should not empty",Toast.LENGTH_LONG).show();
+                                    progressDialog.hide();
                                     return;
                                 }
 
@@ -104,17 +110,18 @@ public class GalleryFragment extends Fragment {
                                                                                    //    ));
                                                                                    startActivity(new Intent(getActivity(), MainSheet.class));
 
-
+                                                                                   progressDialog.hide();
                                                                                }
                                                                                else{
                                                                                    Toast.makeText(getContext(),"Please check style Number. Style number should be unique.",Toast.LENGTH_LONG).show();;
+                                                                                   progressDialog.hide();
                                                                                }
 
                                                                            }
 
                                                                            @Override
                                                                            public void onCancelled(DatabaseError databaseError) {
-
+                                                                               progressDialog.hide();
                                                                            }
                                                                        }
                                         );

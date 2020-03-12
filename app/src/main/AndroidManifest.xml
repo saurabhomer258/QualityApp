@@ -38,7 +38,8 @@
         <activity android:name=".PWresetActivity" />
         <activity android:name=".cardviewmenu.CardMenu" />
         <activity android:name=".ui.gallery.MainSeet2" />
-        <activity android:name=".ui.gallery.MainSheet"></activity>
+        <activity android:name=".ui.gallery.MainSheet" />
+        <activity android:name=".admin.DailyfinishingAdmin"></activity>
     </application>
 
 </manifest>

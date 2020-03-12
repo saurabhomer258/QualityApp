@@ -3,21 +3,20 @@ package com.example.saurabhomer.qualityapp.DailyFinishingAnalysis;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishingModel1;
+import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
+import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.R;
-import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenu;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis.DAILYFINIFSHINGMODELLIST;
+import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis.dailyFinishinfModels;
+import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis.model;
 import static com.example.saurabhomer.qualityapp.cardviewmenu.CardMenu.STYLE_NUMBER;
 
 public class DailyFinishingAnalysis2 extends AppCompatActivity {
@@ -67,11 +66,15 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity {
        done.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-             for (int i = 0; i < DAILYFINIFSHINGMODELLIST.size(); i++) {
-                FirebaseDatabase.getInstance().getReference("dailyFinishing")
-                        .child(STYLE_NUMBER).child(i+"").setValue(DAILYFINIFSHINGMODELLIST.get(i));
-             }
+
+             dailyFinishinfModels.setDialyFinishingAnalysisModels(DAILYFINIFSHINGMODELLIST);
+             FirebaseDatabase.getInstance().getReference("dailyFinishing")
+                     .child(STYLE_NUMBER).setValue(dailyFinishinfModels);
+
              DAILYFINIFSHINGMODELLIST.clear();
+             Intent i =new Intent(DailyFinishingAnalysis2.this,CardMenu.class);
+             startActivity(i);
+             finish();
           }
        });
        next.setOnClickListener(new View.OnClickListener() {
@@ -112,7 +115,9 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity {
                      ,edt_iron.getSelectedItemPosition()+1+""
              );
              DAILYFINIFSHINGMODELLIST.add(dialyFinishingAnalysisModel);
-
+             Intent i =new Intent(DailyFinishingAnalysis2.this,DailyFinishingAnalysis2.class);
+             startActivity(i);
+             finish();
           }
        });
 
