@@ -109,7 +109,6 @@ public class GalleryFragment extends Fragment {
                                                                                            fabicDes.getText().toString());
                                                                                    //    ));
                                                                                    startActivity(new Intent(getActivity(), MainSheet.class));
-
                                                                                    progressDialog.hide();
                                                                                }
                                                                                else{
