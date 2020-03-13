@@ -8,7 +8,9 @@ public class DialyFinishingAnalysisModel {
     private String TotalDefect,QualityOut,ProductionOut,Damage,Dirty,Iron;
     private String hours;
 
-    public DialyFinishingAnalysisModel() {
+    public DialyFinishingAnalysisModel()
+    {
+
     }
 
     public String getPrintingMRBO() {

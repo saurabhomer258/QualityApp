@@ -31,7 +31,6 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity
     static String total_defect_per="";
     static DailyFinishingModel1 model;
     static DailyFinishinfModels dailyFinishinfModels = new DailyFinishinfModels();
-
     static ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -79,12 +78,10 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity
                                     startActivity(intent);
                                     finish();
                                 }
-
-
                             }
-
                             @Override
-                            public void onCancelled(DatabaseError databaseError) {
+                            public void onCancelled(DatabaseError databaseError)
+                            {
 
                             }
                         });

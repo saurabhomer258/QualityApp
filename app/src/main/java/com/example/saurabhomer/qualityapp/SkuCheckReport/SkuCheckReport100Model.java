@@ -16,8 +16,6 @@ public class SkuCheckReport100Model {
     private String otherhasbeencheck;
     private String packingmethodhasbeencheck;
     private String sizestickerhasbeencheck;
-    private String next;
-    private String done;
 
     public String getEdt_readyquantity() {
         return edt_readyquantity;
@@ -79,8 +77,7 @@ public class SkuCheckReport100Model {
         return polybaghasbeencheck;
     }
 
-    public void setPolybaghasbeencheck(String polybaghasbeencheck)
-    {
+    public void setPolybaghasbeencheck(String polybaghasbeencheck) {
         this.polybaghasbeencheck = polybaghasbeencheck;
     }
 
@@ -88,8 +85,7 @@ public class SkuCheckReport100Model {
         return polystikerhasbeencheck;
     }
 
-    public void setPolystikerhasbeencheck(String polystikerhasbeencheck)
-    {
+    public void setPolystikerhasbeencheck(String polystikerhasbeencheck) {
         this.polystikerhasbeencheck = polystikerhasbeencheck;
     }
 
@@ -139,21 +135,5 @@ public class SkuCheckReport100Model {
 
     public void setSizestickerhasbeencheck(String sizestickerhasbeencheck) {
         this.sizestickerhasbeencheck = sizestickerhasbeencheck;
-    }
-
-    public String getNext() {
-        return next;
-    }
-
-    public void setNext(String next) {
-        this.next = next;
-    }
-
-    public String getDone() {
-        return done;
-    }
-
-    public void setDone(String done) {
-        this.done = done;
     }
 }

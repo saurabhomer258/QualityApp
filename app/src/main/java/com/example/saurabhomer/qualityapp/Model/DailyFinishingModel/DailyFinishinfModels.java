@@ -2,8 +2,8 @@ package com.example.saurabhomer.qualityapp.Model.DailyFinishingModel;
 
 import java.util.ArrayList;
 
-public class DailyFinishinfModels {
-
+public class DailyFinishinfModels
+{
     ArrayList<DialyFinishingAnalysisModel> dialyFinishingAnalysisModels;
     DailyFinishingModel1 model;
     private String hours ;

@@ -19,10 +19,11 @@ import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFin
 import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis.model;
 import static com.example.saurabhomer.qualityapp.cardviewmenu.CardMenu.STYLE_NUMBER;
 
-public class DailyFinishingAnalysis2 extends AppCompatActivity {
-
+public class DailyFinishingAnalysis2 extends AppCompatActivity
+{
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_finishing_analysis2);
         final EditText hour = findViewById(R.id.edt_hours).findViewById(R.id.atvCommon);
@@ -65,7 +66,8 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity {
        Button done =findViewById(R.id.btn_done).findViewById(R.id.btnNext);
        done.setOnClickListener(new View.OnClickListener() {
           @Override
-          public void onClick(View v) {
+          public void onClick(View v)
+          {
 
              dailyFinishinfModels.setDialyFinishingAnalysisModels(DAILYFINIFSHINGMODELLIST);
              FirebaseDatabase.getInstance().getReference("dailyFinishing")
@@ -77,7 +79,8 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity {
              finish();
           }
        });
-       next.setOnClickListener(new View.OnClickListener() {
+       next.setOnClickListener(new View.OnClickListener()
+       {
           @Override
           public void onClick(View v) {
 

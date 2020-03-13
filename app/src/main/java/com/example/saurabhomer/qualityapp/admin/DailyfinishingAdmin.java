@@ -18,13 +18,15 @@ import java.util.ArrayList;
 
 import static com.example.saurabhomer.qualityapp.cardviewmenu.CardMenu.STYLE_NUMBER;
 
-public class DailyfinishingAdmin extends AppCompatActivity {
-     LinearLayout layout;
+public class DailyfinishingAdmin extends AppCompatActivity
+{
+    LinearLayout layout;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dailyfinishing_admin);
-       layout = findViewById(R.id.dailyLayout);
+        layout = findViewById(R.id.dailyLayout);
         FirebaseDatabase.getInstance().getReference("dailyFinishing")
                 .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
