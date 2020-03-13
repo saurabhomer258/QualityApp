@@ -31,37 +31,37 @@ public class SkuCheckReport100 extends AppCompatActivity {
         final RadioButton radio_country_hbc = view_radio_hbc.findViewById(R.id.ok);
 
         View view_label_hbc = findViewById(R.id.labelhasbeenchecked);
-        final RadioGroup radio_label_hbc = view_label_hbc.findViewById(R.id.common_radio_group);
+        final RadioButton radio_label_hbc = view_label_hbc.findViewById(R.id.ok);
 
         View view_barcode_hbc = findViewById(R.id.barcodehasbeencheck);
-        final RadioGroup radio_barcode_hbc = view_barcode_hbc.findViewById(R.id.common_radio_group);
+        final RadioButton radio_barcode_hbc = view_barcode_hbc.findViewById(R.id.ok);
 
         View view_color_hbc = findViewById(R.id.colourhasbeencheck);
-        final RadioGroup radio_color_hbc = view_color_hbc.findViewById(R.id.common_radio_group);
+        final RadioButton radio_color_hbc = view_color_hbc.findViewById(R.id.ok);
 
         View view_polybag_hbc = findViewById(R.id.polybaghasbeencheck);
-        final RadioGroup radio_polybag_hbc = view_polybag_hbc.findViewById(R.id.common_radio_group);
+        final RadioButton radio_polybag_hbc = view_polybag_hbc.findViewById(R.id.ok);
 
         View view_polysticker_hbc = findViewById(R.id.polystickerhasbeencheck);
-        final RadioGroup radio_polysticker_hbc = view_polysticker_hbc.findViewById(R.id.common_radio_group);
+        final RadioButton radio_polysticker_hbc = view_polysticker_hbc.findViewById(R.id.ok);
 
         View view_pricetag_hbc = findViewById(R.id.pricetaghasbeencheck);
-        final RadioGroup radio_pricetag_hbc = view_pricetag_hbc.findViewById(R.id.common_radio_group);
+        final RadioButton radio_pricetag_hbc = view_pricetag_hbc.findViewById(R.id.ok);
 
         View view_hanger_hbc = findViewById(R.id.hangerhasbeencheck);
-        final RadioGroup radio_hanger_hbc = view_hanger_hbc.findViewById(R.id.common_radio_group);
+        final RadioButton radio_hanger_hbc = view_hanger_hbc.findViewById(R.id.ok);
 
         View view_hangertag_hbc = findViewById(R.id.hangtaghasbeencheck);
-        final RadioGroup radio_hangertag_hbc = view_hangertag_hbc.findViewById(R.id.common_radio_group);
+        final RadioButton radio_hangertag_hbc = view_hangertag_hbc.findViewById(R.id.ok);
 
         View view_othertag_hbc = findViewById(R.id.otherhasbeencheck);
-        final RadioGroup radio_othertag_hbc = view_othertag_hbc.findViewById(R.id.common_radio_group);
+        final RadioButton radio_othertag_hbc = view_othertag_hbc.findViewById(R.id.ok);
 
         View view_packingmethod_hbc = findViewById(R.id.packingmethodhasbeencheck);
-        final RadioGroup radio_packingmethod_hbc = view_packingmethod_hbc.findViewById(R.id.common_radio_group);
+        final RadioButton radio_packingmethod_hbc = view_packingmethod_hbc.findViewById(R.id.ok);
 
         View view_sizesticker_hbc = findViewById(R.id.sizestickershasbeencheck);
-        final RadioGroup radio_sizesticker_hbc = view_sizesticker_hbc.findViewById(R.id.common_radio_group);
+        final RadioButton radio_sizesticker_hbc = view_sizesticker_hbc.findViewById(R.id.ok);
 
         View view_done = findViewById(R.id.btn_done_sku);
         final Button btn_sku = view_done.findViewById(R.id.btnNext);
@@ -75,7 +75,18 @@ public class SkuCheckReport100 extends AppCompatActivity {
                 skuCheckReport100Model.setEdt_readyquantity(editText_readyquantity.getText().toString());
                 skuCheckReport100Model.setEdt_checkquantity(editText_checkquantity.getText().toString());
                 skuCheckReport100Model.setEdt_size(editText_size.getText().toString());
-                skuCheckReport100Model.setColorhasbeencheck(getStringOfRedio(radio_country_hbc.isChecked()));
+                skuCheckReport100Model.setCountryhasbeencheck(getStringOfRedio(radio_country_hbc.isChecked()));
+                skuCheckReport100Model.setLabelhasbeencheck(getStringOfRedio(radio_label_hbc.isChecked()));
+                skuCheckReport100Model.setBarcodehasbeencheck(getStringOfRedio(radio_barcode_hbc.isChecked()));
+                skuCheckReport100Model.setColorhasbeencheck(getStringOfRedio(radio_color_hbc.isChecked()));
+                skuCheckReport100Model.setPolybaghasbeencheck(getStringOfRedio(radio_polybag_hbc.isChecked()));
+                skuCheckReport100Model.setPolystikerhasbeencheck(getStringOfRedio(radio_polysticker_hbc.isChecked()));
+                skuCheckReport100Model.setPricetaghasbeencheck(getStringOfRedio(radio_pricetag_hbc.isChecked()));
+                skuCheckReport100Model.setHangerhasbeencheck(getStringOfRedio(radio_hanger_hbc.isChecked()));
+                skuCheckReport100Model.setHagertaghasbeencheck(getStringOfRedio(radio_hangertag_hbc.isChecked()));
+                skuCheckReport100Model.setOtherhasbeencheck(getStringOfRedio(radio_othertag_hbc.isChecked()));
+                skuCheckReport100Model.setPackingmethodhasbeencheck(getStringOfRedio(radio_packingmethod_hbc.isChecked()));
+                skuCheckReport100Model.setSizestickerhasbeencheck(getStringOfRedio(radio_sizesticker_hbc.isChecked()));
             }
         });
     }
@@ -84,4 +95,10 @@ public class SkuCheckReport100 extends AppCompatActivity {
         if(okButton) return "ok";
         else return "notOk";
    }
+
+   private void senddonedata(SkuCheckReport100Model skuCheckReport100Model)
+   {
+
+   }
+
 }

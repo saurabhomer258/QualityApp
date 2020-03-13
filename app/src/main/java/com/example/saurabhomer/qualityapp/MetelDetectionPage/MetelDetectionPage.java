@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
@@ -18,7 +19,7 @@ public class MetelDetectionPage extends AppCompatActivity {
     Button done;
     EditText edt_date;
     EditText edt_time;
-    RadioGroup r_calibrated;
+    RadioButton r_calibrated;
     EditText edt_garment_pass;
     EditText edt_garment;
     static MetelDetectionPageModel metelDetectionPageModel = new MetelDetectionPageModel();
@@ -36,7 +37,7 @@ public class MetelDetectionPage extends AppCompatActivity {
         edt_time = view_time.findViewById(R.id.atvCommon);
 
         View view_calibrate = findViewById(R.id.edt_calibrated);
-        r_calibrated = view_calibrate.findViewById(R.id.common_radio_group);
+        r_calibrated = view_calibrate.findViewById(R.id.ok);
 
         View view_garmentpass = findViewById(R.id.edt_garmentpass);
         edt_garment_pass = view_garmentpass.findViewById(R.id.atvCommon);
@@ -57,6 +58,7 @@ public class MetelDetectionPage extends AppCompatActivity {
                 metelDetectionPageModel.setEdt_time(edt_time.getText().toString());
                 metelDetectionPageModel.setEdt_garment_pass(edt_garment_pass.getText().toString());
                 metelDetectionPageModel.setEdt_garment(edt_garment.getText().toString());
+                metelDetectionPageModel.setCountryhasbeencheck(getStringOfRedio(r_calibrated.isChecked()));
             }
         });
 
@@ -66,5 +68,14 @@ public class MetelDetectionPage extends AppCompatActivity {
 
             }
         });
+    }
+    private String getStringOfRedio(boolean okButton){
+        if(okButton) return "ok";
+        else return "notOk";
+    }
+
+    private void senddonedata(MetelDetectionPageModel metelDetectionPageModel)
+    {
+
     }
 }

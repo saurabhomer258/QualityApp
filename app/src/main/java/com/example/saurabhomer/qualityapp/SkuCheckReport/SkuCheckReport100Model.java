@@ -9,6 +9,7 @@ public class SkuCheckReport100Model {
     private String barcodehasbeencheck;
     private String colorhasbeencheck;
     private String polybaghasbeencheck;
+    private String pricetaghasbeencheck;
     private String polystikerhasbeencheck;
     private String sizetaghasbeencheck;
     private String hangerhasbeencheck;
@@ -79,6 +80,14 @@ public class SkuCheckReport100Model {
 
     public void setPolybaghasbeencheck(String polybaghasbeencheck) {
         this.polybaghasbeencheck = polybaghasbeencheck;
+    }
+
+    public String getPricetaghasbeencheck() {
+        return pricetaghasbeencheck;
+    }
+
+    public void setPricetaghasbeencheck(String pricetaghasbeencheck) {
+        this.pricetaghasbeencheck = pricetaghasbeencheck;
     }
 
     public String getPolystikerhasbeencheck() {
