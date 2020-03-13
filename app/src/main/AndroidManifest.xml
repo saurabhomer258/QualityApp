@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:remove="android:appComponentFactory">
-        <activity android:name=".MetelDetectionPage.MetelDetectionAdmin"></activity>
+        <activity android:name=".CartoonAudit.AreaOfPackingMaterial"></activity>
+        <activity android:name=".CartoonAudit.AreaOfInsideCarton" />
+        <activity android:name=".CartoonAudit.AreaofOutsideCartoon" />
+        <activity android:name=".InlinePrelineFinal.InlinePrelineFinal" />
+        <activity android:name=".CartoonAudit.CartoonAudit" />
+        <activity android:name=".HourlyLotAuditReport.HourlyLotAudit" />
+        <activity android:name=".MetelDetectionPage.MetelDetectionAdmin" />
         <activity android:name=".MeasurementDescription" />
         <activity android:name=".MainSheet" />
         <activity android:name=".MetelDetectionPage.MetelDetectionPage" />
