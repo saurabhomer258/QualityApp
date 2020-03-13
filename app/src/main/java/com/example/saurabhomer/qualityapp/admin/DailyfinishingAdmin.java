@@ -35,6 +35,7 @@ public class DailyfinishingAdmin extends AppCompatActivity {
                 setLayout("Defect%",dailyFinishinfModels.getDefectInPercent());
                 setLayout("Total Check",dailyFinishinfModels.getTotalCheck());
                 setLayout("Hours",dailyFinishinfModels.getHours());
+                setLayout("Finishing Line",dailyFinishinfModels.getFinishingLine());
                 TextView textView= new TextView(DailyfinishingAdmin.this);
                 textView.setText("_________________________________________________");
                 layout.addView(textView);

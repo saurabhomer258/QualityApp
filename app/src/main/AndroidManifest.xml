@@ -39,7 +39,10 @@
         <activity android:name=".cardviewmenu.CardMenu" />
         <activity android:name=".ui.gallery.MainSeet2" />
         <activity android:name=".ui.gallery.MainSheet" />
-        <activity android:name=".admin.DailyfinishingAdmin"></activity>
+        <activity android:name=".admin.DailyfinishingAdmin" />
+        <activity android:name=".Measurement.Mesurement1" />
+        <activity android:name=".hourlylot.HourlyLot"></activity>
+        <activity android:name=".hourlylot.HourlyLot2"></activity>
     </application>
 
 </manifest>

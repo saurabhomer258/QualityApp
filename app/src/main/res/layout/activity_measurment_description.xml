@@ -93,7 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:weightSum="10"
-            android:gravity="center"
+
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
@@ -106,38 +106,9 @@
                 android:textSize="@dimen/common_text_size" />
 
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_marginLeft="80dp"
-                android:layout_height="fill_parent">
-                <CheckBox android:id="@+id/checkbox_40"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="40"
-                    android:onClick="onCheckboxClicked"/>
-                <CheckBox android:id="@+id/checkbox_42"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="42"
-                    android:onClick="onCheckboxClicked"/>
-                <CheckBox android:id="@+id/checkbox_44"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="44"
-                    android:onClick="onCheckboxClicked"/>
-                <CheckBox android:id="@+id/checkbox_46"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="46"
-                    android:onClick="onCheckboxClicked"/>
-                <CheckBox android:id="@+id/checkbox_48"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="48"
-                    android:onClick="onCheckboxClicked"/>
-            </LinearLayout>
+
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_height="wrap_content"

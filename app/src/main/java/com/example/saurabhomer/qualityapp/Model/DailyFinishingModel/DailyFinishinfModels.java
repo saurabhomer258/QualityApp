@@ -11,6 +11,7 @@ public class DailyFinishinfModels {
 
     private String DefectInPercent;
     private String totalCheck;
+    private String finishingLine;
 
     public ArrayList<DialyFinishingAnalysisModel> getDialyFinishingAnalysisModels() {
         return dialyFinishingAnalysisModels;
@@ -34,6 +35,14 @@ public class DailyFinishinfModels {
 
     public void setHours(String hours) {
         this.hours = hours;
+    }
+
+    public String getFinishingLine() {
+        return finishingLine;
+    }
+
+    public void setFinishingLine(String finishingLine) {
+        this.finishingLine = finishingLine;
     }
 
     public String getTotalDefect() {

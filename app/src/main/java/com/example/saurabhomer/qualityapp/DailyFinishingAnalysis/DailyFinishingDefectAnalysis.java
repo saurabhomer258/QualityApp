@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishingModel1;
@@ -42,6 +43,8 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity
         View view_edt_hour = findViewById(R.id.edt_hours);
         final EditText editText_hour = view_edt_hour.findViewById(R.id.atvCommon);
 
+
+        final Spinner spinner =(Spinner)view_edt_hour.findViewById(R.id.edt_finishing).findViewById(R.id.spinner);
         View view_edt_total_defect = findViewById(R.id.edt_total_defects);
         final EditText editText_total_defects = view_edt_total_defect.findViewById(R.id.atvCommon);
 
@@ -73,8 +76,8 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity
                                     dailyFinishinfModels.setTotalDefect(editText_total_defects.getText().toString());
                                     dailyFinishinfModels.setDefectInPercent(editText_edt_defects.getText().toString());
                                     dailyFinishinfModels.setTotalDefect(editText_edt_total_check.getText().toString());
-
-
+                                    int val = spinner.getSelectedItemPosition();
+                                    dailyFinishinfModels.setFinishingLine(val+1+"");
                                     Intent intent = new Intent(DailyFinishingDefectAnalysis.this,DailyFinishingAnalysis2.class);
                                     startActivity(intent);
                                     finish();
