@@ -1,31 +1,16 @@
 package com.example.saurabhomer.qualityapp.MetelDetectionPage;
 
+import java.util.ArrayList;
+
 public class MetelDetectionPageModel
 {
-    private String next;
-    private String done;
+
     private String edt_date;
     private String edt_time;
     private String edt_calibrated;
     private String edt_garment_pass;
     private String edt_garment;
 
-
-    public String getNext() {
-        return next;
-    }
-
-    public void setNext(String next) {
-        this.next = next;
-    }
-
-    public String getDone() {
-        return done;
-    }
-
-    public void setDone(String done) {
-        this.done = done;
-    }
 
     public String getEdt_date() {
         return edt_date;
@@ -43,12 +28,12 @@ public class MetelDetectionPageModel
         this.edt_time = edt_time;
     }
 
-    public String getCountryhasbeencheck() {
+    public String getEdt_calibrated() {
         return edt_calibrated;
     }
 
-    public void setCountryhasbeencheck(String countryhasbeencheck) {
-        this.edt_calibrated = countryhasbeencheck;
+    public void setEdt_calibrated(String edt_calibrated) {
+        this.edt_calibrated = edt_calibrated;
     }
 
     public String getEdt_garment_pass() {

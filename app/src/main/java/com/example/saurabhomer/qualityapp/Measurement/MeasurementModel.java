@@ -9,10 +9,6 @@ public class MeasurementModel {
     private String check_44;
     private String check_46;
     private String check_48;
-    private String next;
-    private String done;
-
-
 
     public String getEdt_measur() {
         return edt_measur;
@@ -50,8 +46,7 @@ public class MeasurementModel {
         return check_42;
     }
 
-    public void setCheck_42(String check_42)
-    {
+    public void setCheck_42(String check_42) {
         this.check_42 = check_42;
     }
 
@@ -77,21 +72,5 @@ public class MeasurementModel {
 
     public void setCheck_48(String check_48) {
         this.check_48 = check_48;
-    }
-
-    public String getNext() {
-        return next;
-    }
-
-    public void setNext(String next) {
-        this.next = next;
-    }
-
-    public String getDone() {
-        return done;
-    }
-
-    public void setDone(String done) {
-        this.done = done;
     }
 }

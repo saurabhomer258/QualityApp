@@ -8,7 +8,10 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.R;
+
+import java.util.ArrayList;
 
 public class MetelDetectionPage extends AppCompatActivity {
 
@@ -19,6 +22,8 @@ public class MetelDetectionPage extends AppCompatActivity {
     RadioButton r_calibrated;
     EditText edt_garment_pass;
     EditText edt_garment;
+    static MetelDetectionPageModel metelDetectionPageModel = new MetelDetectionPageModel();
+    static ArrayList<MetelDetectionPageModel> METELDETECTIONMODELLIST = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -43,15 +48,24 @@ public class MetelDetectionPage extends AppCompatActivity {
         View view_done = findViewById(R.id.btn_done_metel);
         done = view_done.findViewById(R.id.btnNext);
 
-        done.setOnClickListener(new View.OnClickListener() {
+        done.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
-                MetelDetectionPageModel metelDetectionPageModel = new MetelDetectionPageModel();
+            public void onClick(View v)
+            {
+
                 metelDetectionPageModel.setEdt_date(edt_date.getText().toString());
                 metelDetectionPageModel.setEdt_time(edt_time.getText().toString());
                 metelDetectionPageModel.setEdt_garment_pass(edt_garment_pass.getText().toString());
                 metelDetectionPageModel.setEdt_garment(edt_garment.getText().toString());
                 metelDetectionPageModel.setCountryhasbeencheck(getStringOfRedio(r_calibrated.isChecked()));
+            }
+        });
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }
