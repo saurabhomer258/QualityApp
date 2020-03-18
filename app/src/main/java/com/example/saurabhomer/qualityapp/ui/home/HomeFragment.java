@@ -32,7 +32,7 @@ import com.google.firebase.database.ValueEventListener;
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
-
+    public static String STYLE_NUMBER;
     private Button submitBtn;
     private ProgressDialog progressDialog;
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -60,6 +60,7 @@ public class HomeFragment extends Fragment {
                         if(dataSnapshot.getValue()!=null) {
                             progressDialog.dismiss();
                            Intent i = new Intent(getContext(),CardMenu.class);
+                            STYLE_NUMBER =  edt_styleno.getText().toString().trim();
                            i.putExtra("style",edt_styleno.getText().toString());
                            startActivity(i);
                         }

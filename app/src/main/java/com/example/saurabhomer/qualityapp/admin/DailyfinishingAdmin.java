@@ -16,7 +16,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-import static com.example.saurabhomer.qualityapp.cardviewmenu.CardMenu.STYLE_NUMBER;
+import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
+
 
 public class DailyfinishingAdmin extends AppCompatActivity
 {

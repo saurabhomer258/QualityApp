@@ -4,18 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.Toast;
 
-import com.example.saurabhomer.qualityapp.MeasurementDescription;
-import com.example.saurabhomer.qualityapp.MetelDetectionPage.MetelDetectionPageModel;
 import com.example.saurabhomer.qualityapp.R;
-import com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100Model;
 
 public class Measurment extends AppCompatActivity
 {
@@ -35,7 +28,7 @@ public class Measurment extends AppCompatActivity
         super.onCreate(savedInstanceState);
         Intent i = getIntent();
         if(i!=null){
-             String hours= i.getStringExtra("data");
+             String hours= i.getStringExtra("hours");
         }
         setContentView(R.layout.activity_measurment_description);
 

@@ -51,14 +51,13 @@ public class MetelDetectionPage extends AppCompatActivity {
         done.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
 
                 metelDetectionPageModel.setEdt_date(edt_date.getText().toString());
                 metelDetectionPageModel.setEdt_time(edt_time.getText().toString());
                 metelDetectionPageModel.setEdt_garment_pass(edt_garment_pass.getText().toString());
                 metelDetectionPageModel.setEdt_garment(edt_garment.getText().toString());
-                metelDetectionPageModel.setCountryhasbeencheck(getStringOfRedio(r_calibrated.isChecked()));
+               // metelDetectionPageModel.setCountryhasbeencheck(getStringOfRedio(r_calibrated.isChecked()));
             }
         });
 

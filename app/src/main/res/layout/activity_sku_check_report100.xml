@@ -6,87 +6,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
-            android:layout_marginEnd="14dp"
-            android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Ready Quantity Cartoon"
-
-                android:layout_weight="3"
-                android:textColor="@color/common_text_color"
-                android:textSize="@dimen/common_text_size" />
 
 
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
-
-                android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/edt_readyquantity" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
-            android:layout_marginEnd="14dp"
-            android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Check Quantity"
-
-                android:layout_weight="3"
-                android:textColor="@color/common_text_color"
-                android:textSize="@dimen/common_text_size" />
-
-
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
-
-                android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/edt_checkquantity" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
-            android:layout_marginEnd="14dp"
-            android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Size"
-
-                android:layout_weight="3"
-                android:textColor="@color/common_text_color"
-                android:textSize="@dimen/common_text_size" />
-
-
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
-
-                android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/edt_size" />
-
-        </LinearLayout>
 
 
 
@@ -402,7 +323,7 @@
                 android:padding="5dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:id="@+id/btn_next" />
+                android:id="@+id/btn_next_1" />
 
             <customView.DoneButton
                 android:layout_width="0dp"

@@ -4,11 +4,13 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 
 import com.example.saurabhomer.qualityapp.R;
 
 public class DailyFinishingEditText extends RelativeLayout {
+    EditText atvCommon;
     public DailyFinishingEditText(Context context) {
         super(context);
         init(context);
@@ -29,6 +31,11 @@ public class DailyFinishingEditText extends RelativeLayout {
                 (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (inflater != null) {
             View view = inflater.inflate(R.layout.daily_finishing_edit_text, this);
+            atvCommon = view.findViewById(R.id.atvCommon);
         }
     }
+    public  String getText(){
+      return atvCommon.getText().toString();
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.example.saurabhomer.qualityapp.cardviewmenu;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,32 +12,38 @@ import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingD
 import com.example.saurabhomer.qualityapp.Measurement.Measurment;
 import com.example.saurabhomer.qualityapp.MetelDetectionPage.MetelDetectionPage;
 import com.example.saurabhomer.qualityapp.R;
-import com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100;
+import com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100Page1;
+import com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100Page2;
 import com.example.saurabhomer.qualityapp.admin.DailyfinishingAdmin;
 import com.example.saurabhomer.qualityapp.pref.LoginPref;
+import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class CardMenu extends AppCompatActivity {
-    public static String STYLE_NUMBER;
+import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
+public class CardMenu extends AppCompatActivity {
+
+    private ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_menu);
-        CardView cardView1 = findViewById(R.id.cardView1);
+        CardView inside = findViewById(R.id.cardView1);
+
+        progressDialog = new ProgressDialog(this);
         if (getIntent() != null) {
             Intent i = getIntent();
-            STYLE_NUMBER = i.getStringExtra("style");
+
 
         }
-        cardView1.setOnClickListener(new View.OnClickListener() {
+        inside.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(CardMenu.this, DailyFinishingDefectAnalysis.class);
-                startActivity(i);
+
+                openDailyFinishing();
             }
         });
 
@@ -44,52 +51,30 @@ public class CardMenu extends AppCompatActivity {
         cardView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseDatabase.getInstance().getReference("dailyFinishing")
-                        .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.getValue() == null) {
-                            Intent i = new Intent(CardMenu.this, DailyFinishingDefectAnalysis.class);
-                            startActivity(i);
-                        } else if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
-                                Intent i =  new Intent(CardMenu.this, DailyfinishingAdmin.class);
-                                startActivity(i);
 
-                        }
-                        else {
-                            Toast.makeText(CardMenu.this,"This is completed.",Toast.LENGTH_LONG).show();
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
-
+                openDailyFinishing();
 
             }
 
 
         });
 
-        CardView cardView3 = findViewById(R.id.mainfile11);
-//        cardView3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(CardMenu.this,DailyFinishingDefectAnalysis.class);
-//                startActivity(i);
-//
-//            }
-//        });
-        CardView mainFile = findViewById(R.id.cardView3);
-        mainFile.setOnClickListener(new View.OnClickListener() {
+
+        CardView cardView3 = findViewById(R.id.cardView3);
+        cardView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent i = new Intent(CardMenu.this, MainSheet.class);
-//                startActivity(i);
+                openDailyFinishing();
             }
         });
+//      //  CardView mainFile = findViewById(R.id.cardView3);
+//      //  mainFile.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                Intent i = new Intent(CardMenu.this, MainSheet.class);
+////                startActivity(i);
+//            }
+//        });
 
         CardView cardView4 = findViewById(R.id.cardView4);
         cardView4.setOnClickListener(new View.OnClickListener() {
@@ -113,8 +98,34 @@ public class CardMenu extends AppCompatActivity {
         cardView6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(CardMenu.this, SkuCheckReport100.class);
-                startActivity(i);
+                FirebaseDatabase.getInstance().getReference("100perSKU")
+                        .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if(!NetworkUtils.isNetworkConnected(CardMenu.this))
+                        {
+                            progressDialog.hide();
+                            return;
+                        }
+                        if (dataSnapshot.getValue() == null) {
+                            Intent i = new Intent(CardMenu.this, SkuCheckReport100Page1.class);
+                            startActivity(i);
+                        }
+                        else if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
+                            Toast.makeText(CardMenu.this,"working on admin page",Toast.LENGTH_LONG).show();
+
+                        }
+                        else {
+                            Toast.makeText(CardMenu.this,"This is completed.",Toast.LENGTH_LONG).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
             }
         });
 
@@ -135,5 +146,39 @@ public class CardMenu extends AppCompatActivity {
         });
 
         // CardView cardView5 = findViewById(R.id.)
+    }
+
+    void openDailyFinishing(){
+        progressDialog.setMessage("Verificating...");
+        progressDialog.show();
+        FirebaseDatabase.getInstance().getReference("dailyFinishing")
+                .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if(!NetworkUtils.isNetworkConnected(CardMenu.this))
+                {
+                    progressDialog.hide();
+                    return;
+                }
+                if (dataSnapshot.getValue() == null) {
+                    Intent i = new Intent(CardMenu.this, DailyFinishingDefectAnalysis.class);
+                    startActivity(i);
+                } else if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
+                    Intent i =  new Intent(CardMenu.this, DailyfinishingAdmin.class);
+                    startActivity(i);
+
+                }
+                else {
+                    Toast.makeText(CardMenu.this,"This is completed.",Toast.LENGTH_LONG).show();
+                }
+                progressDialog.hide();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 }

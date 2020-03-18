@@ -17,25 +17,24 @@ public class DropDownFinishingSelect extends RelativeLayout {
     Spinner spinner;
     public DropDownFinishingSelect(Context context) {
         super(context);
-        init(context);
+
     }
 
     public DropDownFinishingSelect(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init(context);
+
     }
 
     public DropDownFinishingSelect(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context);
     }
 
-    void init(Context context) {
+    public void init(Context context) {
         LayoutInflater inflater =
                 (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (inflater != null) {
-            View view = inflater.inflate(R.layout.common_drop_down, this);
-            spinner = (Spinner) findViewById(R.id.spinner);
+            View view = inflater.inflate(R.layout.common_drop_down1, this);
+            spinner = (Spinner) findViewById(R.id.spinner1);
             List<String> list = new ArrayList<String>();
             list.add("1");
             list.add("2");

@@ -1,6 +1,7 @@
 package com.example.saurabhomer.qualityapp.DailyFinishingAnalysis;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,12 +13,13 @@ import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishi
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenu;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.FirebaseDatabase;
 
 import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis.DAILYFINIFSHINGMODELLIST;
 import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis.dailyFinishinfModels;
-import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis.model;
-import static com.example.saurabhomer.qualityapp.cardviewmenu.CardMenu.STYLE_NUMBER;
+import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
 public class DailyFinishingAnalysis2 extends AppCompatActivity
 {
@@ -68,10 +70,48 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
           @Override
           public void onClick(View v)
           {
-
+             DialyFinishingAnalysisModel dialyFinishingAnalysisModel = new DialyFinishingAnalysisModel(
+                     hour.getText().toString(),
+                     slube_hole.getSelectedItemPosition()+1+""
+                     ,edt_color_shading.getSelectedItemPosition()+1+""
+                     ,edt_broken_stitches.getSelectedItemPosition()+1+""
+                     ,edt_slip_stitches.getSelectedItemPosition()+1+""
+                     ,edt_spi.getSelectedItemPosition()+1+""
+                     ,edt_pukering.getSelectedItemPosition()+1+""
+                     ,edt_snap_defects.getSelectedItemPosition()+1+""
+                     ,edt_loose_tensions.getSelectedItemPosition()+1+""
+                     ,edt_uneven.getSelectedItemPosition()+1+""
+                     ,edt_needle_mark.getSelectedItemPosition()+1+""
+                     ,edt_open_seam.getSelectedItemPosition()+1+""
+                     ,edt_pleats.getSelectedItemPosition()+1+""
+                     ,edt_missing_stitches.getSelectedItemPosition()+1+""
+                     ,edt_skip_run_off.getSelectedItemPosition()+1+""
+                     ,edt_incorrect_label.getSelectedItemPosition()+1+""
+                     ,edt_wrong_placement.getSelectedItemPosition()+1+""
+                     ,edt_looseness.getSelectedItemPosition()+1+""
+                     ,edt_cut_damage.getSelectedItemPosition()+1+""
+                     ,edt_others.getSelectedItemPosition()+1+""
+                     ,edt_stain.getSelectedItemPosition()+1+""
+                     ,edt_oil_marks.getSelectedItemPosition()+1+""
+                     ,edt_stickers.getSelectedItemPosition()+1+""
+                     ,edt_uncut_thread.getSelectedItemPosition()+1+""
+                     ,edt_out_of_spec.getSelectedItemPosition()+1+""
+                     ,edt_total_defects_1111.getSelectedItemPosition()+1+""
+                     ,edt_quality_out.getSelectedItemPosition()+1+""
+                     ,edt_production_out.getSelectedItemPosition()+1+""
+                     ,edt_damage.getSelectedItemPosition()+1+""
+                     ,edt_dirty.getSelectedItemPosition()+1+""
+                     ,edt_iron.getSelectedItemPosition()+1+""
+             );
+             DAILYFINIFSHINGMODELLIST.add(dialyFinishingAnalysisModel);
              dailyFinishinfModels.setDialyFinishingAnalysisModels(DAILYFINIFSHINGMODELLIST);
              FirebaseDatabase.getInstance().getReference("dailyFinishing")
-                     .child(STYLE_NUMBER).setValue(dailyFinishinfModels);
+                     .child(STYLE_NUMBER).setValue(dailyFinishinfModels).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+
+                }
+             });
 
              DAILYFINIFSHINGMODELLIST.clear();
              Intent i =new Intent(DailyFinishingAnalysis2.this,CardMenu.class);

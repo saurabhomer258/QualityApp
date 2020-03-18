@@ -17,14 +17,14 @@
             android:background="?attr/colorPrimary" />
 
     </android.support.design.widget.AppBarLayout>
-    <LinearLayout
-        android:layout_height="wrap_content"
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
+        android:layout_height="60dp"
         android:layout_marginEnd="14dp"
         android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+        android:gravity="center"
+        android:weightSum="10">
 
         <TextView
             android:layout_width="0dp"
@@ -35,13 +35,12 @@
             android:textColor="@color/common_text_color"
             android:textSize="@dimen/common_text_size" />
 
+        <customView.DropDownSelect
+            android:id="@+id/edt_finishing"
 
-        <customView.DropDownFinishingSelect
             android:layout_width="0dp"
-
             android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_finishing" />
+            android:layout_weight="7" />
 
     </LinearLayout>
 

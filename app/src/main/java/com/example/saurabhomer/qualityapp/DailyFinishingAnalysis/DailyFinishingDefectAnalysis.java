@@ -22,7 +22,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.saurabhomer.qualityapp.cardviewmenu.CardMenu.STYLE_NUMBER;
+import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
+
 
 public class DailyFinishingDefectAnalysis extends AppCompatActivity
 {
@@ -43,7 +44,7 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity
         final EditText editText_hour = view_edt_hour.findViewById(R.id.atvCommon);
 
 
-        final Spinner spinner =(Spinner)view_edt_hour.findViewById(R.id.edt_finishing).findViewById(R.id.spinner);
+        final Spinner spinner =(Spinner)    findViewById(R.id.edt_finishing).findViewById(R.id.spinner);
         View view_edt_total_defect = findViewById(R.id.edt_total_defects);
         final EditText editText_total_defects = view_edt_total_defect.findViewById(R.id.atvCommon);
 
@@ -74,7 +75,7 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity
                                     dailyFinishinfModels.setHours(editText_hour.getText().toString());
                                     dailyFinishinfModels.setTotalDefect(editText_total_defects.getText().toString());
                                     dailyFinishinfModels.setDefectInPercent(editText_edt_defects.getText().toString());
-                                    dailyFinishinfModels.setTotalDefect(editText_edt_total_check.getText().toString());
+                                    dailyFinishinfModels.setTotalCheck(editText_edt_total_check.getText().toString());
                                     int val = spinner.getSelectedItemPosition();
                                     dailyFinishinfModels.setFinishingLine(val+1+"");
                                     Intent intent = new Intent(DailyFinishingDefectAnalysis.this,DailyFinishingAnalysis2.class);

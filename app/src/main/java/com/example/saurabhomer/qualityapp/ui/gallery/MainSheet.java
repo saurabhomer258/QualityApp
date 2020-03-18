@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.saurabhomer.qualityapp.HomeActivity;
 import com.example.saurabhomer.qualityapp.LoginActivity;
 import com.example.saurabhomer.qualityapp.R;
+import com.example.saurabhomer.qualityapp.ui.gallery.model.MainSeetListModel;
 import com.example.saurabhomer.qualityapp.ui.gallery.model.MainSeetModel2;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -82,21 +83,29 @@ public class MainSheet extends AppCompatActivity {
                 progressDialog.show();
                 String string = "";
                 for(DailyFinishingEditText list : editTexts){
-                    string =string +  list+",";
+                    string =string +  list.getText()+",";
                 }
                 MainSeetModel2 mainSeetModel2 = new MainSeetModel2(edt_finishing_working_hour.getText().toString(),edt_toerance.getText().toString(),string);
                 GalleryFragment.mainSeetModel2.add(mainSeetModel2);
 
                 FirebaseDatabase.getInstance().getReference("styles").
                                         child(styleSheetModel.getSheetNumber().toString()).
-                                        setValue(styleSheetModel);
+                                        setValue(styleSheetModel).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                            if(task==null || !task.isSuccessful())
+                            {
+                                Toast.makeText(MainSheet.this,"oops ! Please try again ",Toast.LENGTH_SHORT).show();
+                            }
+                    }
 
-                for(int i=0;i<GalleryFragment.mainSeetModel2.size();i++)
-                {
+                });
+
+                    MainSeetListModel mainSeetListModel = new MainSeetListModel();
+                    mainSeetListModel.setMainSeetModel2(GalleryFragment.mainSeetModel2);
                     FirebaseDatabase.getInstance().getReference("mainSeet")
                             .child(styleSheetModel.getSheetNumber().toString())
-                            .child(i+"")
-                            .setValue(GalleryFragment.mainSeetModel2.get(i)).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            .setValue(mainSeetListModel).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()|| task.isComplete()) {
@@ -111,7 +120,7 @@ public class MainSheet extends AppCompatActivity {
                             }
                         }
                     });
-                }
+
 
 
             }
@@ -121,7 +130,7 @@ public class MainSheet extends AppCompatActivity {
             public void onClick(View v) {
                 String string = "";
                 for (DailyFinishingEditText list : editTexts) {
-                    string = string + list + ",";
+                    string = string + list.getText() + ",";
                 }
                 MainSeetModel2 mainSeetModel2 = new MainSeetModel2(edt_finishing_working_hour.getText().toString(), edt_toerance.getText().toString(), string);
                 GalleryFragment.mainSeetModel2.add(mainSeetModel2);

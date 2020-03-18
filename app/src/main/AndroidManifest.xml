@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:remove="android:appComponentFactory">
-        <activity android:name=".MetelDetectionPage.MetelDetectionAdmin"></activity>
+        <activity android:name=".MetelDetectionPage.MetelDetectionAdmin" />
         <activity android:name=".MeasurementDescription" />
         <activity android:name=".MainSheet" />
         <activity android:name=".MetelDetectionPage.MetelDetectionPage" />
-        <activity android:name=".SkuCheckReport.SkuCheckReport100" />
+        <activity android:name=".SkuCheckReport.SkuCheckReport100Page2" />
         <activity android:name=".Measurement.Measurment" />
         <activity android:name=".DailyFinishingAnalysis.DailyFinishingAnalysis2" />
         <activity android:name=".DailyFinishingAnalysis.DailyFinishingDefectAnalysis" />
@@ -41,11 +41,10 @@
         <activity android:name=".ui.gallery.MainSeet2" />
         <activity android:name=".ui.gallery.MainSheet" />
         <activity android:name=".admin.DailyfinishingAdmin" />
-
         <activity android:name=".Measurement.Mesurement1" />
-        <activity android:name=".hourlylot.HourlyLot"></activity>
-        <activity android:name=".hourlylot.HourlyLot2"></activity>
-
+        <activity android:name=".hourlylot.HourlyLot" />
+        <activity android:name=".hourlylot.HourlyLot2" />
+        <activity android:name=".SkuCheckReport.SkuCheckReport100Page1"></activity>
     </application>
 
 </manifest>

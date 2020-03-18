@@ -1,9 +1,7 @@
-package com.example.saurabhomer.qualityapp.SkuCheckReport;
+package com.example.saurabhomer.qualityapp.SkuCheckReport.model;
 
-public class SkuCheckReport100Model {
-    private String edt_readyquantity;
-    private String edt_checkquantity;
-    private String edt_size;
+public class SkuCheckReport100ModelList {
+
     private String countryhasbeencheck;
     private String labelhasbeencheck;
     private String barcodehasbeencheck;
@@ -18,29 +16,6 @@ public class SkuCheckReport100Model {
     private String packingmethodhasbeencheck;
     private String sizestickerhasbeencheck;
 
-    public String getEdt_readyquantity() {
-        return edt_readyquantity;
-    }
-
-    public void setEdt_readyquantity(String edt_readyquantity) {
-        this.edt_readyquantity = edt_readyquantity;
-    }
-
-    public String getEdt_checkquantity() {
-        return edt_checkquantity;
-    }
-
-    public void setEdt_checkquantity(String edt_checkquantity) {
-        this.edt_checkquantity = edt_checkquantity;
-    }
-
-    public String getEdt_size() {
-        return edt_size;
-    }
-
-    public void setEdt_size(String edt_size) {
-        this.edt_size = edt_size;
-    }
 
     public String getCountryhasbeencheck() {
         return countryhasbeencheck;
