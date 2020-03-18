@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class MainSeetListModel {
 
-     ArrayList<MainSeetModel2> mainSeetModel2;
+     public ArrayList<MainSeetModel2> mainSeetModel2;
 
     public ArrayList<MainSeetModel2> getMainSeetModel2() {
         return mainSeetModel2;

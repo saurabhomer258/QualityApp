@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:remove="android:appComponentFactory">
+
+        <activity android:name=".CartoonAudit.AreaOfPackingMaterial"></activity>
+        <activity android:name=".CartoonAudit.AreaOfInsideCarton" />
+        <activity android:name=".CartoonAudit.AreaofOutsideCartoon" />
+        <activity android:name=".InlinePrelineFinal.InlinePrelineFinal" />
+        <activity android:name=".CartoonAudit.CartoonAudit" />
+        <activity android:name=".HourlyLotAuditReport.HourlyLotAudit" />
+
         <activity android:name=".MetelDetectionPage.MetelDetectionAdmin" />
         <activity android:name=".MeasurementDescription" />
         <activity android:name=".MainSheet" />
@@ -38,7 +46,7 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".PWresetActivity" />
         <activity android:name=".cardviewmenu.CardMenu" />
-        <activity android:name=".ui.gallery.MainSeet2" />
+
         <activity android:name=".ui.gallery.MainSheet" />
         <activity android:name=".admin.DailyfinishingAdmin" />
         <activity android:name=".Measurement.Mesurement1" />
