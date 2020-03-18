@@ -31,7 +31,7 @@
 
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
-                android:id="@+id/edt_measurment" />
+                android:id="@+id/edt_hour" />
 
         </LinearLayout>
         <LinearLayout
@@ -58,7 +58,7 @@
 
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
-                android:id="@+id/edt_tolerance_plus" />
+                android:id="@+id/edt_cartoon" />
 
         </LinearLayout>
         <LinearLayout
@@ -100,12 +100,11 @@
                 android:textSize="@dimen/common_text_size" />
 
 
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
-
-                android:layout_height="wrap_content"
+            <customView.RadioButtonNOTOK
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_weight="7"
-                android:id="@+id/edt_car" />
+                android:id="@+id/edt_cartoon_shiping" />
 
         </LinearLayout>
 
@@ -128,12 +127,14 @@
                 android:textSize="@dimen/common_text_size" />
 
 
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
 
-                android:layout_height="wrap_content"
+            <customView.RadioButtonNOTOK
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_weight="7"
                 android:id="@+id/edt_printing" />
+
+
 
         </LinearLayout>
         <LinearLayout
@@ -155,10 +156,9 @@
                 android:textSize="@dimen/common_text_size" />
 
 
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
-
-                android:layout_height="wrap_content"
+            <customView.RadioButtonNOTOK
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_weight="7"
                 android:id="@+id/edt_car_size" />
 
@@ -183,10 +183,11 @@
                 android:textSize="@dimen/common_text_size" />
 
 
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
 
-                android:layout_height="wrap_content"
+
+            <customView.RadioButtonNOTOK
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_weight="7"
                 android:id="@+id/edt_cartoon_no" />
 
@@ -211,10 +212,10 @@
                 android:textSize="@dimen/common_text_size" />
 
 
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
 
-                android:layout_height="wrap_content"
+            <customView.RadioButtonNOTOK
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_weight="7"
                 android:id="@+id/edt_barcode" />
 
@@ -239,14 +240,42 @@
                 android:textSize="@dimen/common_text_size" />
 
 
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
-
-                android:layout_height="wrap_content"
+            <customView.RadioButtonNOTOK
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_weight="7"
                 android:id="@+id/edt_car_fly" />
 
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Remarks"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/remarks"/>
+
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_height="wrap_content"

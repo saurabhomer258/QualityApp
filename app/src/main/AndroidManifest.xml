@@ -12,7 +12,7 @@
         tools:remove="android:appComponentFactory">
 
         <activity android:name=".CartoonAudit.AreaOfPackingMaterial"></activity>
-        <activity android:name=".CartoonAudit.AreaOfInsideCarton" />
+        <activity android:name=".CartoonAudit.AreaOfInsideCartoon" />
         <activity android:name=".CartoonAudit.AreaofOutsideCartoon" />
         <activity android:name=".InlinePrelineFinal.InlinePrelineFinal" />
         <activity android:name=".CartoonAudit.CartoonAudit" />

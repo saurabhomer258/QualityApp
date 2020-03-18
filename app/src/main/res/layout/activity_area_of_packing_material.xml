@@ -1,9 +1,434 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<android.support.v4.widget.NestedScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CartoonAudit.AreaOfPackingMaterial">
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
 
-</android.support.constraint.ConstraintLayout>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Hour"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/edt_hour" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Cartoon Lot Quantity"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/edt_cartoon" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Check Cartoon Quantity"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/edt_check_cartoon" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Defect"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Packing Label of Hangtag"
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.RadioButtonNOTOK
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="7"
+                android:id="@+id/edt_packinglabel" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Additional Label or Hangtag"
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.RadioButtonNOTOK
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="7"
+                android:id="@+id/edt_additionallabel" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Misplace Packing Label or Hangtag"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.RadioButtonNOTOK
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="7"
+                android:id="@+id/edt_misplace" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect Packing Label or Hangtag"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.RadioButtonNOTOK
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="7"
+                android:id="@+id/edt_incorrectlabel" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Damaged or Insecure Label or Hangtag"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.RadioButtonNOTOK
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="7"
+                android:id="@+id/edt_damagelabel" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect UPC"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.RadioButtonNOTOK
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="7"
+                android:id="@+id/edt_incorrectUPC" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect Sizer"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.RadioButtonNOTOK
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="7"
+                android:id="@+id/edt_incorrectSize" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect Hanger"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.RadioButtonNOTOK
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="7"
+                android:id="@+id/edt_incorrectHanger" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Poly Warning"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.RadioButtonNOTOK
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="7"
+                android:id="@+id/edt_polywarning" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Total Defect Count"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/edt_total_defect_count" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Remarks"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/remarks"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="6"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <customView.NextButton
+                android:layout_width="0dp"
+                android:padding="5dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:id="@+id/btn_next" />
+
+            <customView.DoneButton
+                android:layout_width="0dp"
+                android:padding="5dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:id="@+id/btn_done_measurement" />
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
