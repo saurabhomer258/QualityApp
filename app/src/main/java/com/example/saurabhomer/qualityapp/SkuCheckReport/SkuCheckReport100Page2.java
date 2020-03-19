@@ -28,7 +28,8 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
      Button btn_done;
      Button btn_next;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sku_check_report100);
 

@@ -8,6 +8,7 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit;
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis;
 import com.example.saurabhomer.qualityapp.Measurement.Measurment;
 import com.example.saurabhomer.qualityapp.MetelDetectionPage.MetelDetectionPage;
@@ -133,7 +134,8 @@ public class CardMenu extends AppCompatActivity {
         cardView7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Intent i = new Intent(CardMenu.this,)
+               Intent intent = new Intent(CardMenu.this, CartoonAudit.class);
+               startActivity(intent);
             }
         });
 
