@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:remove="android:appComponentFactory">
+        <activity android:name=".utils.DatePicker"></activity>
         <activity android:name=".CartoonAudit.AreaOfPackingMaterial" />
         <activity android:name=".CartoonAudit.AreaOfInsideCartoon" />
         <activity android:name=".CartoonAudit.AreaofOutsideCartoon" />
@@ -50,7 +51,7 @@
         <activity android:name=".hourlylot.HourlyLot" />
         <activity android:name=".hourlylot.HourlyLot2" />
         <activity android:name=".SkuCheckReport.SkuCheckReport100Page1" />
-        <activity android:name=".admin.SkuAdmin"></activity>
+        <activity android:name=".admin.SkuAdmin" />
     </application>
 
 </manifest>

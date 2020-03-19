@@ -26,7 +26,7 @@
                 android:textSize="@dimen/common_text_size" />
 
 
-            <customView.DailyFinishingEditText
+            <customView.DailyFinishingEditTextgit
                 android:layout_width="0dp"
 
                 android:layout_height="wrap_content"
@@ -115,7 +115,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:weightSum="10"
-            android:gravity="center"
+
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
@@ -124,7 +124,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Packing Label of Hangtag"
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -132,7 +132,7 @@
             <customView.RadioButtonNOTOK
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_weight="7"
+                android:layout_weight="6"
                 android:id="@+id/edt_packinglabel" />
 
         </LinearLayout>
@@ -140,7 +140,6 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:weightSum="10"
-            android:gravity="center"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
@@ -149,7 +148,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Additional Label or Hangtag"
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -157,7 +156,7 @@
             <customView.RadioButtonNOTOK
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_weight="7"
+                android:layout_weight="6"
                 android:id="@+id/edt_additionallabel" />
 
         </LinearLayout>
@@ -176,7 +175,7 @@
                 android:layout_height="wrap_content"
                 android:text="Misplace Packing Label or Hangtag"
 
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -184,7 +183,7 @@
             <customView.RadioButtonNOTOK
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_weight="7"
+                android:layout_weight="6"
                 android:id="@+id/edt_misplace" />
 
         </LinearLayout>
@@ -193,7 +192,6 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:weightSum="10"
-            android:gravity="center"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
@@ -203,7 +201,7 @@
                 android:layout_height="wrap_content"
                 android:text="Incorrect Packing Label or Hangtag"
 
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -211,7 +209,7 @@
             <customView.RadioButtonNOTOK
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_weight="7"
+                android:layout_weight="6"
                 android:id="@+id/edt_incorrectlabel" />
 
         </LinearLayout>
@@ -220,7 +218,6 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:weightSum="10"
-            android:gravity="center"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
@@ -230,7 +227,7 @@
                 android:layout_height="wrap_content"
                 android:text="Damaged or Insecure Label or Hangtag"
 
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -238,7 +235,7 @@
             <customView.RadioButtonNOTOK
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_weight="7"
+                android:layout_weight="6"
                 android:id="@+id/edt_damagelabel" />
 
         </LinearLayout>
@@ -247,7 +244,6 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:weightSum="10"
-            android:gravity="center"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
@@ -257,7 +253,7 @@
                 android:layout_height="wrap_content"
                 android:text="Incorrect UPC"
 
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -265,7 +261,7 @@
             <customView.RadioButtonNOTOK
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_weight="7"
+                android:layout_weight="6"
                 android:id="@+id/edt_incorrectUPC" />
 
         </LinearLayout>
@@ -274,7 +270,6 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:weightSum="10"
-            android:gravity="center"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
@@ -284,7 +279,7 @@
                 android:layout_height="wrap_content"
                 android:text="Incorrect Sizer"
 
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -292,7 +287,7 @@
             <customView.RadioButtonNOTOK
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_weight="7"
+                android:layout_weight="6"
                 android:id="@+id/edt_incorrectSize" />
 
         </LinearLayout>
@@ -301,7 +296,6 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:weightSum="10"
-            android:gravity="center"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
@@ -311,7 +305,7 @@
                 android:layout_height="wrap_content"
                 android:text="Incorrect Hanger"
 
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -319,7 +313,7 @@
             <customView.RadioButtonNOTOK
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_weight="7"
+                android:layout_weight="6"
                 android:id="@+id/edt_incorrectHanger" />
 
         </LinearLayout>
@@ -328,7 +322,6 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:weightSum="10"
-            android:gravity="center"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
@@ -338,7 +331,7 @@
                 android:layout_height="wrap_content"
                 android:text="Poly Warning"
 
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -346,7 +339,7 @@
             <customView.RadioButtonNOTOK
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_weight="7"
+                android:layout_weight="6"
                 android:id="@+id/edt_polywarning" />
 
 
