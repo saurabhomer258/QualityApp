@@ -16,6 +16,7 @@ import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100Page1;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100Page2;
 import com.example.saurabhomer.qualityapp.admin.DailyfinishingAdmin;
+import com.example.saurabhomer.qualityapp.admin.SkuAdmin;
 import com.example.saurabhomer.qualityapp.pref.LoginPref;
 import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.firebase.database.DataSnapshot;
@@ -113,7 +114,8 @@ public class CardMenu extends AppCompatActivity {
                             startActivity(i);
                         }
                         else if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
-                            Toast.makeText(CardMenu.this,"working on admin page",Toast.LENGTH_LONG).show();
+                            Intent i = new Intent(CardMenu.this, SkuAdmin.class);
+                            startActivity(i);
 
                         }
                         else {
