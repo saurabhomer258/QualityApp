@@ -1,5 +1,6 @@
 package com.example.saurabhomer.qualityapp.ui.gallery;
 
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.saurabhomer.qualityapp.Model.StyleModel.StyleSheetModel;
@@ -24,10 +26,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
-public class GalleryFragment extends Fragment {
+public class GalleryFragment extends Fragment implements
+        View.OnClickListener  {
 
-
+    private int mYear, mMonth, mDay, mHour, mMinute;
+    Button btnDatePicker;
+    EditText txtDate;
     AutoCompleteTextView styleNu;
     AutoCompleteTextView productName;
     AutoCompleteTextView orderNumber;
@@ -38,6 +44,7 @@ public class GalleryFragment extends Fragment {
     AutoCompleteTextView fabicDes;
     AutoCompleteTextView buyerName;
     Button submitBtn;
+    String tDate;
     static StyleSheetModel styleSheetModel;
     static ArrayList<MainSeetModel2> mainSeetModel2 = new ArrayList<>();
     private ProgressDialog progressDialog;
@@ -46,12 +53,18 @@ public class GalleryFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
+
+
         View root = inflater.inflate(R.layout.fragment_gallery, container, false);
+        btnDatePicker = root.findViewById(R.id.btn_date);
+        txtDate = root.findViewById(R.id.in_date);
+        tDate = txtDate.getText().toString();//doubt hai empty aa rha hai
+        btnDatePicker.setOnClickListener(this);
         styleNu = root.findViewById(R.id.edt_style_no).findViewById(R.id.atvCommon);
         productName = root.findViewById(R.id.edt_product_name).findViewById(R.id.atvCommon);
         buyerName = root.findViewById(R.id.edt_buyer_name).findViewById(R.id.atvCommon);
         orderNumber = root.findViewById(R.id.edt_order_quality).findViewById(R.id.atvCommon);
-        shipDate = root.findViewById(R.id.edt_shipment_date).findViewById(R.id.atvCommon);
+       // shipDate = root.findViewById(R.id.edt_shipment_date).findViewById(R.id.atvCommon);
         color = root.findViewById(R.id.edt_color).findViewById(R.id.atvCommon);
         size = root.findViewById(R.id.edt_Size).findViewById(R.id.atvCommon);
 
@@ -76,6 +89,7 @@ public class GalleryFragment extends Fragment {
                         new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
+                                Toast.makeText(getContext(), ""+tDate, Toast.LENGTH_SHORT).show();
 
                                 if(!NetworkUtils.isNetworkConnected(getContext()))
                                 {
@@ -127,6 +141,31 @@ public class GalleryFragment extends Fragment {
 
                             }
                         });
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        if (v == btnDatePicker) {
+
+            // Get Current Date
+            final Calendar c = Calendar.getInstance();
+            mYear = c.get(Calendar.YEAR);
+            mMonth = c.get(Calendar.MONTH);
+            mDay = c.get(Calendar.DAY_OF_MONTH);
+
+
+            DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(),
+                    new DatePickerDialog.OnDateSetListener()
+                    {
+                        @Override
+                        public void onDateSet(android.widget.DatePicker view, int year, int month, int dayOfMonth)
+                        {
+                            txtDate.setText(dayOfMonth + "-" + (month + 1) + "-" + year);
+                        }
+                    }, mYear, mMonth, mDay);
+            datePickerDialog.show();
+        }
     }
 
     @Override
