@@ -93,8 +93,10 @@ public class DailyfinishingAdmin extends AppCompatActivity
         });
     }
     private void setLayout(String object ,String result){
-        TextView textView= new TextView(DailyfinishingAdmin.this);
-        textView.setText(object + " : "+result);
-        layout.addView(textView);
+        if(result!=null) {
+            TextView textView = new TextView(DailyfinishingAdmin.this);
+            textView.setText(object + " : " + result);
+            layout.addView(textView);
+        }
     }
 }

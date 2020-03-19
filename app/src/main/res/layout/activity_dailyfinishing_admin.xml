@@ -19,7 +19,15 @@
         android:id="@+id/admin"
         android:textSize="18sp"
         android:text="Admin Panel"/>
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_constraintTop_toBottomOf="@+id/admin"
+    android:id="@+id/dailyLayout">
 
+
+</LinearLayout>
 
 
 

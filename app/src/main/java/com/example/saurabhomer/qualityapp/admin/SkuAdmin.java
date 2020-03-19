@@ -6,7 +6,6 @@ import android.util.Log;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.model.SkuCheckReport100ModelList;
 import com.google.firebase.database.DataSnapshot;
