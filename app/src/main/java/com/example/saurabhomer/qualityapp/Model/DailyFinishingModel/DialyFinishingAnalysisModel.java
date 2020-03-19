@@ -305,11 +305,11 @@ public class DialyFinishingAnalysisModel {
         Iron = iron;
         this.hours = hours;
     }
-    public void getTotal(){
-//        PrintingMRBO+Slubs_Holes_NAR + colorShading+BrokenStitches,SlipStitches,SPI,Pukering,LooseTensions,SnapDefects,NeedleMark,OpenSeam,Pleats;
-//        private String MissingStitches,SkipRunOff,IncorrectLabel,WrongPlacement,LooseNess,CutDamage,Others,Stain,OilMark,Stickers,UncutThread,OutOfSpec;
-//        private String TotalDefect,QualityOut,ProductionOut,Damage,Dirty,Iron;
-//        private String hours;
-//        private String totalCheck
+    public int getTotal(){
+       int total = PrintingMRBO+Slubs_Holes_NAR + colorShading+BrokenStitches+SlipStitches+SPI+Pukering+LooseTensions+SnapDefects+NeedleMark+OpenSeam+Pleats
+     +MissingStitches+SkipRunOff+IncorrectLabel+WrongPlacement+LooseNess+CutDamage+Others+Stain+OilMark+Stickers+UncutThread+OutOfSpec+
+    TotalDefect+QualityOut+ProductionOut+Damage+Dirty+Iron
+    ;
+       return total;
     }
 }

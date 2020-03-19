@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
@@ -68,10 +69,61 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
        Button next =findViewById(R.id.btn_next).findViewById(R.id.btnNext);
        Button btn_res =findViewById(R.id.btn_result).findViewById(R.id.btnNext);
        Button done =findViewById(R.id.btn_done).findViewById(R.id.btnNext);
+       btn_res.setText("Get Result");
        btn_res.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
+           TextView total =  findViewById(R.id.tv_total);
+           TextView totalPer =  findViewById(R.id.tv_Defect_per);
+             String a = total_check.getText().toString().trim().equals("") ? 0 +"": total_check.getText().toString().trim();
 
+
+             DialyFinishingAnalysisModel dialyFinishingAnalysisModel = new DialyFinishingAnalysisModel(
+                     Integer.parseInt(a),
+
+                     slube_hole.getSelectedItemPosition()
+                     ,edt_color_shading.getSelectedItemPosition()
+                     ,edt_broken_stitches.getSelectedItemPosition()
+                     ,edt_slip_stitches.getSelectedItemPosition()
+                     ,edt_spi.getSelectedItemPosition()
+                     ,edt_pukering.getSelectedItemPosition()
+                     ,edt_snap_defects.getSelectedItemPosition()
+                     ,edt_loose_tensions.getSelectedItemPosition()
+                     ,edt_uneven.getSelectedItemPosition()
+                     ,edt_needle_mark.getSelectedItemPosition()
+                     ,edt_open_seam.getSelectedItemPosition()
+                     ,edt_pleats.getSelectedItemPosition()
+                     ,edt_missing_stitches.getSelectedItemPosition()
+                     ,edt_skip_run_off.getSelectedItemPosition()
+                     ,edt_incorrect_label.getSelectedItemPosition()
+                     ,edt_wrong_placement.getSelectedItemPosition()
+                     ,edt_looseness.getSelectedItemPosition()
+                     ,edt_cut_damage.getSelectedItemPosition()
+                     ,edt_others.getSelectedItemPosition()
+                     ,edt_stain.getSelectedItemPosition()
+                     ,edt_oil_marks.getSelectedItemPosition()
+                     ,edt_stickers.getSelectedItemPosition()
+                     ,edt_uncut_thread.getSelectedItemPosition()
+                     ,edt_out_of_spec.getSelectedItemPosition()
+                     ,edt_total_defects_1111.getSelectedItemPosition()
+                     ,edt_quality_out.getSelectedItemPosition()
+                     ,edt_production_out.getSelectedItemPosition()
+                     ,edt_damage.getSelectedItemPosition()
+                     ,edt_dirty.getSelectedItemPosition()
+                     ,edt_iron.getSelectedItemPosition()
+                     , hour.getText().toString()+""
+             );
+             String s = dialyFinishingAnalysisModel.getTotal()+"";
+           total.setText(s);
+           if(dialyFinishingAnalysisModel.getTotalCheck()==0)
+           {
+              totalPer.setText(0);
+           }
+           else {
+         float f    =  (float) dialyFinishingAnalysisModel.getTotal() / dialyFinishingAnalysisModel.getTotalCheck();
+         f = f*100;
+              totalPer.setText(f+"");
+           }
           }
        });
        done.setOnClickListener(new View.OnClickListener() {
