@@ -39,6 +39,7 @@ public class Mesurement1 extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Log.d("aaa",dataSnapshot.getKey());
+                Log.d("aaa",dataSnapshot.getValue()+"");
             }
 
             @Override
