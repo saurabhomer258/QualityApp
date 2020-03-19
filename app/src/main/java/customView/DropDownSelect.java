@@ -37,6 +37,7 @@ public class DropDownSelect extends RelativeLayout {
             View view = inflater.inflate(R.layout.common_drop_down, this);
             spinner = (Spinner) findViewById(R.id.spinner);
             List<String> list = new ArrayList<String>();
+            list.add("0");
             list.add("1");
             list.add("2");
             list.add("3");
