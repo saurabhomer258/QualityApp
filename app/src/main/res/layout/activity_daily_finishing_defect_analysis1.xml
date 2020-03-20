@@ -43,12 +43,11 @@
             android:layout_weight="7" />
 
     </LinearLayout>
-
     <LinearLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:weightSum="10"
-        android:gravity="center"
+
         android:layout_marginEnd="14dp"
         android:layout_marginStart="14dp"
         xmlns:android="http://schemas.android.com/apk/res/android">
@@ -56,103 +55,31 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="HOURS"
-
-            android:layout_weight="3"
+            android:text="Shipment Date"
+            android:layout_weight="4"
             android:textColor="@color/common_text_color"
             android:textSize="@dimen/common_text_size" />
 
+        <EditText
+            android:layout_weight="5"
+            android:layout_marginLeft="48dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/in_date" />
 
-        <customView.DailyFinishingEditText
-        android:layout_width="0dp"
-
-        android:layout_height="wrap_content"
-        android:layout_weight="7"
-        android:id="@+id/edt_hours" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="DATE"
+            android:id="@+id/btn_date"
+            android:layout_alignBottom="@+id/in_date"
+            android:layout_toRightOf="@+id/in_date"
+            android:layout_toEndOf="@+id/in_date" />
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="TOTAL DEFECT"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_total_defects" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="DEFECT %"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.DailyFinishingEditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_defect_s" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:weightSum="10"
-        android:gravity="center"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="TOTAL CHECK"
-
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
-
-
-        <customView.SignUpEditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/edt_total_check" />
-
-    </LinearLayout>
 
 
     <customView.NextButton

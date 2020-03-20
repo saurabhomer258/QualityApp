@@ -61,12 +61,12 @@ public class MetelDetectionPage extends AppCompatActivity {
             }
         });
 
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+//        next.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
     }
     private String getStringOfRedio(boolean okButton){
         if(okButton) return "ok";

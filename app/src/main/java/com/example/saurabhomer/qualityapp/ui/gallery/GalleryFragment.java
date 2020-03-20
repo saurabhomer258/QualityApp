@@ -117,7 +117,7 @@ public class GalleryFragment extends Fragment implements
                                                                                            buyerName.getText().toString(),
                                                                                            productName.getText().toString(),
                                                                                            orderNumber.getText().toString(),
-                                                                                           shipDate.getText().toString(),
+                                                                                           tDate = txtDate.getText().toString(),
                                                                                            color.getText().toString(),
                                                                                            size.getText().toString(),
                                                                                            fabicDes.getText().toString());

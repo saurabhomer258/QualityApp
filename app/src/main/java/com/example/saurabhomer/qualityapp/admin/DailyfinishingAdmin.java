@@ -1,14 +1,18 @@
 package com.example.saurabhomer.qualityapp.admin;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.R;
+import com.example.saurabhomer.qualityapp.dialog.DailyFInishingResult;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -28,16 +32,23 @@ public class DailyfinishingAdmin extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dailyfinishing_admin);
         layout = findViewById(R.id.dailyLayout);
+        Button btn = findViewById(R.id.btn_ok);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i =new Intent(DailyfinishingAdmin.this,DailyFInishingResult.class);
+                startActivity(i);
+                finish();
+            }
+        });
         FirebaseDatabase.getInstance().getReference("dailyFinishing")
                 .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 DailyFinishinfModels dailyFinishinfModels =   dataSnapshot.getValue(DailyFinishinfModels.class);
-                setLayout("Total Defect",dailyFinishinfModels.getTotalDefect());
-                setLayout("Defect%",dailyFinishinfModels.getDefectInPercent());
-                setLayout("Total Check",dailyFinishinfModels.getTotalCheck());
-                setLayout("Hours",dailyFinishinfModels.getHours());
+
+                setLayout("Date",dailyFinishinfModels.getDate());
                 setLayout("Finishing Line",dailyFinishinfModels.getFinishingLine());
                 TextView textView= new TextView(DailyfinishingAdmin.this);
                 textView.setText("_________________________________________________");
@@ -78,6 +89,10 @@ public class DailyfinishingAdmin extends AppCompatActivity
                     setLayout("Dirty",items.getDirty()+"");
                     setLayout("Iron",items.getIron()+"");
                     setLayout("hours",items.getHours());
+                    setLayout("Uneven",items.getUneven()+"");
+                    setLayout("Total Check",items.getTotalCheck()+"");
+
+
                     TextView textView1= new TextView(DailyfinishingAdmin.this);
                     textView1.setText("_________________________________________________");
                     layout.addView(textView1);

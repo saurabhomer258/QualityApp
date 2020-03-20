@@ -5,12 +5,10 @@ import java.util.ArrayList;
 public class DailyFinishinfModels
 {
     ArrayList<DialyFinishingAnalysisModel> dialyFinishingAnalysisModels;
-    DailyFinishingModel1 model;
-    private String hours ;
-    private String totalDefect ;
 
-    private String DefectInPercent;
-    private String totalCheck;
+
+    public String date;
+
     private String finishingLine;
 
     public ArrayList<DialyFinishingAnalysisModel> getDialyFinishingAnalysisModels() {
@@ -21,21 +19,6 @@ public class DailyFinishinfModels
         this.dialyFinishingAnalysisModels = dialyFinishingAnalysisModels;
     }
 
-    public DailyFinishingModel1 getModel() {
-        return model;
-    }
-
-    public void setModel(DailyFinishingModel1 model) {
-        this.model = model;
-    }
-
-    public String getHours() {
-        return hours;
-    }
-
-    public void setHours(String hours) {
-        this.hours = hours;
-    }
 
     public String getFinishingLine() {
         return finishingLine;
@@ -45,27 +28,11 @@ public class DailyFinishinfModels
         this.finishingLine = finishingLine;
     }
 
-    public String getTotalDefect() {
-        return totalDefect;
+    public String getDate() {
+        return date;
     }
 
-    public void setTotalDefect(String totalDefect) {
-        this.totalDefect = totalDefect;
-    }
-
-    public String getDefectInPercent() {
-        return DefectInPercent;
-    }
-
-    public void setDefectInPercent(String defectInPercent) {
-        DefectInPercent = defectInPercent;
-    }
-
-    public String getTotalCheck() {
-        return totalCheck;
-    }
-
-    public void setTotalCheck(String totalCheck) {
-        this.totalCheck = totalCheck;
+    public void setDate(String date) {
+        this.date = date;
     }
 }

@@ -50,7 +50,7 @@ public class SkuAdmin extends AppCompatActivity {
                         for(SkuCheckReport100ModelList skuCheckReport100ModelList : skuCheckReport100ModelList1) {
 
 
-                        setLayout("Country Hasbeen check",skuCheckReport100ModelList.getCountryhasbeencheck());
+                        setLayout("Country Has been check",skuCheckReport100ModelList.getCountryhasbeencheck());
                         setLayout("Label has been Check",skuCheckReport100ModelList.getLabelhasbeencheck());
                         setLayout("Barcode has been check",skuCheckReport100ModelList.getBarcodehasbeencheck());
                         setLayout("Color has been check",skuCheckReport100ModelList.getColorhasbeencheck());
