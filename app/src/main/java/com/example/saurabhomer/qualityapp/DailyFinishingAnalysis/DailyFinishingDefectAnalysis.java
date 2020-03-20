@@ -1,5 +1,6 @@
 package com.example.saurabhomer.qualityapp.DailyFinishingAnalysis;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,13 +21,18 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
 
-public class DailyFinishingDefectAnalysis extends AppCompatActivity
+public class DailyFinishingDefectAnalysis extends AppCompatActivity implements
+        View.OnClickListener
 {
+    private int mYear, mMonth, mDay, mHour, mMinute;
+    Button btnDatePicker;
+    EditText txtDate;
     static int DAILYFINISHINGPAGE =0;
     static String total_defect="";
     static String total_Check="";
@@ -43,6 +49,9 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity
         View view_edt_hour = findViewById(R.id.edt_hours);
         final EditText editText_hour = view_edt_hour.findViewById(R.id.atvCommon);
 
+        btnDatePicker=(Button)findViewById(R.id.btn_date);
+        txtDate=(EditText)findViewById(R.id.in_date);
+        btnDatePicker.setOnClickListener(this);
 
         final Spinner spinner =(Spinner)    findViewById(R.id.edt_finishing).findViewById(R.id.spinner);
         View view_edt_total_defect = findViewById(R.id.edt_total_defects);
@@ -91,5 +100,30 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity
                         });
             }
         });
+
     }
+
+    @Override
+    public void onClick(View v) {
+
+        if (v == btnDatePicker) {
+
+            // Get Current Date
+            final Calendar c = Calendar.getInstance();
+            mYear = c.get(Calendar.YEAR);
+            mMonth = c.get(Calendar.MONTH);
+            mDay = c.get(Calendar.DAY_OF_MONTH);
+
+
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                    new DatePickerDialog.OnDateSetListener() {
+                        @Override
+                        public void onDateSet(android.widget.DatePicker view, int year, int month, int dayOfMonth) {
+                            txtDate.setText(dayOfMonth + "-" + (month + 1) + "-" + year);
+                        }
+                    }, mYear, mMonth, mDay);
+            datePickerDialog.show();
+        }
+    }
+
 }
