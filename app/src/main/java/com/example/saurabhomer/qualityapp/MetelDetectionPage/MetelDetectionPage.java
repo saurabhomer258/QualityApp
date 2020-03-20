@@ -1,5 +1,6 @@
 package com.example.saurabhomer.qualityapp.MetelDetectionPage;
 
+import android.app.DatePickerDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,9 +13,13 @@ import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishi
 import com.example.saurabhomer.qualityapp.R;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
-public class MetelDetectionPage extends AppCompatActivity {
-
+public class MetelDetectionPage extends AppCompatActivity implements
+        View.OnClickListener {
+    private int mYear, mMonth, mDay, mHour, mMinute;
+    Button btnDatePicker;
+    EditText txtDate;
     Button next;
     Button done;
     EditText edt_date;
@@ -31,8 +36,10 @@ public class MetelDetectionPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_metel_detection_page);
 
-        View view_date = findViewById(R.id.edt_date);
-        edt_date = view_date.findViewById(R.id.atvCommon);
+        btnDatePicker=(Button)findViewById(R.id.btn_date);
+        txtDate=(EditText)findViewById(R.id.in_date);
+        btnDatePicker.setOnClickListener(this);
+
 
         View view_time = findViewById(R.id.edt_time);
         edt_time = view_time.findViewById(R.id.atvCommon);
@@ -76,5 +83,30 @@ public class MetelDetectionPage extends AppCompatActivity {
     private void senddonedata(MetelDetectionPageModel metelDetectionPageModel)
     {
 
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        if (v == btnDatePicker) {
+
+            // Get Current Date
+            final Calendar c = Calendar.getInstance();
+            mYear = c.get(Calendar.YEAR);
+            mMonth = c.get(Calendar.MONTH);
+            mDay = c.get(Calendar.DAY_OF_MONTH);
+
+
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                    new DatePickerDialog.OnDateSetListener()
+                    {
+                        @Override
+                        public void onDateSet(android.widget.DatePicker view, int year, int month, int dayOfMonth)
+                        {
+                            txtDate.setText(dayOfMonth + "-" + (month + 1) + "-" + year);
+                        }
+                    }, mYear, mMonth, mDay);
+            datePickerDialog.show();
+        }
     }
 }

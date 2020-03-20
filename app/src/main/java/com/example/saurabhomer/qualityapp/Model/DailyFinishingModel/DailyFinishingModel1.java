@@ -3,7 +3,6 @@ package com.example.saurabhomer.qualityapp.Model.DailyFinishingModel;
 public class DailyFinishingModel1 {
     private String hours ;
     private String totalDefect ;
-
     private String DefectInPercent;
     private String totalCheck;
 
@@ -13,4 +12,5 @@ public class DailyFinishingModel1 {
         DefectInPercent = defectInPercent;
         this.totalCheck = totalCheck;
     }
+
 }

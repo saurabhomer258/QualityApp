@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.NestedScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="50dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,7 +11,6 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:weightSum="10"
-            android:gravity="center"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
@@ -25,12 +25,23 @@
                 android:textSize="@dimen/common_text_size" />
 
 
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
-
+            <EditText
+                android:layout_weight="5"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="48dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/edt_date" />
+                android:id="@+id/in_date" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="DATE"
+                android:id="@+id/btn_date"
+                android:layout_alignBottom="@+id/in_date"
+                android:layout_toRightOf="@+id/in_date"
+                android:layout_toEndOf="@+id/in_date" />
 
         </LinearLayout>
         <LinearLayout
