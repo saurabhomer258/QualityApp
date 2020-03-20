@@ -8,6 +8,7 @@ public class DialyFinishingAnalysisModel {
     private int TotalDefect,QualityOut,ProductionOut,Damage,Dirty,Iron;
     private String hours;
     private int totalCheck;
+    private int uneven;
 
     public DialyFinishingAnalysisModel()
     {
@@ -16,6 +17,14 @@ public class DialyFinishingAnalysisModel {
 
     public int getPrintingMRBO() {
         return PrintingMRBO;
+    }
+
+    public int getUneven() {
+        return uneven;
+    }
+
+    public void setUneven(int uneven) {
+        this.uneven = uneven;
     }
 
     public void setPrintingMRBO(int printingMRBO) {
@@ -270,7 +279,13 @@ public class DialyFinishingAnalysisModel {
         this.totalCheck = totalCheck;
     }
 
-    public DialyFinishingAnalysisModel(int totalCheck, int printingMRBO, int slubs_Holes_NAR, int colorShading, int brokenStitches, int slipStitches, int SPI, int pukering, int looseTensions, int snapDefects, int needleMark, int openSeam, int pleats, int missingStitches, int skipRunOff, int incorrectLabel, int wrongPlacement, int looseNess, int cutDamage, int others, int stain, int oilMark, int stickers, int uncutThread, int outOfSpec, int totalDefect, int qualityOut, int productionOut, int damage, int dirty, int iron, String hours) {
+
+
+
+
+    public DialyFinishingAnalysisModel(int totalCheck, int printingMRBO, int slubs_Holes_NAR, int colorShading,
+                                       int brokenStitches, int slipStitches, int SPI,
+                                       int pukering, int looseTensions, int snapDefects, int needleMark, int openSeam, int pleats, int missingStitches, int skipRunOff, int incorrectLabel, int wrongPlacement, int looseNess, int cutDamage, int others, int stain, int oilMark, int stickers, int uncutThread, int outOfSpec, int totalDefect, int qualityOut, int productionOut, int damage, int dirty, int iron, String hours,int uneven) {
         this.totalCheck = totalCheck ;
         PrintingMRBO = printingMRBO;
         Slubs_Holes_NAR = slubs_Holes_NAR;
@@ -284,6 +299,7 @@ public class DialyFinishingAnalysisModel {
         NeedleMark = needleMark;
         OpenSeam = openSeam;
         Pleats = pleats;
+        this.uneven = uneven;
         MissingStitches = missingStitches;
         SkipRunOff = skipRunOff;
         IncorrectLabel = incorrectLabel;

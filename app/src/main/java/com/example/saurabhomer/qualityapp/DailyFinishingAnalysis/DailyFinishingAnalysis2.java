@@ -81,7 +81,7 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
 
              DialyFinishingAnalysisModel dialyFinishingAnalysisModel = new DialyFinishingAnalysisModel(
                      Integer.parseInt(a),
-
+                     printing.getSelectedItemPosition(),
                      slube_hole.getSelectedItemPosition()
                      ,edt_color_shading.getSelectedItemPosition()
                      ,edt_broken_stitches.getSelectedItemPosition()
@@ -90,7 +90,7 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
                      ,edt_pukering.getSelectedItemPosition()
                      ,edt_snap_defects.getSelectedItemPosition()
                      ,edt_loose_tensions.getSelectedItemPosition()
-                     ,edt_uneven.getSelectedItemPosition()
+
                      ,edt_needle_mark.getSelectedItemPosition()
                      ,edt_open_seam.getSelectedItemPosition()
                      ,edt_pleats.getSelectedItemPosition()
@@ -113,6 +113,7 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
                      ,edt_dirty.getSelectedItemPosition()
                      ,edt_iron.getSelectedItemPosition()
                      , hour.getText().toString()+""
+                     ,edt_uneven.getSelectedItemPosition()
              );
              String s = dialyFinishingAnalysisModel.getTotal()+"";
            total.setText(s);
@@ -131,9 +132,10 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
           @Override
           public void onClick(View v)
           {
+              String a = total_check.getText().toString().trim().equals("") ? 0 +"": total_check.getText().toString().trim();
              DialyFinishingAnalysisModel dialyFinishingAnalysisModel = new DialyFinishingAnalysisModel(
-                     Integer.parseInt(total_check.getText().toString()),
-
+                     Integer.parseInt(a),
+                     printing.getSelectedItemPosition(),
                      slube_hole.getSelectedItemPosition()
                      ,edt_color_shading.getSelectedItemPosition()
                      ,edt_broken_stitches.getSelectedItemPosition()
@@ -142,7 +144,7 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
                      ,edt_pukering.getSelectedItemPosition()
                      ,edt_snap_defects.getSelectedItemPosition()
                      ,edt_loose_tensions.getSelectedItemPosition()
-                     ,edt_uneven.getSelectedItemPosition()
+
                      ,edt_needle_mark.getSelectedItemPosition()
                      ,edt_open_seam.getSelectedItemPosition()
                      ,edt_pleats.getSelectedItemPosition()
@@ -165,6 +167,7 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
                      ,edt_dirty.getSelectedItemPosition()
                      ,edt_iron.getSelectedItemPosition()
                      , hour.getText().toString()+""
+                     ,edt_uneven.getSelectedItemPosition()
              );
              DAILYFINIFSHINGMODELLIST.add(dialyFinishingAnalysisModel);
              dailyFinishinfModels.setDialyFinishingAnalysisModels(DAILYFINIFSHINGMODELLIST);
@@ -186,10 +189,10 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
        {
           @Override
           public void onClick(View v) {
-
+              String a = total_check.getText().toString().trim().equals("") ? 0 +"": total_check.getText().toString().trim();
              DialyFinishingAnalysisModel dialyFinishingAnalysisModel = new DialyFinishingAnalysisModel(
-                     Integer.parseInt(total_check.getText().toString()),
-
+                     Integer.parseInt(a),
+                     printing.getSelectedItemPosition(),
                      slube_hole.getSelectedItemPosition()
                      ,edt_color_shading.getSelectedItemPosition()
                      ,edt_broken_stitches.getSelectedItemPosition()
@@ -198,7 +201,7 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
                      ,edt_pukering.getSelectedItemPosition()
                      ,edt_snap_defects.getSelectedItemPosition()
                      ,edt_loose_tensions.getSelectedItemPosition()
-                     ,edt_uneven.getSelectedItemPosition()
+
                      ,edt_needle_mark.getSelectedItemPosition()
                      ,edt_open_seam.getSelectedItemPosition()
                      ,edt_pleats.getSelectedItemPosition()
@@ -221,6 +224,7 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
                      ,edt_dirty.getSelectedItemPosition()
                      ,edt_iron.getSelectedItemPosition()
                      , hour.getText().toString()+""
+                     ,edt_uneven.getSelectedItemPosition()
              );
              DAILYFINIFSHINGMODELLIST.add(dialyFinishingAnalysisModel);
              Intent i =new Intent(DailyFinishingAnalysis2.this,DailyFinishingAnalysis2.class);

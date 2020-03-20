@@ -46,22 +46,17 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity implements
         DAILYFINISHINGPAGE =0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_finishing_defect_analysis1);
-        View view_edt_hour = findViewById(R.id.edt_hours);
-        final EditText editText_hour = view_edt_hour.findViewById(R.id.atvCommon);
+
 
         btnDatePicker=(Button)findViewById(R.id.btn_date);
         txtDate=(EditText)findViewById(R.id.in_date);
         btnDatePicker.setOnClickListener(this);
 
         final Spinner spinner =(Spinner)    findViewById(R.id.edt_finishing).findViewById(R.id.spinner);
-        View view_edt_total_defect = findViewById(R.id.edt_total_defects);
-        final EditText editText_total_defects = view_edt_total_defect.findViewById(R.id.atvCommon);
 
-        View view_edt_defects = findViewById(R.id.edt_defect_s);
-        final EditText editText_edt_defects = view_edt_defects.findViewById(R.id.atvCommon);
 
-        View view_edt_total_check = findViewById(R.id.edt_total_check);
-        final EditText editText_edt_total_check = view_edt_total_check.findViewById(R.id.atvUsernameReg);
+
+
 
         View signin_button = findViewById(R.id.bt_next);
         Button bt_signin_button= signin_button.findViewById(R.id.btnNext);
@@ -76,15 +71,11 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity implements
                             public void onDataChange(DataSnapshot dataSnapshot) {
                                 if(dataSnapshot.getValue()==null)
                                 {
-                                    DailyFinishingModel1 model = new DailyFinishingModel1(editText_hour.getText().toString(),
-                                            editText_total_defects.getText().toString(),
-                                            editText_edt_defects.getText().toString(),
-                                            editText_edt_total_check.getText().toString()
-                                    );
-                                    dailyFinishinfModels.setHours(editText_hour.getText().toString());
-                                    dailyFinishinfModels.setTotalDefect(editText_total_defects.getText().toString());
-                                    dailyFinishinfModels.setDefectInPercent(editText_edt_defects.getText().toString());
-                                    dailyFinishinfModels.setTotalCheck(editText_edt_total_check.getText().toString());
+//                                    DailyFinishingModel1 model = new DailyFinishingModel1(editText_hour.getText().toString(),
+//                                            editText_edt_total_check.getText().toString()
+//                                    );
+
+                                    dailyFinishinfModels.setDate(txtDate.getText().toString());
                                     int val = spinner.getSelectedItemPosition();
                                     dailyFinishinfModels.setFinishingLine(val+1+"");
                                     Intent intent = new Intent(DailyFinishingDefectAnalysis.this,DailyFinishingAnalysis2.class);
