@@ -26,13 +26,13 @@ import java.util.ArrayList;
 
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
-public class CommonStyleData extends AppCompatActivity {
-
+public class CommonStyleData extends AppCompatActivity
+{
     LinearLayout layout;
     private ProgressDialog progressDialog;
     private String styleNu;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_common_style_data);
         layout = findViewById(R.id.dailyLayout);
@@ -43,7 +43,6 @@ public class CommonStyleData extends AppCompatActivity {
         }
         progressDialog.setMessage("Verificating...");
         progressDialog.show();
-
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference users = firebaseDatabase.getReference("styles");
         users.child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -70,6 +69,7 @@ public class CommonStyleData extends AppCompatActivity {
                 }
               
             }
+
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
