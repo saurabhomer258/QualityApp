@@ -18,6 +18,7 @@ import com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100Page2;
 import com.example.saurabhomer.qualityapp.admin.DailyfinishingAdmin;
 import com.example.saurabhomer.qualityapp.admin.SkuAdmin;
 import com.example.saurabhomer.qualityapp.pref.LoginPref;
+import com.example.saurabhomer.qualityapp.utils.CommonStyleData;
 import com.example.saurabhomer.qualityapp.utils.DatePicker;
 import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.firebase.database.DataSnapshot;
@@ -146,7 +147,7 @@ public class CardMenu extends AppCompatActivity {
         cardView8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CardMenu.this, DatePicker.class);
+                Intent intent = new Intent(CardMenu.this, CommonStyleData.class);
                 startActivity(intent);
             }
         });

@@ -21,11 +21,13 @@ import java.util.ArrayList;
 
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
-public class SkuAdmin extends AppCompatActivity {
+public class SkuAdmin extends AppCompatActivity
+{
     LinearLayout layout;
     private ProgressDialog progressDialog;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sku_admin);
         layout = findViewById(R.id.dailyLayout);
@@ -65,6 +67,7 @@ public class SkuAdmin extends AppCompatActivity {
                         setLayout("Packing method has been check",skuCheckReport100ModelList.getPackingmethodhasbeencheck());
                         setLayout("Size sticker has been check",skuCheckReport100ModelList.getSizestickerhasbeencheck());
                         }
+
                         progressDialog.hide();
 
                     }
