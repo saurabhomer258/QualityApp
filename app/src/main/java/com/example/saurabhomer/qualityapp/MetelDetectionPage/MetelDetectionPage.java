@@ -26,6 +26,7 @@ public class MetelDetectionPage extends AppCompatActivity implements
     EditText edt_time;
     RadioButton r_calibrated;
     EditText edt_garment_pass;
+    EditText edt_garment_reject;
     EditText edt_garment;
     static MetelDetectionPageModel metelDetectionPageModel = new MetelDetectionPageModel();
     static ArrayList<MetelDetectionPageModel> METELDETECTIONMODELLIST = new ArrayList<>();
@@ -49,6 +50,9 @@ public class MetelDetectionPage extends AppCompatActivity implements
         View view_garmentpass = findViewById(R.id.edt_garmentpass);
         edt_garment_pass = view_garmentpass.findViewById(R.id.atvCommon);
 
+        View view_garmentreject = findViewById(R.id.edt_garment_reject);
+        edt_garment_reject = view_garmentreject.findViewById(R.id.atvCommon);
+
         View view_garment = findViewById(R.id.edt_garment);
         edt_garment = view_garment.findViewById(R.id.atvCommon);
 
@@ -63,17 +67,13 @@ public class MetelDetectionPage extends AppCompatActivity implements
                 metelDetectionPageModel.setEdt_date(edt_date.getText().toString());
                 metelDetectionPageModel.setEdt_time(edt_time.getText().toString());
                 metelDetectionPageModel.setEdt_garment_pass(edt_garment_pass.getText().toString());
-                metelDetectionPageModel.setEdt_garment(edt_garment.getText().toString());
-               // metelDetectionPageModel.setCountryhasbeencheck(getStringOfRedio(r_calibrated.isChecked()));
+                metelDetectionPageModel.setEdt_no_of_garment_check(edt_garment.getText().toString());
+                metelDetectionPageModel.setEdt_garment_fail(edt_garment_reject.getText().toString());
+                metelDetectionPageModel.setEdt_calibrated(getStringOfRedio(r_calibrated.isChecked()));
             }
         });
 
-//        next.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
+
     }
     private String getStringOfRedio(boolean okButton){
         if(okButton) return "ok";

@@ -9,7 +9,8 @@ public class MetelDetectionPageModel
     private String edt_time;
     private String edt_calibrated;
     private String edt_garment_pass;
-    private String edt_garment;
+    private String edt_garment_fail;
+    private String edt_no_of_garment_check;
 
 
     public String getEdt_date() {
@@ -44,11 +45,19 @@ public class MetelDetectionPageModel
         this.edt_garment_pass = edt_garment_pass;
     }
 
-    public String getEdt_garment() {
-        return edt_garment;
+    public String getEdt_garment_fail() {
+        return edt_garment_fail;
     }
 
-    public void setEdt_garment(String edt_garment) {
-        this.edt_garment = edt_garment;
+    public void setEdt_garment_fail(String edt_garment_fail) {
+        this.edt_garment_fail = edt_garment_fail;
+    }
+
+    public String getEdt_no_of_garment_check() {
+        return edt_no_of_garment_check;
+    }
+
+    public void setEdt_no_of_garment_check(String edt_no_of_garment_check) {
+        this.edt_no_of_garment_check = edt_no_of_garment_check;
     }
 }

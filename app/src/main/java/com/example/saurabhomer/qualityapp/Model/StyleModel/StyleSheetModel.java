@@ -12,6 +12,9 @@ public class StyleSheetModel {
 
     String fabricDescription;
 
+    public StyleSheetModel() {
+    }
+
     public StyleSheetModel(String sheetNumber, String BuyersName, String produectName, String orderQuality, String shipmentDate, String color, String size, String fabricDescription) {
         this.sheetNumber = sheetNumber;
         this.BuyersName = BuyersName;

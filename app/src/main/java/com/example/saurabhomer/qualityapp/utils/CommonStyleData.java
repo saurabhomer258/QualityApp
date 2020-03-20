@@ -49,7 +49,7 @@ public class CommonStyleData extends AppCompatActivity
             @Override
             public void onDataChange(DataSnapshot dataSnapshot)
             {
-                if(dataSnapshot==null)
+                if(dataSnapshot!=null)
                 {
                     StyleSheetModel styleSheetModel = dataSnapshot.getValue(StyleSheetModel.class);
                     setLayout("Sheet Number",styleSheetModel.getSheetNumber());
@@ -64,8 +64,7 @@ public class CommonStyleData extends AppCompatActivity
                 }
                 else
                 {
-                    Toast.makeText(CommonStyleData.this, "Please check style Number. Style number should be unique", Toast.LENGTH_SHORT).show();
-                    progressDialog.hide();
+                     progressDialog.hide();
                 }
               
             }
