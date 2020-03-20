@@ -11,7 +11,9 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.example.saurabhomer.qualityapp.R;
+import com.example.saurabhomer.qualityapp.SkuCheckReport.model.SkuCheckReport100Model;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.model.SkuCheckReport100ModelList;
+import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.FirebaseDatabase;
@@ -81,6 +83,10 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
+                if (!NetworkUtils.isNetworkConnected(SkuCheckReport100Page2.this))
+                {
+                    return;
+                }
                 progressDialog.setMessage("Verificating...");
                 progressDialog.show();
                 SkuCheckReport100ModelList skuCheckReport100ModelList = new SkuCheckReport100ModelList();

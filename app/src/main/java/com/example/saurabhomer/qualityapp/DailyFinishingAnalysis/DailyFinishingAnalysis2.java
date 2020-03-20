@@ -14,6 +14,7 @@ import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishi
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenu;
+import com.example.saurabhomer.qualityapp.dialog.DailyFInishingResult;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.FirebaseDatabase;
@@ -176,7 +177,7 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
              });
 
              DAILYFINIFSHINGMODELLIST.clear();
-             Intent i =new Intent(DailyFinishingAnalysis2.this,CardMenu.class);
+             Intent i =new Intent(DailyFinishingAnalysis2.this,DailyFInishingResult.class);
              startActivity(i);
              finish();
           }
