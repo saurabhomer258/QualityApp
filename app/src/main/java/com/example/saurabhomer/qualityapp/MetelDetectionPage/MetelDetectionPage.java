@@ -3,6 +3,7 @@ package com.example.saurabhomer.qualityapp.MetelDetectionPage;
 import android.app.DatePickerDialog;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 
 import android.app.TimePickerDialog;
@@ -79,6 +80,27 @@ public class MetelDetectionPage extends AppCompatActivity implements
         View view_done = findViewById(R.id.btn_done_metel);
         done = view_done.findViewById(R.id.btnNext);
 
+
+
+        View view_next = findViewById(R.id.btn_next);
+        next = view_done.findViewById(R.id.btnNext);
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                metelDetectionPageModel.setEdt_date(txtDate.getText().toString());
+                metelDetectionPageModel.setEdt_time(txtTime.getText().toString());
+                metelDetectionPageModel.setEdt_garment_pass(edt_garment_pass.getText().toString());
+                metelDetectionPageModel.setEdt_no_of_garment_check(edt_garment.getText().toString());
+                metelDetectionPageModel.setEdt_garment_fail(edt_garment_reject.getText().toString());
+                metelDetectionPageModel.setEdt_calibrated(getStringOfRedio(r_calibrated.isChecked()));
+                METELDETECTIONMODELLIST.add(metelDetectionPageModel);
+                Intent i = new Intent(MetelDetectionPage.this,MetelDetectionPage.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
         done.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -90,13 +112,16 @@ public class MetelDetectionPage extends AppCompatActivity implements
                 progressDialog.setMessage("Verificating...");
                 progressDialog.show();
                 metelDetectionPageModel.setEdt_date(txtDate.getText().toString());
-                metelDetectionPageModel.setEdt_time(edt_time.getText().toString());
+                metelDetectionPageModel.setEdt_time(txtTime.getText().toString());
                 metelDetectionPageModel.setEdt_garment_pass(edt_garment_pass.getText().toString());
                 metelDetectionPageModel.setEdt_no_of_garment_check(edt_garment.getText().toString());
                 metelDetectionPageModel.setEdt_garment_fail(edt_garment_reject.getText().toString());
                 metelDetectionPageModel.setEdt_calibrated(getStringOfRedio(r_calibrated.isChecked()));
+                METELDETECTIONMODELLIST.add(metelDetectionPageModel);
+                MetelDetectionPageListModel metelDetectionPageListModel = new MetelDetectionPageListModel();
+                metelDetectionPageListModel.setmMetelDetectionPageModel(METELDETECTIONMODELLIST);
                 FirebaseDatabase.getInstance().getReference("matelDetectionPage")
-                        .child(STYLE_NUMBER).setValue(metelDetectionPageModel).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        .child(STYLE_NUMBER).setValue(metelDetectionPageListModel).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         progressDialog.hide();

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.saurabhomer.qualityapp.MetelDetectionPage.MetelDetectionPageListModel;
 import com.example.saurabhomer.qualityapp.MetelDetectionPage.MetelDetectionPageModel;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.model.SkuCheckReport100Model;
@@ -42,15 +43,20 @@ public class MetelDetectionAdmin extends AppCompatActivity {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
 
-                        MetelDetectionPageModel metelDetectionPageModel =   dataSnapshot.getValue(MetelDetectionPageModel.class);
+                        MetelDetectionPageListModel metelDetectionPageModel1 =   dataSnapshot.getValue(MetelDetectionPageListModel.class);
 
+                        for(MetelDetectionPageModel metelDetectionPageModel : metelDetectionPageModel1.getmMetelDetectionPageModel()) {
+                            setLayout("Date", metelDetectionPageModel.getEdt_date());
+                            setLayout("Time", metelDetectionPageModel.getEdt_time());
+                            setLayout("Calibrated", metelDetectionPageModel.getEdt_calibrated());
+                            setLayout("Garment Pass", metelDetectionPageModel.getEdt_garment_pass());
+                            setLayout("Garment fail", metelDetectionPageModel.getEdt_garment_fail());
+                            setLayout("Garment check", metelDetectionPageModel.getEdt_no_of_garment_check());
 
-                        setLayout("Date",metelDetectionPageModel.getEdt_date());
-                        setLayout("Time",metelDetectionPageModel.getEdt_time());
-                        setLayout("Calibrated",metelDetectionPageModel.getEdt_calibrated());
-                        setLayout("Garment Pass",metelDetectionPageModel.getEdt_garment_pass());
-                        setLayout("Garment fail",metelDetectionPageModel.getEdt_garment_fail());
-                        setLayout("Garment check",metelDetectionPageModel.getEdt_no_of_garment_check());
+                            TextView textView1= new TextView(MetelDetectionAdmin.this);
+                            textView1.setText("_________________________________________________");
+                            layout.addView(textView1);
+                        }
 
                         progressDialog.hide();
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.saurabhomer.qualityapp" >
+    package="com.example.saurabhomer.qualityapp">
 
     <application
         android:allowBackup="true"
@@ -9,9 +9,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:remove="android:appComponentFactory" >
-        <activity android:name=".utils.CommonStyleData" >
-        </activity>
+        tools:remove="android:appComponentFactory">
+        <activity android:name=".cardviewmenu.CardMenuP"></activity>
+        <activity android:name=".utils.CommonStyleData"></activity>
         <activity android:name=".utils.DatePicker" />
         <activity android:name=".CartoonAudit.AreaOfPackingMaterial" />
         <activity android:name=".CartoonAudit.AreaOfInsideCartoon" />
@@ -37,7 +37,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity" />
         <activity android:name=".RegistrationActivity" />
-        <activity android:name=".SplashScrActivity" >
+        <activity android:name=".SplashScrActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

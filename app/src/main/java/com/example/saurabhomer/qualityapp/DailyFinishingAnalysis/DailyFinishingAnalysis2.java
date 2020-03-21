@@ -119,7 +119,7 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
            total.setText(s);
            if(dialyFinishingAnalysisModel.getTotalCheck()==0)
            {
-              totalPer.setText(0);
+              totalPer.setText(0+"");
            }
            else {
          float f    =  (float) dialyFinishingAnalysisModel.getTotal() / dialyFinishingAnalysisModel.getTotalCheck();

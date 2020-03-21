@@ -40,7 +40,7 @@ public class DailyfinishingAdmin extends AppCompatActivity
         {
             return;
         }
-
+        progressDialog = new ProgressDialog(DailyfinishingAdmin.this);
         progressDialog.setMessage("Verificating...");
         progressDialog.show();
         btn.setOnClickListener(new View.OnClickListener() {
