@@ -14,9 +14,11 @@ import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenuP;
 
 import java.util.ArrayList;
 
+import static com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit.areaofOutsideCartoonModelArrayList;
+
 public class AreaofOutsideCartoon extends AppCompatActivity {
 
-    static ArrayList<AreaofOutsideCartoonModel> areaofOutsideCartoonModelArrayList = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +61,17 @@ public class AreaofOutsideCartoon extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i =new Intent(AreaofOutsideCartoon.this, AreaofOutsideCartoon.class);
+                AreaofOutsideCartoonModel areaofOutsideCartoonModel = new AreaofOutsideCartoonModel();
+                areaofOutsideCartoonModel.setHour(editText_edt_hour.getText().toString());
+                areaofOutsideCartoonModel.setCartoonlotquantity(editText_edt_cartoon.getText().toString());
+                areaofOutsideCartoonModel.setCartoonshipingmark(getStringOfRedio(radioButton_edt_cartoon_shiping.isChecked()));
+                areaofOutsideCartoonModel.setPrinting(getStringOfRedio(radioButton_edt_printing.isChecked()));
+                areaofOutsideCartoonModel.setCartoonsize(getStringOfRedio(radioButton_edt_car_size.isChecked()));
+                areaofOutsideCartoonModel.setCartoonno(getStringOfRedio(radioButton_edt_cartoon_no.isChecked()));
+                areaofOutsideCartoonModel.setBarcode(getStringOfRedio(radioButton_edt_barcode.isChecked()));
+                areaofOutsideCartoonModel.setCartoonfly(getStringOfRedio(radioButton_edt_car_fly.isChecked()));
+                areaofOutsideCartoonModel.setRemarks(textView_edt_remarks.getText().toString());
+                areaofOutsideCartoonModelArrayList.add(areaofOutsideCartoonModel);
                 startActivity(i);
             }
         });
@@ -77,6 +90,7 @@ public class AreaofOutsideCartoon extends AppCompatActivity {
                 areaofOutsideCartoonModel.setBarcode(getStringOfRedio(radioButton_edt_barcode.isChecked()));
                 areaofOutsideCartoonModel.setCartoonfly(getStringOfRedio(radioButton_edt_car_fly.isChecked()));
                 areaofOutsideCartoonModel.setRemarks(textView_edt_remarks.getText().toString());
+                areaofOutsideCartoonModelArrayList.add(areaofOutsideCartoonModel);
                 Intent i =new Intent(AreaofOutsideCartoon.this, AreaOfInsideCartoon.class);
                 startActivity(i);
             }

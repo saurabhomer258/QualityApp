@@ -9,10 +9,13 @@ import android.widget.EditText;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.ui.BaseActivity;
 
+import java.util.ArrayList;
+
 public class CartoonAudit extends BaseActivity
 {
 
     static CartoonAuditModel cartoonAuditModel = new CartoonAuditModel();
+    static ArrayList<AreaofOutsideCartoonModel> areaofOutsideCartoonModelArrayList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
