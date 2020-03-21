@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis.dailyFinishinfModels;
+
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
 public class MetelDetectionPage extends AppCompatActivity implements
@@ -80,7 +80,7 @@ public class MetelDetectionPage extends AppCompatActivity implements
                 }
                 progressDialog.setMessage("Verificating...");
                 progressDialog.show();
-                metelDetectionPageModel.setEdt_date(edt_date.getText().toString());
+                metelDetectionPageModel.setEdt_date(txtDate.getText().toString());
                 metelDetectionPageModel.setEdt_time(edt_time.getText().toString());
                 metelDetectionPageModel.setEdt_garment_pass(edt_garment_pass.getText().toString());
                 metelDetectionPageModel.setEdt_no_of_garment_check(edt_garment.getText().toString());
@@ -91,6 +91,7 @@ public class MetelDetectionPage extends AppCompatActivity implements
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         progressDialog.hide();
+                        finish();
                     }
                 });
 
