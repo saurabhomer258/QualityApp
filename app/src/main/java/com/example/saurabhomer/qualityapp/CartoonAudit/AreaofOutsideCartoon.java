@@ -15,6 +15,7 @@ import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenuP;
 import java.util.ArrayList;
 
 import static com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit.areaofOutsideCartoonModelArrayList;
+import static com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit.cartoonAuditModel;
 
 public class AreaofOutsideCartoon extends AppCompatActivity {
 
@@ -91,6 +92,7 @@ public class AreaofOutsideCartoon extends AppCompatActivity {
                 areaofOutsideCartoonModel.setCartoonfly(getStringOfRedio(radioButton_edt_car_fly.isChecked()));
                 areaofOutsideCartoonModel.setRemarks(textView_edt_remarks.getText().toString());
                 areaofOutsideCartoonModelArrayList.add(areaofOutsideCartoonModel);
+                cartoonAuditModel.setAreaofOutsideCartoonModelArrayList(areaofOutsideCartoonModelArrayList);
                 Intent i =new Intent(AreaofOutsideCartoon.this, AreaOfInsideCartoon.class);
                 startActivity(i);
             }
