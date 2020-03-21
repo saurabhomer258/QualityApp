@@ -102,7 +102,7 @@ public class CartoonAuditAdmin extends AppCompatActivity {
                 ArrayList<AreaOfPackingMaterialModel> list3 = cartoonAuditModel.getAreaOfPackingMaterialArrayList();
                 for(AreaOfPackingMaterialModel items:list3)
                 {
-                       setLayout("Hour Inside",items.getHour_inside());
+                       setLayout("Hour Inside",items.getHour_inside1());
                        setLayout("Cartoon Lot Quantity",items.getCartoon_lot());
                        setLayout("Check Cartoon Quantity",items.getCheckcartoon());
                        setLayout("Packing Label Or Hangtag",items.getPackinglabel());

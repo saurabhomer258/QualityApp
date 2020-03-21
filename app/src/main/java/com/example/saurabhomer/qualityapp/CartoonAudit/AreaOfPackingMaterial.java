@@ -92,7 +92,7 @@ public class AreaOfPackingMaterial extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i =new Intent(AreaOfPackingMaterial.this, AreaOfPackingMaterial.class);
                 AreaOfPackingMaterialModel areaOfPackingMaterialModel = new AreaOfPackingMaterialModel();
-                areaOfPackingMaterialModel.setHour_inside(editText_edt_hour.getText().toString());
+                areaOfPackingMaterialModel.setHour_inside1(editText_edt_hour.getText().toString());
                 areaOfPackingMaterialModel.setCartoon_lot(editText_edt_cartoon.getText().toString());
                 areaOfPackingMaterialModel.setCheckcartoon(editText_edt_check_cartoon.getText().toString());
                 areaOfPackingMaterialModel.setPackinglabel(getStringOfRedio(radioButton_view_edt_packinglabel.isChecked()));
@@ -115,7 +115,7 @@ public class AreaOfPackingMaterial extends AppCompatActivity {
             public void onClick(View v)
             {
                 AreaOfPackingMaterialModel areaOfPackingMaterialModel = new AreaOfPackingMaterialModel();
-                areaOfPackingMaterialModel.setHour_inside(editText_edt_hour.getText().toString());
+                areaOfPackingMaterialModel.setHour_inside1(editText_edt_hour.getText().toString());
                 areaOfPackingMaterialModel.setCartoon_lot(editText_edt_cartoon.getText().toString());
                 areaOfPackingMaterialModel.setCheckcartoon(editText_edt_check_cartoon.getText().toString());
                 areaOfPackingMaterialModel.setPackinglabel(getStringOfRedio(radioButton_view_edt_packinglabel.isChecked()));
@@ -146,12 +146,12 @@ public class AreaOfPackingMaterial extends AppCompatActivity {
                 Intent i =new Intent(AreaOfPackingMaterial.this, CardMenuP.class);
                 startActivity(i);
                 finish();
-
             }
         });
     }
 
-    private String getStringOfRedio(boolean okButton){
+    private String getStringOfRedio(boolean okButton)
+    {
         if(okButton) return "ok";
         else return "notOk";
     }
