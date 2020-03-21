@@ -54,10 +54,6 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity implements
 
         final Spinner spinner =(Spinner)    findViewById(R.id.edt_finishing).findViewById(R.id.spinner);
 
-
-
-
-
         View signin_button = findViewById(R.id.bt_next);
         Button bt_signin_button= signin_button.findViewById(R.id.btnNext);
         bt_signin_button.setOnClickListener(new View.OnClickListener() {

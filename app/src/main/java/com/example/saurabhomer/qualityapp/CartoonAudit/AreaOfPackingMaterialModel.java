@@ -1,8 +1,16 @@
 package com.example.saurabhomer.qualityapp.CartoonAudit;
 
 public class AreaOfPackingMaterialModel {
-    public String Hour_inside,cartoon_lot,checkcartoon,packinglabel,additionlabel,incorrectlabel,damagelabel,incorrectupc,incorrectsize,incorrecthanger;
+    public String Hour_inside,cartoon_lot,checkcartoon,misplacelabel,packinglabel,additionlabel,incorrectlabel,damagelabel,incorrectupc,incorrectsize,incorrecthanger;
     public String polywarning,totaldefectcount;
+
+    public String getMisplacelabel() {
+        return misplacelabel;
+    }
+
+    public void setMisplacelabel(String misplacelabel) {
+        this.misplacelabel = misplacelabel;
+    }
 
     public String getHour_inside() {
         return Hour_inside;

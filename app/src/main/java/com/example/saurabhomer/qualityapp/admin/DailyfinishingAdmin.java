@@ -24,7 +24,6 @@ import java.util.ArrayList;
 
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
-
 public class DailyfinishingAdmin extends AppCompatActivity
 {
     LinearLayout layout;

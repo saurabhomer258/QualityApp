@@ -14,6 +14,7 @@ import com.example.saurabhomer.qualityapp.Measurement.Measurment;
 import com.example.saurabhomer.qualityapp.MetelDetectionPage.MetelDetectionPage;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100Page1;
+import com.example.saurabhomer.qualityapp.admin.CartoonAuditAdmin;
 import com.example.saurabhomer.qualityapp.admin.DailyfinishingAdmin;
 import com.example.saurabhomer.qualityapp.admin.SkuAdmin;
 import com.example.saurabhomer.qualityapp.pref.LoginPref;
@@ -127,8 +128,35 @@ public class CardMenuP extends AppCompatActivity {
         cartoonaudit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CardMenuP.this, CartoonAudit.class);
-                startActivity(intent);
+                FirebaseDatabase.getInstance().getReference("cartoonaudit")
+                        .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if(!NetworkUtils.isNetworkConnected(CardMenuP.this))
+                        {
+                            progressDialog.hide();
+                            return;
+                        }
+                        if (dataSnapshot.getValue() == null) {
+                            Intent i = new Intent(CardMenuP.this, CartoonAudit.class);
+                            startActivity(i);
+                        }
+                        else if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
+                            Intent i = new Intent(CardMenuP.this, CartoonAuditAdmin.class);
+                            startActivity(i);
+
+                        }
+                        else {
+                            Toast.makeText(CardMenuP.this,"This is completed.",Toast.LENGTH_LONG).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
             }
         });
         inlinefinal.setOnClickListener(new View.OnClickListener() {

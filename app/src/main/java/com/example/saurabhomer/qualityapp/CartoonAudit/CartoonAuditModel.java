@@ -10,7 +10,7 @@ public class CartoonAuditModel
     public String hour1,hour2,hour3,hour4,hour5,hour6,hour7,hour8;
     public ArrayList<AreaofInsideCartoonModel> areaofInsideCartoonModelArrayList;
 
-    public ArrayList<AreaOfPackingMaterial> areaOfPackingMaterialArrayList;
+    public ArrayList<AreaOfPackingMaterialModel> areaOfPackingMaterialArrayList;
 
     public ArrayList<AreaofOutsideCartoonModel> areaofOutsideCartoonModelArrayList;
 
@@ -22,11 +22,11 @@ public class CartoonAuditModel
         this.areaofInsideCartoonModelArrayList = areaofInsideCartoonModelArrayList;
     }
 
-    public ArrayList<AreaOfPackingMaterial> getAreaOfPackingMaterialArrayList() {
+    public ArrayList<AreaOfPackingMaterialModel> getAreaOfPackingMaterialArrayList() {
         return areaOfPackingMaterialArrayList;
     }
 
-    public void setAreaOfPackingMaterialArrayList(ArrayList<AreaOfPackingMaterial> areaOfPackingMaterialArrayList) {
+    public void setAreaOfPackingMaterialArrayList(ArrayList<AreaOfPackingMaterialModel> areaOfPackingMaterialArrayList) {
         this.areaOfPackingMaterialArrayList = areaOfPackingMaterialArrayList;
     }
 

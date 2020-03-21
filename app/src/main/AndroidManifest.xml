@@ -10,8 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:remove="android:appComponentFactory">
-        <activity android:name=".cardviewmenu.CardMenuP"></activity>
-        <activity android:name=".utils.CommonStyleData"></activity>
+        <activity android:name=".admin.CartoonAuditAdmin"></activity>
+        <activity android:name=".cardviewmenu.CardMenuP" />
+        <activity android:name=".utils.CommonStyleData" />
         <activity android:name=".utils.DatePicker" />
         <activity android:name=".CartoonAudit.AreaOfPackingMaterial" />
         <activity android:name=".CartoonAudit.AreaOfInsideCartoon" />
