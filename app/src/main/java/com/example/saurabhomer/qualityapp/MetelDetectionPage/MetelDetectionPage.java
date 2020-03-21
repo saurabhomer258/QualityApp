@@ -1,6 +1,7 @@
 package com.example.saurabhomer.qualityapp.MetelDetectionPage;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TimePicker;
 
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.R;
@@ -18,8 +20,8 @@ import java.util.Calendar;
 public class MetelDetectionPage extends AppCompatActivity implements
         View.OnClickListener {
     private int mYear, mMonth, mDay, mHour, mMinute;
-    Button btnDatePicker;
-    EditText txtDate;
+    Button btnDatePicker,btnTimePicker;
+    EditText txtDate,txtTime;
     Button next;
     Button done;
     EditText edt_date;
@@ -37,12 +39,14 @@ public class MetelDetectionPage extends AppCompatActivity implements
         setContentView(R.layout.activity_metel_detection_page);
 
         btnDatePicker=(Button)findViewById(R.id.btn_date);
+        btnTimePicker=(Button)findViewById(R.id.btn_time);
         txtDate=(EditText)findViewById(R.id.in_date);
+        txtTime=(EditText)findViewById(R.id.in_time);
         btnDatePicker.setOnClickListener(this);
+        btnTimePicker.setOnClickListener(this);
 
 
-        View view_time = findViewById(R.id.edt_time);
-        edt_time = view_time.findViewById(R.id.atvCommon);
+
 
         View view_calibrate = findViewById(R.id.edt_calibrated);
         r_calibrated = view_calibrate.findViewById(R.id.ok);
@@ -107,6 +111,25 @@ public class MetelDetectionPage extends AppCompatActivity implements
                         }
                     }, mYear, mMonth, mDay);
             datePickerDialog.show();
+        }
+        if (v == btnTimePicker) {
+
+            // Get Current Time
+            final Calendar c = Calendar.getInstance();
+            mHour = c.get(Calendar.HOUR_OF_DAY);
+            mMinute = c.get(Calendar.MINUTE);
+
+            // Launch Time Picker Dialog
+            TimePickerDialog timePickerDialog = new TimePickerDialog(this,
+                    new TimePickerDialog.OnTimeSetListener()
+                    {
+                        @Override
+                        public void onTimeSet(TimePicker view, int hourOfDay, int minute)
+                        {
+                            txtTime.setText(hourOfDay + ":" + minute);
+                        }
+                    }, mHour, mMinute, false);
+            timePickerDialog.show();
         }
     }
 }
