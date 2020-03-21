@@ -311,8 +311,9 @@
 
                 <TextView
                     android:id="@+id/txt_cartoon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="96dp"
+                    android:layout_height="170dp"
+                    android:layout_gravity="center"
                     android:gravity="center|bottom"
                     android:text="CARTOON AUDIT"
                     android:textColor="@color/colorPrimary" />

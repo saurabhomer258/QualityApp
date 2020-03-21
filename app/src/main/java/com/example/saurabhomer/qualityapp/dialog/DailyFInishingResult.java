@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.R;
-import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenu;
+import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenuP;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
@@ -25,7 +25,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
@@ -58,7 +57,7 @@ public class DailyFInishingResult extends AppCompatActivity {
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(DailyFInishingResult.this, CardMenu.class);
+                Intent i = new Intent(DailyFInishingResult.this, CardMenuP.class);
                 startActivity(i);
                 finish();
             }

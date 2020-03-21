@@ -46,7 +46,6 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".PWresetActivity" />
-        <activity android:name=".cardviewmenu.CardMenu" />
         <activity android:name=".ui.gallery.MainSheet" />
         <activity android:name=".admin.DailyfinishingAdmin" />
         <activity android:name=".Measurement.Mesurement1" />
