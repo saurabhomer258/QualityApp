@@ -16,6 +16,7 @@ import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100Page1;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100Page2;
 import com.example.saurabhomer.qualityapp.admin.DailyfinishingAdmin;
+import com.example.saurabhomer.qualityapp.admin.MetelDetectionAdmin;
 import com.example.saurabhomer.qualityapp.admin.SkuAdmin;
 import com.example.saurabhomer.qualityapp.pref.LoginPref;
 import com.example.saurabhomer.qualityapp.utils.CommonStyleData;
@@ -84,6 +85,35 @@ public class CardMenu extends AppCompatActivity {
         cardView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(!NetworkUtils.isNetworkConnected(CardMenu.this))
+                {
+                    progressDialog.hide();
+                    return;
+                }
+//                FirebaseDatabase.getInstance().getReference("100perSKU")
+//                        .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(DataSnapshot dataSnapshot) {
+//
+//                        if (dataSnapshot.getValue() == null) {
+//                            Intent i = new Intent(CardMenu.this, SkuCheckReport100Page1.class);
+//                            startActivity(i);
+//                        }
+//                        else if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
+//                            Intent i = new Intent(CardMenu.this, SkuAdmin.class);
+//                            startActivity(i);
+//
+//                        }
+//                        else {
+//                            Toast.makeText(CardMenu.this,"This is completed.",Toast.LENGTH_LONG).show();
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(DatabaseError databaseError) {
+//
+//                    }
+//                });
                 Intent i = new Intent(CardMenu.this, Measurment.class);
                 startActivity(i);
             }
@@ -93,8 +123,32 @@ public class CardMenu extends AppCompatActivity {
         cardView5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(CardMenu.this, MetelDetectionPage.class);
-                startActivity(i);
+
+                FirebaseDatabase.getInstance().getReference("matelDetectionPage")
+                        .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                        if (dataSnapshot.getValue() == null) {
+                            Intent i = new Intent(CardMenu.this, MetelDetectionPage.class);
+                            startActivity(i);
+                        }
+                        else if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
+                            Intent i = new Intent(CardMenu.this, MetelDetectionAdmin.class);
+                            startActivity(i);
+
+                        }
+                        else {
+                            Toast.makeText(CardMenu.this,"This is completed.",Toast.LENGTH_LONG).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
             }
         });
 
@@ -102,15 +156,16 @@ public class CardMenu extends AppCompatActivity {
         cardView6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(!NetworkUtils.isNetworkConnected(CardMenu.this))
+                {
+                    progressDialog.hide();
+                    return;
+                }
                 FirebaseDatabase.getInstance().getReference("100perSKU")
                         .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        if(!NetworkUtils.isNetworkConnected(CardMenu.this))
-                        {
-                            progressDialog.hide();
-                            return;
-                        }
+
                         if (dataSnapshot.getValue() == null) {
                             Intent i = new Intent(CardMenu.this, SkuCheckReport100Page1.class);
                             startActivity(i);

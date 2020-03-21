@@ -1,5 +1,6 @@
 package com.example.saurabhomer.qualityapp.admin;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishi
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.dialog.DailyFInishingResult;
+import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -26,6 +28,7 @@ import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMB
 public class DailyfinishingAdmin extends AppCompatActivity
 {
     LinearLayout layout;
+    private ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -33,6 +36,13 @@ public class DailyfinishingAdmin extends AppCompatActivity
         setContentView(R.layout.activity_dailyfinishing_admin);
         layout = findViewById(R.id.dailyLayout);
         Button btn = findViewById(R.id.btn_ok);
+        if (!NetworkUtils.isNetworkConnected(DailyfinishingAdmin.this))
+        {
+            return;
+        }
+
+        progressDialog.setMessage("Verificating...");
+        progressDialog.show();
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,13 +107,13 @@ public class DailyfinishingAdmin extends AppCompatActivity
                     textView1.setText("_________________________________________________");
                     layout.addView(textView1);
                 }
-
+                progressDialog.hide();
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError)
             {
-
+                progressDialog.hide();
             }
         });
     }

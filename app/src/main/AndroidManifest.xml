@@ -19,7 +19,7 @@
         <activity android:name=".InlinePrelineFinal.InlinePrelineFinal" />
         <activity android:name=".CartoonAudit.CartoonAudit" />
         <activity android:name=".HourlyLotAuditReport.HourlyLotAudit" />
-        <activity android:name=".MetelDetectionPage.MetelDetectionAdmin" />
+        <activity android:name=".admin.MetelDetectionAdmin" />
         <activity android:name=".MeasurementDescription" />
         <activity android:name=".MainSheet" />
         <activity android:name=".MetelDetectionPage.MetelDetectionPage" />
