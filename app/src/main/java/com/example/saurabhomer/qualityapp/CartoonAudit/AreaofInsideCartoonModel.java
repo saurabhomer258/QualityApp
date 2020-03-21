@@ -2,7 +2,23 @@ package com.example.saurabhomer.qualityapp.CartoonAudit;
 
 public class AreaofInsideCartoonModel
 {
-    public String hour,cartoonquantity,totalcheckquantity,blisterorpolybag,assortment,quantity,item,colour,ratio,totaldefectno,remarks;
+    public String hour,cartoonquantity,checkcartton,totalcheckquantity,blisterorpolybag,damageblister,assortment,quantity,item,colour,ratio,totaldefectno,remarks;
+
+    public String getDamageblister() {
+        return damageblister;
+    }
+
+    public void setDamageblister(String damageblister) {
+        this.damageblister = damageblister;
+    }
+
+    public String getCheckcartton() {
+        return checkcartton;
+    }
+
+    public void setCheckcartton(String checkcartton) {
+        this.checkcartton = checkcartton;
+    }
 
     public String getHour() {
         return hour;

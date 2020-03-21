@@ -12,6 +12,7 @@ import com.example.saurabhomer.qualityapp.R;
 
 public class AreaOfPackingMaterial extends AppCompatActivity {
 
+    static CartoonAuditModel cartoonAuditModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,9 +79,30 @@ public class AreaOfPackingMaterial extends AppCompatActivity {
 
         bt_done.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
+                AreaOfPackingMaterialModel areaOfPackingMaterialModel = new AreaOfPackingMaterialModel();
+                areaOfPackingMaterialModel.setHour_inside(editText_edt_hour.getText().toString());
+                areaOfPackingMaterialModel.setCartoon_lot(editText_edt_cartoon.getText().toString());
+                areaOfPackingMaterialModel.setCheckcartoon(editText_edt_check_cartoon.getText().toString());
+                areaOfPackingMaterialModel.setPackinglabel(getStringOfRedio(radioButton_view_edt_packinglabel.isChecked()));
+                areaOfPackingMaterialModel.setAdditionlabel(getStringOfRedio(radioButton_edt_additionallabel.isChecked()));
+                areaOfPackingMaterialModel.setMisplacelabel(getStringOfRedio(radioButton_edt_misplace.isChecked()));
+                areaOfPackingMaterialModel.setIncorrectlabel(getStringOfRedio(radioButton_edt_incorrectlabel.isChecked()));
+                areaOfPackingMaterialModel.setDamagelabel(getStringOfRedio(radioButton_edt_damagelabel.isChecked()));
+                areaOfPackingMaterialModel.setIncorrectupc(getStringOfRedio(radioButton_edt_incorrectUPC.isChecked()));
+                areaOfPackingMaterialModel.setIncorrectsize(getStringOfRedio(radioButton_edt_incorrectSize.isChecked()));
+                areaOfPackingMaterialModel.setIncorrecthanger(getStringOfRedio(radioButton_edt_incorrectHanger.isChecked()));
+                areaOfPackingMaterialModel.setPolywarning(getStringOfRedio(radioButton_edt_polywarning.isChecked()));
+                areaOfPackingMaterialModel.setTotaldefectcount(editText_edt_total_defect_count.getText().toString());
+
 
             }
         });
+    }
+
+    private String getStringOfRedio(boolean okButton){
+        if(okButton) return "ok";
+        else return "notOk";
     }
 }

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit;
+import com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAuditModel;
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis;
 import com.example.saurabhomer.qualityapp.Measurement.Measurment;
 import com.example.saurabhomer.qualityapp.MetelDetectionPage.MetelDetectionPage;
@@ -28,7 +29,7 @@ import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMB
 
 public class CardMenuP extends AppCompatActivity {
     private ProgressDialog progressDialog;
-
+    static CartoonAuditModel cartoonAuditModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

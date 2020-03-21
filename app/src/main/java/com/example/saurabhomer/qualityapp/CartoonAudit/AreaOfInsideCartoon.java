@@ -12,6 +12,7 @@ import com.example.saurabhomer.qualityapp.R;
 
 public class AreaOfInsideCartoon extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,9 +72,27 @@ public class AreaOfInsideCartoon extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
+                AreaofInsideCartoonModel areaofInsideCartoonModel=new AreaofInsideCartoonModel();
+                areaofInsideCartoonModel.setHour(editText_edt_hour.getText().toString());
+                areaofInsideCartoonModel.setCartoonquantity(editText_edt_cartoon.getText().toString());
+                areaofInsideCartoonModel.setCheckcartton(editText_edt_cartoon.getText().toString());
+                areaofInsideCartoonModel.setCheckcartton(editText_edt_check_cartoon.getText().toString());
+                areaofInsideCartoonModel.setBlisterorpolybag(getStringOfRedio(radioButton_edt_blister.isChecked()));
+                areaofInsideCartoonModel.setDamageblister(getStringOfRedio(radioButton_edt_damage_blister.isChecked()));
+                areaofInsideCartoonModel.setAssortment(getStringOfRedio(radioButton_edt_assorment.isChecked()));
+                areaofInsideCartoonModel.setQuantity(getStringOfRedio(radioButton_edt_quantity.isChecked()));
+                areaofInsideCartoonModel.setItem(getStringOfRedio(radioButton_edt_item.isChecked()));
+                areaofInsideCartoonModel.setColour(getStringOfRedio(radioButton_edt_colour.isChecked()));
+                areaofInsideCartoonModel.setRatio(getStringOfRedio(radioButton_edt_ratio.isChecked()));
+                areaofInsideCartoonModel.setTotaldefectno(editText_edt_total_defect_count.getText().toString());
+
                 Intent i =new Intent(AreaOfInsideCartoon.this, AreaOfPackingMaterial.class);
                 startActivity(i);
             }
         });
+    }
+    private String getStringOfRedio(boolean okButton){
+        if(okButton) return "ok";
+        else return "notOk";
     }
 }

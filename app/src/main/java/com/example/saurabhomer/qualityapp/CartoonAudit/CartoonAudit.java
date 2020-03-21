@@ -12,7 +12,7 @@ import com.example.saurabhomer.qualityapp.ui.BaseActivity;
 public class CartoonAudit extends BaseActivity
 {
 
-
+    static CartoonAuditModel cartoonAuditModel = new CartoonAuditModel();
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -52,6 +52,17 @@ public class CartoonAudit extends BaseActivity
         {
             @Override
             public void onClick(View v) {
+
+                cartoonAuditModel.setCartoonlotquantity(editText_edt_cartoon.getText().toString());
+                cartoonAuditModel.setHour1(editText_edt_hour1.getText().toString());
+                cartoonAuditModel.setHour2(editText_edt_hour2.getText().toString());
+                cartoonAuditModel.setHour3(editText_edt_hour3.getText().toString());
+                cartoonAuditModel.setHour4(editText_edt_hour4.getText().toString());
+                cartoonAuditModel.setHour5(editText_edt_hour5.getText().toString());
+                cartoonAuditModel.setHour6(editText_edt_hour6.getText().toString());
+                cartoonAuditModel.setHour7(editText_edt_hour7.getText().toString());
+                cartoonAuditModel.setHour8(editText_edt_hour8.getText().toString());
+
                 Intent i =new Intent(CartoonAudit.this, AreaofOutsideCartoon.class);
                 startActivity(i);
             }

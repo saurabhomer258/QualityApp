@@ -10,9 +10,13 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.example.saurabhomer.qualityapp.R;
+import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenuP;
+
+import java.util.ArrayList;
 
 public class AreaofOutsideCartoon extends AppCompatActivity {
 
+    static ArrayList<AreaofOutsideCartoonModel> areaofOutsideCartoonModelArrayList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +47,7 @@ public class AreaofOutsideCartoon extends AppCompatActivity {
         final RadioButton radioButton_edt_car_fly= view_edt_car_fly.findViewById(R.id.ok);
 
 
-        final TextView textView_edt_hour8 = (TextView) findViewById(R.id.remarks);
+        final TextView textView_edt_remarks = (TextView) findViewById(R.id.remarks);
 
         View btn_next = findViewById(R.id.btn_next);
         Button bt_next = btn_next.findViewById(R.id.btnNext);
@@ -62,9 +66,25 @@ public class AreaofOutsideCartoon extends AppCompatActivity {
         bt_done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                AreaofOutsideCartoonModel areaofOutsideCartoonModel = new AreaofOutsideCartoonModel();
+                areaofOutsideCartoonModel.setHour(editText_edt_hour.getText().toString());
+                areaofOutsideCartoonModel.setCartoonlotquantity(editText_edt_cartoon.getText().toString());
+                areaofOutsideCartoonModel.setCartoonshipingmark(getStringOfRedio(radioButton_edt_cartoon_shiping.isChecked()));
+                areaofOutsideCartoonModel.setPrinting(getStringOfRedio(radioButton_edt_printing.isChecked()));
+                areaofOutsideCartoonModel.setCartoonsize(getStringOfRedio(radioButton_edt_car_size.isChecked()));
+                areaofOutsideCartoonModel.setCartoonno(getStringOfRedio(radioButton_edt_cartoon_no.isChecked()));
+                areaofOutsideCartoonModel.setBarcode(getStringOfRedio(radioButton_edt_barcode.isChecked()));
+                areaofOutsideCartoonModel.setCartoonfly(getStringOfRedio(radioButton_edt_car_fly.isChecked()));
+                areaofOutsideCartoonModel.setRemarks(textView_edt_remarks.getText().toString());
                 Intent i =new Intent(AreaofOutsideCartoon.this, AreaOfInsideCartoon.class);
                 startActivity(i);
             }
         });
+    }
+
+    private String getStringOfRedio(boolean okButton){
+        if(okButton) return "ok";
+        else return "notOk";
     }
 }
