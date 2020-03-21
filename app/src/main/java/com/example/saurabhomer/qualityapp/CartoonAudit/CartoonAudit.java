@@ -16,6 +16,8 @@ public class CartoonAudit extends BaseActivity
 
     static CartoonAuditModel cartoonAuditModel = new CartoonAuditModel();
     static ArrayList<AreaofOutsideCartoonModel> areaofOutsideCartoonModelArrayList = new ArrayList<>();
+    static ArrayList<AreaofInsideCartoonModel> areaofInsideCartoonModelArrayList = new ArrayList<>();
+    static ArrayList<AreaOfPackingMaterialModel> areaOfPackingMaterialArrayList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {

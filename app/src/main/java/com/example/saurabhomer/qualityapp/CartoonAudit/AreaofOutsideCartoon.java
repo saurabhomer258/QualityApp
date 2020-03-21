@@ -17,9 +17,8 @@ import java.util.ArrayList;
 import static com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit.areaofOutsideCartoonModelArrayList;
 import static com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit.cartoonAuditModel;
 
-public class AreaofOutsideCartoon extends AppCompatActivity {
-
-
+public class AreaofOutsideCartoon extends AppCompatActivity
+{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,10 +76,11 @@ public class AreaofOutsideCartoon extends AppCompatActivity {
             }
         });
 
-        bt_done.setOnClickListener(new View.OnClickListener() {
+        bt_done.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
-
+            public void onClick(View v)
+            {
                 AreaofOutsideCartoonModel areaofOutsideCartoonModel = new AreaofOutsideCartoonModel();
                 areaofOutsideCartoonModel.setHour(editText_edt_hour.getText().toString());
                 areaofOutsideCartoonModel.setCartoonlotquantity(editText_edt_cartoon.getText().toString());
@@ -99,7 +99,8 @@ public class AreaofOutsideCartoon extends AppCompatActivity {
         });
     }
 
-    private String getStringOfRedio(boolean okButton){
+    private String getStringOfRedio(boolean okButton)
+    {
         if(okButton) return "ok";
         else return "notOk";
     }

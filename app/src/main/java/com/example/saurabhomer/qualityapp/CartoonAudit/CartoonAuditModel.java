@@ -14,7 +14,8 @@ public class CartoonAuditModel
 
     public ArrayList<AreaofOutsideCartoonModel> areaofOutsideCartoonModelArrayList;
 
-    public ArrayList<AreaofInsideCartoonModel> getAreaofInsideCartoonModelArrayList() {
+    public ArrayList<AreaofInsideCartoonModel> getAreaofInsideCartoonModelArrayList()
+    {
         return areaofInsideCartoonModelArrayList;
     }
 

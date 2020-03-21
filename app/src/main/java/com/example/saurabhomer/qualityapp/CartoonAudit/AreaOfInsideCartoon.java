@@ -10,6 +10,10 @@ import android.widget.RadioButton;
 
 import com.example.saurabhomer.qualityapp.R;
 
+import static com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit.areaOfPackingMaterialArrayList;
+import static com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit.areaofInsideCartoonModelArrayList;
+import static com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit.cartoonAuditModel;
+
 public class AreaOfInsideCartoon extends AppCompatActivity {
 
 
@@ -64,6 +68,20 @@ public class AreaOfInsideCartoon extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i =new Intent(AreaOfInsideCartoon.this, AreaOfPackingMaterial.class);
+                AreaofInsideCartoonModel areaofInsideCartoonModel=new AreaofInsideCartoonModel();
+                areaofInsideCartoonModel.setHour(editText_edt_hour.getText().toString());
+                areaofInsideCartoonModel.setCartoonquantity(editText_edt_cartoon.getText().toString());
+                areaofInsideCartoonModel.setCheckcartton(editText_edt_cartoon.getText().toString());
+                areaofInsideCartoonModel.setCheckcartton(editText_edt_check_cartoon.getText().toString());
+                areaofInsideCartoonModel.setBlisterorpolybag(getStringOfRedio(radioButton_edt_blister.isChecked()));
+                areaofInsideCartoonModel.setDamageblister(getStringOfRedio(radioButton_edt_damage_blister.isChecked()));
+                areaofInsideCartoonModel.setAssortment(getStringOfRedio(radioButton_edt_assorment.isChecked()));
+                areaofInsideCartoonModel.setQuantity(getStringOfRedio(radioButton_edt_quantity.isChecked()));
+                areaofInsideCartoonModel.setItem(getStringOfRedio(radioButton_edt_item.isChecked()));
+                areaofInsideCartoonModel.setColour(getStringOfRedio(radioButton_edt_colour.isChecked()));
+                areaofInsideCartoonModel.setRatio(getStringOfRedio(radioButton_edt_ratio.isChecked()));
+                areaofInsideCartoonModel.setTotaldefectno(editText_edt_total_defect_count.getText().toString());
+                areaofInsideCartoonModelArrayList.add(areaofInsideCartoonModel);
                 startActivity(i);
             }
         });
@@ -85,7 +103,8 @@ public class AreaOfInsideCartoon extends AppCompatActivity {
                 areaofInsideCartoonModel.setColour(getStringOfRedio(radioButton_edt_colour.isChecked()));
                 areaofInsideCartoonModel.setRatio(getStringOfRedio(radioButton_edt_ratio.isChecked()));
                 areaofInsideCartoonModel.setTotaldefectno(editText_edt_total_defect_count.getText().toString());
-
+                areaofInsideCartoonModelArrayList.add(areaofInsideCartoonModel);
+                cartoonAuditModel.setAreaofInsideCartoonModelArrayList(areaofInsideCartoonModelArrayList);
                 Intent i =new Intent(AreaOfInsideCartoon.this, AreaOfPackingMaterial.class);
                 startActivity(i);
             }
