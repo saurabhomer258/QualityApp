@@ -22,6 +22,7 @@ import com.example.saurabhomer.qualityapp.LoginActivity;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.SignUpActivity;
 import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenu;
+import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenuP;
 import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -59,7 +60,7 @@ public class HomeFragment extends Fragment {
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         if(dataSnapshot.getValue()!=null) {
                             progressDialog.dismiss();
-                           Intent i = new Intent(getContext(),CardMenu.class);
+                           Intent i = new Intent(getContext(), CardMenuP.class);
                             STYLE_NUMBER =  edt_styleno.getText().toString().trim();
                            i.putExtra("style",edt_styleno.getText().toString());
                            startActivity(i);
