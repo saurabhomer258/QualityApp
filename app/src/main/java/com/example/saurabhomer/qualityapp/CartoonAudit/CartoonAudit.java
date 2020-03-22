@@ -70,6 +70,7 @@ public class CartoonAudit extends BaseActivity
 
                 Intent i =new Intent(CartoonAudit.this, AreaofOutsideCartoon.class);
                 startActivity(i);
+                finish();
             }
         });
     }

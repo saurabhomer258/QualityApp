@@ -67,7 +67,7 @@ public class AreaOfInsideCartoon extends AppCompatActivity {
         bt_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i =new Intent(AreaOfInsideCartoon.this, AreaOfPackingMaterial.class);
+
                 AreaofInsideCartoonModel areaofInsideCartoonModel=new AreaofInsideCartoonModel();
                 areaofInsideCartoonModel.setHour(editText_edt_hour.getText().toString());
                 areaofInsideCartoonModel.setCartoonquantity(editText_edt_cartoon.getText().toString());
@@ -82,7 +82,9 @@ public class AreaOfInsideCartoon extends AppCompatActivity {
                 areaofInsideCartoonModel.setRatio(getStringOfRedio(radioButton_edt_ratio.isChecked()));
                 areaofInsideCartoonModel.setTotaldefectno(editText_edt_total_defect_count.getText().toString());
                 areaofInsideCartoonModelArrayList.add(areaofInsideCartoonModel);
+                Intent i =new Intent(AreaOfInsideCartoon.this, AreaOfInsideCartoon.class);
                 startActivity(i);
+                finish();
             }
         });
 

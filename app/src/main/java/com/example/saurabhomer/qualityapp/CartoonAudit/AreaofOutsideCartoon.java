@@ -60,7 +60,7 @@ public class AreaofOutsideCartoon extends AppCompatActivity
         bt_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i =new Intent(AreaofOutsideCartoon.this, AreaofOutsideCartoon.class);
+
                 AreaofOutsideCartoonModel areaofOutsideCartoonModel = new AreaofOutsideCartoonModel();
                 areaofOutsideCartoonModel.setHour(editText_edt_hour.getText().toString());
                 areaofOutsideCartoonModel.setCartoonlotquantity(editText_edt_cartoon.getText().toString());
@@ -72,7 +72,9 @@ public class AreaofOutsideCartoon extends AppCompatActivity
                 areaofOutsideCartoonModel.setCartoonfly(getStringOfRedio(radioButton_edt_car_fly.isChecked()));
                 areaofOutsideCartoonModel.setRemarks(textView_edt_remarks.getText().toString());
                 areaofOutsideCartoonModelArrayList.add(areaofOutsideCartoonModel);
+                Intent i =new Intent(AreaofOutsideCartoon.this, AreaofOutsideCartoon.class);
                 startActivity(i);
+                finish();
             }
         });
 

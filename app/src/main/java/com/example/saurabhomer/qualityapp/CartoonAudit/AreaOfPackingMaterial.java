@@ -90,7 +90,7 @@ public class AreaOfPackingMaterial extends AppCompatActivity {
         bt_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i =new Intent(AreaOfPackingMaterial.this, AreaOfPackingMaterial.class);
+
                 AreaOfPackingMaterialModel areaOfPackingMaterialModel = new AreaOfPackingMaterialModel();
                 areaOfPackingMaterialModel.setHour_inside1(editText_edt_hour.getText().toString());
                 areaOfPackingMaterialModel.setCartoon_lot(editText_edt_cartoon.getText().toString());
@@ -106,7 +106,9 @@ public class AreaOfPackingMaterial extends AppCompatActivity {
                 areaOfPackingMaterialModel.setPolywarning(getStringOfRedio(radioButton_edt_polywarning.isChecked()));
                 areaOfPackingMaterialModel.setTotaldefectcount(editText_edt_total_defect_count.getText().toString());
                 areaOfPackingMaterialArrayList.add(areaOfPackingMaterialModel);
+                Intent i =new Intent(AreaOfPackingMaterial.this, AreaOfPackingMaterial.class);
                 startActivity(i);
+                finish();
             }
         });
 
