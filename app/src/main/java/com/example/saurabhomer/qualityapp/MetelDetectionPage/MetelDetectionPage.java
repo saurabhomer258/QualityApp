@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
@@ -80,7 +81,23 @@ public class MetelDetectionPage extends AppCompatActivity implements
         View view_done = findViewById(R.id.btn_done_metel);
         done = view_done.findViewById(R.id.btnNext);
 
+        View view_res = findViewById(R.id.result);
+        Button remark_btn = view_res.findViewById(R.id.btnNext);
+        final TextView remark = findViewById(R.id.tv_res);
 
+        remark_btn.setText("Show Remark");
+
+        remark_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(edt_garment_reject.getText().toString().trim().equals("0")) {
+                    remark.setText("Remark : PASS");
+                }
+                else {
+                    remark.setText("Remark : RECHECK OR REJECT THAT PIECE");
+                }
+            }
+        });
 
         View view_next = findViewById(R.id.btn_next);
         next = view_done.findViewById(R.id.btnNext);
