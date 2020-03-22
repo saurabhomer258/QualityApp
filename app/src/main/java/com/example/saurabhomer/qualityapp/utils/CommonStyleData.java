@@ -4,6 +4,8 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +30,7 @@ import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMB
 
 public class CommonStyleData extends AppCompatActivity
 {
+    Button Ok;
     LinearLayout layout;
     private ProgressDialog progressDialog;
     private String styleNu;
@@ -36,6 +39,8 @@ public class CommonStyleData extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_common_style_data);
         layout = findViewById(R.id.dailyLayout);
+        Ok = (Button)findViewById(R.id.ok);
+
         progressDialog = new ProgressDialog(this);
         if (!NetworkUtils.isNetworkConnected(CommonStyleData.this))
         {
@@ -59,8 +64,8 @@ public class CommonStyleData extends AppCompatActivity
                     setLayout("ShipmentDate",styleSheetModel.getShipmentDate());
                     setLayout("color",styleSheetModel.getColor());
                     setLayout("size",styleSheetModel.getSize());
-                    startActivity(new Intent(CommonStyleData.this, MainSheet.class));
-                    progressDialog.hide();
+//                    startActivity(new Intent(CommonStyleData.this, MainSheet.class));
+//                    progressDialog.hide();
                 }
                 else
                 {
@@ -73,6 +78,13 @@ public class CommonStyleData extends AppCompatActivity
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
+            }
+        });
+
+        Ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

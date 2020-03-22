@@ -33,7 +33,8 @@ public class LoginPref {
         }
     }
 
-    public void setUsername(String username,String isAdmin) {
+    public void setUsername(String username,String isAdmin)
+    {
         mEditor.putString("username", username);
         mEditor.putString("isAdmin", isAdmin);
         mEditor.apply();

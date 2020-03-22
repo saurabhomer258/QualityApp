@@ -14,6 +14,7 @@ import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishi
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.pref.LoginPref;
+import com.example.saurabhomer.qualityapp.utils.CommonStyleData;
 import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,6 +34,7 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity implements
     private int mYear, mMonth, mDay, mHour, mMinute;
     Button btnDatePicker;
     EditText txtDate;
+    Button info_btn;
     static int DAILYFINISHINGPAGE =0;
     static String total_defect="";
     static String total_Check="";
@@ -48,6 +50,7 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity implements
         setContentView(R.layout.activity_daily_finishing_defect_analysis1);
 
 
+        info_btn = (Button)findViewById(R.id.info_daily);
         btnDatePicker=(Button)findViewById(R.id.btn_date);
         txtDate=(EditText)findViewById(R.id.in_date);
         btnDatePicker.setOnClickListener(this);
@@ -85,6 +88,14 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity implements
 
                             }
                         });
+            }
+        });
+
+        info_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DailyFinishingDefectAnalysis.this, CommonStyleData.class);
+                startActivity(intent);
             }
         });
 
