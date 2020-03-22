@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.saurabhomer.qualityapp.R;
+import com.example.saurabhomer.qualityapp.utils.CommonStyleData;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -31,7 +32,7 @@ public class Measurment extends AppCompatActivity
     EditText edt_tolerance_plus;
     EditText edt_tolerance_minus;
 
-    Button next;
+    Button next,info_btn;
     LinearLayout layout;
     ArrayList<DailyFinishingEditText> editTexts = new ArrayList<>();
     Button done;
@@ -46,6 +47,8 @@ public class Measurment extends AppCompatActivity
         }
         setContentView(R.layout.activity_measurment_description);
        layout = findViewById(R.id.layout);
+
+       info_btn = findViewById(R.id.info_me);
         View  view_measurment= findViewById(R.id.edt_measurment);
         edt_measurement = view_measurment.findViewById(R.id.atvCommon);
 
@@ -65,7 +68,14 @@ public class Measurment extends AppCompatActivity
 //
 //        final CheckBox  check48= findViewById(R.id.checkbox_48);
 
-
+        info_btn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Measurment.this, CommonStyleData.class);
+                startActivity(intent);
+            }
+        });
 
         View view_done = findViewById(R.id.btn_done_measurement);
         done = view_done.findViewById(R.id.btnNext);

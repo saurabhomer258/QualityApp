@@ -10,6 +10,7 @@ import android.widget.EditText;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.model.SkuCheckReport100Model;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.model.SkuCheckReport100ModelList;
+import com.example.saurabhomer.qualityapp.utils.CommonStyleData;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -19,11 +20,22 @@ import customView.NextButton;
 public class SkuCheckReport100Page1 extends AppCompatActivity {
     static SkuCheckReport100Model skuCheckReport100Model = new SkuCheckReport100Model();
     static ArrayList<SkuCheckReport100ModelList> skuCheckReport100ModelList1 = new ArrayList<>();
-    Button submitButton ;
+    Button submitButton ,info_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
          setContentView(R.layout.activity_sku_check_report100_page2);
+
+         info_btn = findViewById(R.id.info_sku);
+
+        info_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SkuCheckReport100Page1.this, CommonStyleData.class);
+                startActivity(intent);
+            }
+        });
+
         View view_readyquantity = findViewById(R.id.edt_readyquantity);
         final EditText editText_readyquantity = view_readyquantity.findViewById(R.id.atvCommon);
 
@@ -52,6 +64,7 @@ public class SkuCheckReport100Page1 extends AppCompatActivity {
             }
 
         }
+
 //        submitButton.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {

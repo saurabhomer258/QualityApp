@@ -16,7 +16,8 @@
             <Button
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginLeft="350dp"
+                android:layout_marginLeft="300dp"
+                android:id="@+id/info_sku"
                 android:background="@drawable/round_button"
                 android:gravity="center_vertical|center_horizontal"
                 android:text="info"
