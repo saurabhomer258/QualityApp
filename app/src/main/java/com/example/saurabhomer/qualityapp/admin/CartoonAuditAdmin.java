@@ -76,7 +76,7 @@ public class CartoonAuditAdmin extends AppCompatActivity {
                     setLayout("Remarks",items.getRemarks());
                     TextView textView1= new TextView(CartoonAuditAdmin.this);
                     textView1.setText("_________________________________________________");
-                    layout.addView(textView);
+                    layout.addView(textView1);
                 }
 
                 ArrayList<AreaofInsideCartoonModel> list1 = cartoonAuditModel.getAreaofInsideCartoonModelArrayList();
@@ -96,7 +96,7 @@ public class CartoonAuditAdmin extends AppCompatActivity {
 
                     TextView textView2= new TextView(CartoonAuditAdmin.this);
                     textView2.setText("_________________________________________________");
-                    layout.addView(textView);
+                    layout.addView(textView2);
                 }
 
                 ArrayList<AreaOfPackingMaterialModel> list3 = cartoonAuditModel.getAreaOfPackingMaterialArrayList();
@@ -118,7 +118,7 @@ public class CartoonAuditAdmin extends AppCompatActivity {
 
                        TextView textView3= new TextView(CartoonAuditAdmin.this);
                        textView3.setText("_________________________________________________");
-                       layout.addView(textView);
+                       layout.addView(textView3);
 
                 }
                 progressDialog.hide();
