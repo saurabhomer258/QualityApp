@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -16,6 +17,7 @@ import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.model.SkuCheckReport100Model;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.model.SkuCheckReport100ModelList;
 import com.example.saurabhomer.qualityapp.admin.SkuAdmin;
+import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenuP;
 import com.example.saurabhomer.qualityapp.ui.home.HomeFragment;
 import com.google.android.gms.common.internal.service.Common;
 import com.google.firebase.database.DataSnapshot;
@@ -57,15 +59,15 @@ public class CommonStyleData extends AppCompatActivity
                 if(dataSnapshot!=null)
                 {
                     StyleSheetModel styleSheetModel = dataSnapshot.getValue(StyleSheetModel.class);
-                    setLayout("Sheet Number",styleSheetModel.getSheetNumber());
+                    setLayout("Sheet Number",STYLE_NUMBER);
                     setLayout("BuyersName",styleSheetModel.getBuyersName());
                     setLayout("ProduectName",styleSheetModel.getProduectName());
                     setLayout("OrderQuality",styleSheetModel.getOrderQuality());
                     setLayout("ShipmentDate",styleSheetModel.getShipmentDate());
                     setLayout("color",styleSheetModel.getColor());
                     setLayout("size",styleSheetModel.getSize());
-//                    startActivity(new Intent(CommonStyleData.this, MainSheet.class));
-//                    progressDialog.hide();
+
+                    progressDialog.hide();
                 }
                 else
                 {
