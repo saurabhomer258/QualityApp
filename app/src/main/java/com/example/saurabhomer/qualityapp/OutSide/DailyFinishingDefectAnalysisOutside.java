@@ -37,8 +37,8 @@ public class DailyFinishingDefectAnalysisOutside extends AppCompatActivity imple
     static String total_Check="";
     static String total_defect_per="";
     static DailyFinishingModel1 model;
-    static public DailyFinishinfModels dailyFinishinfModels = new DailyFinishinfModels();
-    static public ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
+    static public DailyFinishinfModels dailyFinishinfModels1 = new DailyFinishinfModels();
+    static public ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST1 = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,9 +67,9 @@ public class DailyFinishingDefectAnalysisOutside extends AppCompatActivity imple
 //                                            editText_edt_total_check.getText().toString()
 //                                    );
 
-                                    dailyFinishinfModels.setDate(txtDate.getText().toString());
+                                    dailyFinishinfModels1.setDate(txtDate.getText().toString());
                                     int val = spinner.getSelectedItemPosition();
-                                    dailyFinishinfModels.setFinishingLine(val+1+"");
+                                    dailyFinishinfModels1.setFinishingLine(val+1+"");
                                     Intent intent = new Intent(DailyFinishingDefectAnalysisOutside.this, DailyFinishingAnalysisOutside.class);
                                     startActivity(intent);
                                     finish();
