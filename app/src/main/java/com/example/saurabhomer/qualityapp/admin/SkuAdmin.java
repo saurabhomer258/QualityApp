@@ -66,6 +66,10 @@ public class SkuAdmin extends AppCompatActivity
                         setLayout("Other has been check",skuCheckReport100ModelList.getOtherhasbeencheck());
                         setLayout("Packing method has been check",skuCheckReport100ModelList.getPackingmethodhasbeencheck());
                         setLayout("Size sticker has been check",skuCheckReport100ModelList.getSizestickerhasbeencheck());
+
+                            TextView textView2= new TextView(SkuAdmin.this);
+                            textView2.setText("_________________________________________________");
+                            layout.addView(textView2);
                         }
 
                         progressDialog.hide();

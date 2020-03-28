@@ -124,10 +124,23 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SkuCheckReport100ModelList skuCheckReport100ModelList = new SkuCheckReport100ModelList();
+                skuCheckReport100ModelList.setCountryhasbeencheck(getStringOfRedio(radio_country_hbc.isChecked()));
+                skuCheckReport100ModelList.setLabelhasbeencheck(getStringOfRedio(radio_label_hbc.isChecked()));
+                skuCheckReport100ModelList.setBarcodehasbeencheck(getStringOfRedio(radio_barcode_hbc.isChecked()));
+                skuCheckReport100ModelList.setColorhasbeencheck(getStringOfRedio(radio_color_hbc.isChecked()));
+                skuCheckReport100ModelList.setPolybaghasbeencheck(getStringOfRedio(radio_polybag_hbc.isChecked()));
+                skuCheckReport100ModelList.setPolystikerhasbeencheck(getStringOfRedio(radio_polysticker_hbc.isChecked()));
+                skuCheckReport100ModelList.setPricetaghasbeencheck(getStringOfRedio(radio_pricetag_hbc.isChecked()));
+                skuCheckReport100ModelList.setHangerhasbeencheck(getStringOfRedio(radio_hanger_hbc.isChecked()));
+                skuCheckReport100ModelList.setHagertaghasbeencheck(getStringOfRedio(radio_hangertag_hbc.isChecked()));
+                skuCheckReport100ModelList.setOtherhasbeencheck(getStringOfRedio(radio_othertag_hbc.isChecked()));
+                skuCheckReport100ModelList.setPackingmethodhasbeencheck(getStringOfRedio(radio_packingmethod_hbc.isChecked()));
+                skuCheckReport100ModelList.setSizestickerhasbeencheck(getStringOfRedio(radio_sizesticker_hbc.isChecked()));
+                skuCheckReport100ModelList1.add(skuCheckReport100ModelList);
                 Intent i =new Intent(SkuCheckReport100Page2.this,SkuCheckReport100Page2.class);
                 startActivity(i);
-
-
+                finish();
             }
         });
     }

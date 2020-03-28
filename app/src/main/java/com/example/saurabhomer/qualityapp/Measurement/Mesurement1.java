@@ -14,17 +14,20 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import customView.DailyFinishingEditText;
+import customView.NextButton;
+
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
 
 public class Mesurement1 extends AppCompatActivity {
-    Button btn;
+    NextButton btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mesurement1);
-        final  EditText edt_hours = findViewById(R.id.edt_hours);
-       btn=  (Button)findViewById(R.id.btn_next);
+        final DailyFinishingEditText edt_hours = findViewById(R.id.edt_hours);
+        btn=  (NextButton) findViewById(R.id.btn_next);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
