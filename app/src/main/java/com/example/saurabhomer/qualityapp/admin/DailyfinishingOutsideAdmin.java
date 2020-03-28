@@ -13,6 +13,7 @@ import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishi
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.dialog.DailyFInishingResult;
+import com.example.saurabhomer.qualityapp.dialog.DailyFinishingOutsideResult;
 import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -43,12 +44,12 @@ public class DailyfinishingOutsideAdmin extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i =new Intent(DailyfinishingOutsideAdmin.this, DailyFInishingResult.class);
+                Intent i =new Intent(DailyfinishingOutsideAdmin.this, DailyFinishingOutsideResult.class);
                 startActivity(i);
                 finish();
             }
         });
-        FirebaseDatabase.getInstance().getReference("dailyFinishing")
+        FirebaseDatabase.getInstance().getReference("dailyFinishingoutside")
                 .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

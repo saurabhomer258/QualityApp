@@ -11,12 +11,16 @@ import android.widget.Toast;
 import com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit;
 import com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAuditModel;
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis;
+import com.example.saurabhomer.qualityapp.GetUp.DailyFinishingDefectAnalysisGetup;
 import com.example.saurabhomer.qualityapp.Measurement.Measurment;
 import com.example.saurabhomer.qualityapp.MetelDetectionPage.MetelDetectionPage;
+import com.example.saurabhomer.qualityapp.OutSide.DailyFinishingDefectAnalysisOutside;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100Page1;
 import com.example.saurabhomer.qualityapp.admin.CartoonAuditAdmin;
 import com.example.saurabhomer.qualityapp.admin.DailyfinishingAdmin;
+import com.example.saurabhomer.qualityapp.admin.DailyfinishingGetUpAdmin;
+import com.example.saurabhomer.qualityapp.admin.DailyfinishingOutsideAdmin;
 import com.example.saurabhomer.qualityapp.admin.SkuAdmin;
 import com.example.saurabhomer.qualityapp.pref.LoginPref;
 import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
@@ -60,13 +64,13 @@ public class CardMenuP extends AppCompatActivity {
         outside.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openDailyFinishing();
+                openDailyFinishingOutside();
             }
         });
         getup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openDailyFinishing();
+                openDailyFinishingGetup();
             }
         });
         measurmentreport.setOnClickListener(new View.OnClickListener() {
@@ -188,6 +192,72 @@ public class CardMenuP extends AppCompatActivity {
                     Intent i =  new Intent(CardMenuP.this, DailyfinishingAdmin.class);
                     startActivity(i);
 
+                }
+                else {
+                    Toast.makeText(CardMenuP.this,"This is completed.",Toast.LENGTH_LONG).show();
+                }
+                progressDialog.hide();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    void openDailyFinishingGetup(){
+        progressDialog.setMessage("Verificating...");
+        progressDialog.show();
+        FirebaseDatabase.getInstance().getReference("dailyFinishinggetup")
+                .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if(!NetworkUtils.isNetworkConnected(CardMenuP.this))
+                {
+                    progressDialog.hide();
+                    return;
+                }
+                if (dataSnapshot.getValue() == null) {
+                    Intent i = new Intent(CardMenuP.this, DailyFinishingDefectAnalysisGetup.class);
+                    startActivity(i);
+                } else if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
+                    Intent i =  new Intent(CardMenuP.this, DailyfinishingGetUpAdmin.class);
+                    startActivity(i);
+
+                }
+                else {
+                    Toast.makeText(CardMenuP.this,"This is completed.",Toast.LENGTH_LONG).show();
+                }
+                progressDialog.hide();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+    void openDailyFinishingOutside(){
+        progressDialog.setMessage("Verificating...");
+        progressDialog.show();
+        FirebaseDatabase.getInstance().getReference("dailyFinishingoutside")
+                .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if(!NetworkUtils.isNetworkConnected(CardMenuP.this))
+                {
+                    progressDialog.hide();
+                    return;
+                }
+                if (dataSnapshot.getValue() == null) {
+                    Intent i = new Intent(CardMenuP.this, DailyFinishingDefectAnalysisOutside.class);
+                    startActivity(i);
+                } else if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
+                    Intent i =  new Intent(CardMenuP.this, DailyfinishingOutsideAdmin.class);
+                    startActivity(i);
                 }
                 else {
                     Toast.makeText(CardMenuP.this,"This is completed.",Toast.LENGTH_LONG).show();

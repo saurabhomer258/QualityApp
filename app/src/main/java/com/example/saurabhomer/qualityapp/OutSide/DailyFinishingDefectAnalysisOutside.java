@@ -38,9 +38,10 @@ public class DailyFinishingDefectAnalysisOutside extends AppCompatActivity imple
     static String total_defect_per="";
     static DailyFinishingModel1 model;
     static public DailyFinishinfModels dailyFinishinfModels1 = new DailyFinishinfModels();
-    static public ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST1 = new ArrayList<>();
+    static public ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        DAILYFINISHINGPAGE =0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_finishing_defect_analysis_outside);
         info_btn = (Button)findViewById(R.id.info_daily);

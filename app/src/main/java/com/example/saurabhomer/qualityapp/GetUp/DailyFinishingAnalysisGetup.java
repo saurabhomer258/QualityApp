@@ -19,7 +19,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.FirebaseDatabase;
 
-import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingDefectAnalysisGetup.DAILYFINIFSHINGMODELLIST2;
+import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingDefectAnalysisGetup.DAILYFINIFSHINGMODELLIST;
 import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingDefectAnalysisGetup.dailyFinishinfModels2;
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
@@ -169,8 +169,8 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity {
                         , hour.getText().toString()+""
                         ,edt_uneven.getSelectedItemPosition()
                 );
-                DAILYFINIFSHINGMODELLIST2.add(dialyFinishingAnalysisModel);
-                dailyFinishinfModels2.setDialyFinishingAnalysisModels(DAILYFINIFSHINGMODELLIST2);
+                DAILYFINIFSHINGMODELLIST.add(dialyFinishingAnalysisModel);
+                dailyFinishinfModels2.setDialyFinishingAnalysisModels(DAILYFINIFSHINGMODELLIST);
                 FirebaseDatabase.getInstance().getReference("dailyFinishinggetup")
                         .child(STYLE_NUMBER).setValue(dailyFinishinfModels2).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -179,7 +179,7 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity {
                     }
                 });
 
-                DAILYFINIFSHINGMODELLIST2.clear();
+                DAILYFINIFSHINGMODELLIST.clear();
                 Intent i =new Intent(DailyFinishingAnalysisGetup.this, DailyFinishingGetupResult.class);
                 startActivity(i);
                 finish();
@@ -226,7 +226,7 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity {
                         , hour.getText().toString()+""
                         ,edt_uneven.getSelectedItemPosition()
                 );
-                DAILYFINIFSHINGMODELLIST2.add(dialyFinishingAnalysisModel);
+                DAILYFINIFSHINGMODELLIST.add(dialyFinishingAnalysisModel);
                 Intent i =new Intent(DailyFinishingAnalysisGetup.this,DailyFinishingAnalysisGetup.class);
                 startActivity(i);
                 finish();

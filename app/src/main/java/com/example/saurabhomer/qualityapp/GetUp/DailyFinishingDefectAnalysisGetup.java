@@ -38,9 +38,10 @@ public class DailyFinishingDefectAnalysisGetup extends AppCompatActivity impleme
     static String total_defect_per="";
     static DailyFinishingModel1 model;
     static public DailyFinishinfModels dailyFinishinfModels2 = new DailyFinishinfModels();
-    static public ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST2 = new ArrayList<>();
+    static public ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        DAILYFINISHINGPAGE =0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_finishing_defect_analysis_getup);
         info_btn = (Button)findViewById(R.id.info_daily);
@@ -56,7 +57,7 @@ public class DailyFinishingDefectAnalysisGetup extends AppCompatActivity impleme
             @Override
             public void onClick(View v) {
 
-                FirebaseDatabase.getInstance().getReference("dailyFinishingoutside")
+                FirebaseDatabase.getInstance().getReference("dailyFinishinggetup")
                         .child(STYLE_NUMBER).child(0+"").
                         addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
@@ -70,7 +71,7 @@ public class DailyFinishingDefectAnalysisGetup extends AppCompatActivity impleme
                                     dailyFinishinfModels2.setDate(txtDate.getText().toString());
                                     int val = spinner.getSelectedItemPosition();
                                     dailyFinishinfModels2.setFinishingLine(val+1+"");
-                                    Intent intent = new Intent(DailyFinishingDefectAnalysisGetup.this, DailyFinishingAnalysisOutside.class);
+                                    Intent intent = new Intent(DailyFinishingDefectAnalysisGetup.this, DailyFinishingAnalysisGetup.class);
                                     startActivity(intent);
                                     finish();
                                 }

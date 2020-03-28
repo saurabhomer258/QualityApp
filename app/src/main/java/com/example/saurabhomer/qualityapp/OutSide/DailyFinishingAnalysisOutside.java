@@ -20,7 +20,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.FirebaseDatabase;
 
 
-import static com.example.saurabhomer.qualityapp.OutSide.DailyFinishingDefectAnalysisOutside.DAILYFINIFSHINGMODELLIST1;
+import static com.example.saurabhomer.qualityapp.OutSide.DailyFinishingDefectAnalysisOutside.DAILYFINIFSHINGMODELLIST;
 import static com.example.saurabhomer.qualityapp.OutSide.DailyFinishingDefectAnalysisOutside.dailyFinishinfModels1;
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
@@ -170,8 +170,8 @@ public class DailyFinishingAnalysisOutside extends AppCompatActivity {
                         , hour.getText().toString()+""
                         ,edt_uneven.getSelectedItemPosition()
                 );
-                DAILYFINIFSHINGMODELLIST1.add(dialyFinishingAnalysisModel);
-                dailyFinishinfModels1.setDialyFinishingAnalysisModels(DAILYFINIFSHINGMODELLIST1);
+                DAILYFINIFSHINGMODELLIST.add(dialyFinishingAnalysisModel);
+                dailyFinishinfModels1.setDialyFinishingAnalysisModels(DAILYFINIFSHINGMODELLIST);
                 FirebaseDatabase.getInstance().getReference("dailyFinishingoutside")
                         .child(STYLE_NUMBER).setValue(dailyFinishinfModels1).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -180,7 +180,7 @@ public class DailyFinishingAnalysisOutside extends AppCompatActivity {
                     }
                 });
 
-                DAILYFINIFSHINGMODELLIST1.clear();
+                DAILYFINIFSHINGMODELLIST.clear();
                 Intent i =new Intent(DailyFinishingAnalysisOutside.this, DailyFinishingOutsideResult.class);
                 startActivity(i);
                 finish();
@@ -227,7 +227,7 @@ public class DailyFinishingAnalysisOutside extends AppCompatActivity {
                         , hour.getText().toString()+""
                         ,edt_uneven.getSelectedItemPosition()
                 );
-                DAILYFINIFSHINGMODELLIST1.add(dialyFinishingAnalysisModel);
+                DAILYFINIFSHINGMODELLIST.add(dialyFinishingAnalysisModel);
                 Intent i =new Intent(DailyFinishingAnalysisOutside.this,DailyFinishingAnalysisOutside.class);
                 startActivity(i);
                 finish();
