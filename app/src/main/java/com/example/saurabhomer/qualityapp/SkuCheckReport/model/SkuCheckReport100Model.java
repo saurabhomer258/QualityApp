@@ -6,6 +6,7 @@ public class SkuCheckReport100Model {
     public String edt_readyquantity;
     public String edt_checkquantity;
     public String edt_size;
+    private String date;
     public ArrayList<SkuCheckReport100ModelList> skuCheckReport100ModelList;
 
     public String getEdt_readyquantity() {
@@ -38,5 +39,13 @@ public class SkuCheckReport100Model {
 
     public void setSkuCheckReport100ModelList(ArrayList<SkuCheckReport100ModelList> skuCheckReport100ModelList) {
         this.skuCheckReport100ModelList = skuCheckReport100ModelList;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }
