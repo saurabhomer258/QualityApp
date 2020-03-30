@@ -12,8 +12,10 @@ import android.widget.Toast;
 
 import com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAuditModel;
 import com.example.saurabhomer.qualityapp.R;
+import com.example.saurabhomer.qualityapp.SkuCheckReport.model.MainSkuModel;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.model.SkuCheckReport100Model;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.model.SkuCheckReport100ModelList;
+import com.example.saurabhomer.qualityapp.SkuCheckReport.model.SkuDateModel;
 import com.example.saurabhomer.qualityapp.admin.SkuAdmin;
 import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenuP;
 import com.example.saurabhomer.qualityapp.pref.LoginPref;
@@ -25,11 +27,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 import customView.NextButton;
 
 import static com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100Page1.skuCheckReport100Model;
 import static com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100Page1.skuCheckReport100ModelList1;
 
+import static com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100Page1.txtDate;
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
 public class SkuCheckReport100Page2 extends AppCompatActivity {
@@ -131,6 +136,15 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
         btn_done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MainSkuModel mainSkuModel = new MainSkuModel();
+                SkuDateModel skuDateModel = new SkuDateModel();
+                ArrayList<SkuDateModel> skuDateModelsdate = new ArrayList<>();
+                skuDateModelsdate.add(skuDateModel);
+
+                skuDateModel.setDate(txtDate.getText().toString());
+                skuDateModel.setSkuCheckReport100Model(skuCheckReport100Model);
+
+
                 SkuCheckReport100ModelList skuCheckReport100ModelList = new SkuCheckReport100ModelList();
                 skuCheckReport100ModelList.setCountryhasbeencheck(getStringOfRedio(radio_country_hbc.isChecked()));
                 skuCheckReport100ModelList.setLabelhasbeencheck(getStringOfRedio(radio_label_hbc.isChecked()));
@@ -146,7 +160,9 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
                 skuCheckReport100ModelList.setSizestickerhasbeencheck(getStringOfRedio(radio_sizesticker_hbc.isChecked()));
                 skuCheckReport100ModelList1.add(skuCheckReport100ModelList);
                 skuCheckReport100Model.setSkuCheckReport100ModelList(skuCheckReport100ModelList1);
-                FirebaseDatabase.getInstance().getReference("100perSKU").child(STYLE_NUMBER).child(skuCheckReport100Model.getDate()).setValue(skuCheckReport100Model).addOnCompleteListener(new OnCompleteListener<Void>() {
+                mainSkuModel.setSkuDateModels(skuDateModelsdate);
+
+                FirebaseDatabase.getInstance().getReference("100perSKU").child(STYLE_NUMBER).setValue(mainSkuModel).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (!task.isComplete()) {
@@ -160,7 +176,8 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
             }
 
         });
-        btn_next.setOnClickListener(new View.OnClickListener() {
+        btn_next.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v) {
                 SkuCheckReport100ModelList skuCheckReport100ModelList = new SkuCheckReport100ModelList();
