@@ -1,6 +1,7 @@
 package com.example.saurabhomer.qualityapp.admin;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,6 +28,7 @@ public class SkuAdmin extends AppCompatActivity
 {
     LinearLayout layout;
     private ProgressDialog progressDialog;
+    String str;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -42,47 +44,51 @@ public class SkuAdmin extends AppCompatActivity
         progressDialog.show();
         FirebaseDatabase.getInstance().getReference("100perSKU").child(STYLE_NUMBER)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
+
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-
                         MainSkuModel mainSkuModel = dataSnapshot.getValue(MainSkuModel.class);
-                            ArrayList<SkuDateModel> skuDateModels = mainSkuModel.getSkuDateModels();
-                            for(SkuDateModel skuDateModel:skuDateModels)
-                            {
-                                setLayout("Date",skuDateModel.getDate());
-                                SkuCheckReport100Model skuCheckReport100Model =   dataSnapshot.getValue(SkuCheckReport100Model.class);
+                        ArrayList<SkuDateModel> skuDateModels = mainSkuModel.getSkuDateModels();
 
-                                setLayout("Ready quantity",skuCheckReport100Model.getEdt_readyquantity());
-                                setLayout("Check quantity",skuCheckReport100Model.getEdt_checkquantity());
-                                setLayout("size",skuCheckReport100Model.getEdt_size());
+                        for (SkuDateModel skuDateModel : skuDateModels) {
+                            String skudate = skuDateModel.getDate();
+                            Intent i = getIntent();
+                            str = i.getStringExtra("SkuDate");
+                            if (skudate.equals(str))
+                            {
+                                setLayout("Date", skuDateModel.getDate());
+                                SkuCheckReport100Model skuCheckReport100Model = skuDateModel.getSkuCheckReport100Model();
+                                setLayout("Ready quantity", skuCheckReport100Model.getEdt_readyquantity());
+                                setLayout("Check quantity", skuCheckReport100Model.getEdt_checkquantity());
+                                setLayout("size", skuCheckReport100Model.getEdt_size());
 
                                 ArrayList<SkuCheckReport100ModelList> skuCheckReport100ModelList1 = skuCheckReport100Model.getSkuCheckReport100ModelList();
-                                if(skuCheckReport100ModelList1!=null)
-                                {
-                                    for(SkuCheckReport100ModelList skuCheckReport100ModelList : skuCheckReport100ModelList1)
-                                    {
-                                        setLayout("Country Has been check",skuCheckReport100ModelList.getCountryhasbeencheck());
-                                        setLayout("Label has been Check",skuCheckReport100ModelList.getLabelhasbeencheck());
-                                        setLayout("Barcode has been check",skuCheckReport100ModelList.getBarcodehasbeencheck());
-                                        setLayout("Color has been check",skuCheckReport100ModelList.getColorhasbeencheck());
-                                        setLayout("Polybag has been check",skuCheckReport100ModelList.getPolybaghasbeencheck());
-                                        setLayout("Price tag has been check",skuCheckReport100ModelList.getPricetaghasbeencheck());
-                                        setLayout("Polystiker has been check",skuCheckReport100ModelList.getPolystikerhasbeencheck());
-                                        setLayout("Size tag has been check",skuCheckReport100ModelList.getSizestickerhasbeencheck());
-                                        setLayout("Hanger has been check",skuCheckReport100ModelList.getHagertaghasbeencheck());
-                                        setLayout("Hager tag has been check",skuCheckReport100ModelList.getHagertaghasbeencheck());
-                                        setLayout("Otherhasbeencheck",skuCheckReport100ModelList.getOtherhasbeencheck());
-                                        setLayout("Other has been check",skuCheckReport100ModelList.getOtherhasbeencheck());
-                                        setLayout("Packing method has been check",skuCheckReport100ModelList.getPackingmethodhasbeencheck());
-                                        setLayout("Size sticker has been check",skuCheckReport100ModelList.getSizestickerhasbeencheck());
+                                if (skuCheckReport100ModelList1 != null) {
+                                    for (SkuCheckReport100ModelList skuCheckReport100ModelList : skuCheckReport100ModelList1) {
+                                        setLayout("Country Has been check", skuCheckReport100ModelList.getCountryhasbeencheck());
+                                        setLayout("Label has been Check", skuCheckReport100ModelList.getLabelhasbeencheck());
+                                        setLayout("Barcode has been check", skuCheckReport100ModelList.getBarcodehasbeencheck());
+                                        setLayout("Color has been check", skuCheckReport100ModelList.getColorhasbeencheck());
+                                        setLayout("Polybag has been check", skuCheckReport100ModelList.getPolybaghasbeencheck());
+                                        setLayout("Price tag has been check", skuCheckReport100ModelList.getPricetaghasbeencheck());
+                                        setLayout("Polystiker has been check", skuCheckReport100ModelList.getPolystikerhasbeencheck());
+                                        setLayout("Size tag has been check", skuCheckReport100ModelList.getSizestickerhasbeencheck());
+                                        setLayout("Hanger has been check", skuCheckReport100ModelList.getHagertaghasbeencheck());
+                                        setLayout("Hager tag has been check", skuCheckReport100ModelList.getHagertaghasbeencheck());
+                                        setLayout("Otherhasbeencheck", skuCheckReport100ModelList.getOtherhasbeencheck());
+                                        setLayout("Other has been check", skuCheckReport100ModelList.getOtherhasbeencheck());
+                                        setLayout("Packing method has been check", skuCheckReport100ModelList.getPackingmethodhasbeencheck());
+                                        setLayout("Size sticker has been check", skuCheckReport100ModelList.getSizestickerhasbeencheck());
 
                                     }
 
+
                                 }
 
-                                TextView textView2= new TextView(SkuAdmin.this);
-                            textView2.setText("_________________________________________________");
-                            layout.addView(textView2);
+                                TextView textView2 = new TextView(SkuAdmin.this);
+                                textView2.setText("_________________________________________________");
+                                layout.addView(textView2);
+                            }
                         }
 
                         progressDialog.hide();
