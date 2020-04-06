@@ -46,7 +46,7 @@ public class DailyFInishingResult extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 DailyFinishinfModels dailyFinishinfModels =   dataSnapshot.getValue(DailyFinishinfModels.class);
-                getMaxThree(dailyFinishinfModels);
+                //getMaxThree(dailyFinishinfModels);
             }
             @Override
             public void onCancelled(DatabaseError databaseError)

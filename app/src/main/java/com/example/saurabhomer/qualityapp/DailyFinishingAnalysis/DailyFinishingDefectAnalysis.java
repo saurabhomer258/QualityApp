@@ -40,10 +40,11 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity implements
     static String total_Check="";
     static String total_defect_per="";
     static DailyFinishingModel1 model;
-    static DailyFinishinfModels dailyFinishinfModels = new DailyFinishinfModels();
-    static ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
+
+   static ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
     static MainDailyFinishingModel mainDailyFinishingModel = new MainDailyFinishingModel();
-    static DailyFinishinfModels dailyFinishinfModels_1 = new DailyFinishinfModels();
+    static DailyFinishinfModels sDailyFinishinfModels = new DailyFinishinfModels();
+
     static Spinner finishing;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -69,10 +70,11 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity implements
 //                skuCheckReport100Model.setEdt_checkquantity(editText_checkquantity.getText().toString());
 //                skuCheckReport100Model.setEdt_readyquantity(editText_readyquantity.getText().toString());
 //                skuCheckReport100Model.setEdt_size(editText_size.getText().toString());
+
                 String strdate = txtDate.getText().toString();
                 String text = finishing.getSelectedItem().toString();
-                dailyFinishinfModels_1.setDate(strdate);
-                dailyFinishinfModels_1.setFinishingLine(text);
+                sDailyFinishinfModels.setDate(strdate);
+                sDailyFinishinfModels.setFinishingLine(text);
                 Intent intent = new Intent(DailyFinishingDefectAnalysis.this,DailyFinishingAnalysis2.class);
                 startActivity(intent);
 //

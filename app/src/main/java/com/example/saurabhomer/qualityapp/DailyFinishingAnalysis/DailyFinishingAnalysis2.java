@@ -26,9 +26,9 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis.DAILYFINIFSHINGMODELLIST;
-import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis.dailyFinishinfModels;
-import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis.dailyFinishinfModels_1;
+
 import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis.finishing;
+import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis.sDailyFinishinfModels;
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
 public class DailyFinishingAnalysis2 extends AppCompatActivity
@@ -137,7 +137,7 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
           @Override
           public void onClick(View v)
           {
-              FirebaseDatabase.getInstance().getReference("100perSKU").child(STYLE_NUMBER)
+              FirebaseDatabase.getInstance().getReference("dailyFinishing").child(STYLE_NUMBER)
                       .addListenerForSingleValueEvent(new ValueEventListener() {
                           @Override
                           public void onDataChange(DataSnapshot dataSnapshot) {
@@ -194,9 +194,9 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
                                   );
                                   DAILYFINIFSHINGMODELLIST.add(dialyFinishingAnalysisModel);
 
-                                  dailyFinishinfModels.setDialyFinishingAnalysisModels(DAILYFINIFSHINGMODELLIST);
+                                  sDailyFinishinfModels.setDialyFinishingAnalysisModels(DAILYFINIFSHINGMODELLIST);
 
-                                  dailyFinishinfModelslist.add(dailyFinishinfModels);
+                                  dailyFinishinfModelslist.add(sDailyFinishinfModels);
                                   mainDailyFinishingModel.setDailyFinishingModels(dailyFinishinfModelslist);
                                   FirebaseDatabase.getInstance().getReference("dailyFinishing")
                                           .child(STYLE_NUMBER).setValue(mainDailyFinishingModel).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -251,10 +251,12 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
                                   DAILYFINIFSHINGMODELLIST.add(dialyFinishingAnalysisModel);
 
 
-                                  dailyFinishinfModels.setDialyFinishingAnalysisModels(DAILYFINIFSHINGMODELLIST);
+                                  sDailyFinishinfModels.setDialyFinishingAnalysisModels(DAILYFINIFSHINGMODELLIST);
+
+
 
                                   ArrayList<DailyFinishinfModels>   dailyFinishinfModelList = new ArrayList<DailyFinishinfModels>();
-                                  dailyFinishinfModelList.add(dailyFinishinfModels);
+                                  dailyFinishinfModelList.add(sDailyFinishinfModels);
                                   mainDailyFinishingModel1.setDailyFinishingModels(dailyFinishinfModelList);
                                   FirebaseDatabase.getInstance().getReference("dailyFinishing")
                                           .child(STYLE_NUMBER).setValue(mainDailyFinishingModel1).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -265,6 +267,7 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
                                   });
 
                               }
+                              DAILYFINIFSHINGMODELLIST.clear();
 
                           }
 
@@ -275,7 +278,7 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
                       });
 
 
-             DAILYFINIFSHINGMODELLIST.clear();
+
              Intent i =new Intent(DailyFinishingAnalysis2.this,DailyFInishingResult.class);
              startActivity(i);
              finish();
