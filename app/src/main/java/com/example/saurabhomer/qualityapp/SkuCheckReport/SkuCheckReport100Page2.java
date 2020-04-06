@@ -108,7 +108,8 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
                             {
                                 skuDateModelArrayList = mainSkuModel.getSkuDateModels();
                             }
-                            else {
+                            else
+                                {
                                 skuDateModelArrayList = new ArrayList<>();
                             }
 
@@ -151,7 +152,8 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
                             });
                             skuCheckReport100ModelList1.clear();
                         }
-                        else{
+                        else
+                            {
                             mainSkuModel = new MainSkuModel();
                             ArrayList<SkuDateModel> skuDateModelArrayList = mainSkuModel.getSkuDateModels();
 

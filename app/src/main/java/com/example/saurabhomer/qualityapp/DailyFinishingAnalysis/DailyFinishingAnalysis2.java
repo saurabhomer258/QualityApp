@@ -146,6 +146,62 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
 
                               if(mainDailyFinishingModel!=null)
                               {
+                                   ArrayList<DailyFinishinfModels> dailyFinishinfModelslist;
+                                   if(mainDailyFinishingModel.getDailyFinishingModels()!=null)
+                                   {
+                                       dailyFinishinfModelslist = mainDailyFinishingModel.getDailyFinishingModels();
+                                   }
+                                   else
+                                   {
+                                       dailyFinishinfModelslist = new ArrayList<>();
+                                   }
+                                  String a = total_check.getText().toString().trim().equals("") ? 0 +"": total_check.getText().toString().trim();
+                                  DialyFinishingAnalysisModel dialyFinishingAnalysisModel = new DialyFinishingAnalysisModel(
+                                          Integer.parseInt(a),
+                                          printing.getSelectedItemPosition(),
+                                          slube_hole.getSelectedItemPosition()
+                                          ,edt_color_shading.getSelectedItemPosition()
+                                          ,edt_broken_stitches.getSelectedItemPosition()
+                                          ,edt_slip_stitches.getSelectedItemPosition()
+                                          ,edt_spi.getSelectedItemPosition()
+                                          ,edt_pukering.getSelectedItemPosition()
+                                          ,edt_snap_defects.getSelectedItemPosition()
+                                          ,edt_loose_tensions.getSelectedItemPosition()
+
+                                          ,edt_needle_mark.getSelectedItemPosition()
+                                          ,edt_open_seam.getSelectedItemPosition()
+                                          ,edt_pleats.getSelectedItemPosition()
+                                          ,edt_missing_stitches.getSelectedItemPosition()
+                                          ,edt_skip_run_off.getSelectedItemPosition()
+                                          ,edt_incorrect_label.getSelectedItemPosition()
+                                          ,edt_wrong_placement.getSelectedItemPosition()
+                                          ,edt_looseness.getSelectedItemPosition()
+                                          ,edt_cut_damage.getSelectedItemPosition()
+                                          ,edt_others.getSelectedItemPosition()
+                                          ,edt_stain.getSelectedItemPosition()
+                                          ,edt_oil_marks.getSelectedItemPosition()
+                                          ,edt_stickers.getSelectedItemPosition()
+                                          ,edt_uncut_thread.getSelectedItemPosition()
+                                          ,edt_out_of_spec.getSelectedItemPosition()
+                                          ,edt_total_defects_1111.getSelectedItemPosition()
+                                          ,edt_quality_out.getSelectedItemPosition()
+                                          ,edt_production_out.getSelectedItemPosition()
+                                          ,edt_damage.getSelectedItemPosition()
+                                          ,edt_dirty.getSelectedItemPosition()
+                                          ,edt_iron.getSelectedItemPosition()
+                                          , hour.getText().toString()+""
+                                          ,edt_uneven.getSelectedItemPosition()
+                                  );
+                                  DAILYFINIFSHINGMODELLIST.add(dialyFinishingAnalysisModel);
+
+                                  dailyFinishinfModels.setDialyFinishingAnalysisModels(DAILYFINIFSHINGMODELLIST);
+                                  FirebaseDatabase.getInstance().getReference("dailyFinishing")
+                                          .child(STYLE_NUMBER).setValue(dailyFinishinfModels).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                      @Override
+                                      public void onComplete(@NonNull Task<Void> task) {
+
+                                      }
+                                  });
 
                               }
                               else
