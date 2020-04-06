@@ -195,8 +195,11 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
                                   DAILYFINIFSHINGMODELLIST.add(dialyFinishingAnalysisModel);
 
                                   dailyFinishinfModels.setDialyFinishingAnalysisModels(DAILYFINIFSHINGMODELLIST);
+
+                                  dailyFinishinfModelslist.add(dailyFinishinfModels);
+                                  mainDailyFinishingModel.setDailyFinishingModels(dailyFinishinfModelslist);
                                   FirebaseDatabase.getInstance().getReference("dailyFinishing")
-                                          .child(STYLE_NUMBER).setValue(dailyFinishinfModels).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                          .child(STYLE_NUMBER).setValue(mainDailyFinishingModel).addOnCompleteListener(new OnCompleteListener<Void>() {
                                       @Override
                                       public void onComplete(@NonNull Task<Void> task) {
 
@@ -206,6 +209,8 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
                               }
                               else
                               {
+                                  MainDailyFinishingModel mainDailyFinishingModel1 =  new MainDailyFinishingModel();
+
                                   String a = total_check.getText().toString().trim().equals("") ? 0 +"": total_check.getText().toString().trim();
                                   DialyFinishingAnalysisModel dialyFinishingAnalysisModel = new DialyFinishingAnalysisModel(
                                           Integer.parseInt(a),
@@ -245,9 +250,14 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
                                   );
                                   DAILYFINIFSHINGMODELLIST.add(dialyFinishingAnalysisModel);
 
+
                                   dailyFinishinfModels.setDialyFinishingAnalysisModels(DAILYFINIFSHINGMODELLIST);
+
+                                  ArrayList<DailyFinishinfModels>   dailyFinishinfModelList = new ArrayList<DailyFinishinfModels>();
+                                  dailyFinishinfModelList.add(dailyFinishinfModels);
+                                  mainDailyFinishingModel1.setDailyFinishingModels(dailyFinishinfModelList);
                                   FirebaseDatabase.getInstance().getReference("dailyFinishing")
-                                          .child(STYLE_NUMBER).setValue(dailyFinishinfModels).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                          .child(STYLE_NUMBER).setValue(mainDailyFinishingModel1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                       @Override
                                       public void onComplete(@NonNull Task<Void> task) {
 
