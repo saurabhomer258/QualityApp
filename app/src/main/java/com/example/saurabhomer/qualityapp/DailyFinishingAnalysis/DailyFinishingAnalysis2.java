@@ -10,15 +10,25 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
+import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.MainDailyFinishingModel;
 import com.example.saurabhomer.qualityapp.R;
+import com.example.saurabhomer.qualityapp.SkuCheckReport.model.MainSkuModel;
 import com.example.saurabhomer.qualityapp.dialog.DailyFInishingResult;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis.DAILYFINIFSHINGMODELLIST;
 import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis.dailyFinishinfModels;
+import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis.dailyFinishinfModels_1;
+import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis.finishing;
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
 public class DailyFinishingAnalysis2 extends AppCompatActivity
@@ -40,9 +50,6 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
        final Spinner edt_snap_defects = findViewById(R.id.edt_snap_defects).findViewById(R.id.spinner);
        final Spinner edt_loose_tensions = findViewById(R.id.edt_loose_tensions).findViewById(R.id.spinner);
        final Spinner edt_uneven = findViewById(R.id.edt_uneven).findViewById(R.id.spinner);
-
-
-
        final Spinner edt_needle_mark = findViewById(R.id.edt_needle_mark).findViewById(R.id.spinner);
        final Spinner edt_open_seam = findViewById(R.id.edt_open_seam).findViewById(R.id.spinner);
        final Spinner edt_pleats = findViewById(R.id.edt_pleats).findViewById(R.id.spinner);
@@ -130,52 +137,77 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
           @Override
           public void onClick(View v)
           {
-              String a = total_check.getText().toString().trim().equals("") ? 0 +"": total_check.getText().toString().trim();
-             DialyFinishingAnalysisModel dialyFinishingAnalysisModel = new DialyFinishingAnalysisModel(
-                     Integer.parseInt(a),
-                     printing.getSelectedItemPosition(),
-                     slube_hole.getSelectedItemPosition()
-                     ,edt_color_shading.getSelectedItemPosition()
-                     ,edt_broken_stitches.getSelectedItemPosition()
-                     ,edt_slip_stitches.getSelectedItemPosition()
-                     ,edt_spi.getSelectedItemPosition()
-                     ,edt_pukering.getSelectedItemPosition()
-                     ,edt_snap_defects.getSelectedItemPosition()
-                     ,edt_loose_tensions.getSelectedItemPosition()
+              FirebaseDatabase.getInstance().getReference("100perSKU").child(STYLE_NUMBER)
+                      .addListenerForSingleValueEvent(new ValueEventListener() {
+                          @Override
+                          public void onDataChange(DataSnapshot dataSnapshot) {
 
-                     ,edt_needle_mark.getSelectedItemPosition()
-                     ,edt_open_seam.getSelectedItemPosition()
-                     ,edt_pleats.getSelectedItemPosition()
-                     ,edt_missing_stitches.getSelectedItemPosition()
-                     ,edt_skip_run_off.getSelectedItemPosition()
-                     ,edt_incorrect_label.getSelectedItemPosition()
-                     ,edt_wrong_placement.getSelectedItemPosition()
-                     ,edt_looseness.getSelectedItemPosition()
-                     ,edt_cut_damage.getSelectedItemPosition()
-                     ,edt_others.getSelectedItemPosition()
-                     ,edt_stain.getSelectedItemPosition()
-                     ,edt_oil_marks.getSelectedItemPosition()
-                     ,edt_stickers.getSelectedItemPosition()
-                     ,edt_uncut_thread.getSelectedItemPosition()
-                     ,edt_out_of_spec.getSelectedItemPosition()
-                     ,edt_total_defects_1111.getSelectedItemPosition()
-                     ,edt_quality_out.getSelectedItemPosition()
-                     ,edt_production_out.getSelectedItemPosition()
-                     ,edt_damage.getSelectedItemPosition()
-                     ,edt_dirty.getSelectedItemPosition()
-                     ,edt_iron.getSelectedItemPosition()
-                     , hour.getText().toString()+""
-                     ,edt_uneven.getSelectedItemPosition()
-             );
-             DAILYFINIFSHINGMODELLIST.add(dialyFinishingAnalysisModel);
-             dailyFinishinfModels.setDialyFinishingAnalysisModels(DAILYFINIFSHINGMODELLIST);
-             FirebaseDatabase.getInstance().getReference("dailyFinishing")
-                     .child(STYLE_NUMBER).setValue(dailyFinishinfModels).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
+                              MainDailyFinishingModel mainDailyFinishingModel = dataSnapshot.getValue(MainDailyFinishingModel.class);
 
-                }
-             });
+                              if(mainDailyFinishingModel!=null)
+                              {
+
+                              }
+                              else
+                              {
+                                  String a = total_check.getText().toString().trim().equals("") ? 0 +"": total_check.getText().toString().trim();
+                                  DialyFinishingAnalysisModel dialyFinishingAnalysisModel = new DialyFinishingAnalysisModel(
+                                          Integer.parseInt(a),
+                                          printing.getSelectedItemPosition(),
+                                          slube_hole.getSelectedItemPosition()
+                                          ,edt_color_shading.getSelectedItemPosition()
+                                          ,edt_broken_stitches.getSelectedItemPosition()
+                                          ,edt_slip_stitches.getSelectedItemPosition()
+                                          ,edt_spi.getSelectedItemPosition()
+                                          ,edt_pukering.getSelectedItemPosition()
+                                          ,edt_snap_defects.getSelectedItemPosition()
+                                          ,edt_loose_tensions.getSelectedItemPosition()
+
+                                          ,edt_needle_mark.getSelectedItemPosition()
+                                          ,edt_open_seam.getSelectedItemPosition()
+                                          ,edt_pleats.getSelectedItemPosition()
+                                          ,edt_missing_stitches.getSelectedItemPosition()
+                                          ,edt_skip_run_off.getSelectedItemPosition()
+                                          ,edt_incorrect_label.getSelectedItemPosition()
+                                          ,edt_wrong_placement.getSelectedItemPosition()
+                                          ,edt_looseness.getSelectedItemPosition()
+                                          ,edt_cut_damage.getSelectedItemPosition()
+                                          ,edt_others.getSelectedItemPosition()
+                                          ,edt_stain.getSelectedItemPosition()
+                                          ,edt_oil_marks.getSelectedItemPosition()
+                                          ,edt_stickers.getSelectedItemPosition()
+                                          ,edt_uncut_thread.getSelectedItemPosition()
+                                          ,edt_out_of_spec.getSelectedItemPosition()
+                                          ,edt_total_defects_1111.getSelectedItemPosition()
+                                          ,edt_quality_out.getSelectedItemPosition()
+                                          ,edt_production_out.getSelectedItemPosition()
+                                          ,edt_damage.getSelectedItemPosition()
+                                          ,edt_dirty.getSelectedItemPosition()
+                                          ,edt_iron.getSelectedItemPosition()
+                                          , hour.getText().toString()+""
+                                          ,edt_uneven.getSelectedItemPosition()
+                                  );
+                                  DAILYFINIFSHINGMODELLIST.add(dialyFinishingAnalysisModel);
+
+                                  dailyFinishinfModels.setDialyFinishingAnalysisModels(DAILYFINIFSHINGMODELLIST);
+                                  FirebaseDatabase.getInstance().getReference("dailyFinishing")
+                                          .child(STYLE_NUMBER).setValue(dailyFinishinfModels).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                      @Override
+                                      public void onComplete(@NonNull Task<Void> task) {
+
+                                      }
+                                  });
+
+                              }
+
+                          }
+
+                          @Override
+                          public void onCancelled(DatabaseError databaseError) {
+
+                          }
+                      });
+
 
              DAILYFINIFSHINGMODELLIST.clear();
              Intent i =new Intent(DailyFinishingAnalysis2.this,DailyFInishingResult.class);

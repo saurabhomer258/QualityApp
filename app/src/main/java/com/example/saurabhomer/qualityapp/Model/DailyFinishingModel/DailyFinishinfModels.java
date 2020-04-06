@@ -19,7 +19,6 @@ public class DailyFinishinfModels
         this.dialyFinishingAnalysisModels = dialyFinishingAnalysisModels;
     }
 
-
     public String getFinishingLine() {
         return finishingLine;
     }

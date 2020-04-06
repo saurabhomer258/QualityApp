@@ -28,7 +28,7 @@ public class CommonDateFilter extends AppCompatActivity implements
         btnDatePicker=(Button)findViewById(R.id.btn_date);
         commontxtDate=(EditText)findViewById(R.id.in_date);
         btnDatePicker.setOnClickListener(this);
-        final String strDate = commontxtDate.getText().toString();
+
 
         View btn_done = findViewById(R.id.btn_donedate);
         Button bt_done = btn_done.findViewById(R.id.btnNext);
@@ -41,6 +41,7 @@ public class CommonDateFilter extends AppCompatActivity implements
 
                 if(test1.equals(str))
                 {
+                    String strDate = commontxtDate.getText().toString();
                     Intent i = new Intent(CommonDateFilter.this, SkuAdmin.class);
                     i.putExtra("SkuDate",strDate);
                     startActivity(i);
