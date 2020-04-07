@@ -133,7 +133,8 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
            }
           }
        });
-       done.setOnClickListener(new View.OnClickListener() {
+       done.setOnClickListener(new View.OnClickListener()
+       {
           @Override
           public void onClick(View v)
           {
@@ -143,7 +144,6 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
                           public void onDataChange(DataSnapshot dataSnapshot) {
 
                               MainDailyFinishingModel mainDailyFinishingModel = dataSnapshot.getValue(MainDailyFinishingModel.class);
-
                               if(mainDailyFinishingModel!=null)
                               {
                                    ArrayList<DailyFinishinfModels> dailyFinishinfModelslist;
@@ -193,15 +193,14 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
                                           ,edt_uneven.getSelectedItemPosition()
                                   );
                                   DAILYFINIFSHINGMODELLIST.add(dialyFinishingAnalysisModel);
-
                                   sDailyFinishinfModels.setDialyFinishingAnalysisModels(DAILYFINIFSHINGMODELLIST);
-
                                   dailyFinishinfModelslist.add(sDailyFinishinfModels);
                                   mainDailyFinishingModel.setDailyFinishingModels(dailyFinishinfModelslist);
                                   FirebaseDatabase.getInstance().getReference("dailyFinishing")
                                           .child(STYLE_NUMBER).setValue(mainDailyFinishingModel).addOnCompleteListener(new OnCompleteListener<Void>() {
                                       @Override
-                                      public void onComplete(@NonNull Task<Void> task) {
+                                      public void onComplete(@NonNull Task<Void> task)
+                                      {
 
                                       }
                                   });
@@ -249,12 +248,7 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
                                           ,edt_uneven.getSelectedItemPosition()
                                   );
                                   DAILYFINIFSHINGMODELLIST.add(dialyFinishingAnalysisModel);
-
-
                                   sDailyFinishinfModels.setDialyFinishingAnalysisModels(DAILYFINIFSHINGMODELLIST);
-
-
-
                                   ArrayList<DailyFinishinfModels>   dailyFinishinfModelList = new ArrayList<DailyFinishinfModels>();
                                   dailyFinishinfModelList.add(sDailyFinishinfModels);
                                   mainDailyFinishingModel1.setDailyFinishingModels(dailyFinishinfModelList);

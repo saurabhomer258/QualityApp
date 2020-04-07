@@ -9,9 +9,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingAnalysis2;
+import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishingModel1;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
+import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.MainDailyFinishingModel;
 import com.example.saurabhomer.qualityapp.OutSide.DailyFinishingAnalysisOutside;
 import com.example.saurabhomer.qualityapp.OutSide.DailyFinishingDefectAnalysisOutside;
 import com.example.saurabhomer.qualityapp.R;
@@ -37,8 +40,12 @@ public class DailyFinishingDefectAnalysisGetup extends AppCompatActivity impleme
     static String total_Check="";
     static String total_defect_per="";
     static DailyFinishingModel1 model;
-    static public DailyFinishinfModels dailyFinishinfModels2 = new DailyFinishinfModels();
-    static public ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
+
+    static ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
+    static MainDailyFinishingModel mainDailyFinishingModel = new MainDailyFinishingModel();
+    static DailyFinishinfModels sDailyFinishinfModels = new DailyFinishinfModels();
+
+    static Spinner finishing;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         DAILYFINISHINGPAGE =0;
@@ -49,7 +56,7 @@ public class DailyFinishingDefectAnalysisGetup extends AppCompatActivity impleme
         txtDate=(EditText)findViewById(R.id.in_date);
         btnDatePicker.setOnClickListener(this);
 
-        final Spinner spinner =(Spinner)    findViewById(R.id.edt_finishing).findViewById(R.id.spinner);
+        finishing =(Spinner)    findViewById(R.id.edt_finishing).findViewById(R.id.spinner);
 
         View signin_button = findViewById(R.id.bt_next);
         Button bt_signin_button= signin_button.findViewById(R.id.btnNext);
@@ -57,31 +64,12 @@ public class DailyFinishingDefectAnalysisGetup extends AppCompatActivity impleme
             @Override
             public void onClick(View v) {
 
-                FirebaseDatabase.getInstance().getReference("dailyFinishinggetup")
-                        .child(STYLE_NUMBER).child(0+"").
-                        addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                if(dataSnapshot.getValue()==null)
-                                {
-//                                    DailyFinishingModel1 model = new DailyFinishingModel1(editText_hour.getText().toString(),
-//                                            editText_edt_total_check.getText().toString()
-//                                    );
-
-                                    dailyFinishinfModels2.setDate(txtDate.getText().toString());
-                                    int val = spinner.getSelectedItemPosition();
-                                    dailyFinishinfModels2.setFinishingLine(val+1+"");
-                                    Intent intent = new Intent(DailyFinishingDefectAnalysisGetup.this, DailyFinishingAnalysisGetup.class);
-                                    startActivity(intent);
-                                    finish();
-                                }
-                            }
-                            @Override
-                            public void onCancelled(DatabaseError databaseError)
-                            {
-
-                            }
-                        });
+                String strdate = txtDate.getText().toString();
+                String text = finishing.getSelectedItem().toString();
+                sDailyFinishinfModels.setDate(strdate);
+                sDailyFinishinfModels.setFinishingLine(text);
+                Intent intent = new Intent(DailyFinishingDefectAnalysisGetup.this, DailyFinishingAnalysisGetup.class);
+                startActivity(intent);
             }
         });
 

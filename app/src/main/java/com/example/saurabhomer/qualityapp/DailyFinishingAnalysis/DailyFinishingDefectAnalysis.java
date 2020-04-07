@@ -28,8 +28,7 @@ import java.util.List;
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
 
-public class DailyFinishingDefectAnalysis extends AppCompatActivity implements
-        View.OnClickListener
+public class DailyFinishingDefectAnalysis extends AppCompatActivity implements View.OnClickListener
 {
     private int mYear, mMonth, mDay, mHour, mMinute;
     Button btnDatePicker;
@@ -41,7 +40,7 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity implements
     static String total_defect_per="";
     static DailyFinishingModel1 model;
 
-   static ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
+    static ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
     static MainDailyFinishingModel mainDailyFinishingModel = new MainDailyFinishingModel();
     static DailyFinishinfModels sDailyFinishinfModels = new DailyFinishinfModels();
 
