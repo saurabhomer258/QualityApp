@@ -24,6 +24,7 @@ import com.example.saurabhomer.qualityapp.admin.DailyfinishingGetUpAdmin;
 import com.example.saurabhomer.qualityapp.admin.DailyfinishingOutsideAdmin;
 import com.example.saurabhomer.qualityapp.admin.SkuAdmin;
 import com.example.saurabhomer.qualityapp.pref.LoginPref;
+import com.example.saurabhomer.qualityapp.utils.CommonDailyDateFilter;
 import com.example.saurabhomer.qualityapp.utils.CommonDateFilter;
 import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.firebase.database.DataSnapshot;
@@ -145,7 +146,8 @@ public class CardMenuP extends AppCompatActivity
         progressDialog.setMessage("Verificating...");
         progressDialog.show();
         if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
-            Intent i =  new Intent(CardMenuP.this, DailyfinishingAdmin.class);
+            Intent i =  new Intent(CardMenuP.this, CommonDailyDateFilter.class);
+            i.putExtra("Name","DialyInside");
             startActivity(i);
         }
         else {

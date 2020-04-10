@@ -33,31 +33,31 @@
             android:textColor="#fff" />
     </LinearLayout>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        android:gravity="center"
-        android:weightSum="10">
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="14dp"
+    android:layout_marginStart="14dp"
+    android:gravity="center"
+    android:weightSum="10">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Finishing Line"
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Finishing Line"
 
-            android:layout_weight="3"
-            android:textColor="@color/common_text_color"
-            android:textSize="@dimen/common_text_size" />
+        android:layout_weight="3"
+        android:textColor="@color/common_text_color"
+        android:textSize="@dimen/common_text_size" />
 
-        <customView.DropDownSelect
-            android:id="@+id/edt_finishing"
+    <customView.DropDownSelect
+        android:id="@+id/edt_finishing"
 
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="7" />
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="7" />
 
-    </LinearLayout>
+</LinearLayout>
     <LinearLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"

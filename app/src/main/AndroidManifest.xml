@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:remove="android:appComponentFactory">
-        <activity android:name=".utils.CommonDateFilter"></activity>
+        <activity android:name=".utils.CommonDailyDateFilter"></activity>
+        <activity android:name=".utils.CommonDateFilter" />
         <activity android:name=".admin.CartoonAuditAdmin" />
         <activity android:name=".cardviewmenu.CardMenuP" />
         <activity android:name=".utils.CommonStyleData" />
