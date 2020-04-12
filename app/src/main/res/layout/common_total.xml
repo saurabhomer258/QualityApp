@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.NestedScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/parent"
+
+        tools:context=".dialog.DailyFInishingResult">
+
+        <android.support.v7.widget.CardView
+
+            android:id="@+id/cardView8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="30dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/cardView6"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical"
+                android:paddingStart="30dp"
+                >
+                <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!---->
+                <!--android:textColor="#000"-->
+                <!--android:gravity="center"-->
+                <!--android:textSize="19dp"-->
+                <!--android:layout_marginBottom="40dp"-->
+                <!--android:text="Top 3 defect name"/>-->
+
+                <TextView
+                    android:id="@+id/data1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                    android:layout_marginBottom="10dp"
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                    android:layout_marginBottom="10dp"
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                    android:layout_marginBottom="10dp"
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                    android:layout_marginBottom="10dp"
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                    android:layout_marginBottom="10dp"
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                    android:layout_marginBottom="10dp"
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                    android:layout_marginBottom="10dp"
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                    android:layout_marginBottom="10dp"
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                    android:layout_marginBottom="10dp"
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                    android:layout_marginBottom="10dp"
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                    android:layout_marginBottom="10dp"
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data17"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                    android:layout_marginBottom="10dp"
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data18"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                    android:layout_marginBottom="10dp"
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                    android:layout_marginBottom="10dp"
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data21"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data22"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                    android:layout_marginBottom="10dp"
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data23"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                    android:layout_marginBottom="10dp"
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data24"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data25"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data26"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data27"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data28"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+                <TextView
+                    android:id="@+id/data29"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+                <TextView
+                    android:id="@+id/data30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                  
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/tv_total"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:text="data"
+                    android:textColor="#000" />
+                <TextView
+                    android:id="@+id/tv_Defect_per"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:text="data"
+                    android:textColor="#000" />
+                <TextView
+                    android:id="@+id/data41"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:text="data"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/data42"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:text="data"
+                    android:textColor="#000" />
+                <TextView
+                    android:id="@+id/data43"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:text="data"
+                    android:textColor="#000" />
+
+
+
+                <Button
+                    android:id="@+id/btn_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:text="OK" />
+
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>

@@ -74,6 +74,7 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity implements V
                 String text = finishing.getSelectedItem().toString();
                 sDailyFinishinfModels.setDate(strdate);
                 sDailyFinishinfModels.setFinishingLine(text);
+
                 Intent intent = new Intent(DailyFinishingDefectAnalysis.this,DailyFinishingAnalysis2.class);
                 startActivity(intent);
 //

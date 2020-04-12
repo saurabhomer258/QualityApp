@@ -31,10 +31,11 @@ import java.util.ArrayList;
 
 import static com.example.saurabhomer.qualityapp.OutSide.DailyFinishingDefectAnalysisOutside.DAILYFINIFSHINGMODELLIST;
 import static com.example.saurabhomer.qualityapp.OutSide.DailyFinishingDefectAnalysisOutside.dailyFinishinfModels1;
+import static com.example.saurabhomer.qualityapp.OutSide.DailyFinishingDefectAnalysisOutside.sDailyFinishinfModels;
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
 public class DailyFinishingAnalysisOutside extends AppCompatActivity {
-    static DailyFinishinfModels sDailyFinishinfModels = new DailyFinishinfModels();
+
     static ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
