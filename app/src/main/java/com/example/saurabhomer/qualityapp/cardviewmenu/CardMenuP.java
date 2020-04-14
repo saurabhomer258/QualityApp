@@ -62,7 +62,6 @@ public class CardMenuP extends AppCompatActivity
         inside.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 openDailyFinishingcheck();
             }
         });
@@ -163,7 +162,8 @@ public class CardMenuP extends AppCompatActivity
         progressDialog.show();
 
         if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
-            Intent i =  new Intent(CardMenuP.this, DailyfinishingGetUpAdmin.class);
+            Intent i =  new Intent(CardMenuP.this, CommonDailyDateFilter.class);
+            i.putExtra("Name","DailyGetup");
             startActivity(i);
         }
         else {
@@ -178,13 +178,13 @@ public class CardMenuP extends AppCompatActivity
         progressDialog.setMessage("Verificating...");
         progressDialog.show();
         if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
-            Intent i =  new Intent(CardMenuP.this, DailyfinishingOutsideAdmin.class);
+            Intent i =  new Intent(CardMenuP.this, CommonDailyDateFilter.class);
+            i.putExtra("Name","DailyOutSide");
             startActivity(i);
         }
         else {
             Intent i = new Intent(CardMenuP.this, DailyFinishingDefectAnalysisOutside.class);
             startActivity(i);
-
         }
         progressDialog.hide();
 

@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,8 +23,10 @@ public class CommonDailyDateFilter extends AppCompatActivity  implements
     static EditText commontxtDate;
     Spinner finishing;
     private int mYear, mMonth, mDay, mHour, mMinute;
-    String str;
+    String str,str1,str2;
     String test1 = "DialyInside";
+    String testgetup ="DailyGetup";
+    String testoutside = "DailyOutSide";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +45,7 @@ public class CommonDailyDateFilter extends AppCompatActivity  implements
             {
                 Intent intent=getIntent();
                 str = intent.getStringExtra("Name");
-
+                Log.d("string", ""+str);
                 if(test1.equals(str))
                 {
                     Toast.makeText(CommonDailyDateFilter.this, "btn", Toast.LENGTH_SHORT).show();
@@ -53,7 +56,27 @@ public class CommonDailyDateFilter extends AppCompatActivity  implements
                     i.putExtra("insidefinishing",finish);
                     startActivity(i);
                 }
+                else if(testoutside.equals(str))
+                {
 
+                    Toast.makeText(CommonDailyDateFilter.this, "btn", Toast.LENGTH_SHORT).show();
+                    String strDate = commontxtDate.getText().toString();
+                    final String finish = finishing.getSelectedItem().toString();
+                    Intent i = new Intent(CommonDailyDateFilter.this, DailyfinishingAdmin.class);
+                    i.putExtra("outsidedate",strDate);
+                    i.putExtra("outsidefinishing",finish);
+                    startActivity(i);
+                }
+                else if(testgetup.equals(str))
+                {
+                    Toast.makeText(CommonDailyDateFilter.this, "btn", Toast.LENGTH_SHORT).show();
+                    String strDate = commontxtDate.getText().toString();
+                    final String finish = finishing.getSelectedItem().toString();
+                    Intent i = new Intent(CommonDailyDateFilter.this, DailyfinishingAdmin.class);
+                    i.putExtra("getupdate",strDate);
+                    i.putExtra("getupfinishing",finish);
+                    startActivity(i);
+                }
 
             }
         });
