@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,6 +37,7 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity {
     static ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
     public static DialyFinishingAnalysisModel  dialyFinishingAnalysisModelForResult;
     public static ArrayList<DialyFinishingAnalysisModel>  DAILYFINIFSHINGMODELLISTForResult;
+    Button btn_res;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,7 +81,7 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity {
         final Spinner edt_dirty = findViewById(R.id.edt_dirty).findViewById(R.id.spinner);
         final Spinner edt_iron = findViewById(R.id.edt_iron).findViewById(R.id.spinner);
         Button next =findViewById(R.id.btn_next).findViewById(R.id.btnNext);
-        Button btn_res =findViewById(R.id.btn_result).findViewById(R.id.btnNext);
+         btn_res =findViewById(R.id.btn_result).findViewById(R.id.btnNext);
         Button done =findViewById(R.id.btn_done).findViewById(R.id.btnNext);
         btn_res.setText("Get Result");
         btn_res.setOnClickListener(new View.OnClickListener() {
@@ -126,6 +128,7 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity {
                         ,edt_uneven.getSelectedItemPosition()
                 );
                 dialyFinishingAnalysisModelForResult =dialyFinishingAnalysisModel ;
+                Log.d("sssss",DAILYFINIFSHINGMODELLIST.size()+"");
                 DAILYFINIFSHINGMODELLISTForResult= DAILYFINIFSHINGMODELLIST;
                Intent i = new Intent(DailyFinishingAnalysisGetup.this,ResultView.class);
                 startActivity(i);

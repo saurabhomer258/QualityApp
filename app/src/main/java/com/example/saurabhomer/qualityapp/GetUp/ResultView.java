@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -32,10 +33,12 @@ import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGet
         data42  = findViewById(R.id.data42);
         data43  = findViewById(R.id.data43);
         DialyFinishingAnalysisModel dialyFinishingAnalysisModel  = dialyFinishingAnalysisModelForResult;
-        ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST =DAILYFINIFSHINGMODELLISTForResult;
-        ArrayList<DialyFinishingAnalysisModel> Dummy =DAILYFINIFSHINGMODELLISTForResult;
+        ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST =new ArrayList<>();
+        DAILYFINIFSHINGMODELLIST  =DAILYFINIFSHINGMODELLISTForResult;
+        ArrayList<DialyFinishingAnalysisModel> Dummy = new ArrayList<>();
+        Dummy.addAll(DAILYFINIFSHINGMODELLISTForResult);
+        Dummy.add(dialyFinishingAnalysisModel);
 
-          Dummy.add(dialyFinishingAnalysisModel);
         for(int i=0;i<DAILYFINIFSHINGMODELLIST.size();i++){
 
            DialyFinishingAnalysisModel dialyFinishingAnalysisModel1 = DAILYFINIFSHINGMODELLIST.get(i);
@@ -73,13 +76,6 @@ import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGet
            dialyFinishingAnalysisModel.setIron(dialyFinishingAnalysisModel.getIron()+dialyFinishingAnalysisModel1.getIron());
 
        }
-        // private int PrintingMRBO,Slubs_Holes_NAR,colorShading,BrokenStitches,SlipStitches,SPI,Pukering,LooseTensions,SnapDefects,NeedleMark,OpenSeam,Pleats;
-        //   private int MissingStitches,SkipRunOff,IncorrectLabel,WrongPlacement,LooseNess,CutDamage,Others,Stain,OilMark,Stickers,UncutThread,OutOfSpec;
-        //    private int TotalDefect,QualityOut,ProductionOut,Damage,Dirty,Iron;
-        //    private String hours;
-        //    private int totalCheck;
-        //    private int uneven;
-
         TextView textView1 =  findViewById(R.id.data1);
         textView1.setText("PrintingMRBO:"+ dialyFinishingAnalysisModel.getPrintingMRBO());
 
