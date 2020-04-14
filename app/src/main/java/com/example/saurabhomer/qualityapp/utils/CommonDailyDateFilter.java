@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.admin.DailyfinishingAdmin;
+import com.example.saurabhomer.qualityapp.admin.DailyfinishingGetUpAdmin;
+import com.example.saurabhomer.qualityapp.admin.DailyfinishingOutsideAdmin;
 import com.example.saurabhomer.qualityapp.admin.SkuAdmin;
 
 import java.util.Calendar;
@@ -62,7 +64,7 @@ public class CommonDailyDateFilter extends AppCompatActivity  implements
                     Toast.makeText(CommonDailyDateFilter.this, "btn", Toast.LENGTH_SHORT).show();
                     String strDate = commontxtDate.getText().toString();
                     final String finish = finishing.getSelectedItem().toString();
-                    Intent i = new Intent(CommonDailyDateFilter.this, DailyfinishingAdmin.class);
+                    Intent i = new Intent(CommonDailyDateFilter.this, DailyfinishingOutsideAdmin.class);
                     i.putExtra("outsidedate",strDate);
                     i.putExtra("outsidefinishing",finish);
                     startActivity(i);
@@ -72,7 +74,7 @@ public class CommonDailyDateFilter extends AppCompatActivity  implements
                     Toast.makeText(CommonDailyDateFilter.this, "btn", Toast.LENGTH_SHORT).show();
                     String strDate = commontxtDate.getText().toString();
                     final String finish = finishing.getSelectedItem().toString();
-                    Intent i = new Intent(CommonDailyDateFilter.this, DailyfinishingAdmin.class);
+                    Intent i = new Intent(CommonDailyDateFilter.this, DailyfinishingGetUpAdmin.class);
                     i.putExtra("getupdate",strDate);
                     i.putExtra("getupfinishing",finish);
                     startActivity(i);
