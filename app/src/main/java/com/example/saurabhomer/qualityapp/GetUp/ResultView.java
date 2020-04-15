@@ -53,21 +53,22 @@ import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGet
            dialyFinishingAnalysisModel.setPukering(dialyFinishingAnalysisModel.getPukering()+dialyFinishingAnalysisModel1.getPukering());
            dialyFinishingAnalysisModel.setLooseTensions(dialyFinishingAnalysisModel.getLooseTensions()+dialyFinishingAnalysisModel1.getLooseTensions());
            dialyFinishingAnalysisModel.setSnapDefects(dialyFinishingAnalysisModel.getSnapDefects()+dialyFinishingAnalysisModel1.getSnapDefects());
-           dialyFinishingAnalysisModel.setNeedleMark(dialyFinishingAnalysisModel.getSnapDefects()+dialyFinishingAnalysisModel1.getSnapDefects());
-           dialyFinishingAnalysisModel.setOpenSeam(dialyFinishingAnalysisModel.getSnapDefects()+dialyFinishingAnalysisModel1.getSnapDefects());
-           dialyFinishingAnalysisModel.setPleats(dialyFinishingAnalysisModel.getSnapDefects()+dialyFinishingAnalysisModel1.getSnapDefects());
-           dialyFinishingAnalysisModel.setMissingStitches(dialyFinishingAnalysisModel.getSnapDefects()+dialyFinishingAnalysisModel1.getSnapDefects());
-           dialyFinishingAnalysisModel.setSkipRunOff(dialyFinishingAnalysisModel.getSnapDefects()+dialyFinishingAnalysisModel1.getSnapDefects());
-           dialyFinishingAnalysisModel.setIncorrectLabel(dialyFinishingAnalysisModel.getSnapDefects()+dialyFinishingAnalysisModel1.getSnapDefects());
-           dialyFinishingAnalysisModel.setWrongPlacement(dialyFinishingAnalysisModel.getSnapDefects()+dialyFinishingAnalysisModel1.getSnapDefects());
-           dialyFinishingAnalysisModel.setLooseNess(dialyFinishingAnalysisModel.getSnapDefects()+dialyFinishingAnalysisModel1.getSnapDefects());
-           dialyFinishingAnalysisModel.setCutDamage(dialyFinishingAnalysisModel.getSnapDefects()+dialyFinishingAnalysisModel1.getSnapDefects());
-           dialyFinishingAnalysisModel.setOthers(dialyFinishingAnalysisModel.getSnapDefects()+dialyFinishingAnalysisModel1.getSnapDefects());
-           dialyFinishingAnalysisModel.setStain(dialyFinishingAnalysisModel.getSnapDefects()+dialyFinishingAnalysisModel1.getSnapDefects());
-           dialyFinishingAnalysisModel.setOilMark(dialyFinishingAnalysisModel.getSnapDefects()+dialyFinishingAnalysisModel1.getSnapDefects());
-           dialyFinishingAnalysisModel.setStickers(dialyFinishingAnalysisModel.getSnapDefects()+dialyFinishingAnalysisModel1.getSnapDefects());
-           dialyFinishingAnalysisModel.setUncutThread(dialyFinishingAnalysisModel.getSnapDefects()+dialyFinishingAnalysisModel1.getSnapDefects());
-           dialyFinishingAnalysisModel.setOutOfSpec(dialyFinishingAnalysisModel.getSnapDefects()+dialyFinishingAnalysisModel1.getSnapDefects());
+
+           dialyFinishingAnalysisModel.setNeedleMark(dialyFinishingAnalysisModel.getNeedleMark()+dialyFinishingAnalysisModel1.getNeedleMark());
+           dialyFinishingAnalysisModel.setOpenSeam(dialyFinishingAnalysisModel.getOpenSeam()+dialyFinishingAnalysisModel1.getOpenSeam());
+           dialyFinishingAnalysisModel.setPleats(dialyFinishingAnalysisModel.getPleats()+dialyFinishingAnalysisModel1.getPleats());
+           dialyFinishingAnalysisModel.setMissingStitches(dialyFinishingAnalysisModel.getMissingStitches()+dialyFinishingAnalysisModel1.getMissingStitches());
+           dialyFinishingAnalysisModel.setSkipRunOff(dialyFinishingAnalysisModel.getSkipRunOff()+dialyFinishingAnalysisModel1.getSkipRunOff());
+           dialyFinishingAnalysisModel.setIncorrectLabel(dialyFinishingAnalysisModel.getIncorrectLabel()+dialyFinishingAnalysisModel1.getIncorrectLabel());
+           dialyFinishingAnalysisModel.setWrongPlacement(dialyFinishingAnalysisModel.getWrongPlacement()+dialyFinishingAnalysisModel1.getWrongPlacement());
+           dialyFinishingAnalysisModel.setLooseNess(dialyFinishingAnalysisModel.getLooseNess()+dialyFinishingAnalysisModel1.getLooseNess());
+           dialyFinishingAnalysisModel.setCutDamage(dialyFinishingAnalysisModel.getCutDamage()+dialyFinishingAnalysisModel1.getCutDamage());
+           dialyFinishingAnalysisModel.setOthers(dialyFinishingAnalysisModel.getOthers()+dialyFinishingAnalysisModel1.getOthers());
+           dialyFinishingAnalysisModel.setStain(dialyFinishingAnalysisModel.getStain()+dialyFinishingAnalysisModel1.getStain());
+           dialyFinishingAnalysisModel.setOilMark(dialyFinishingAnalysisModel.getOilMark()+dialyFinishingAnalysisModel1.getOilMark());
+           dialyFinishingAnalysisModel.setStickers(dialyFinishingAnalysisModel.getStickers()+dialyFinishingAnalysisModel1.getStickers());
+           dialyFinishingAnalysisModel.setUncutThread(dialyFinishingAnalysisModel.getUncutThread()+dialyFinishingAnalysisModel1.getUncutThread());
+           dialyFinishingAnalysisModel.setOutOfSpec(dialyFinishingAnalysisModel.getOutOfSpec()+dialyFinishingAnalysisModel1.getOutOfSpec());
            dialyFinishingAnalysisModel.setTotalDefect(dialyFinishingAnalysisModel.getTotalDefect()+dialyFinishingAnalysisModel1.getTotalDefect());
            dialyFinishingAnalysisModel.setQualityOut(dialyFinishingAnalysisModel.getQualityOut()+dialyFinishingAnalysisModel1.getQualityOut());
            dialyFinishingAnalysisModel.setProductionOut(dialyFinishingAnalysisModel.getProductionOut()+dialyFinishingAnalysisModel1.getProductionOut());
@@ -77,50 +78,50 @@ import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGet
 
        }
         TextView textView1 =  findViewById(R.id.data1);
-        textView1.setText("PrintingMRBO:"+ dialyFinishingAnalysisModel.getPrintingMRBO());
+        textView1.setText("PrintingMRBO            :"+ dialyFinishingAnalysisModel.getPrintingMRBO());
 
         TextView textView2 =  findViewById(R.id.data2);
-        textView2.setText("Slubs_Holes_NAR:"+ dialyFinishingAnalysisModel.getSlubs_Holes_NAR());
+        textView2.setText("Slubs_Holes_NAR     :"+ dialyFinishingAnalysisModel.getSlubs_Holes_NAR());
 
 
 
         TextView textView3 =  findViewById(R.id.data3);
-        textView3.setText("colorShading:"+ dialyFinishingAnalysisModel.getColorShading());
+        textView3.setText("colorShading              :"+ dialyFinishingAnalysisModel.getColorShading());
 
 
         TextView textView4 =  findViewById(R.id.data4);
-        textView4.setText("BrokenStitches:"+ dialyFinishingAnalysisModel.getBrokenStitches());
+        textView4.setText("BrokenStitches          :"+ dialyFinishingAnalysisModel.getBrokenStitches());
 
 
         TextView textView5 =  findViewById(R.id.data5);
-        textView5.setText("SlipStitches:"+ dialyFinishingAnalysisModel.getSlipStitches());
+        textView5.setText("SlipStitches                :"+ dialyFinishingAnalysisModel.getSlipStitches());
 
 
         TextView textView6 =  findViewById(R.id.data6);
-        textView6.setText("SPI:"+ dialyFinishingAnalysisModel.getSPI());
+        textView6.setText("SPI                                :"+ dialyFinishingAnalysisModel.getSPI());
 
 
         TextView textView7 =  findViewById(R.id.data7);
-        textView7.setText("Pukering:"+ dialyFinishingAnalysisModel.getPukering());
+        textView7.setText("Pukering                      :"+ dialyFinishingAnalysisModel.getPukering());
 
 
 
         TextView textView8 =  findViewById(R.id.data8);
-        textView8.setText("LooseTensions:"+ dialyFinishingAnalysisModel.getLooseTensions());
+        textView8.setText("LooseTensions          :"+ dialyFinishingAnalysisModel.getLooseTensions());
 
 
         TextView textView9 =  findViewById(R.id.data9);
-        textView9.setText("SnapDefects:"+ dialyFinishingAnalysisModel.getSnapDefects());
+        textView9.setText("SnapDefects              :"+ dialyFinishingAnalysisModel.getSnapDefects());
 
         TextView textView10 =  findViewById(R.id.data10);
-        textView10.setText("NeedleMark:"+ dialyFinishingAnalysisModel.getNeedleMark());
+        textView10.setText("NeedleMark                :"+ dialyFinishingAnalysisModel.getNeedleMark());
 
 
         TextView textView11 =  findViewById(R.id.data11);
-        textView11.setText("OpenSeam:"+ dialyFinishingAnalysisModel.getOpenSeam());
+        textView11.setText("OpenSeam                  :"+ dialyFinishingAnalysisModel.getOpenSeam());
 
         TextView textView12 =  findViewById(R.id.data12);
-        textView12.setText("Pleats:"+ dialyFinishingAnalysisModel.getPleats());
+        textView12.setText("Pleats                           :"+ dialyFinishingAnalysisModel.getPleats());
 
 
 //   private int MissingStitches,SkipRunOff,IncorrectLabel,WrongPlacement,LooseNess,CutDamage,Others,Stain,OilMark,Stickers,UncutThread,OutOfSpec;
@@ -130,91 +131,91 @@ import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGet
         //    private int uneven;
 
         TextView textView13 =  findViewById(R.id.data13);
-        textView13.setText("MissingStitches:"+ dialyFinishingAnalysisModel.getMissingStitches());
+        textView13.setText("MissingStitches         :"+ dialyFinishingAnalysisModel.getMissingStitches());
 
 
 
         TextView textView14 =  findViewById(R.id.data14);
-        textView14.setText("SkipRunOff:"+ dialyFinishingAnalysisModel.getSkipRunOff());
+        textView14.setText("SkipRunOff                  :"+ dialyFinishingAnalysisModel.getSkipRunOff());
 
 
         TextView textView15 =  findViewById(R.id.data15);
-        textView15.setText("IncorrectLabel:"+ dialyFinishingAnalysisModel.getIncorrectLabel());
+        textView15.setText("IncorrectLabel            :"+ dialyFinishingAnalysisModel.getIncorrectLabel());
 
 
         TextView textView16 =  findViewById(R.id.data16);
-        textView16.setText("WrongPlacement:"+ dialyFinishingAnalysisModel.getWrongPlacement());
+        textView16.setText("WrongPlacement       :"+ dialyFinishingAnalysisModel.getWrongPlacement());
 
 
         TextView textView17 =  findViewById(R.id.data17);
-        textView17.setText("LooseNess:"+ dialyFinishingAnalysisModel.getLooseNess());
+        textView17.setText("LooseNess                  :"+ dialyFinishingAnalysisModel.getLooseNess());
 
 
         TextView textView18 =  findViewById(R.id.data18);
-        textView18.setText("CutDamage:"+ dialyFinishingAnalysisModel.getCutDamage());
+        textView18.setText("CutDamage                 :"+ dialyFinishingAnalysisModel.getCutDamage());
 
 
         //   private int MissingStitches,SkipRunOff,IncorrectLabel,WrongPlacement,LooseNess,CutDamage,Others,Stain,OilMark,Stickers,UncutThread,;
 
 
         TextView textView19 =  findViewById(R.id.data19);
-        textView19.setText("Others:"+ dialyFinishingAnalysisModel.getOthers());
+        textView19.setText("Others                           :"+ dialyFinishingAnalysisModel.getOthers());
 
         TextView textView20 =  findViewById(R.id.data20);
-        textView20.setText("Stain:"+ dialyFinishingAnalysisModel.getStain());
+        textView20.setText("Stain                              :"+ dialyFinishingAnalysisModel.getStain());
 
         TextView textView21 =  findViewById(R.id.data21);
-        textView21.setText("OilMark:"+ dialyFinishingAnalysisModel.getOilMark());
+        textView21.setText("OilMark                         :"+ dialyFinishingAnalysisModel.getOilMark());
 
 
         TextView textView22 =  findViewById(R.id.data22);
-        textView22.setText("Stickers:"+ dialyFinishingAnalysisModel.getStickers());
+        textView22.setText("Stickers                        :"+ dialyFinishingAnalysisModel.getStickers());
 
         TextView textView23 =  findViewById(R.id.data23);
-        textView23.setText("UncutThread:"+ dialyFinishingAnalysisModel.getUncutThread());
+        textView23.setText("UncutThread               :"+ dialyFinishingAnalysisModel.getUncutThread());
 
 
         TextView textView24 =  findViewById(R.id.data24);
-        textView24.setText("OutOfSpec:"+ dialyFinishingAnalysisModel.getOutOfSpec());
+        textView24.setText("OutOfSpec                   :"+ dialyFinishingAnalysisModel.getOutOfSpec());
 
        // private int TotalDefect,QualityOut,ProductionOut,Damage,Dirty,Iron;
 
 
 
         TextView textView25 =  findViewById(R.id.data25);
-        textView25.setText("TotalDefect:"+ dialyFinishingAnalysisModel.getTotalDefect());
+        textView25.setText("TotalDefect                  :"+ dialyFinishingAnalysisModel.getTotalDefect());
 
 
         TextView textView26 =  findViewById(R.id.data26);
-        textView26.setText("QualityOut:"+ dialyFinishingAnalysisModel.getQualityOut());
+        textView26.setText("QualityOut                    :"+ dialyFinishingAnalysisModel.getQualityOut());
 
 
 
         TextView textView27 =  findViewById(R.id.data27);
-        textView27.setText("ProductionOut:"+ dialyFinishingAnalysisModel.getProductionOut());
+        textView27.setText("ProductionOut            :"+ dialyFinishingAnalysisModel.getProductionOut());
 
 
         TextView textView28 =  findViewById(R.id.data28);
-        textView28.setText("Damage:"+ dialyFinishingAnalysisModel.getDamage());
+        textView28.setText("Damage                       :"+ dialyFinishingAnalysisModel.getDamage());
 
 
         TextView textView29 =  findViewById(R.id.data29);
-        textView29.setText("Dirty:"+ dialyFinishingAnalysisModel.getDirty());
+        textView29.setText("Dirty                              :"+ dialyFinishingAnalysisModel.getDirty());
 
         TextView textView30 =  findViewById(R.id.data30);
-        textView30.setText("Iron:"+ dialyFinishingAnalysisModel.getIron());
+        textView30.setText("Iron                                :"+ dialyFinishingAnalysisModel.getIron());
 
 
         String s = dialyFinishingAnalysisModel.getTotal()+"";
-        total.setText("Total : "+s);
+        total.setText("Total                             :"+s);
         if(dialyFinishingAnalysisModel.getTotalCheck()==0)
         {
-            totalPer.setText("Total percentage:"+0+"");
+            totalPer.setText("Total percentage         :"+0+"");
         }
         else {
             float f    =  (float) dialyFinishingAnalysisModel.getTotal() / dialyFinishingAnalysisModel.getTotalCheck();
             f = f*100;
-            totalPer.setText("Total percentage:"+f+"");
+            totalPer.setText("Total percentage          :"+f+"");
         }
         Button b = findViewById(R.id.btn_ok);
         getMaxThree(Dummy);

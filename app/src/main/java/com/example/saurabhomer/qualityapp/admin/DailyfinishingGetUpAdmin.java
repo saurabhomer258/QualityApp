@@ -82,40 +82,40 @@ public class DailyfinishingGetUpAdmin extends AppCompatActivity {
                         {
                             for(DialyFinishingAnalysisModel items: list)
                             {
-                                setLayout("Printing MRBO",items.getPrintingMRBO()+"");
-                                setLayout("Slubs Holes NAR",items.getSlubs_Holes_NAR()+"");
-                                setLayout("Color Shading",items.getColorShading()+"");
-                                setLayout("Broken Stitches",items.getBrokenStitches()+"");
+                                setLayout("Printing MRBO            ",items.getPrintingMRBO()+"");
+                                setLayout("Slubs Holes NAR        ",items.getSlubs_Holes_NAR()+"");
+                                setLayout("Color Shading             ",items.getColorShading()+"");
+                                setLayout("Broken Stitches          ",items.getBrokenStitches()+"");
 
-                                setLayout("Slip Stitches",items.getSlipStitches()+"");
-                                setLayout("SPI",items.getSPI()+"");
-                                setLayout("Pukering",items.getPukering()+"");
-                                setLayout("LooseTensions",items.getLooseTensions()+"");
-                                setLayout("SnapDefects",items.getSnapDefects()+"");
-                                setLayout("NeedleMark",items.getNeedleMark()+"");
-                                setLayout("OpenSeam",items.getOpenSeam()+"");
-                                setLayout("Pleats",items.getPleats()+"");
-                                setLayout("MissingStitches",items.getMissingStitches()+"");
-                                setLayout("SkipRunOff",items.getSkipRunOff()+"");
-                                setLayout("IncorrectLabel",items.getIncorrectLabel()+"");
-                                setLayout("WrongPlacement",items.getWrongPlacement()+"");
-                                setLayout("LooseNess",items.getLooseNess()+"");
-                                setLayout("CutDamage",items.getCutDamage()+"");
-                                setLayout("Others",items.getOthers()+"");
-                                setLayout("Stain",items.getStain()+"");
-                                setLayout("OilMark",items.getOilMark()+"");
-                                setLayout("Stickers",items.getStickers()+"");
-                                setLayout("UncutThread",items.getUncutThread()+"");
-                                setLayout("OutOfSpec",items.getOutOfSpec()+"");
-                                setLayout("TotalDefect",items.getTotalDefect()+"");
-                                setLayout("QualityOut",items.getQualityOut()+"");
-                                setLayout("ProductionOut",items.getProductionOut()+"");
-                                setLayout("Damage",items.getDamage()+"");
-                                setLayout("Dirty",items.getDirty()+"");
-                                setLayout("Iron",items.getIron()+"");
-                                setLayout("hours",items.getHours());
-                                setLayout("Uneven",items.getUneven()+"");
-                                setLayout("Total Check",items.getTotalCheck()+"");
+                                setLayout("Slip Stitches                ",items.getSlipStitches()+"");
+                                setLayout("SPI                                 ",items.getSPI()+"");
+                                setLayout("Pukering                       ",items.getPukering()+"");
+                                setLayout("LooseTensions           ",items.getLooseTensions()+"");
+                                setLayout("SnapDefects               ",items.getSnapDefects()+"");
+                                setLayout("NeedleMark                 ",items.getNeedleMark()+"");
+                                setLayout("OpenSeam                   ",items.getOpenSeam()+"");
+                                setLayout("Pleats                            ",items.getPleats()+"");
+                                setLayout("MissingStitches          ",items.getMissingStitches()+"");
+                                setLayout("SkipRunOff                   ",items.getSkipRunOff()+"");
+                                setLayout("IncorrectLabel             ",items.getIncorrectLabel()+"");
+                                setLayout("WrongPlacement        ",items.getWrongPlacement()+"");
+                                setLayout("LooseNess                   ",items.getLooseNess()+"");
+                                setLayout("CutDamage                  ",items.getCutDamage()+"");
+                                setLayout("Others                           ",items.getOthers()+"");
+                                setLayout("Stain                              ",items.getStain()+"");
+                                setLayout("OilMark                         ",items.getOilMark()+"");
+                                setLayout("Stickers                         ",items.getStickers()+"");
+                                setLayout("UncutThread                ",items.getUncutThread()+"");
+                                setLayout("OutOfSpec                    ",items.getOutOfSpec()+"");
+                                setLayout("TotalDefect                   ",items.getTotalDefect()+"");
+                                setLayout("QualityOut                     ",items.getQualityOut()+"");
+                                setLayout("ProductionOut             ",items.getProductionOut()+"");
+                                setLayout("Damage                         ",items.getDamage()+"");
+                                setLayout("Dirty                                ",items.getDirty()+"");
+                                setLayout("Iron                                  ",items.getIron()+"");
+                                setLayout("hours                              ",items.getHours());
+                                setLayout("Uneven                           ",items.getUneven()+"");
+                                setLayout("Total Check                   ",items.getTotalCheck()+"");
 
 
                                 TextView textView1= new TextView(DailyfinishingGetUpAdmin.this);

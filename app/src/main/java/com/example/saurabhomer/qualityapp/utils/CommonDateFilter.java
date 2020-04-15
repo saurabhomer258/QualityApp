@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.admin.SkuAdmin;
@@ -15,7 +16,7 @@ import java.util.Calendar;
 
 public class CommonDateFilter extends AppCompatActivity implements
         View.OnClickListener {
-    Button btnDatePicker, btnTimePicker;
+    ImageButton btnDatePicker, btnTimePicker;
     static EditText commontxtDate;
     private int mYear, mMonth, mDay, mHour, mMinute;
     String str;
@@ -25,7 +26,7 @@ public class CommonDateFilter extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_common_date_filter);
-        btnDatePicker=(Button)findViewById(R.id.btn_date);
+        btnDatePicker=(ImageButton)findViewById(R.id.btn_date);
         commontxtDate=(EditText)findViewById(R.id.in_date);
         btnDatePicker.setOnClickListener(this);
 

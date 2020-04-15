@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingAnalysis2;
@@ -32,7 +33,7 @@ import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMB
 public class DailyFinishingDefectAnalysisGetup extends AppCompatActivity implements
         View.OnClickListener {
     private int mYear, mMonth, mDay, mHour, mMinute;
-    Button btnDatePicker;
+    ImageButton btnDatePicker;
     EditText txtDate;
     Button info_btn;
     static int DAILYFINISHINGPAGE =0;
@@ -52,7 +53,7 @@ public class DailyFinishingDefectAnalysisGetup extends AppCompatActivity impleme
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_finishing_defect_analysis_getup);
         info_btn = (Button)findViewById(R.id.info_daily);
-        btnDatePicker=(Button)findViewById(R.id.btn_date);
+        btnDatePicker=(ImageButton)findViewById(R.id.btn_date);
         txtDate=(EditText)findViewById(R.id.in_date);
         btnDatePicker.setOnClickListener(this);
 

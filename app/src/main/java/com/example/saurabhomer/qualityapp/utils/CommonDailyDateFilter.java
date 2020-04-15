@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -21,7 +22,7 @@ import java.util.Calendar;
 
 public class CommonDailyDateFilter extends AppCompatActivity  implements
         View.OnClickListener{
-    Button btnDatePicker, btnTimePicker;
+    ImageButton btnDatePicker, btnTimePicker;
     static EditText commontxtDate;
     Spinner finishing;
     private int mYear, mMonth, mDay, mHour, mMinute;
@@ -33,7 +34,7 @@ public class CommonDailyDateFilter extends AppCompatActivity  implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_common_daily_date_filter);
-        btnDatePicker=(Button)findViewById(R.id.btn_date);
+        btnDatePicker=(ImageButton)findViewById(R.id.btn_date);
         commontxtDate=(EditText)findViewById(R.id.in_date);
         btnDatePicker.setOnClickListener(this);
         finishing=(Spinner)    findViewById(R.id.edt_finishingcommon).findViewById(R.id.spinner);
