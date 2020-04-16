@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingAnalysis2;
 import com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGetup;
+import com.example.saurabhomer.qualityapp.GetUp.ResultViewForActivity;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.MainDailyFinishingModel;
@@ -37,6 +38,7 @@ import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMB
 public class DailyFinishingAnalysisOutside extends AppCompatActivity {
 
     static ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
+    static ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLISTForFinalResut1 = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -259,7 +261,10 @@ public class DailyFinishingAnalysisOutside extends AppCompatActivity {
                                             .child(STYLE_NUMBER).setValue(mainDailyFinishingModel).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
-
+                                            DAILYFINIFSHINGMODELLISTForFinalResut1.addAll( DAILYFINIFSHINGMODELLIST);
+                                            Intent i =new Intent(DailyFinishingAnalysisOutside.this, com.example.saurabhomer.qualityapp.OutSide.ResultViewForActivity.class);
+                                            startActivity(i);
+                                            finish();
                                         }
                                     });
 
@@ -314,11 +319,14 @@ public class DailyFinishingAnalysisOutside extends AppCompatActivity {
                                             .child(STYLE_NUMBER).setValue(mainDailyFinishingModel1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
-
+                                            DAILYFINIFSHINGMODELLISTForFinalResut1.addAll( DAILYFINIFSHINGMODELLIST);
+                                            Intent i =new Intent(DailyFinishingAnalysisOutside.this, com.example.saurabhomer.qualityapp.OutSide.ResultViewForActivity.class);
+                                            startActivity(i);
+                                            finish();
                                         }
                                     });
                                 }
-                                DAILYFINIFSHINGMODELLIST.clear();
+
                             }
 
                             @Override
@@ -326,9 +334,7 @@ public class DailyFinishingAnalysisOutside extends AppCompatActivity {
 
                             }
                         });
-                Intent i =new Intent(DailyFinishingAnalysisOutside.this, DailyFinishingOutsideResult.class);
-                startActivity(i);
-                finish();
+
             }
 
         });

@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGetup;
+import com.example.saurabhomer.qualityapp.GetUp.ResultViewForActivity;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.MainDailyFinishingModel;
@@ -33,6 +35,8 @@ import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMB
 
 public class DailyFinishingAnalysis2 extends AppCompatActivity
 {
+
+    static ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLISTForFinalResut1 = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -201,7 +205,9 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
                                       @Override
                                       public void onComplete(@NonNull Task<Void> task)
                                       {
-
+                                          Intent i =new Intent(DailyFinishingAnalysis2.this, ResultViewForActivity.class);
+                                          startActivity(i);
+                                          finish();
                                       }
                                   });
 
@@ -256,7 +262,9 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
                                           .child(STYLE_NUMBER).setValue(mainDailyFinishingModel1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                       @Override
                                       public void onComplete(@NonNull Task<Void> task) {
-
+                                          Intent i =new Intent(DailyFinishingAnalysis2.this, ResultViewForActivity.class);
+                                          startActivity(i);
+                                          finish();
                                       }
                                   });
 
@@ -273,9 +281,7 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
 
 
 
-             Intent i =new Intent(DailyFinishingAnalysis2.this,DailyFInishingResult.class);
-             startActivity(i);
-             finish();
+
           }
        });
        next.setOnClickListener(new View.OnClickListener()

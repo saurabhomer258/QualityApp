@@ -42,6 +42,7 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity implements V
     static DailyFinishingModel1 model;
 
     static ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
+
     static MainDailyFinishingModel mainDailyFinishingModel = new MainDailyFinishingModel();
     static DailyFinishinfModels sDailyFinishinfModels = new DailyFinishinfModels();
 

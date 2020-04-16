@@ -1,4 +1,4 @@
-package com.example.saurabhomer.qualityapp.GetUp;
+package com.example.saurabhomer.qualityapp.OutSide;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,10 +15,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGetup.DAILYFINIFSHINGMODELLIST;
-import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGetup.DAILYFINIFSHINGMODELLISTForFinalResut;
-import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGetup.DAILYFINIFSHINGMODELLISTForResult;
-import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGetup.dialyFinishingAnalysisModelForResult;
+
 
 public class ResultViewForActivity extends AppCompatActivity {
     TextView data41,data42,data43;
@@ -33,9 +30,9 @@ protected void onCreate(Bundle savedInstanceState) {
     data42  = findViewById(R.id.data42);
     data43  = findViewById(R.id.data43);
 
-    DialyFinishingAnalysisModel dialyFinishingAnalysisModel  = DAILYFINIFSHINGMODELLISTForFinalResut.get(0);
+    DialyFinishingAnalysisModel dialyFinishingAnalysisModel  = DailyFinishingAnalysisOutside.DAILYFINIFSHINGMODELLISTForFinalResut1.get(0);
     ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST =new ArrayList<>();
-    DAILYFINIFSHINGMODELLIST  =DAILYFINIFSHINGMODELLISTForFinalResut;
+    DAILYFINIFSHINGMODELLIST  =DailyFinishingAnalysisOutside.DAILYFINIFSHINGMODELLISTForFinalResut1;
     ArrayList<DialyFinishingAnalysisModel> Dummy = new ArrayList<>();
 
     Dummy.add(dialyFinishingAnalysisModel);
@@ -232,8 +229,8 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 
     private void clear() {
-        DAILYFINIFSHINGMODELLIST.clear();
-        DAILYFINIFSHINGMODELLISTForFinalResut.clear();
+        DailyFinishingAnalysisOutside.DAILYFINIFSHINGMODELLIST.clear();
+        DailyFinishingAnalysisOutside.DAILYFINIFSHINGMODELLISTForFinalResut1.clear();
     }
 
 

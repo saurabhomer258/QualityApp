@@ -67,6 +67,7 @@
         <activity android:name=".SkuCheckReport.SkuCheckReport100Page1" />
         <activity android:name=".admin.SkuAdmin" />
         <activity android:name=".dialog.DailyFInishingResult" />
+        <activity android:name=".OutSide.ResultViewForActivity" />
     </application>
 
 </manifest>

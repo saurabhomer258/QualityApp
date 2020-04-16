@@ -201,7 +201,10 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity {
                                             .child(STYLE_NUMBER).setValue(mainDailyFinishingModel).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
-
+                                            DAILYFINIFSHINGMODELLISTForFinalResut = DAILYFINIFSHINGMODELLIST;
+                                            Intent i =new Intent(DailyFinishingAnalysisGetup.this, ResultViewForActivity.class);
+                                            startActivity(i);
+                                            finish();
                                         }
                                     });
 
@@ -256,7 +259,10 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity {
                                             .child(STYLE_NUMBER).setValue(mainDailyFinishingModel1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
-
+                                            DAILYFINIFSHINGMODELLISTForFinalResut = DAILYFINIFSHINGMODELLIST;
+                                            Intent i =new Intent(DailyFinishingAnalysisGetup.this, ResultViewForActivity.class);
+                                            startActivity(i);
+                                            finish();
                                         }
                                     });
                                 }
@@ -268,9 +274,7 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity {
 
                             }
                         });
-                Intent i =new Intent(DailyFinishingAnalysisGetup.this, ResultViewForActivity.class);
-                startActivity(i);
-                finish();
+
             }
         });
         next.setOnClickListener(new View.OnClickListener()
