@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingAnalysis2;
 import com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGetup;
+import com.example.saurabhomer.qualityapp.GetUp.GetupResultView;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.MainDailyFinishingModel;
@@ -37,6 +39,8 @@ import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMB
 public class DailyFinishingAnalysisOutside extends AppCompatActivity {
 
     static ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
+    public static DialyFinishingAnalysisModel  dialyFinishingAnalysisModelForResult;
+    public static ArrayList<DialyFinishingAnalysisModel>  DAILYFINIFSHINGMODELLISTForResult;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -127,17 +131,11 @@ public class DailyFinishingAnalysisOutside extends AppCompatActivity {
                         , hour.getText().toString()+""
                         ,edt_uneven.getSelectedItemPosition()
                 );
-                String s = dialyFinishingAnalysisModel.getTotal()+"";
-                total.setText(s);
-                if(dialyFinishingAnalysisModel.getTotalCheck()==0)
-                {
-                    totalPer.setText(0+"");
-                }
-                else {
-                    float f    =  (float) dialyFinishingAnalysisModel.getTotal() / dialyFinishingAnalysisModel.getTotalCheck();
-                    f = f*100;
-                    totalPer.setText(f+"");
-                }
+                dialyFinishingAnalysisModelForResult =dialyFinishingAnalysisModel ;
+                Log.d("sssss",DAILYFINIFSHINGMODELLIST.size()+"");
+                DAILYFINIFSHINGMODELLISTForResult= DAILYFINIFSHINGMODELLIST;
+                Intent i = new Intent(DailyFinishingAnalysisOutside.this, OutsideResultView.class);
+                startActivity(i);
             }
         });
         done.setOnClickListener(new View.OnClickListener() {

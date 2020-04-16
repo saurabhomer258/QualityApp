@@ -21,7 +21,7 @@ import java.util.List;
 import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGetup.DAILYFINIFSHINGMODELLISTForResult;
 import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGetup.dialyFinishingAnalysisModelForResult;
 
-    public class ResultView extends AppCompatActivity {
+    public class GetupResultView extends AppCompatActivity {
         TextView data41,data42,data43;
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -208,14 +208,17 @@ import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGet
 
         String s = dialyFinishingAnalysisModel.getTotal()+"";
         total.setText("Total                             :"+s);
+
         if(dialyFinishingAnalysisModel.getTotalCheck()==0)
         {
-            totalPer.setText("Total percentage         :"+0+"");
+            totalPer.setText("Total percentage :"+0+"");
+            totalPer.setTextSize(18);
         }
         else {
             float f    =  (float) dialyFinishingAnalysisModel.getTotal() / dialyFinishingAnalysisModel.getTotalCheck();
             f = f*100;
-            totalPer.setText("Total percentage          :"+f+"");
+            totalPer.setText("Total percentage :"+f+"");
+            totalPer.setTextSize(18);
         }
         Button b = findViewById(R.id.btn_ok);
         getMaxThree(Dummy);
@@ -441,21 +444,24 @@ import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGet
     void setString(String string,int val){
         if(count==0)
         {
-            data41.setText(string +" "+val);
+            data41.setText(string +" : "+val);
+            data41.setTextSize(18);
             strings.add(string);
             value.add(val);
             count++;
         }
         else if(count==1)
         {
-            data42.setText(string +"  "+val);
+            data42.setText(string +" : "+val);
+            data42.setTextSize(18);
             strings.add(string);
             value.add(val);
             count++;
         }
         else if(count==2)
         {
-            data43.setText(string +"  "+val);
+            data43.setText(string +" : "+val);
+            data43.setTextSize(18);
             strings.add(string);
             value.add(val);
             count++;

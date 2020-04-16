@@ -9,15 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
-import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingAnalysis2;
-import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.MainDailyFinishingModel;
 import com.example.saurabhomer.qualityapp.R;
-import com.example.saurabhomer.qualityapp.dialog.DailyFInishingResult;
 import com.example.saurabhomer.qualityapp.dialog.DailyFinishingGetupResult;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -130,7 +126,7 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity {
                 dialyFinishingAnalysisModelForResult =dialyFinishingAnalysisModel ;
                 Log.d("sssss",DAILYFINIFSHINGMODELLIST.size()+"");
                 DAILYFINIFSHINGMODELLISTForResult= DAILYFINIFSHINGMODELLIST;
-               Intent i = new Intent(DailyFinishingAnalysisGetup.this,ResultView.class);
+               Intent i = new Intent(DailyFinishingAnalysisGetup.this, GetupResultView.class);
                 startActivity(i);
             }
 
