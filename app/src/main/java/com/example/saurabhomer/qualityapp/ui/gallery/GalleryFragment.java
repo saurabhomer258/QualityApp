@@ -13,6 +13,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.saurabhomer.qualityapp.Model.StyleModel.StyleSheetModel;
@@ -32,7 +33,7 @@ public class GalleryFragment extends Fragment implements
         View.OnClickListener  {
 
     private int mYear, mMonth, mDay, mHour, mMinute;
-    Button btnDatePicker;
+    ImageButton btnDatePicker;
     EditText txtDate;
     AutoCompleteTextView styleNu;
     AutoCompleteTextView productName;
