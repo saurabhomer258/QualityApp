@@ -9,16 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
-import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingAnalysis2;
-import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.MainDailyFinishingModel;
 import com.example.saurabhomer.qualityapp.R;
-import com.example.saurabhomer.qualityapp.dialog.DailyFInishingResult;
-import com.example.saurabhomer.qualityapp.dialog.DailyFinishingGetupResult;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -35,6 +30,7 @@ import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMB
 public class DailyFinishingAnalysisGetup extends AppCompatActivity {
 
     static ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
+    static ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLISTForFinalResut = new ArrayList<>();
     public static DialyFinishingAnalysisModel  dialyFinishingAnalysisModelForResult;
     public static ArrayList<DialyFinishingAnalysisModel>  DAILYFINIFSHINGMODELLISTForResult;
     Button btn_res;
@@ -127,7 +123,7 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity {
                         , hour.getText().toString()+""
                         ,edt_uneven.getSelectedItemPosition()
                 );
-                dialyFinishingAnalysisModelForResult =dialyFinishingAnalysisModel ;
+                dialyFinishingAnalysisModelForResult = dialyFinishingAnalysisModel ;
                 Log.d("sssss",DAILYFINIFSHINGMODELLIST.size()+"");
                 DAILYFINIFSHINGMODELLISTForResult= DAILYFINIFSHINGMODELLIST;
                Intent i = new Intent(DailyFinishingAnalysisGetup.this,ResultView.class);
@@ -264,7 +260,7 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity {
                                         }
                                     });
                                 }
-                                DAILYFINIFSHINGMODELLIST.clear();
+
                             }
 
                             @Override
@@ -272,7 +268,7 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity {
 
                             }
                         });
-                Intent i =new Intent(DailyFinishingAnalysisGetup.this, DailyFinishingGetupResult.class);
+                Intent i =new Intent(DailyFinishingAnalysisGetup.this, ResultViewForActivity.class);
                 startActivity(i);
                 finish();
             }
