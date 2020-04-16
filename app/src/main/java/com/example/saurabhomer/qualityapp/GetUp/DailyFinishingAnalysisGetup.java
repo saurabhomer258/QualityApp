@@ -14,6 +14,7 @@ import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishi
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.MainDailyFinishingModel;
 import com.example.saurabhomer.qualityapp.R;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -126,7 +127,7 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity {
                 dialyFinishingAnalysisModelForResult = dialyFinishingAnalysisModel ;
                 Log.d("sssss",DAILYFINIFSHINGMODELLIST.size()+"");
                 DAILYFINIFSHINGMODELLISTForResult= DAILYFINIFSHINGMODELLIST;
-               Intent i = new Intent(DailyFinishingAnalysisGetup.this,ResultView.class);
+               Intent i = new Intent(DailyFinishingAnalysisGetup.this, GetupResultView.class);
                 startActivity(i);
             }
 
