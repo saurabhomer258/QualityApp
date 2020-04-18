@@ -75,7 +75,7 @@ import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGet
            dialyFinishingAnalysisModel.setDamage(dialyFinishingAnalysisModel.getDamage()+dialyFinishingAnalysisModel1.getDamage());
            dialyFinishingAnalysisModel.setDirty(dialyFinishingAnalysisModel.getDirty()+dialyFinishingAnalysisModel1.getDirty());
            dialyFinishingAnalysisModel.setIron(dialyFinishingAnalysisModel.getIron()+dialyFinishingAnalysisModel1.getIron());
-
+            dialyFinishingAnalysisModel.setUneven(dialyFinishingAnalysisModel.getUneven() + dialyFinishingAnalysisModel1.getUneven());
        }
         TextView textView1 =  findViewById(R.id.data1);
         textView1.setText("PrintingMRBO            :"+ dialyFinishingAnalysisModel.getPrintingMRBO());
@@ -150,6 +150,8 @@ import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGet
         TextView textView17 =  findViewById(R.id.data17);
         textView17.setText("LooseNess                  :"+ dialyFinishingAnalysisModel.getLooseNess());
 
+        TextView textView171 =  findViewById(R.id.data171);
+        textView171.setText("Unevent/Rewedge            :"+ dialyFinishingAnalysisModel.getUneven());
 
         TextView textView18 =  findViewById(R.id.data18);
         textView18.setText("CutDamage                 :"+ dialyFinishingAnalysisModel.getCutDamage());
