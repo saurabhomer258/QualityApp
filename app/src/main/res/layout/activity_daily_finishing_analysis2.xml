@@ -47,7 +47,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:text="total Check"
+                android:text="Total Check"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -318,7 +318,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
 
-                android:text="uneven /Rewedge"
+                android:text="Uneven /Rewedge"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -898,56 +898,56 @@
                 android:layout_weight="7" />
 
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp"
-            android:weightSum="6">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:weightSum="6">-->
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                 android:gravity="center"
-                android:text="Total"
-                android:textColor="@color/common_text_color"
-                android:textSize="@dimen/common_text_size" />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:gravity="center"
-                android:id="@+id/tv_total"
+<!--            <TextView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="3"-->
+<!--                 android:gravity="center"-->
+<!--                android:text="Total"-->
+<!--                android:textColor="@color/common_text_color"-->
+<!--                android:textSize="@dimen/common_text_size" />-->
+<!--            <TextView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="2"-->
+<!--                android:gravity="center"-->
+<!--                android:id="@+id/tv_total"-->
 
-                android:textColor="@color/common_text_color"
-                android:textSize="@dimen/common_text_size" />
-        </LinearLayout>
+<!--                android:textColor="@color/common_text_color"-->
+<!--                android:textSize="@dimen/common_text_size" />-->
+<!--        </LinearLayout>-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp"
-            android:weightSum="6">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:weightSum="6">-->
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:text="Defect %"
-                android:textColor="@color/common_text_color"
-                android:textSize="@dimen/common_text_size" />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:gravity="center"
-                android:id="@+id/tv_Defect_per"
-                android:textColor="@color/common_text_color"
-                android:textSize="@dimen/common_text_size" />
-        </LinearLayout>
+<!--            <TextView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:text="Defect %"-->
+<!--                android:textColor="@color/common_text_color"-->
+<!--                android:textSize="@dimen/common_text_size" />-->
+<!--            <TextView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="2"-->
+<!--                android:gravity="center"-->
+<!--                android:id="@+id/tv_Defect_per"-->
+<!--                android:textColor="@color/common_text_color"-->
+<!--                android:textSize="@dimen/common_text_size" />-->
+<!--        </LinearLayout>-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -958,7 +958,7 @@
             <customView.NextButton
                 android:id="@+id/btn_result"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="6"
                 android:padding="5dp" />
 

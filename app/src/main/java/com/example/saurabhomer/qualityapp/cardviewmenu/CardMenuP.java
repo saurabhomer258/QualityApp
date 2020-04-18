@@ -141,6 +141,15 @@ public class CardMenuP extends AppCompatActivity
         });
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (progressDialog != null) {
+            progressDialog.dismiss();
+            progressDialog = null;
+        }
+    }
+
     void openDailyFinishingcheck(){
         progressDialog.setMessage("Verificating...");
         progressDialog.show();

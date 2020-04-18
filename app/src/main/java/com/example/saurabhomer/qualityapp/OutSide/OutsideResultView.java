@@ -11,6 +11,7 @@ import com.example.saurabhomer.qualityapp.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 import static com.example.saurabhomer.qualityapp.OutSide.DailyFinishingAnalysisOutside.DAILYFINIFSHINGMODELLISTForResult;
@@ -307,7 +308,11 @@ public class OutsideResultView extends AppCompatActivity {
                 setString("Printing MRBO", val.get(i));
             } else if (val.get(i) == Slubs_Holes_NAR) {
                 setString("Slubs Holes NAR ", val.get(i));
-            } else if (val.get(i) == BrokenStitches) {
+            }else if(val.get(i)==colorShading)
+            {
+                setString("Color Shading ", val.get(i));
+            }
+            else if (val.get(i) == BrokenStitches) {
                 setString("Broken Stitches", val.get(i));
             } else if (val.get(i) == SlipStitches) {
                 setString("Slip Stitches", val.get(i));
@@ -373,8 +378,16 @@ public class OutsideResultView extends AppCompatActivity {
     int count = 0;
     List<String> strings = new ArrayList();
     List<Integer> value = new ArrayList<>();
+    HashMap<String,Integer> checkmap = new HashMap<>();
 
     void setString(String string, int val) {
+        if(checkmap.containsKey(string))
+        {
+            return;
+        }
+        else {
+            checkmap.put(string,val);
+        }
         if (count == 0) {
             data41.setText(string + " : " + val);
             data41.setTextSize(18);

@@ -81,7 +81,12 @@ public class CommonStyleData extends AppCompatActivity
             public void onCancelled(DatabaseError databaseError) {
 
             }
+
+
+
         });
+
+
 
         Ok.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,7 +95,19 @@ public class CommonStyleData extends AppCompatActivity
             }
         });
     }
-    private void setLayout(String object ,String result){
+
+    @Override
+    public void onDestroy()
+    {
+        super.onDestroy();
+        if (progressDialog != null)
+        {
+            progressDialog.dismiss();
+            progressDialog = null;
+        }
+    }
+    private void setLayout(String object ,String result)
+    {
         TextView textView= new TextView(CommonStyleData.this);
         textView.setText(object + " : "+result);
         layout.addView(textView);

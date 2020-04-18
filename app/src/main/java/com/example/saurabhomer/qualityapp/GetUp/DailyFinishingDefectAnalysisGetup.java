@@ -132,6 +132,13 @@ public class DailyFinishingDefectAnalysisGetup extends AppCompatActivity impleme
                         }
                     }
                 }
+                else {
+                    sDailyFinishinfModels.setDate(strdate);
+                    sDailyFinishinfModels.setFinishingLine(text);
+                    Intent intent = new Intent(DailyFinishingDefectAnalysisGetup.this,DailyFinishingAnalysisGetup.class);
+                    startActivity(intent);
+                    progressDialog.hide();
+                }
             }
 
             @Override

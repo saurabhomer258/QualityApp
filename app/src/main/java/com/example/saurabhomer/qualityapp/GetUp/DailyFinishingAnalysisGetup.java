@@ -28,7 +28,8 @@ import java.util.ArrayList;
 import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingDefectAnalysisGetup.sDailyFinishinfModels;
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
-public class DailyFinishingAnalysisGetup extends AppCompatActivity {
+public class DailyFinishingAnalysisGetup extends AppCompatActivity
+{
 
     static ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
     static ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLISTForFinalResut = new ArrayList<>();
@@ -37,7 +38,8 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity {
      static   MainDailyFinishingModel mainDailyFinishingModel;
     Button btn_res;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_finishing_analysis_getup);
 
@@ -257,7 +259,8 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity {
                                     dailyFinishinfModelList.add(sDailyFinishinfModels);
                                     mainDailyFinishingModel1.setDailyFinishingModels(dailyFinishinfModelList);
                                     FirebaseDatabase.getInstance().getReference("dailyFinishinggetup")
-                                            .child(STYLE_NUMBER).setValue(mainDailyFinishingModel1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            .child(STYLE_NUMBER).setValue(mainDailyFinishingModel1).addOnCompleteListener(new OnCompleteListener<Void>()
+                                    {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             DAILYFINIFSHINGMODELLISTForFinalResut = DAILYFINIFSHINGMODELLIST;

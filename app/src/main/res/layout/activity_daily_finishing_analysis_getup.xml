@@ -49,7 +49,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:text="total Check"
+                android:text="Total Check"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
