@@ -1,4 +1,4 @@
-package com.example.saurabhomer.qualityapp.OutSide;
+package com.example.saurabhomer.qualityapp.DailyFinishingAnalysis;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -18,6 +18,7 @@ import java.util.Collections;
 import java.util.List;
 
 
+
 public class ResultViewForActivity extends AppCompatActivity {
     TextView data41, data42, data43;
     LinearLayout layout;
@@ -26,16 +27,16 @@ public class ResultViewForActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.common_total);
-        layout = findViewById(R.id.dailyLayout);
         TextView total = findViewById(R.id.tv_total);
         TextView totalPer = findViewById(R.id.tv_Defect_per);
         data41 = findViewById(R.id.data41);
         data42 = findViewById(R.id.data42);
         data43 = findViewById(R.id.data43);
+        layout = findViewById(R.id.dailyLayout);
 
-        DialyFinishingAnalysisModel dialyFinishingAnalysisModel = DailyFinishingAnalysisOutside.DAILYFINIFSHINGMODELLISTForFinalResut1.get(0);
+        DialyFinishingAnalysisModel dialyFinishingAnalysisModel = DailyFinishingAnalysis2.DAILYFINIFSHINGMODELLISTForFinalResut.get(0);
         ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
-        DAILYFINIFSHINGMODELLIST = DailyFinishingAnalysisOutside.DAILYFINIFSHINGMODELLISTForFinalResut1;
+        DAILYFINIFSHINGMODELLIST = DailyFinishingAnalysis2.DAILYFINIFSHINGMODELLISTForFinalResut;
         ArrayList<DialyFinishingAnalysisModel> Dummy = new ArrayList<>();
 
         Dummy.add(dialyFinishingAnalysisModel);
@@ -211,25 +212,30 @@ public class ResultViewForActivity extends AppCompatActivity {
             f = f * 100;
             totalPer.setText("Total percentage          :" + f + "");
         }
+
         Button b = findViewById(R.id.btn_ok);
         getMaxThree(Dummy);
-        for (int i=0 ; i <DAILYFINIFSHINGMODELLIST.size();i++){
-            setLayout(DAILYFINIFSHINGMODELLIST.get(i).getHours()+"" ,DAILYFINIFSHINGMODELLIST.get(i).getTotal()+"" );
-        }
+
+      for (int i=0 ; i <DAILYFINIFSHINGMODELLIST.size();i++){
+          setLayout(DAILYFINIFSHINGMODELLIST.get(i).getHours()+"" ,DAILYFINIFSHINGMODELLIST.get(i).getTotal()+"" );
+      }
+
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 clear();
                 Intent i = new Intent(ResultViewForActivity.this, CardMenuP.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
                 startActivity(i);
+                finish();
             }
         });
     }
 
     private void clear() {
-        DailyFinishingAnalysisOutside.DAILYFINIFSHINGMODELLIST.clear();
-        DailyFinishingAnalysisOutside.DAILYFINIFSHINGMODELLISTForFinalResut1.clear();
+        DailyFinishingAnalysis2.DAILYFINIFSHINGMODELLIST.clear();
+        DailyFinishingAnalysis2.DAILYFINIFSHINGMODELLISTForFinalResut.clear();
     }
 
 
@@ -387,21 +393,25 @@ public class ResultViewForActivity extends AppCompatActivity {
     void setString(String string, int val) {
         if (count == 0) {
             data41.setText(string + " " + val);
+            data41.setTextSize(18);
             strings.add(string);
             value.add(val);
             count++;
         } else if (count == 1) {
             data42.setText(string + "  " + val);
+            data42.setTextSize(18);
             strings.add(string);
             value.add(val);
             count++;
         } else if (count == 2) {
             data43.setText(string + "  " + val);
+            data43.setTextSize(18);
             strings.add(string);
             value.add(val);
             count++;
         }
     }
+
     private void setLayout(String object ,String result){
         if(result!=null) {
             TextView textView = new TextView(ResultViewForActivity.this);

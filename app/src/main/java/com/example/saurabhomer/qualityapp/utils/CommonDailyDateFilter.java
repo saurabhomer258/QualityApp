@@ -48,10 +48,9 @@ public class CommonDailyDateFilter extends AppCompatActivity  implements
             {
                 Intent intent=getIntent();
                 str = intent.getStringExtra("Name");
-                Log.d("string", ""+str);
                 if(test1.equals(str))
                 {
-                    Toast.makeText(CommonDailyDateFilter.this, "btn", Toast.LENGTH_SHORT).show();
+
                     String strDate = commontxtDate.getText().toString();
                     final String finish = finishing.getSelectedItem().toString();
                     Intent i = new Intent(CommonDailyDateFilter.this, DailyfinishingAdmin.class);
@@ -62,7 +61,6 @@ public class CommonDailyDateFilter extends AppCompatActivity  implements
                 else if(testoutside.equals(str))
                 {
 
-                    Toast.makeText(CommonDailyDateFilter.this, "btn", Toast.LENGTH_SHORT).show();
                     String strDate = commontxtDate.getText().toString();
                     final String finish = finishing.getSelectedItem().toString();
                     Intent i = new Intent(CommonDailyDateFilter.this, DailyfinishingOutsideAdmin.class);
@@ -72,7 +70,6 @@ public class CommonDailyDateFilter extends AppCompatActivity  implements
                 }
                 else if(testgetup.equals(str))
                 {
-                    Toast.makeText(CommonDailyDateFilter.this, "btn", Toast.LENGTH_SHORT).show();
                     String strDate = commontxtDate.getText().toString();
                     final String finish = finishing.getSelectedItem().toString();
                     Intent i = new Intent(CommonDailyDateFilter.this, DailyfinishingGetUpAdmin.class);

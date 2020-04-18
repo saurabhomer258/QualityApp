@@ -16,7 +16,7 @@
         android:drawablePadding="10dp"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textColorHint="@color/gray"
         android:textSize="15sp"
         tools:ignore="MissingConstraints" />

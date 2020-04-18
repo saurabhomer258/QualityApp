@@ -28,7 +28,43 @@
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@+id/admin">
 
+            <LinearLayout
 
+                android:id="@+id/dailyLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/dailyLayout">
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="TOP 3 RESULT"
+                    android:textSize="18sp" />
+
+
+
+
+                <TextView
+                    android:id="@+id/data41"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff" />
+
+                <TextView
+                    android:id="@+id/data42"
+                    android:textColor="#fff"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/data43"
+                    android:textColor="#fff"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
         </LinearLayout>
 
         <Button

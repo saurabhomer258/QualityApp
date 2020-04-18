@@ -73,6 +73,8 @@
         <activity android:name=".admin.SkuAdmin" />
         <activity android:name=".dialog.DailyFInishingResult" />
         <activity android:name=".OutSide.ResultViewForActivity" />
+        <activity android:name=".DailyFinishingAnalysis.InsideResultView" />
+        <activity android:name=".DailyFinishingAnalysis.ResultViewForActivity" />
     </application>
 
 </manifest>

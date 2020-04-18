@@ -34,6 +34,7 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity {
     static ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLISTForFinalResut = new ArrayList<>();
     public static DialyFinishingAnalysisModel  dialyFinishingAnalysisModelForResult;
     public static ArrayList<DialyFinishingAnalysisModel>  DAILYFINIFSHINGMODELLISTForResult;
+     static   MainDailyFinishingModel mainDailyFinishingModel;
     Button btn_res;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,7 +126,6 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity {
                         ,edt_uneven.getSelectedItemPosition()
                 );
                 dialyFinishingAnalysisModelForResult = dialyFinishingAnalysisModel ;
-                Log.d("sssss",DAILYFINIFSHINGMODELLIST.size()+"");
                 DAILYFINIFSHINGMODELLISTForResult= DAILYFINIFSHINGMODELLIST;
                Intent i = new Intent(DailyFinishingAnalysisGetup.this, GetupResultView.class);
                 startActivity(i);
@@ -143,7 +143,7 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                                MainDailyFinishingModel mainDailyFinishingModel = dataSnapshot.getValue(MainDailyFinishingModel.class);
+                                mainDailyFinishingModel = dataSnapshot.getValue(MainDailyFinishingModel.class);
 
                                 if(mainDailyFinishingModel!=null)
                                 {

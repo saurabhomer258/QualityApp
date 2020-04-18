@@ -15,7 +15,7 @@ android:layout_margin="20dp"
 
         <customView.SeachEditText
             android:layout_width="0dp"
-            android:background="@color/white"
+
             android:layout_marginTop="6dp"
 
             android:layout_height="40dp"

@@ -1,6 +1,7 @@
 package com.example.saurabhomer.qualityapp.GetUp;
 
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingAnalysis2;
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis;
@@ -19,6 +21,7 @@ import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.MainDailyFin
 import com.example.saurabhomer.qualityapp.OutSide.DailyFinishingAnalysisOutside;
 import com.example.saurabhomer.qualityapp.OutSide.DailyFinishingDefectAnalysisOutside;
 import com.example.saurabhomer.qualityapp.R;
+import com.example.saurabhomer.qualityapp.admin.DailyfinishingGetUpAdmin;
 import com.example.saurabhomer.qualityapp.utils.CommonStyleData;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -41,6 +44,7 @@ public class DailyFinishingDefectAnalysisGetup extends AppCompatActivity impleme
     static String total_Check="";
     static String total_defect_per="";
     static DailyFinishingModel1 model;
+    private ProgressDialog progressDialog;
 
     static ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
     static MainDailyFinishingModel mainDailyFinishingModel = new MainDailyFinishingModel();
@@ -56,6 +60,8 @@ public class DailyFinishingDefectAnalysisGetup extends AppCompatActivity impleme
         btnDatePicker=(ImageButton)findViewById(R.id.btn_date);
         txtDate=(EditText)findViewById(R.id.in_date);
         btnDatePicker.setOnClickListener(this);
+        progressDialog = new ProgressDialog(DailyFinishingDefectAnalysisGetup.this);
+        progressDialog.setMessage("Verificating...");
 
         finishing =(Spinner)    findViewById(R.id.edt_finishing).findViewById(R.id.spinner);
 
@@ -65,12 +71,8 @@ public class DailyFinishingDefectAnalysisGetup extends AppCompatActivity impleme
             @Override
             public void onClick(View v) {
 
-                String strdate = txtDate.getText().toString();
-                String text = finishing.getSelectedItem().toString();
-                sDailyFinishinfModels.setDate(strdate);
-                sDailyFinishinfModels.setFinishingLine(text);
-                Intent intent = new Intent(DailyFinishingDefectAnalysisGetup.this, DailyFinishingAnalysisGetup.class);
-                startActivity(intent);
+                progressDialog.show();
+                checkAuth();
             }
         });
 
@@ -103,5 +105,39 @@ public class DailyFinishingDefectAnalysisGetup extends AppCompatActivity impleme
                     }, mYear, mMonth, mDay);
             datePickerDialog.show();
         }
+    }
+    private void checkAuth(){
+        final String strdate = txtDate.getText().toString();
+        final String text = finishing.getSelectedItem().toString();
+        FirebaseDatabase.getInstance().getReference("dailyFinishinggetup")
+                .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                MainDailyFinishingModel mainDailyFinishingModel = dataSnapshot.getValue(MainDailyFinishingModel.class);
+                if(mainDailyFinishingModel!=null){
+                    ArrayList<DailyFinishinfModels> list =    mainDailyFinishingModel.getDailyFinishingModels();
+                    for(int i=0;i< list.size() ;i++ ){
+                        if(list.get(i).getDate().equals(strdate) && list.get(i).getFinishingLine().equals(text))
+                        {
+                            progressDialog.hide();
+                          Toast.makeText(DailyFinishingDefectAnalysisGetup.this,"Date and finishing line is filled.",Toast.LENGTH_SHORT).show();
+                            break;
+                        }
+                        if(i==list.size()-1){
+                            sDailyFinishinfModels.setDate(strdate);
+                            sDailyFinishinfModels.setFinishingLine(text);
+                            Intent intent = new Intent(DailyFinishingDefectAnalysisGetup.this, DailyFinishingAnalysisGetup.class);
+                            startActivity(intent);
+                            progressDialog.hide();
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 }
