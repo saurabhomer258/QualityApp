@@ -123,6 +123,15 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity implements V
         });
 
     }
+    public void onDestroy()
+    {
+        super.onDestroy();
+        if (progressDialog != null)
+        {
+            progressDialog.dismiss();
+            progressDialog = null;
+        }
+    }
 
     @Override
     public void onClick(View v) {
@@ -146,11 +155,13 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity implements V
             datePickerDialog.show();
         }
     }
-    private void checkAuth(){
+    private void checkAuth()
+    {
         final String strdate = txtDate.getText().toString();
         final String text = finishing.getSelectedItem().toString();
         FirebaseDatabase.getInstance().getReference("dailyFinishing")
-                .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
+                .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener()
+        {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 MainDailyFinishingModel mainDailyFinishingModel = dataSnapshot.getValue(MainDailyFinishingModel.class);
@@ -171,6 +182,14 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity implements V
                             progressDialog.hide();
                         }
                     }
+
+                }
+                else {
+                    sDailyFinishinfModels.setDate(strdate);
+                    sDailyFinishinfModels.setFinishingLine(text);
+                    Intent intent = new Intent(DailyFinishingDefectAnalysis.this,DailyFinishingAnalysis2.class);
+                    startActivity(intent);
+                    progressDialog.hide();
                 }
             }
 

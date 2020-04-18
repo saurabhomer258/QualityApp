@@ -135,7 +135,6 @@ public class DailyfinishingAdmin extends AppCompatActivity
                                     TextView textView1 = new TextView(DailyfinishingAdmin.this);
                                     textView1.setText("_________________________________________________");
                                     layout.addView(textView1);
-
                                 }
                             }
                             TextView textView1 = new TextView(DailyfinishingAdmin.this);
@@ -155,11 +154,8 @@ public class DailyfinishingAdmin extends AppCompatActivity
                     }
 
                 }
-
-
                 progressDialog.hide();
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError)
             {
@@ -244,11 +240,11 @@ public class DailyfinishingAdmin extends AppCompatActivity
         setLayout("Uneven                           ",items.getUneven()+"");
         setLayout("Total Check                   ",items.getTotalCheck()+"");
         if (items.getTotalCheck() == 0) {
-            setLayout("Defect percentage         ",  0 + "");
+            setLayout("Total percentage         ",  0 + "");
         } else {
             float f = (float) items.getTotal() / items.getTotalCheck();
             f = f * 100;
-            setLayout( "Defect percentage           :" , f + "");
+            setLayout( "Total percentage           :" , f + "");
         }
     }
 

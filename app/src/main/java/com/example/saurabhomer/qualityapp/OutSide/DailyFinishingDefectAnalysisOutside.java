@@ -131,6 +131,13 @@ public class DailyFinishingDefectAnalysisOutside extends AppCompatActivity imple
                         }
                     }
                 }
+                else {
+                    sDailyFinishinfModels.setDate(strdate);
+                    sDailyFinishinfModels.setFinishingLine(text);
+                    Intent intent = new Intent(DailyFinishingDefectAnalysisOutside.this,DailyFinishingAnalysisOutside.class);
+                    startActivity(intent);
+                    progressDialog.hide();
+                }
             }
 
             @Override

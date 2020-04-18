@@ -16,6 +16,7 @@ import com.example.saurabhomer.qualityapp.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingAnalysis2.DAILYFINIFSHINGMODELLISTForResult;
@@ -40,7 +41,8 @@ protected void onCreate(Bundle savedInstanceState) {
     Dummy.addAll(DAILYFINIFSHINGMODELLISTForResult);
     Dummy.add(dialyFinishingAnalysisModel);
 
-    for(int i=0;i<DAILYFINIFSHINGMODELLIST.size();i++){
+    for(int i=0;i<DAILYFINIFSHINGMODELLIST.size();i++)
+    {
 
        DialyFinishingAnalysisModel dialyFinishingAnalysisModel1 = DAILYFINIFSHINGMODELLIST.get(i);
        dialyFinishingAnalysisModel.setPrintingMRBO(dialyFinishingAnalysisModel.getPrintingMRBO()+dialyFinishingAnalysisModel1.getPrintingMRBO());
@@ -323,7 +325,10 @@ private void getMaxThree(  ArrayList<DialyFinishingAnalysisModel> dialyFinishing
         {
             setString("Slubs Holes NAR ",val.get(i));
         }
-
+        else if(val.get(i)==colorShading)
+        {
+            setString("Color Shading ", val.get(i));
+        }
         else if(val.get(i)==BrokenStitches)
         {
             setString("Broken Stitches",val.get(i));
@@ -442,7 +447,16 @@ private void getMaxThree(  ArrayList<DialyFinishingAnalysisModel> dialyFinishing
 int count =0 ;
 List<String> strings = new ArrayList();
 List<Integer> value = new ArrayList<>();
+HashMap<String,Integer> checkmap = new HashMap<>();
+
 void setString(String string,int val){
+    if(checkmap.containsKey(string))
+    {
+        return;
+    }
+    else {
+        checkmap.put(string,val);
+    }
     if(count==0)
     {
         data41.setText(string +" : "+val);
