@@ -63,17 +63,27 @@ public class DailyFinishingDefectAnalysisGetup extends AppCompatActivity impleme
         btnDatePicker.setOnClickListener(this);
         progressDialog = new ProgressDialog(DailyFinishingDefectAnalysisGetup.this);
         progressDialog.setMessage("Verificating...");
-
         finishing =(Spinner)    findViewById(R.id.edt_finishing).findViewById(R.id.spinner);
-
         View signin_button = findViewById(R.id.bt_next);
         Button bt_signin_button= signin_button.findViewById(R.id.btnNext);
         bt_signin_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                progressDialog.show();
-                checkAuth();
+                String strdate = txtDate.getText().toString();
+                String text = finishing.getSelectedItem().toString();
+
+
+
+                if(isNullOrEmpty(strdate))
+                {
+                    Toast.makeText(DailyFinishingDefectAnalysisGetup.this, "Date Should not be Empty", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    checkAuth();
+                }
+
+
             }
         });
 
@@ -153,5 +163,11 @@ public class DailyFinishingDefectAnalysisGetup extends AppCompatActivity impleme
 
             }
         });
+    }
+
+    public static boolean isNullOrEmpty(String str) {
+        if(str != null && !str.trim().isEmpty())
+            return false;
+        return true;
     }
 }

@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.saurabhomer.qualityapp.GetUp.GetupResultView;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.R;
 
@@ -20,7 +22,7 @@ import static com.example.saurabhomer.qualityapp.OutSide.DailyFinishingAnalysisO
 
 public class OutsideResultView extends AppCompatActivity {
     TextView data41, data42, data43;
-
+    LinearLayout layout;
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -146,7 +148,7 @@ public class OutsideResultView extends AppCompatActivity {
         textView17.setText("LooseNess                  :" + dialyFinishingAnalysisModel.getLooseNess());
 
         TextView textView171 =  findViewById(R.id.data171);
-        textView171.setText("Unevent/Rewedge            :"+ dialyFinishingAnalysisModel.getUneven());
+        textView171.setText("Unevent/Rewedge     :"+ dialyFinishingAnalysisModel.getUneven());
 
         TextView textView18 = findViewById(R.id.data18);
         textView18.setText("CutDamage                 :" + dialyFinishingAnalysisModel.getCutDamage());
@@ -203,6 +205,7 @@ public class OutsideResultView extends AppCompatActivity {
 
         String s = dialyFinishingAnalysisModel.getTotal() + "";
         total.setText("Total                             :" + s);
+
 
         if (dialyFinishingAnalysisModel.getTotalCheck() == 0) {
             totalPer.setText("Total percentage :" + 0 + "");

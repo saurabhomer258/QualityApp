@@ -7,9 +7,11 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.InsideResultView;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.R;
@@ -24,6 +26,7 @@ import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGet
 
     public class GetupResultView extends AppCompatActivity {
         TextView data41,data42,data43;
+
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -152,7 +155,7 @@ import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGet
         textView17.setText("LooseNess                  :"+ dialyFinishingAnalysisModel.getLooseNess());
 
         TextView textView171 =  findViewById(R.id.data171);
-        textView171.setText("Unevent/Rewedge            :"+ dialyFinishingAnalysisModel.getUneven());
+        textView171.setText("Unevent/Rewedge     :"+ dialyFinishingAnalysisModel.getUneven());
 
         TextView textView18 =  findViewById(R.id.data18);
         textView18.setText("CutDamage                 :"+ dialyFinishingAnalysisModel.getCutDamage());
@@ -211,6 +214,8 @@ import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGet
 
         String s = dialyFinishingAnalysisModel.getTotal()+"";
         total.setText("Total                             :"+s);
+
+
 
         if(dialyFinishingAnalysisModel.getTotalCheck()==0)
         {

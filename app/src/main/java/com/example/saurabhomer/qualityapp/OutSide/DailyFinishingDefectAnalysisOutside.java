@@ -72,7 +72,16 @@ public class DailyFinishingDefectAnalysisOutside extends AppCompatActivity imple
                 String text = finishing.getSelectedItem().toString();
                 sDailyFinishinfModels.setDate(strdate);
                 sDailyFinishinfModels.setFinishingLine(text);
-                checkAuth();
+
+                if(isNullOrEmpty(strdate))
+                {
+                    Toast.makeText(DailyFinishingDefectAnalysisOutside.this, "Date should not be Empty", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    checkAuth();
+                }
+
             }
         });
 
@@ -151,5 +160,11 @@ public class DailyFinishingDefectAnalysisOutside extends AppCompatActivity imple
 
             }
         });
+    }
+
+    public static boolean isNullOrEmpty(String str) {
+        if(str != null && !str.trim().isEmpty())
+            return false;
+        return true;
     }
 }

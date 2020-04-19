@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.saurabhomer.qualityapp.GetUp.GetupResultView;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenuP;
@@ -150,7 +151,7 @@ public class ResultViewForActivity extends AppCompatActivity {
         textView17.setText("LooseNess                  :" + dialyFinishingAnalysisModel.getLooseNess());
 
         TextView textView171 =  findViewById(R.id.data171);
-        textView171.setText("Unevent/Rewedge            :"+ dialyFinishingAnalysisModel.getUneven());
+        textView171.setText("Unevent/Rewedge     :"+ dialyFinishingAnalysisModel.getUneven());
 
         TextView textView18 = findViewById(R.id.data18);
         textView18.setText("CutDamage                 :" + dialyFinishingAnalysisModel.getCutDamage());
@@ -207,12 +208,15 @@ public class ResultViewForActivity extends AppCompatActivity {
 
         String s = dialyFinishingAnalysisModel.getTotal() + "";
         total.setText("Total                             :" + s);
+
         if (dialyFinishingAnalysisModel.getTotalCheck() == 0) {
             totalPer.setText("Total percentage         :" + 0 + "");
+            totalPer.setTextSize(18);
         } else {
             float f = (float) dialyFinishingAnalysisModel.getTotal() / dialyFinishingAnalysisModel.getTotalCheck();
             f = f * 100;
             totalPer.setText("Total percentage          :" + f + "");
+            totalPer.setTextSize(18);
         }
         Button b = findViewById(R.id.btn_ok);
         getMaxThree(Dummy);
