@@ -102,7 +102,7 @@ public class CardMenuP extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
-                    Intent i =  new Intent(CardMenuP.this, CommonDateFilter.class);
+                    Intent i =  new Intent(CardMenuP.this, SkuAdmin.class);
                     i.putExtra("Name","Skutest");
                     startActivity(i);
                 }

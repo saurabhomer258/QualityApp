@@ -6,23 +6,22 @@
 
     <RadioGroup
         android:id="@+id/common_radio_group"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_width="219dp"
+        android:layout_height="46dp"
         android:orientation="horizontal">
 
         <RadioButton
             android:id="@+id/ok"
-            android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
+            android:checked="true"
             android:text="Ok" />
 
         <RadioButton
             android:id="@+id/notok"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:text="Not Ok" />
     </RadioGroup>
 

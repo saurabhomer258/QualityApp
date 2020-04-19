@@ -96,7 +96,9 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
         if (v != null) {
             btn_next = v.getbutton();
         }
+
         Button btn_res =findViewById(R.id.btn_result).findViewById(R.id.btnNext);
+        btn_res.setText("Get Result");
         btn_res.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

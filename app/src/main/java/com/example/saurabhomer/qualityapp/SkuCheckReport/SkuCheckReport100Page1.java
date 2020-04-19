@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.model.MainSkuModel;
@@ -24,7 +25,7 @@ import customView.NextButton;
 public class SkuCheckReport100Page1 extends AppCompatActivity implements View.OnClickListener
 {
     private int mYear, mMonth, mDay, mHour, mMinute;
-    Button btnDatePicker;
+    ImageButton btnDatePicker;
     static EditText txtDate;
 
     static SkuCheckReport100Model skuCheckReport100Model = new SkuCheckReport100Model();
@@ -36,7 +37,7 @@ public class SkuCheckReport100Page1 extends AppCompatActivity implements View.On
          setContentView(R.layout.activity_sku_check_report100_page2);
 
 
-        btnDatePicker=(Button)findViewById(R.id.btn_date);
+        btnDatePicker=(ImageButton)findViewById(R.id.btn_date);
         txtDate=(EditText)findViewById(R.id.in_date);
         btnDatePicker.setOnClickListener(this);
         info_btn = findViewById(R.id.info_sku);

@@ -7,10 +7,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
-
-
-
         <LinearLayout
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
@@ -18,6 +14,7 @@
             android:gravity="center"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
+            android:layout_marginBottom="5dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
 
             <TextView
@@ -43,6 +40,7 @@
             android:gravity="center"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
+            android:layout_marginBottom="5dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
 
             <TextView
@@ -69,6 +67,7 @@
             android:gravity="center"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
+            android:layout_marginBottom="5dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
 
             <TextView
@@ -94,6 +93,7 @@
             android:gravity="center"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
+            android:layout_marginBottom="5dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
 
             <TextView
@@ -119,6 +119,7 @@
             android:gravity="center"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
+            android:layout_marginBottom="5dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
 
             <TextView
@@ -144,6 +145,7 @@
             android:gravity="center"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
+            android:layout_marginBottom="5dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
 
             <TextView
@@ -169,6 +171,7 @@
             android:gravity="center"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
+            android:layout_marginBottom="5dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
 
             <TextView
@@ -194,6 +197,7 @@
             android:gravity="center"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
+            android:layout_marginBottom="5dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
 
             <TextView
@@ -219,6 +223,7 @@
             android:gravity="center"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
+            android:layout_marginBottom="5dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
 
             <TextView
@@ -244,6 +249,7 @@
             android:gravity="center"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
+            android:layout_marginBottom="5dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
 
             <TextView
@@ -269,6 +275,7 @@
             android:gravity="center"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
+            android:layout_marginBottom="5dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
 
             <TextView
@@ -294,6 +301,7 @@
             android:gravity="center"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
+            android:layout_marginBottom="5dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
 
             <TextView
@@ -303,7 +311,6 @@
                 android:layout_weight="3"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
-
 
             <customView.RadioButtonNOTOK
                 android:layout_width="60dp"
@@ -320,6 +327,7 @@
             android:gravity="center"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
+            android:layout_marginBottom="5dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
 
             <TextView
@@ -341,6 +349,7 @@
             android:gravity="center"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
+            android:layout_marginBottom="5dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
 
             <TextView
@@ -351,8 +360,6 @@
                 android:layout_weight="3"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
-
-
 
         </LinearLayout>
         <LinearLayout

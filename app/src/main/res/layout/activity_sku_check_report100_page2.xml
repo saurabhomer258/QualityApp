@@ -129,7 +129,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/in_date" />
 
-            <Button
+            <ImageButton
+                android:src="@drawable/calendar1"
                 android:layout_width="wrap_content"
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
