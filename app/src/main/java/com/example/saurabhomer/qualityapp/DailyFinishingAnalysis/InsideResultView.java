@@ -26,7 +26,7 @@ import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFin
 
 public class InsideResultView extends AppCompatActivity {
     TextView data41,data42,data43;
-    LinearLayout layout;
+
 protected void onCreate(Bundle savedInstanceState) {
 
 
@@ -217,10 +217,6 @@ protected void onCreate(Bundle savedInstanceState) {
 
     String s = dialyFinishingAnalysisModel.getTotal()+"";
     total.setText("Total                             :"+s);
-
-    TextView textView = new TextView(InsideResultView.this);
-    textView.setText("_________________________________________________");
-    layout.addView(textView);
 
 
     if(dialyFinishingAnalysisModel.getTotalCheck()==0)

@@ -206,9 +206,6 @@ public class OutsideResultView extends AppCompatActivity {
         String s = dialyFinishingAnalysisModel.getTotal() + "";
         total.setText("Total                             :" + s);
 
-        TextView textView = new TextView(OutsideResultView.this);
-        textView.setText("_________________________________________________");
-        layout.addView(textView);
 
         if (dialyFinishingAnalysisModel.getTotalCheck() == 0) {
             totalPer.setText("Total percentage :" + 0 + "");

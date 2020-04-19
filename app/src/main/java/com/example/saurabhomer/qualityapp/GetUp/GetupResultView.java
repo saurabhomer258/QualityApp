@@ -26,7 +26,7 @@ import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGet
 
     public class GetupResultView extends AppCompatActivity {
         TextView data41,data42,data43;
-        LinearLayout layout;
+
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -215,9 +215,7 @@ import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGet
         String s = dialyFinishingAnalysisModel.getTotal()+"";
         total.setText("Total                             :"+s);
 
-        TextView textView = new TextView(GetupResultView.this);
-        textView.setText("_________________________________________________");
-        layout.addView(textView);
+
 
         if(dialyFinishingAnalysisModel.getTotalCheck()==0)
         {

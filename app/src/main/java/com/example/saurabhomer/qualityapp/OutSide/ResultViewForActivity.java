@@ -209,16 +209,14 @@ public class ResultViewForActivity extends AppCompatActivity {
         String s = dialyFinishingAnalysisModel.getTotal() + "";
         total.setText("Total                             :" + s);
 
-        TextView textView = new TextView(ResultViewForActivity.this);
-        textView.setText("_________________________________________________");
-        layout.addView(textView);
-
         if (dialyFinishingAnalysisModel.getTotalCheck() == 0) {
             totalPer.setText("Total percentage         :" + 0 + "");
+            totalPer.setTextSize(18);
         } else {
             float f = (float) dialyFinishingAnalysisModel.getTotal() / dialyFinishingAnalysisModel.getTotalCheck();
             f = f * 100;
             totalPer.setText("Total percentage          :" + f + "");
+            totalPer.setTextSize(18);
         }
         Button b = findViewById(R.id.btn_ok);
         getMaxThree(Dummy);
