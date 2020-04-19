@@ -89,7 +89,7 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity implements V
                 }
                 else
                 {
-                    Toast.makeText(DailyFinishingDefectAnalysis.this, ""+strdate, Toast.LENGTH_SHORT).show();
+
                     checkAuth();
                 }
 
