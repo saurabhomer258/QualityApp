@@ -140,7 +140,7 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
                             skuCheckReport100Model.setSkuCheckReport100ModelList(skuCheckReport100ModelList1);
                             mainSkuModel.setSkuDateModels(skuDateModelArrayList);
 
-                            FirebaseDatabase.getInstance().getReference("100perSKU").child(STYLE_NUMBER).setValue(mainSkuModel).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            FirebaseDatabase.getInstance().getReference("100perSKU").child(STYLE_NUMBER).setValue(skuCheckReport100Model).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (!task.isComplete()) {

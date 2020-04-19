@@ -74,7 +74,7 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity implements V
             @Override
             public void onClick(View v)
             {
-//                skuCheckReport100Model.setEdt_checkquantity(editText_checkquantity.getText().toString());
+//F                skuCheckReport100Model.setEdt_checkquantity(editText_checkquantity.getText().toString());
 //                skuCheckReport100Model.setEdt_readyquantity(editText_readyquantity.getText().toString());
 //                skuCheckReport100Model.setEdt_size(editText_size.getText().toString());
 
