@@ -2,12 +2,14 @@ package com.example.saurabhomer.qualityapp.SkuCheckReport;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAuditModel;
@@ -42,6 +44,8 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
     Button btn_done;
     Button btn_next;
 
+    TextView res1;
+    TextView res2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,11 +90,39 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
 
         View view_done = findViewById(R.id.btn_done_sku);
         btn_done = view_done.findViewById(R.id.btnNext);
+        res1 = findViewById(R.id.result1);
+        res2 = findViewById(R.id.result2);
         NextButton v = findViewById(R.id.btn_next_1);
         if (v != null) {
             btn_next = v.getbutton();
         }
+        Button btn_res =findViewById(R.id.btn_result).findViewById(R.id.btnNext);
+        btn_res.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                SkuCheckReport100ModelList skuCheckReport100ModelList = new SkuCheckReport100ModelList();
+                int res = getIntOfRedio(radio_country_hbc.isChecked())
+               + getIntOfRedio(radio_label_hbc.isChecked())
+                +getIntOfRedio(radio_barcode_hbc.isChecked())+
+                getIntOfRedio(radio_color_hbc.isChecked())+
+                getIntOfRedio(radio_polybag_hbc.isChecked())+
+                getIntOfRedio(radio_polysticker_hbc.isChecked())+
+                getIntOfRedio(radio_pricetag_hbc.isChecked())+
+                getIntOfRedio(radio_hanger_hbc.isChecked())+
+                getIntOfRedio(radio_hangertag_hbc.isChecked())+
+                getIntOfRedio(radio_othertag_hbc.isChecked())+
+                getIntOfRedio(radio_packingmethod_hbc.isChecked())+
+                getIntOfRedio(radio_sizesticker_hbc.isChecked());
+              res1.setText("Result "+res);
+              if(res==0) {
+                  res2.setText("Remark : Pass");
+              }else{
+                  res2.setText("Remark : Fail");
+              }
+
+            }
+        });
         btn_done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -229,6 +261,10 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
         else return "notOk";
     }
 
+    private int getIntOfRedio(boolean okButton) {
+        if (okButton) return 0;
+        else return 1;
+    }
     private void senddonedata(SkuCheckReport100ModelList skuCheckReport100ModelList) {
 
     }

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100Page2;
@@ -47,48 +48,56 @@ public class SkuAdmin extends AppCompatActivity
 
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        SkuDateModel skuDateModel = dataSnapshot.getValue(SkuDateModel.class);
 
+                        SkuCheckReport100Model skuCheckReport100Model = dataSnapshot.getValue(SkuCheckReport100Model.class);
+//                        ArrayList<SkuDateModel> skuDateModels = mainSkuModel.getSkuDateModels();
+//
+//                        for (SkuDateModel skuDateModel : skuDateModels) {
+//                            String skudate = skuDateModel.getDate();
+//                            Intent i = getIntent();
+//                            str = i.getStringExtra("SkuDate");
+//                            if (skudate.equals(str))
+//                            {
+//                                setLayout("Date", skuDateModel.getDate());
+                                if(skuCheckReport100Model!=null) {
+                                    setLayout("Ready quantity", skuCheckReport100Model.getEdt_readyquantity());
+                                    setLayout("Check quantity", skuCheckReport100Model.getEdt_checkquantity());
+                                    setLayout("size", skuCheckReport100Model.getEdt_size());
 
-
-                            String skudate = skuDateModel.getDate();
-                            Intent i = getIntent();
-                            str = i.getStringExtra("SkuDate");
-                            if (skudate.equals(str))
-                            {
-                                setLayout("Date", skuDateModel.getDate());
-                                SkuCheckReport100Model skuCheckReport100Model = skuDateModel.getSkuCheckReport100Model();
-                                setLayout("Ready quantity", skuCheckReport100Model.getEdt_readyquantity());
-                                setLayout("Check quantity", skuCheckReport100Model.getEdt_checkquantity());
-                                setLayout("size", skuCheckReport100Model.getEdt_size());
-
-                                ArrayList<SkuCheckReport100ModelList> skuCheckReport100ModelList1 = skuCheckReport100Model.getSkuCheckReport100ModelList();
-                                if (skuCheckReport100ModelList1 != null) {
-                                    for (SkuCheckReport100ModelList skuCheckReport100ModelList : skuCheckReport100ModelList1) {
-                                        setLayout("Country Has been check", skuCheckReport100ModelList.getCountryhasbeencheck());
-                                        setLayout("Label has been Check", skuCheckReport100ModelList.getLabelhasbeencheck());
-                                        setLayout("Barcode has been check", skuCheckReport100ModelList.getBarcodehasbeencheck());
-                                        setLayout("Color has been check", skuCheckReport100ModelList.getColorhasbeencheck());
-                                        setLayout("Polybag has been check", skuCheckReport100ModelList.getPolybaghasbeencheck());
-                                        setLayout("Price tag has been check", skuCheckReport100ModelList.getPricetaghasbeencheck());
-                                        setLayout("Polystiker has been check", skuCheckReport100ModelList.getPolystikerhasbeencheck());
-                                        setLayout("Size tag has been check", skuCheckReport100ModelList.getSizestickerhasbeencheck());
-                                        setLayout("Hanger has been check", skuCheckReport100ModelList.getHagertaghasbeencheck());
-                                        setLayout("Hager tag has been check", skuCheckReport100ModelList.getHagertaghasbeencheck());
-                                        setLayout("Otherhasbeencheck", skuCheckReport100ModelList.getOtherhasbeencheck());
-                                        setLayout("Other has been check", skuCheckReport100ModelList.getOtherhasbeencheck());
-                                        setLayout("Packing method has been check", skuCheckReport100ModelList.getPackingmethodhasbeencheck());
-                                        setLayout("Size sticker has been check", skuCheckReport100ModelList.getSizestickerhasbeencheck());
+                                    ArrayList<SkuCheckReport100ModelList> skuCheckReport100ModelList1 = skuCheckReport100Model.getSkuCheckReport100ModelList();
+                                    if (skuCheckReport100ModelList1 != null) {
+                                        for (SkuCheckReport100ModelList skuCheckReport100ModelList : skuCheckReport100ModelList1) {
+                                            setLayout("Country Has been check", skuCheckReport100ModelList.getCountryhasbeencheck());
+                                            setLayout("Label has been Check", skuCheckReport100ModelList.getLabelhasbeencheck());
+                                            setLayout("Barcode has been check", skuCheckReport100ModelList.getBarcodehasbeencheck());
+                                            setLayout("Color has been check", skuCheckReport100ModelList.getColorhasbeencheck());
+                                            setLayout("Polybag has been check", skuCheckReport100ModelList.getPolybaghasbeencheck());
+                                            setLayout("Price tag has been check", skuCheckReport100ModelList.getPricetaghasbeencheck());
+                                            setLayout("Polystiker has been check", skuCheckReport100ModelList.getPolystikerhasbeencheck());
+                                            setLayout("Size tag has been check", skuCheckReport100ModelList.getSizestickerhasbeencheck());
+                                            setLayout("Hanger has been check", skuCheckReport100ModelList.getHagertaghasbeencheck());
+                                            setLayout("Hager tag has been check", skuCheckReport100ModelList.getHagertaghasbeencheck());
+                                            setLayout("Otherhasbeencheck", skuCheckReport100ModelList.getOtherhasbeencheck());
+                                            setLayout("Other has been check", skuCheckReport100ModelList.getOtherhasbeencheck());
+                                            setLayout("Packing method has been check", skuCheckReport100ModelList.getPackingmethodhasbeencheck());
+                                            setLayout("Size sticker has been check", skuCheckReport100ModelList.getSizestickerhasbeencheck());
+                                            setLayout("Result","Pass");
+                                            setLayout("Remark","Pass");
+                                            TextView textView2 = new TextView(SkuAdmin.this);
+                                            textView2.setText("_________________________________________________");
+                                            layout.addView(textView2);
+                                        }
 
                                     }
 
-
                                 }
+                                else {
 
-                                TextView textView2 = new TextView(SkuAdmin.this);
-                                textView2.setText("_________________________________________________");
-                                layout.addView(textView2);
-                            }
+                                    Toast.makeText(SkuAdmin.this, "Opps! No data found", Toast.LENGTH_SHORT).show();
+                                    finish();
+                                }
+                       //     }
+                   //     }
 
 
                         progressDialog.hide();
