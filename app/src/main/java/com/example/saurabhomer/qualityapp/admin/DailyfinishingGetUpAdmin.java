@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGetup;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.MainDailyFinishingModel;
@@ -59,6 +60,8 @@ public class DailyfinishingGetUpAdmin extends AppCompatActivity {
                 finish();
             }
         });
+
+
         FirebaseDatabase.getInstance().getReference("dailyFinishinggetup")
                 .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

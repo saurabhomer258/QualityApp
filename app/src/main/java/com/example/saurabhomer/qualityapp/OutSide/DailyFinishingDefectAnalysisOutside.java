@@ -20,6 +20,7 @@ import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishi
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.MainDailyFinishingModel;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.utils.CommonStyleData;
+import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -108,6 +109,11 @@ public class DailyFinishingDefectAnalysisOutside extends AppCompatActivity imple
     private void checkAuth(){
         final String strdate = txtDate.getText().toString();
         final String text = finishing.getSelectedItem().toString();
+
+        if (!NetworkUtils.isNetworkConnected(DailyFinishingDefectAnalysisOutside.this))
+        {
+            return;
+        }
         FirebaseDatabase.getInstance().getReference("dailyFinishingoutside")
                 .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

@@ -1,5 +1,6 @@
 package com.example.saurabhomer.qualityapp.GetUp;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -13,8 +14,11 @@ import android.widget.Spinner;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.MainDailyFinishingModel;
+import com.example.saurabhomer.qualityapp.OutSide.DailyFinishingAnalysisOutside;
 import com.example.saurabhomer.qualityapp.R;
 
+import com.example.saurabhomer.qualityapp.admin.DailyfinishingAdmin;
+import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -37,12 +41,14 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity
     public static ArrayList<DialyFinishingAnalysisModel>  DAILYFINIFSHINGMODELLISTForResult;
      static   MainDailyFinishingModel mainDailyFinishingModel;
     Button btn_res;
+    private ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_finishing_analysis_getup);
-
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Verificating...");
         final EditText hour = findViewById(R.id.edt_hours).findViewById(R.id.atvCommon);
         final EditText total_check = findViewById(R.id.edt_total_check).findViewById(R.id.atvCommon);
         final Spinner printing = findViewById(R.id.edt_printing_mrbo).findViewById(R.id.spinner);
@@ -140,11 +146,17 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+                progressDialog.show();
+
+                if (!NetworkUtils.isNetworkConnected(DailyFinishingAnalysisGetup.this))
+                {
+                    return;
+                }
                 FirebaseDatabase.getInstance().getReference("dailyFinishinggetup").child(STYLE_NUMBER)
                         .addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
-
+                                progressDialog.hide();
                                 mainDailyFinishingModel = dataSnapshot.getValue(MainDailyFinishingModel.class);
 
                                 if(mainDailyFinishingModel!=null)
@@ -214,6 +226,7 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity
                                 }
                                 else
                                 {
+                                    progressDialog.hide();
                                     MainDailyFinishingModel mainDailyFinishingModel1 =  new MainDailyFinishingModel();
 
                                     String a = total_check.getText().toString().trim().equals("") ? 0 +"": total_check.getText().toString().trim();

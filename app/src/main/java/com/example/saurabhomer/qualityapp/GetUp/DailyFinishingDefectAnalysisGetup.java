@@ -23,6 +23,7 @@ import com.example.saurabhomer.qualityapp.OutSide.DailyFinishingDefectAnalysisOu
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.admin.DailyfinishingGetUpAdmin;
 import com.example.saurabhomer.qualityapp.utils.CommonStyleData;
+import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -109,10 +110,16 @@ public class DailyFinishingDefectAnalysisGetup extends AppCompatActivity impleme
     private void checkAuth(){
         final String strdate = txtDate.getText().toString();
         final String text = finishing.getSelectedItem().toString();
+
+        if (!NetworkUtils.isNetworkConnected(DailyFinishingDefectAnalysisGetup.this))
+        {
+            return;
+        }
         FirebaseDatabase.getInstance().getReference("dailyFinishinggetup")
                 .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
                 MainDailyFinishingModel mainDailyFinishingModel = dataSnapshot.getValue(MainDailyFinishingModel.class);
                 if(mainDailyFinishingModel!=null){
                     ArrayList<DailyFinishinfModels> list =    mainDailyFinishingModel.getDailyFinishingModels();

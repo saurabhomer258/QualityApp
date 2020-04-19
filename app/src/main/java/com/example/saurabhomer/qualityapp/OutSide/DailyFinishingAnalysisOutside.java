@@ -1,5 +1,6 @@
 package com.example.saurabhomer.qualityapp.OutSide;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -12,8 +13,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingAnalysis2;
+import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis;
 import com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGetup;
 
+import com.example.saurabhomer.qualityapp.GetUp.DailyFinishingDefectAnalysisGetup;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.MainDailyFinishingModel;
@@ -21,6 +24,7 @@ import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.dialog.DailyFInishingResult;
 import com.example.saurabhomer.qualityapp.dialog.DailyFinishingGetupResult;
 import com.example.saurabhomer.qualityapp.dialog.DailyFinishingOutsideResult;
+import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -44,6 +48,7 @@ public class DailyFinishingAnalysisOutside extends AppCompatActivity {
 
     public static DialyFinishingAnalysisModel  dialyFinishingAnalysisModelForResult;
     public static ArrayList<DialyFinishingAnalysisModel>  DAILYFINIFSHINGMODELLISTForResult;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +96,8 @@ public class DailyFinishingAnalysisOutside extends AppCompatActivity {
         Button btn_res =findViewById(R.id.btn_result).findViewById(R.id.btnNext);
         Button done =findViewById(R.id.btn_done).findViewById(R.id.btnNext);
         btn_res.setText("Get Result");
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Verificating...");
         btn_res.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -197,11 +204,17 @@ public class DailyFinishingAnalysisOutside extends AppCompatActivity {
 //                Intent i =new Intent(DailyFinishingAnalysisOutside.this, DailyFinishingOutsideResult.class);
 //                startActivity(i);
 //                finish();
+                progressDialog.show();
+
+                if (!NetworkUtils.isNetworkConnected(DailyFinishingAnalysisOutside.this))
+                {
+                    return;
+                }
                 FirebaseDatabase.getInstance().getReference("dailyFinishingoutside").child(STYLE_NUMBER)
                         .addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
-
+                                progressDialog.hide();
                                 MainDailyFinishingModel mainDailyFinishingModel = dataSnapshot.getValue(MainDailyFinishingModel.class);
 
                                 if(mainDailyFinishingModel!=null)
@@ -331,7 +344,7 @@ public class DailyFinishingAnalysisOutside extends AppCompatActivity {
 
                             @Override
                             public void onCancelled(DatabaseError databaseError) {
-
+    progressDialog.hide();
                             }
                         });
 
