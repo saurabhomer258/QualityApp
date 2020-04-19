@@ -316,127 +316,71 @@ import static com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGet
 
         // sort list
         Collections.sort(val, Collections.reverseOrder());
-        for(int i=0;i<val.size();i++){
-            if(val.get(i)==PrintingMRBO)
-            {
-                setString("Printing MRBO",val.get(i));
-            }
-            else if(val.get(i)==Slubs_Holes_NAR)
-            {
-                setString("Slubs Holes NAR ",val.get(i));
-            }
-            else if(val.get(i)==colorShading)
+        for (int i = 0; i < val.size(); i++) {
+            if (val.get(i) == PrintingMRBO) {
+                setString("Printing MRBO", val.get(i));
+            }  if (val.get(i) == Slubs_Holes_NAR) {
+                setString("Slubs Holes NAR ", val.get(i));
+            } if(val.get(i)==colorShading)
             {
                 setString("Color Shading ", val.get(i));
             }
-            else if(val.get(i)==BrokenStitches)
-            {
-                setString("Broken Stitches",val.get(i));
-            }
-            else if(val.get(i)==SlipStitches)
-            {
-                setString("Slip Stitches",val.get(i));
-            }
-            else if(val.get(i)==SPI)
-            {
-                setString("SPI",val.get(i));
-            }
-            else if(val.get(i)==Pukering)
-            {
-                setString("Pukering",val.get(i));
-            }
-            else if(val.get(i)==LooseTensions)
-            {
-                setString("Loose Tensions",val.get(i));
-            }
-            else if(val.get(i)==SnapDefects)
-            {
-                setString("Snap Defects",val.get(i));
-            }
-            else if(val.get(i)==NeedleMark)
-            {
-                setString("Needle Mark",val.get(i));
-            }
-            else if(val.get(i)==OpenSeam)
-            {
-                setString("Open Seam",val.get(i));
-            }
-            else if(val.get(i)==Pleats)
-            {
-                setString("Pleats",val.get(i));
-            }
-            else if(val.get(i)==MissingStitches)
-            {
-                setString("Missing Stitches",val.get(i));
-            }
-            else if(val.get(i)==SkipRunOff)
-            {
-                setString("Skip RunOff",val.get(i));
-            }
-            else if(val.get(i)==IncorrectLabel)
-            {
-                setString("Incorrect Label",val.get(i));
-            }else if(val.get(i)==CutDamage)
-            {
-                setString("Cut Damage",val.get(i));
-            }
-            else if(val.get(i)==WrongPlacement){
-                setString("Wrong Placement",val.get(i));
-            }
-            else if(val.get(i)==unEvent){
-                setString("un Event",val.get(i));
-            }
-
-            else if(val.get(i)==LooseNess){
-                setString("Loose Ness",val.get(i));
-            }
-
-
-            else if(val.get(i)==Others)
-            {
-                setString("Others",val.get(i));
-            }
-            else if(val.get(i)==Stain)
-            {
-                setString("Stain",val.get(i));
-            }
-            else if(val.get(i)==OilMark)
-            {
-                setString("OilMark",val.get(i));
-            }
-            else if(val.get(i)==Stickers)
-            {
-                setString("Stickers",val.get(i));
-            }
-            else if(val.get(i)==UncutThread)
-            {
-                setString("UncutThread",val.get(i));
-            }
-            else if(val.get(i)==OutOfSpec)
-            {
-                setString("OutOfSpec",val.get(i));
-            }
-            else if(val.get(i)==TotalDefect)
-            {
-                setString("TotalDefect",val.get(i));
-            }else if(val.get(i)==QualityOut)
-            {
-                setString("QualityOut",val.get(i));
-            }else if(val.get(i)==ProductionOut)
-            {
-                setString("ProductionOut",val.get(i));
-            }else if(val.get(i)==Damage)
-            {
-                setString("Damage",val.get(i));
-            }
-
-            else if(val.get(i)==Dirty)
-            {
-                setString("Dirty",val.get(i));
-            }
-            else if(val.get(i)==Iron)
-            {
-                setString("Iron",val.get(i));
+            if (val.get(i) == BrokenStitches) {
+                setString("Broken Stitches", val.get(i));
+            }  if (val.get(i) == SlipStitches) {
+                setString("Slip Stitches", val.get(i));
+            }  if (val.get(i) == SPI) {
+                setString("SPI", val.get(i));
+            }  if (val.get(i) == Pukering) {
+                setString("Pukering", val.get(i));
+            }  if (val.get(i) == LooseTensions) {
+                setString("Loose Tensions", val.get(i));
+            }  if (val.get(i) == SnapDefects) {
+                setString("Snap Defects", val.get(i));
+            }  if (val.get(i) == NeedleMark) {
+                setString("Needle Mark", val.get(i));
+            }  if (val.get(i) == OpenSeam) {
+                setString("Open Seam", val.get(i));
+            }  if (val.get(i) == Pleats) {
+                setString("Pleats", val.get(i));
+            }  if (val.get(i) == MissingStitches) {
+                setString("Missing Stitches", val.get(i));
+            }  if (val.get(i) == SkipRunOff) {
+                setString("Skip RunOff", val.get(i));
+            }  if (val.get(i) == IncorrectLabel) {
+                setString("Incorrect Label", val.get(i));
+            }  if (val.get(i) == CutDamage) {
+                setString("Cut Damage", val.get(i));
+            }  if (val.get(i) == WrongPlacement) {
+                setString("Wrong Placement", val.get(i));
+            }  if (val.get(i) == unEvent) {
+                setString("un Event", val.get(i));
+            }  if (val.get(i) == LooseNess) {
+                setString("Loose Ness", val.get(i));
+            }  if (val.get(i) == Others) {
+                setString("Others", val.get(i));
+            }  if (val.get(i) == Stain) {
+                setString("Stain", val.get(i));
+            }  if (val.get(i) == OilMark) {
+                setString("OilMark", val.get(i));
+            }  if (val.get(i) == Stickers) {
+                setString("Stickers", val.get(i));
+            }  if (val.get(i) == UncutThread) {
+                setString("UncutThread", val.get(i));
+            }  if (val.get(i) == OutOfSpec) {
+                setString("OutOfSpec", val.get(i));
+            }  if (val.get(i) == TotalDefect) {
+                setString("TotalDefect", val.get(i));
+            } else if (val.get(i) == QualityOut) {
+                setString("QualityOut", val.get(i));
+            }  if (val.get(i) == ProductionOut) {
+                setString("ProductionOut", val.get(i));
+            }  if (val.get(i) == Damage) {
+                setString("Damage", val.get(i));
+            }  if (val.get(i) == Dirty) {
+                setString("Dirty", val.get(i));
+            }  if (val.get(i) == Iron) {
+                setString("Iron", val.get(i));
             }
 
         }
