@@ -78,7 +78,6 @@ public class RegistrationActivity extends AppCompatActivity {
             progressDialog = null;
         }
     }
-
     public void signIn(final String username, final String password)
     {
             if(!NetworkUtils.isNetworkConnected(this))
@@ -86,8 +85,6 @@ public class RegistrationActivity extends AppCompatActivity {
 
                 return;
             }
-
-
         firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference users = firebaseDatabase.getReference("users");
         progressDialog.setMessage("Verificating...");

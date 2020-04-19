@@ -83,7 +83,16 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity implements V
                 sDailyFinishinfModels.setDate(strdate);
                 sDailyFinishinfModels.setFinishingLine(text);
 
-                checkAuth();
+                if(isNullOrEmpty(strdate))
+                {
+                    Toast.makeText(DailyFinishingDefectAnalysis.this, "Date should not be empty", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(DailyFinishingDefectAnalysis.this, ""+strdate, Toast.LENGTH_SHORT).show();
+                    checkAuth();
+                }
+
 //
 //                FirebaseDatabase.getInstance().getReference("dailyFinishing")
 //                        .child(STYLE_NUMBER).child(0+"").
@@ -122,6 +131,12 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity implements V
             }
         });
 
+    }
+
+    public static boolean isNullOrEmpty(String str) {
+        if(str != null && !str.trim().isEmpty())
+            return false;
+        return true;
     }
     public void onDestroy()
     {
