@@ -4,14 +4,13 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainSkuModel {
-    ArrayList<SkuDateModel> skuDateModels = new ArrayList<>();
+  SkuDateModel skuDateModels = new SkuDateModel();
 
-    public ArrayList<SkuDateModel> getSkuDateModels()
-    {
+    public SkuDateModel getSkuDateModels() {
         return skuDateModels;
     }
 
-    public void setSkuDateModels(ArrayList<SkuDateModel> skuDateModels) {
+    public void setSkuDateModels(SkuDateModel skuDateModels) {
         this.skuDateModels = skuDateModels;
     }
 }

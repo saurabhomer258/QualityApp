@@ -47,10 +47,10 @@ public class SkuAdmin extends AppCompatActivity
 
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        MainSkuModel mainSkuModel = dataSnapshot.getValue(MainSkuModel.class);
-                        ArrayList<SkuDateModel> skuDateModels = mainSkuModel.getSkuDateModels();
+                        SkuDateModel skuDateModel = dataSnapshot.getValue(SkuDateModel.class);
 
-                        for (SkuDateModel skuDateModel : skuDateModels) {
+
+
                             String skudate = skuDateModel.getDate();
                             Intent i = getIntent();
                             str = i.getStringExtra("SkuDate");
@@ -89,7 +89,7 @@ public class SkuAdmin extends AppCompatActivity
                                 textView2.setText("_________________________________________________");
                                 layout.addView(textView2);
                             }
-                        }
+
 
                         progressDialog.hide();
 
