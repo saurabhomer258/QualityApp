@@ -46,6 +46,8 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
 
     TextView res1;
     TextView res2;
+    public static String result1;
+    public static String result2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,11 +118,14 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
                 getIntOfRedio(radio_othertag_hbc.isChecked())+
                 getIntOfRedio(radio_packingmethod_hbc.isChecked())+
                 getIntOfRedio(radio_sizesticker_hbc.isChecked());
-              res1.setText("Result "+res);
+              res1.setText(""+res);
+                result1= res1.getText().toString();
               if(res==0) {
-                  res2.setText("Remark : Pass");
+                  res2.setText("Pass");
+                  result2 = res2.getText().toString();
               }else{
-                  res2.setText("Remark : Fail");
+                  res2.setText("Fail");
+                  result2 = res2.getText().toString();
               }
 
             }
@@ -128,131 +133,88 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
         btn_done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                FirebaseDatabase.getInstance().getReference("100perSKU").child(STYLE_NUMBER)
-//                      .addListenerForSingleValueEvent(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(DataSnapshot dataSnapshot)
-//                    {
-//                        MainSkuModel mainSkuModel =dataSnapshot.getValue(MainSkuModel.class);
-//
-//                        if(mainSkuModel!=null)
-//                        {
-////                            SkuDateModel skuDateModelArrayList;
-////                            if(mainSkuModel.getSkuDateModels()!=null)
-////                            {
-////                                skuDateModelArrayList = mainSkuModel.getSkuDateModels();
-////                            }
-////                            else
-////                                {
-////                                skuDateModelArrayList = new SkuDateModel;
-////                            }
-//
-//  //                          MainSkuModel mainSkuModel = new MainSkuModel();
-//
-//                            SkuDateModel skuDateModel =new SkuDateModel();
-//
-//                           // skuDateModelArrayList.add(skuDateModel);
-//
-//                            skuDateModel.setDate(txtDate.getText().toString());
-//                            skuDateModel.setSkuCheckReport100Model(skuCheckReport100Model);
-//
-//
-//                            SkuCheckReport100ModelList skuCheckReport100ModelList = new SkuCheckReport100ModelList();
-//                            skuCheckReport100ModelList.setCountryhasbeencheck(getStringOfRedio(radio_country_hbc.isChecked()));
-//                            skuCheckReport100ModelList.setLabelhasbeencheck(getStringOfRedio(radio_label_hbc.isChecked()));
-//                            skuCheckReport100ModelList.setBarcodehasbeencheck(getStringOfRedio(radio_barcode_hbc.isChecked()));
-//                            skuCheckReport100ModelList.setColorhasbeencheck(getStringOfRedio(radio_color_hbc.isChecked()));
-//                            skuCheckReport100ModelList.setPolybaghasbeencheck(getStringOfRedio(radio_polybag_hbc.isChecked()));
-//                            skuCheckReport100ModelList.setPolystikerhasbeencheck(getStringOfRedio(radio_polysticker_hbc.isChecked()));
-//                            skuCheckReport100ModelList.setPricetaghasbeencheck(getStringOfRedio(radio_pricetag_hbc.isChecked()));
-//                            skuCheckReport100ModelList.setHangerhasbeencheck(getStringOfRedio(radio_hanger_hbc.isChecked()));
-//                            skuCheckReport100ModelList.setHagertaghasbeencheck(getStringOfRedio(radio_hangertag_hbc.isChecked()));
-//                            skuCheckReport100ModelList.setOtherhasbeencheck(getStringOfRedio(radio_othertag_hbc.isChecked()));
-//                            skuCheckReport100ModelList.setPackingmethodhasbeencheck(getStringOfRedio(radio_packingmethod_hbc.isChecked()));
-//                            skuCheckReport100ModelList.setSizestickerhasbeencheck(getStringOfRedio(radio_sizesticker_hbc.isChecked()));
-//                            skuCheckReport100ModelList1.add(skuCheckReport100ModelList);
-//                            skuCheckReport100Model.setSkuCheckReport100ModelList(skuCheckReport100ModelList1);
-////                            mainSkuModel.setSkuDateModels(skuDateModelArrayList);
-//
-//                            FirebaseDatabase.getInstance().getReference("100perSKU").child(STYLE_NUMBER).setValue(skuDateModel).addOnCompleteListener(new OnCompleteListener<Void>() {
-//                                @Override
-//                                public void onComplete(@NonNull Task<Void> task) {
-//                                    if (!task.isComplete()) {
-//                                        Toast.makeText(SkuCheckReport100Page2.this, "opps ! some thing went wrong, please try again", Toast.LENGTH_SHORT).show();
-//                                    }
-//                                    progressDialog.dismiss();
-//                                    finish();
-//                                }
-//                            });
-//                            skuCheckReport100ModelList1.clear();
-//                        }
-//                        else
-                //   {
-                MainSkuModel mainSkuModel = new MainSkuModel();
-                //   ArrayList<SkuDateModel> skuDateModelArrayList = mainSkuModel.getSkuDateModels();
+                result1 = res1.getText().toString();
+                result2 = res2.getText().toString();
+
+                if (isNullOrEmpty(result1) || isNullOrEmpty(result2)) {
+                    Toast.makeText(SkuCheckReport100Page2.this, "Result and Remark is empty please click on the Get Result button", Toast.LENGTH_SHORT).show();
+                } else {
+
+                    MainSkuModel mainSkuModel = new MainSkuModel();
+
+                    SkuDateModel skuDateModel = new SkuDateModel();
+
+                    skuDateModel.setDate(txtDate.getText().toString());
+                    skuDateModel.setSkuCheckReport100Model(skuCheckReport100Model);
 
 
-                //                          MainSkuModel mainSkuModel = new MainSkuModel();
+                    SkuCheckReport100ModelList skuCheckReport100ModelList = new SkuCheckReport100ModelList();
+                    skuCheckReport100ModelList.setCountryhasbeencheck(getStringOfRedio(radio_country_hbc.isChecked()));
+                    skuCheckReport100ModelList.setLabelhasbeencheck(getStringOfRedio(radio_label_hbc.isChecked()));
+                    skuCheckReport100ModelList.setBarcodehasbeencheck(getStringOfRedio(radio_barcode_hbc.isChecked()));
+                    skuCheckReport100ModelList.setColorhasbeencheck(getStringOfRedio(radio_color_hbc.isChecked()));
+                    skuCheckReport100ModelList.setPolybaghasbeencheck(getStringOfRedio(radio_polybag_hbc.isChecked()));
+                    skuCheckReport100ModelList.setPolystikerhasbeencheck(getStringOfRedio(radio_polysticker_hbc.isChecked()));
+                    skuCheckReport100ModelList.setPricetaghasbeencheck(getStringOfRedio(radio_pricetag_hbc.isChecked()));
+                    skuCheckReport100ModelList.setHangerhasbeencheck(getStringOfRedio(radio_hanger_hbc.isChecked()));
+                    skuCheckReport100ModelList.setHagertaghasbeencheck(getStringOfRedio(radio_hangertag_hbc.isChecked()));
+                    skuCheckReport100ModelList.setOtherhasbeencheck(getStringOfRedio(radio_othertag_hbc.isChecked()));
+                    skuCheckReport100ModelList.setPackingmethodhasbeencheck(getStringOfRedio(radio_packingmethod_hbc.isChecked()));
+                    skuCheckReport100ModelList.setSizestickerhasbeencheck(getStringOfRedio(radio_sizesticker_hbc.isChecked()));
+                    skuCheckReport100ModelList.setRemark(res1.getText().toString());
+                    skuCheckReport100ModelList.setResult(res2.getText().toString());
+                    skuCheckReport100ModelList1.add(skuCheckReport100ModelList);
+                    skuCheckReport100Model.setSkuCheckReport100ModelList(skuCheckReport100ModelList1);
+                    //  mainSkuModel.setSkuDateModels(skuDateModelArrayList);
 
-                SkuDateModel skuDateModel = new SkuDateModel();
-
-                // skuDateModelArrayList.add(skuDateModel);
-
-                skuDateModel.setDate(txtDate.getText().toString());
-                skuDateModel.setSkuCheckReport100Model(skuCheckReport100Model);
-
-
-                SkuCheckReport100ModelList skuCheckReport100ModelList = new SkuCheckReport100ModelList();
-                skuCheckReport100ModelList.setCountryhasbeencheck(getStringOfRedio(radio_country_hbc.isChecked()));
-                skuCheckReport100ModelList.setLabelhasbeencheck(getStringOfRedio(radio_label_hbc.isChecked()));
-                skuCheckReport100ModelList.setBarcodehasbeencheck(getStringOfRedio(radio_barcode_hbc.isChecked()));
-                skuCheckReport100ModelList.setColorhasbeencheck(getStringOfRedio(radio_color_hbc.isChecked()));
-                skuCheckReport100ModelList.setPolybaghasbeencheck(getStringOfRedio(radio_polybag_hbc.isChecked()));
-                skuCheckReport100ModelList.setPolystikerhasbeencheck(getStringOfRedio(radio_polysticker_hbc.isChecked()));
-                skuCheckReport100ModelList.setPricetaghasbeencheck(getStringOfRedio(radio_pricetag_hbc.isChecked()));
-                skuCheckReport100ModelList.setHangerhasbeencheck(getStringOfRedio(radio_hanger_hbc.isChecked()));
-                skuCheckReport100ModelList.setHagertaghasbeencheck(getStringOfRedio(radio_hangertag_hbc.isChecked()));
-                skuCheckReport100ModelList.setOtherhasbeencheck(getStringOfRedio(radio_othertag_hbc.isChecked()));
-                skuCheckReport100ModelList.setPackingmethodhasbeencheck(getStringOfRedio(radio_packingmethod_hbc.isChecked()));
-                skuCheckReport100ModelList.setSizestickerhasbeencheck(getStringOfRedio(radio_sizesticker_hbc.isChecked()));
-                skuCheckReport100ModelList1.add(skuCheckReport100ModelList);
-                skuCheckReport100Model.setSkuCheckReport100ModelList(skuCheckReport100ModelList1);
-                //  mainSkuModel.setSkuDateModels(skuDateModelArrayList);
-
-                FirebaseDatabase.getInstance().getReference("100perSKU").child(STYLE_NUMBER).setValue(skuDateModel).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (!task.isComplete()) {
-                            Toast.makeText(SkuCheckReport100Page2.this, "opps ! some thing went wrong, please try again", Toast.LENGTH_SHORT).show();
+                    FirebaseDatabase.getInstance().getReference("100perSKU").child(STYLE_NUMBER).setValue(skuDateModel).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (!task.isComplete()) {
+                                Toast.makeText(SkuCheckReport100Page2.this, "opps ! some thing went wrong, please try again", Toast.LENGTH_SHORT).show();
+                            }
+                            progressDialog.dismiss();
+                            finish();
                         }
-                        progressDialog.dismiss();
-                        finish();
-                    }
-                });
-                skuCheckReport100ModelList1.clear();
+                    });
+                    skuCheckReport100ModelList1.clear();
+                }
             }
     });
         btn_next.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v) {
-                SkuCheckReport100ModelList skuCheckReport100ModelList = new SkuCheckReport100ModelList();
-                skuCheckReport100ModelList.setCountryhasbeencheck(getStringOfRedio(radio_country_hbc.isChecked()));
-                skuCheckReport100ModelList.setLabelhasbeencheck(getStringOfRedio(radio_label_hbc.isChecked()));
-                skuCheckReport100ModelList.setBarcodehasbeencheck(getStringOfRedio(radio_barcode_hbc.isChecked()));
-                skuCheckReport100ModelList.setColorhasbeencheck(getStringOfRedio(radio_color_hbc.isChecked()));
-                skuCheckReport100ModelList.setPolybaghasbeencheck(getStringOfRedio(radio_polybag_hbc.isChecked()));
-                skuCheckReport100ModelList.setPolystikerhasbeencheck(getStringOfRedio(radio_polysticker_hbc.isChecked()));
-                skuCheckReport100ModelList.setPricetaghasbeencheck(getStringOfRedio(radio_pricetag_hbc.isChecked()));
-                skuCheckReport100ModelList.setHangerhasbeencheck(getStringOfRedio(radio_hanger_hbc.isChecked()));
-                skuCheckReport100ModelList.setHagertaghasbeencheck(getStringOfRedio(radio_hangertag_hbc.isChecked()));
-                skuCheckReport100ModelList.setOtherhasbeencheck(getStringOfRedio(radio_othertag_hbc.isChecked()));
-                skuCheckReport100ModelList.setPackingmethodhasbeencheck(getStringOfRedio(radio_packingmethod_hbc.isChecked()));
-                skuCheckReport100ModelList.setSizestickerhasbeencheck(getStringOfRedio(radio_sizesticker_hbc.isChecked()));
-                skuCheckReport100ModelList1.add(skuCheckReport100ModelList);
-                Intent i = new Intent(SkuCheckReport100Page2.this, SkuCheckReport100Page2.class);
-                startActivity(i);
-                finish();
+                result1= res1.getText().toString();
+                result2 = res2.getText().toString();
+
+                if(isNullOrEmpty(result1)||isNullOrEmpty(result2))
+                {
+                    Toast.makeText(SkuCheckReport100Page2.this, "Result and Remark is empty please click on the Get Result button", Toast.LENGTH_SHORT).show();
+                }
+                else {
+
+
+                    SkuCheckReport100ModelList skuCheckReport100ModelList = new SkuCheckReport100ModelList();
+                    skuCheckReport100ModelList.setCountryhasbeencheck(getStringOfRedio(radio_country_hbc.isChecked()));
+                    skuCheckReport100ModelList.setLabelhasbeencheck(getStringOfRedio(radio_label_hbc.isChecked()));
+                    skuCheckReport100ModelList.setBarcodehasbeencheck(getStringOfRedio(radio_barcode_hbc.isChecked()));
+                    skuCheckReport100ModelList.setColorhasbeencheck(getStringOfRedio(radio_color_hbc.isChecked()));
+                    skuCheckReport100ModelList.setPolybaghasbeencheck(getStringOfRedio(radio_polybag_hbc.isChecked()));
+                    skuCheckReport100ModelList.setPolystikerhasbeencheck(getStringOfRedio(radio_polysticker_hbc.isChecked()));
+                    skuCheckReport100ModelList.setPricetaghasbeencheck(getStringOfRedio(radio_pricetag_hbc.isChecked()));
+                    skuCheckReport100ModelList.setHangerhasbeencheck(getStringOfRedio(radio_hanger_hbc.isChecked()));
+                    skuCheckReport100ModelList.setHagertaghasbeencheck(getStringOfRedio(radio_hangertag_hbc.isChecked()));
+                    skuCheckReport100ModelList.setOtherhasbeencheck(getStringOfRedio(radio_othertag_hbc.isChecked()));
+                    skuCheckReport100ModelList.setPackingmethodhasbeencheck(getStringOfRedio(radio_packingmethod_hbc.isChecked()));
+                    skuCheckReport100ModelList.setSizestickerhasbeencheck(getStringOfRedio(radio_sizesticker_hbc.isChecked()));
+                    skuCheckReport100ModelList.setRemark(res1.getText().toString());
+                    skuCheckReport100ModelList.setResult(res2.getText().toString());
+                    skuCheckReport100ModelList1.add(skuCheckReport100ModelList);
+                    Intent i = new Intent(SkuCheckReport100Page2.this, SkuCheckReport100Page2.class);
+                    startActivity(i);
+                    finish();
+                }
             }
         });
     }
@@ -269,6 +231,12 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
     }
     private void senddonedata(SkuCheckReport100ModelList skuCheckReport100ModelList) {
 
+    }
+
+    public static boolean isNullOrEmpty(String str) {
+        if(str != null && !str.trim().isEmpty())
+            return false;
+        return true;
     }
 
 }

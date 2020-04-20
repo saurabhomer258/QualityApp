@@ -28,6 +28,9 @@ import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMB
 public class SkuAdmin extends AppCompatActivity
 {
     LinearLayout layout;
+    SkuCheckReport100Page2 skuCheckReport100Page2 = new SkuCheckReport100Page2();
+    String result1;
+    String result2;
     private ProgressDialog progressDialog;
     String str;
     @Override
@@ -54,7 +57,7 @@ public class SkuAdmin extends AppCompatActivity
                         if (skuCheckReport100Model != null) {
                             setLayout("Ready quantity        ", skuCheckReport100Model.getSkuCheckReport100Model().getEdt_readyquantity());
                             setLayout("Check quantity        ", skuCheckReport100Model.getSkuCheckReport100Model().getEdt_checkquantity());
-                            setLayout("size                          ", skuCheckReport100Model.getSkuCheckReport100Model().getEdt_size());
+                            setLayout("Size                           ", skuCheckReport100Model.getSkuCheckReport100Model().getEdt_size());
                             TextView textView3 = new TextView(SkuAdmin.this);
                             textView3.setText("__________________________________________________________");
                             layout.addView(textView3);
@@ -63,33 +66,34 @@ public class SkuAdmin extends AppCompatActivity
                                 for (SkuCheckReport100ModelList skuCheckReport100ModelList : skuCheckReport100ModelList1) {
                                     setLayout("Country Has been check                 ", skuCheckReport100ModelList.getCountryhasbeencheck());
                                     setLayout("Label has been Check                     ", skuCheckReport100ModelList.getLabelhasbeencheck());
-                                    setLayout("Barcode has been check                 ", skuCheckReport100ModelList.getBarcodehasbeencheck());
+                                    setLayout("Barcode has been check                ", skuCheckReport100ModelList.getBarcodehasbeencheck());
                                     setLayout("Color has been check                      ", skuCheckReport100ModelList.getColorhasbeencheck());
-                                    setLayout("Polybag has been check                  ", skuCheckReport100ModelList.getPolybaghasbeencheck());
-                                    setLayout("Price tag has been check                 ", skuCheckReport100ModelList.getPricetaghasbeencheck());
-                                    setLayout("Polystiker has been check                ", skuCheckReport100ModelList.getPolystikerhasbeencheck());
-                                    setLayout("Size tag has been check                  ", skuCheckReport100ModelList.getSizestickerhasbeencheck());
+                                    setLayout("Polybag has been check                 ", skuCheckReport100ModelList.getPolybaghasbeencheck());
+                                    setLayout("Price tag has been check                ", skuCheckReport100ModelList.getPricetaghasbeencheck());
+                                    setLayout("Polystiker has been check              ", skuCheckReport100ModelList.getPolystikerhasbeencheck());
+                                    setLayout("Size tag has been check                 ", skuCheckReport100ModelList.getSizestickerhasbeencheck());
                                     setLayout("Hanger has been check                   ", skuCheckReport100ModelList.getHagertaghasbeencheck());
-                                    setLayout("Hager tag has been check               ", skuCheckReport100ModelList.getHagertaghasbeencheck());
-                                    setLayout("Otherhasbeencheck                          ", skuCheckReport100ModelList.getOtherhasbeencheck());
+                                    setLayout("Hager tag has been check              ", skuCheckReport100ModelList.getHagertaghasbeencheck());
+                                    setLayout("Otherhasbeencheck                         ", skuCheckReport100ModelList.getOtherhasbeencheck());
                                     setLayout("Other has been check                      ", skuCheckReport100ModelList.getOtherhasbeencheck());
                                     setLayout("Packing method has been check   ", skuCheckReport100ModelList.getPackingmethodhasbeencheck());
                                     setLayout("Size sticker has been check           ", skuCheckReport100ModelList.getSizestickerhasbeencheck());
-                                    setLayout("Result", "Pass");
-                                    setLayout("Remark", "Pass");
+                                    setLayout1("Result ", skuCheckReport100ModelList.getResult());
+                                    setLayout1("Remark", skuCheckReport100ModelList.getRemark());
                                     TextView textView2 = new TextView(SkuAdmin.this);
                                     textView2.setText("__________________________________________________________");
                                     layout.addView(textView2);
                                 }
                             }
-                        } else {
+                        }
+                        else
+                            {
 
                             Toast.makeText(SkuAdmin.this, "Opps! No data found", Toast.LENGTH_SHORT).show();
                             finish();
                         }
                         progressDialog.hide();
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
                         progressDialog.hide();
@@ -99,7 +103,14 @@ public class SkuAdmin extends AppCompatActivity
     private void setLayout(String object ,String result){
         TextView textView= new TextView(SkuAdmin.this);
         textView.setText(object + " : "+result);
+        layout.addView(textView);
+    }
+    private void setLayout1(String object, String result)
+    {
+        TextView textView= new TextView(SkuAdmin.this);
+        textView.setText(object + " : "+result);
         textView.setTextSize(18);
+        textView.setTextColor(0xFF00FF00);
         layout.addView(textView);
     }
 

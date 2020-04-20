@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.model.MainSkuModel;
@@ -59,24 +60,34 @@ public class SkuCheckReport100Page1 extends AppCompatActivity implements View.On
         View view_size = findViewById(R.id.edt_size);
         final EditText editText_size = view_size.findViewById(R.id.atvCommon);
         NextButton nextButton = findViewById(R.id.btn_next1);
-        if(nextButton!=null)
-        {
-            submitButton  = nextButton.findViewById(R.id.btnNext);
-            if(submitButton!=null) {
-                submitButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        skuCheckReport100Model.setEdt_checkquantity(editText_checkquantity.getText().toString());
-                        skuCheckReport100Model.setEdt_readyquantity(editText_readyquantity.getText().toString());
-                        skuCheckReport100Model.setEdt_size(editText_size.getText().toString());
-                        Intent i = new Intent(SkuCheckReport100Page1.this, SkuCheckReport100Page2.class);
-                        startActivity(i);
-                        finish();
-                    }
-                });
-            }
+        submitButton  = nextButton.findViewById(R.id.btnNext);
 
-        }
+
+          submitButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            String readq = editText_readyquantity.getText().toString();
+                            String checkq = editText_checkquantity.getText().toString();
+                            String size = editText_size.getText().toString();
+                            String date = txtDate.getText().toString();
+
+                            if (isNullOrEmpty(readq) || isNullOrEmpty(checkq) || isNullOrEmpty(size) || isNullOrEmpty(date)) {
+                                Toast.makeText(SkuCheckReport100Page1.this, "Field's should not be Empty", Toast.LENGTH_SHORT).show();
+                            } else {
+
+                                skuCheckReport100Model.setEdt_checkquantity(editText_checkquantity.getText().toString());
+                                skuCheckReport100Model.setEdt_readyquantity(editText_readyquantity.getText().toString());
+                                skuCheckReport100Model.setEdt_size(editText_size.getText().toString());
+                                Intent i = new Intent(SkuCheckReport100Page1.this, SkuCheckReport100Page2.class);
+                                startActivity(i);
+                                finish();
+                            }
+                        }
+                    });
+
+
+
+
 
 //        submitButton.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -113,6 +124,12 @@ public class SkuCheckReport100Page1 extends AppCompatActivity implements View.On
                     }, mYear, mMonth, mDay);
             datePickerDialog.show();
         }
+    }
+
+    public static boolean isNullOrEmpty(String str) {
+        if(str != null && !str.trim().isEmpty())
+            return false;
+        return true;
     }
 
 }
