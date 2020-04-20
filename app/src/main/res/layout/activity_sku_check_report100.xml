@@ -21,7 +21,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Country has been Check"
-                android:layout_weight="3"
+                android:layout_weight="6"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -29,7 +29,7 @@
             <customView.RadioButtonNOTOK
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_weight="7"
+                android:layout_weight="4"
                 android:id="@+id/countryhasbeencheck" />
 
         </LinearLayout>
@@ -47,7 +47,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Label has been Check"
-                android:layout_weight="3"
+                android:layout_weight="6"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -55,7 +55,7 @@
             <customView.RadioButtonNOTOK
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_weight="7"
+                android:layout_weight="4"
                 android:id="@+id/labelhasbeenchecked" />
 
         </LinearLayout>
@@ -74,7 +74,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Barcode has been Check"
-                android:layout_weight="3"
+                android:layout_weight="6"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -82,7 +82,7 @@
             <customView.RadioButtonNOTOK
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_weight="7"
+                android:layout_weight="4"
                 android:id="@+id/barcodehasbeencheck" />
 
         </LinearLayout>
@@ -100,7 +100,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Colour has been Check"
-                android:layout_weight="3"
+                android:layout_weight="6"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -108,7 +108,7 @@
             <customView.RadioButtonNOTOK
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_weight="7"
+                android:layout_weight="4"
                 android:id="@+id/colourhasbeencheck" />
 
         </LinearLayout>
@@ -126,7 +126,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Poly bag has been Check"
-                android:layout_weight="3"
+                android:layout_weight="6"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -134,7 +134,7 @@
             <customView.RadioButtonNOTOK
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_weight="7"
+                android:layout_weight="4"
                 android:id="@+id/polybaghasbeencheck" />
 
         </LinearLayout>
@@ -152,7 +152,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Poly Sticker has been Check"
-                android:layout_weight="3"
+                android:layout_weight="6"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -160,7 +160,7 @@
             <customView.RadioButtonNOTOK
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_weight="7"
+                android:layout_weight="4"
                 android:id="@+id/polystickerhasbeencheck" />
 
         </LinearLayout>
@@ -178,7 +178,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Price Tag has been Check"
-                android:layout_weight="3"
+                android:layout_weight="6"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -186,7 +186,7 @@
             <customView.RadioButtonNOTOK
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_weight="7"
+                android:layout_weight="4"
                 android:id="@+id/pricetaghasbeencheck" />
 
         </LinearLayout>
@@ -204,7 +204,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Hanger/Sizer has been Check"
-                android:layout_weight="3"
+                android:layout_weight="6"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -212,7 +212,7 @@
             <customView.RadioButtonNOTOK
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_weight="7"
+                android:layout_weight="4"
                 android:id="@+id/hangerhasbeencheck" />
 
         </LinearLayout>
@@ -230,7 +230,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Hangtag has been Check"
-                android:layout_weight="3"
+                android:layout_weight="6"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -238,7 +238,7 @@
             <customView.RadioButtonNOTOK
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_weight="7"
+                android:layout_weight="4"
                 android:id="@+id/hangtaghasbeencheck" />
 
         </LinearLayout>
@@ -256,7 +256,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Othertag has been Check"
-                android:layout_weight="3"
+                android:layout_weight="6"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -264,7 +264,7 @@
             <customView.RadioButtonNOTOK
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_weight="7"
+                android:layout_weight="4"
                 android:id="@+id/otherhasbeencheck" />
 
         </LinearLayout>
@@ -282,7 +282,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Packing method has been Check"
-                android:layout_weight="3"
+                android:layout_weight="6"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -290,7 +290,7 @@
             <customView.RadioButtonNOTOK
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_weight="7"
+                android:layout_weight="4"
                 android:id="@+id/packingmethodhasbeencheck" />
 
         </LinearLayout>
@@ -308,14 +308,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Size Sticker has been Check"
-                android:layout_weight="3"
+                android:layout_weight="6"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
             <customView.RadioButtonNOTOK
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_weight="7"
+                android:layout_weight="4"
                 android:id="@+id/sizestickershasbeencheck" />
 
         </LinearLayout>
@@ -334,8 +334,9 @@
                 android:id="@+id/result1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text=""
-                android:layout_weight="3"
+
+                android:gravity="center"
+                android:layout_weight="10"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -356,8 +357,8 @@
                 android:id="@+id/result2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text=""
-                android:layout_weight="3"
+                android:gravity="center"
+                android:layout_weight="10"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
