@@ -23,8 +23,8 @@ import static com.example.saurabhomer.qualityapp.OutSide.DailyFinishingAnalysisO
 public class OutsideResultView extends AppCompatActivity {
     TextView data41, data42, data43;
     LinearLayout layout;
-    protected void onCreate(Bundle savedInstanceState) {
-
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.common_total);
         TextView total = findViewById(R.id.tv_total);

@@ -46,28 +46,24 @@ public class MetelDetectionAdmin extends AppCompatActivity {
                         MetelDetectionPageListModel metelDetectionPageModel1 =   dataSnapshot.getValue(MetelDetectionPageListModel.class);
 
                         for(MetelDetectionPageModel metelDetectionPageModel : metelDetectionPageModel1.getmMetelDetectionPageModel()) {
-                            setLayout("Date", metelDetectionPageModel.getEdt_date());
-                            setLayout("Time", metelDetectionPageModel.getEdt_time());
-                            setLayout("Calibrated", metelDetectionPageModel.getEdt_calibrated());
-                            setLayout("Garment Pass", metelDetectionPageModel.getEdt_garment_pass());
-                            setLayout("Garment fail", metelDetectionPageModel.getEdt_garment_fail());
-                            setLayout("Garment check", metelDetectionPageModel.getEdt_no_of_garment_check());
-
+                            setLayout("Date                      ", metelDetectionPageModel.getEdt_date());
+                            setLayout("Time                     ", metelDetectionPageModel.getEdt_time());
+                            setLayout("Calibrated            ", metelDetectionPageModel.getEdt_calibrated());
+                            setLayout("Garment Pass     ", metelDetectionPageModel.getEdt_garment_pass());
+                            setLayout("Garment check   ", metelDetectionPageModel.getEdt_no_of_garment_check());
+                            setLayout("Garment fail        ", metelDetectionPageModel.getEdt_garment_fail());
+                            setLayout1("Remark",metelDetectionPageModel.getRemark());
                             TextView textView1= new TextView(MetelDetectionAdmin.this);
-                            textView1.setText("_________________________________________________");
+                            textView1.setText("__________________________________________________________");
                             layout.addView(textView1);
                         }
-
                         progressDialog.hide();
-
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
                         progressDialog.hide();
                     }
                 });
-
     }
 
     private void setLayout(String object ,String result){
@@ -75,4 +71,12 @@ public class MetelDetectionAdmin extends AppCompatActivity {
         textView.setText(object + " : "+result);
         layout.addView(textView);
     }
+
+    private void setLayout1(String object ,String result){
+        TextView textView= new TextView(MetelDetectionAdmin.this);
+        textView.setText(result);
+        textView.setTextSize(18);
+        layout.addView(textView);
+    }
+
 }

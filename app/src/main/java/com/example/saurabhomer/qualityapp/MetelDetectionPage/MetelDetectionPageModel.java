@@ -11,7 +11,16 @@ public class MetelDetectionPageModel
     private String edt_garment_pass;
     private String edt_garment_fail;
     private String edt_no_of_garment_check;
+    private String remark;
 
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
 
     public String getEdt_date() {
         return edt_date;

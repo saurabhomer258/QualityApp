@@ -141,13 +141,9 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
                 } else {
 
                     MainSkuModel mainSkuModel = new MainSkuModel();
-
                     SkuDateModel skuDateModel = new SkuDateModel();
-
                     skuDateModel.setDate(txtDate.getText().toString());
                     skuDateModel.setSkuCheckReport100Model(skuCheckReport100Model);
-
-
                     SkuCheckReport100ModelList skuCheckReport100ModelList = new SkuCheckReport100ModelList();
                     skuCheckReport100ModelList.setCountryhasbeencheck(getStringOfRedio(radio_country_hbc.isChecked()));
                     skuCheckReport100ModelList.setLabelhasbeencheck(getStringOfRedio(radio_label_hbc.isChecked()));
@@ -193,8 +189,6 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
                     Toast.makeText(SkuCheckReport100Page2.this, "Result and Remark is empty please click on the Get Result button", Toast.LENGTH_SHORT).show();
                 }
                 else {
-
-
                     SkuCheckReport100ModelList skuCheckReport100ModelList = new SkuCheckReport100ModelList();
                     skuCheckReport100ModelList.setCountryhasbeencheck(getStringOfRedio(radio_country_hbc.isChecked()));
                     skuCheckReport100ModelList.setLabelhasbeencheck(getStringOfRedio(radio_label_hbc.isChecked()));

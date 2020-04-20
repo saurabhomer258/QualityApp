@@ -95,12 +95,14 @@ public class SkuAdmin extends AppCompatActivity
                         progressDialog.hide();
                     }
                     @Override
-                    public void onCancelled(DatabaseError databaseError) {
+                    public void onCancelled(DatabaseError databaseError)
+                    {
                         progressDialog.hide();
                     }
                 });
     }
-    private void setLayout(String object ,String result){
+    private void setLayout(String object ,String result)
+    {
         TextView textView= new TextView(SkuAdmin.this);
         textView.setText(object + " : "+result);
         layout.addView(textView);
@@ -110,8 +112,6 @@ public class SkuAdmin extends AppCompatActivity
         TextView textView= new TextView(SkuAdmin.this);
         textView.setText(object + " : "+result);
         textView.setTextSize(18);
-        textView.setTextColor(0xFF00FF00);
         layout.addView(textView);
     }
-
 }

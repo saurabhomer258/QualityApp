@@ -20,13 +20,14 @@ import java.util.HashMap;
 import java.util.List;
 
 
-public class ResultViewForActivity extends AppCompatActivity {
+public class ResultViewForActivity extends AppCompatActivity
+{
     TextView data41, data42, data43;
     LinearLayout layout;
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
 
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.common_total);
         layout = findViewById(R.id.dailyLayout);
         TextView total = findViewById(R.id.tv_total);
@@ -41,22 +42,18 @@ public class ResultViewForActivity extends AppCompatActivity {
         ArrayList<DialyFinishingAnalysisModel> Dummy = new ArrayList<>();
 
         Dummy.add(dialyFinishingAnalysisModel);
-
-        for (int i = 1; i < DAILYFINIFSHINGMODELLIST.size(); i++) {
-
+        for (int i = 1; i < DAILYFINIFSHINGMODELLIST.size(); i++)
+        {
             DialyFinishingAnalysisModel dialyFinishingAnalysisModel1 = DAILYFINIFSHINGMODELLIST.get(i);
             dialyFinishingAnalysisModel.setPrintingMRBO(dialyFinishingAnalysisModel.getPrintingMRBO() + dialyFinishingAnalysisModel1.getPrintingMRBO());
             dialyFinishingAnalysisModel.setSlubs_Holes_NAR(dialyFinishingAnalysisModel.getSlubs_Holes_NAR() + dialyFinishingAnalysisModel1.getSlubs_Holes_NAR());
             dialyFinishingAnalysisModel.setColorShading(dialyFinishingAnalysisModel.getColorShading() + dialyFinishingAnalysisModel1.getColorShading());
             dialyFinishingAnalysisModel.setBrokenStitches(dialyFinishingAnalysisModel.getBrokenStitches() + dialyFinishingAnalysisModel1.getBrokenStitches());
-
-
             dialyFinishingAnalysisModel.setSlipStitches(dialyFinishingAnalysisModel.getSlipStitches() + dialyFinishingAnalysisModel1.getSlipStitches());
             dialyFinishingAnalysisModel.setSPI(dialyFinishingAnalysisModel.getSPI() + dialyFinishingAnalysisModel1.getSPI());
             dialyFinishingAnalysisModel.setPukering(dialyFinishingAnalysisModel.getPukering() + dialyFinishingAnalysisModel1.getPukering());
             dialyFinishingAnalysisModel.setLooseTensions(dialyFinishingAnalysisModel.getLooseTensions() + dialyFinishingAnalysisModel1.getLooseTensions());
             dialyFinishingAnalysisModel.setSnapDefects(dialyFinishingAnalysisModel.getSnapDefects() + dialyFinishingAnalysisModel1.getSnapDefects());
-
             dialyFinishingAnalysisModel.setNeedleMark(dialyFinishingAnalysisModel.getNeedleMark() + dialyFinishingAnalysisModel1.getNeedleMark());
             dialyFinishingAnalysisModel.setOpenSeam(dialyFinishingAnalysisModel.getOpenSeam() + dialyFinishingAnalysisModel1.getOpenSeam());
             dialyFinishingAnalysisModel.setPleats(dialyFinishingAnalysisModel.getPleats() + dialyFinishingAnalysisModel1.getPleats());
@@ -86,30 +83,23 @@ public class ResultViewForActivity extends AppCompatActivity {
         TextView textView2 = findViewById(R.id.data2);
         textView2.setText("Slubs_Holes_NAR     :" + dialyFinishingAnalysisModel.getSlubs_Holes_NAR());
 
-
         TextView textView3 = findViewById(R.id.data3);
         textView3.setText("colorShading              :" + dialyFinishingAnalysisModel.getColorShading());
-
 
         TextView textView4 = findViewById(R.id.data4);
         textView4.setText("BrokenStitches          :" + dialyFinishingAnalysisModel.getBrokenStitches());
 
-
         TextView textView5 = findViewById(R.id.data5);
         textView5.setText("SlipStitches                :" + dialyFinishingAnalysisModel.getSlipStitches());
-
 
         TextView textView6 = findViewById(R.id.data6);
         textView6.setText("SPI                                :" + dialyFinishingAnalysisModel.getSPI());
 
-
         TextView textView7 = findViewById(R.id.data7);
         textView7.setText("Pukering                      :" + dialyFinishingAnalysisModel.getPukering());
 
-
         TextView textView8 = findViewById(R.id.data8);
         textView8.setText("LooseTensions          :" + dialyFinishingAnalysisModel.getLooseTensions());
-
 
         TextView textView9 = findViewById(R.id.data9);
         textView9.setText("SnapDefects              :" + dialyFinishingAnalysisModel.getSnapDefects());
@@ -117,15 +107,13 @@ public class ResultViewForActivity extends AppCompatActivity {
         TextView textView10 = findViewById(R.id.data10);
         textView10.setText("NeedleMark                :" + dialyFinishingAnalysisModel.getNeedleMark());
 
-
         TextView textView11 = findViewById(R.id.data11);
         textView11.setText("OpenSeam                  :" + dialyFinishingAnalysisModel.getOpenSeam());
 
         TextView textView12 = findViewById(R.id.data12);
         textView12.setText("Pleats                           :" + dialyFinishingAnalysisModel.getPleats());
 
-
-//   private int MissingStitches,SkipRunOff,IncorrectLabel,WrongPlacement,LooseNess,CutDamage,Others,Stain,OilMark,Stickers,UncutThread,OutOfSpec;
+        //   private int MissingStitches,SkipRunOff,IncorrectLabel,WrongPlacement,LooseNess,CutDamage,Others,Stain,OilMark,Stickers,UncutThread,OutOfSpec;
         //    private int TotalDefect,QualityOut,ProductionOut,Damage,Dirty,Iron;
         //    private String hours;
         //    private int totalCheck;
@@ -134,18 +122,14 @@ public class ResultViewForActivity extends AppCompatActivity {
         TextView textView13 = findViewById(R.id.data13);
         textView13.setText("MissingStitches         :" + dialyFinishingAnalysisModel.getMissingStitches());
 
-
         TextView textView14 = findViewById(R.id.data14);
         textView14.setText("SkipRunOff                  :" + dialyFinishingAnalysisModel.getSkipRunOff());
-
 
         TextView textView15 = findViewById(R.id.data15);
         textView15.setText("IncorrectLabel            :" + dialyFinishingAnalysisModel.getIncorrectLabel());
 
-
         TextView textView16 = findViewById(R.id.data16);
         textView16.setText("WrongPlacement       :" + dialyFinishingAnalysisModel.getWrongPlacement());
-
 
         TextView textView17 = findViewById(R.id.data17);
         textView17.setText("LooseNess                  :" + dialyFinishingAnalysisModel.getLooseNess());
@@ -156,10 +140,7 @@ public class ResultViewForActivity extends AppCompatActivity {
         TextView textView18 = findViewById(R.id.data18);
         textView18.setText("CutDamage                 :" + dialyFinishingAnalysisModel.getCutDamage());
 
-
         //   private int MissingStitches,SkipRunOff,IncorrectLabel,WrongPlacement,LooseNess,CutDamage,Others,Stain,OilMark,Stickers,UncutThread,;
-
-
         TextView textView19 = findViewById(R.id.data19);
         textView19.setText("Others                           :" + dialyFinishingAnalysisModel.getOthers());
 
@@ -169,35 +150,26 @@ public class ResultViewForActivity extends AppCompatActivity {
         TextView textView21 = findViewById(R.id.data21);
         textView21.setText("OilMark                         :" + dialyFinishingAnalysisModel.getOilMark());
 
-
         TextView textView22 = findViewById(R.id.data22);
         textView22.setText("Stickers                        :" + dialyFinishingAnalysisModel.getStickers());
 
         TextView textView23 = findViewById(R.id.data23);
         textView23.setText("UncutThread               :" + dialyFinishingAnalysisModel.getUncutThread());
 
-
         TextView textView24 = findViewById(R.id.data24);
         textView24.setText("OutOfSpec                   :" + dialyFinishingAnalysisModel.getOutOfSpec());
-
-        // private int TotalDefect,QualityOut,ProductionOut,Damage,Dirty,Iron;
-
-
+        // private int TotalDefect,QualityOut,ProductionOut,Damage,Dirty,Iron
         TextView textView25 = findViewById(R.id.data25);
         textView25.setText("TotalDefect                  :" + dialyFinishingAnalysisModel.getTotalDefect());
-
 
         TextView textView26 = findViewById(R.id.data26);
         textView26.setText("QualityOut                    :" + dialyFinishingAnalysisModel.getQualityOut());
 
-
         TextView textView27 = findViewById(R.id.data27);
         textView27.setText("ProductionOut            :" + dialyFinishingAnalysisModel.getProductionOut());
 
-
         TextView textView28 = findViewById(R.id.data28);
         textView28.setText("Damage                       :" + dialyFinishingAnalysisModel.getDamage());
-
 
         TextView textView29 = findViewById(R.id.data29);
         textView29.setText("Dirty                              :" + dialyFinishingAnalysisModel.getDirty());
@@ -205,14 +177,16 @@ public class ResultViewForActivity extends AppCompatActivity {
         TextView textView30 = findViewById(R.id.data30);
         textView30.setText("Iron                                :" + dialyFinishingAnalysisModel.getIron());
 
-
         String s = dialyFinishingAnalysisModel.getTotal() + "";
         total.setText("Total                             :" + s);
 
-        if (dialyFinishingAnalysisModel.getTotalCheck() == 0) {
+        if (dialyFinishingAnalysisModel.getTotalCheck() == 0)
+        {
             totalPer.setText("Total percentage         :" + 0 + "");
             totalPer.setTextSize(18);
-        } else {
+        }
+        else
+            {
             float f = (float) dialyFinishingAnalysisModel.getTotal() / dialyFinishingAnalysisModel.getTotalCheck();
             f = f * 100;
             totalPer.setText("Total percentage          :" + f + "");
@@ -220,12 +194,14 @@ public class ResultViewForActivity extends AppCompatActivity {
         }
         Button b = findViewById(R.id.btn_ok);
         getMaxThree(Dummy);
-        for (int i=0 ; i <DAILYFINIFSHINGMODELLIST.size();i++){
+        for (int i=0 ; i <DAILYFINIFSHINGMODELLIST.size();i++)
+        {
             setLayout(DAILYFINIFSHINGMODELLIST.get(i).getHours()+"" ,DAILYFINIFSHINGMODELLIST.get(i).getTotal()+"" );
         }
-        b.setOnClickListener(new View.OnClickListener() {
+        b.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 clear();
                 Intent i = new Intent(ResultViewForActivity.this, CardMenuP.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -234,21 +210,22 @@ public class ResultViewForActivity extends AppCompatActivity {
         });
     }
 
-    private void clear() {
+    private void clear()
+    {
         DailyFinishingAnalysisOutside.DAILYFINIFSHINGMODELLIST.clear();
         DailyFinishingAnalysisOutside.DAILYFINIFSHINGMODELLISTForFinalResut1.clear();
     }
 
-
-    private void getMaxThree(ArrayList<DialyFinishingAnalysisModel> dialyFinishingAnalysisModels) {
-
+    private void getMaxThree(ArrayList<DialyFinishingAnalysisModel> dialyFinishingAnalysisModels)
+    {
         List<Integer> val = new ArrayList<>();
         int PrintingMRBO = 0, Slubs_Holes_NAR = 0, colorShading = 0, BrokenStitches = 0, SlipStitches = 0, SPI = 0, Pukering = 0, LooseTensions = 0, SnapDefects = 0, NeedleMark = 0, OpenSeam = 0, Pleats = 0;
         int MissingStitches = 0, SkipRunOff = 0, IncorrectLabel = 0, WrongPlacement = 0, LooseNess = 0, CutDamage = 0, Others = 0, Stain = 0, OilMark = 0, Stickers = 0, UncutThread = 0, OutOfSpec = 0;
         int TotalDefect = 0, QualityOut = 0, ProductionOut = 0, Damage = 0, Dirty = 0, Iron = 0;
         int unEvent = 0;
 
-        for (int i = 0; i < dialyFinishingAnalysisModels.size(); i++) {
+        for (int i = 0; i < dialyFinishingAnalysisModels.size(); i++)
+        {
             DialyFinishingAnalysisModel d = dialyFinishingAnalysisModels.get(i);
             PrintingMRBO = PrintingMRBO + d.getPrintingMRBO();
             Slubs_Holes_NAR = Slubs_Holes_NAR + d.getSlubs_Holes_NAR();
@@ -281,7 +258,6 @@ public class ResultViewForActivity extends AppCompatActivity {
             Damage = Damage + d.getDamage();
             Dirty = Dirty + d.getDirty();
             Iron = Iron + d.getIron();
-
         }
         val.add(PrintingMRBO);
         val.add(Slubs_Holes_NAR);
@@ -300,7 +276,6 @@ public class ResultViewForActivity extends AppCompatActivity {
         val.add(IncorrectLabel);
         val.add(WrongPlacement);
         val.add(unEvent);
-
         val.add(LooseNess);
         val.add(CutDamage);
         val.add(Others);
@@ -315,20 +290,18 @@ public class ResultViewForActivity extends AppCompatActivity {
         val.add(Damage);
         val.add(Dirty);
         val.add(Iron);
-
-
         // sort list
         Collections.sort(val, Collections.reverseOrder());
-        for (int i = 0; i < val.size(); i++) {
-            if (val.get(i) == PrintingMRBO) {
+        for (int i = 0; i < val.size(); i++)
+        {
+            if (val.get(i) == PrintingMRBO)
+            {
                 setString("Printing MRBO", val.get(i));
             }  if (val.get(i) == Slubs_Holes_NAR) {
                 setString("Slubs Holes NAR ", val.get(i));
-            } if(val.get(i)==colorShading)
-            {
+            }  if(val.get(i)==colorShading) {
                 setString("Color Shading ", val.get(i));
-            }
-            if (val.get(i) == BrokenStitches) {
+            }if (val.get(i) == BrokenStitches) {
                 setString("Broken Stitches", val.get(i));
             }  if (val.get(i) == SlipStitches) {
                 setString("Slip Stitches", val.get(i));
@@ -385,10 +358,7 @@ public class ResultViewForActivity extends AppCompatActivity {
             }  if (val.get(i) == Iron) {
                 setString("Iron", val.get(i));
             }
-
         }
-
-
     }
 
     int count = 0;

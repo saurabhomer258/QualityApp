@@ -22,6 +22,7 @@ import com.example.saurabhomer.qualityapp.admin.CartoonAuditAdmin;
 import com.example.saurabhomer.qualityapp.admin.DailyfinishingAdmin;
 import com.example.saurabhomer.qualityapp.admin.DailyfinishingGetUpAdmin;
 import com.example.saurabhomer.qualityapp.admin.DailyfinishingOutsideAdmin;
+import com.example.saurabhomer.qualityapp.admin.MetelDetectionAdmin;
 import com.example.saurabhomer.qualityapp.admin.SkuAdmin;
 import com.example.saurabhomer.qualityapp.pref.LoginPref;
 import com.example.saurabhomer.qualityapp.utils.CommonDailyDateFilter;
@@ -93,8 +94,17 @@ public class CardMenuP extends AppCompatActivity
         meteldetection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(CardMenuP.this, MetelDetectionPage.class);
-                startActivity(i);
+                if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
+                    Intent i =  new Intent(CardMenuP.this, MetelDetectionAdmin.class);
+                    i.putExtra("Name","Metel");
+                    startActivity(i);
+                }
+                else {
+                    Intent i = new Intent(CardMenuP.this, MetelDetectionPage.class);
+                    startActivity(i);
+
+                }
+                progressDialog.hide();
             }
         });
 
