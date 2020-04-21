@@ -7,14 +7,21 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.MainDailyFinishingModel;
+import com.example.saurabhomer.qualityapp.Model.StyleModel.StyleSheetModel;
 import com.example.saurabhomer.qualityapp.R;
+import com.example.saurabhomer.qualityapp.ui.gallery.model.MainSeetListModel;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 import customView.DailyFinishingEditText;
+import customView.DropDownSelectWithSize;
 import customView.NextButton;
 
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
@@ -22,31 +29,20 @@ import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMB
 
 public class Mesurement1 extends AppCompatActivity {
     NextButton btn;
+    static public ArrayList<String> data = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mesurement1);
-        final DailyFinishingEditText edt_hours = findViewById(R.id.edt_hours);
-        btn=  (NextButton) findViewById(R.id.btn_next);
-        btn.setOnClickListener(new View.OnClickListener() {
+
+        btn = (NextButton) findViewById(R.id.btn_next1);
+        Button nextbtn = (Button)  findViewById(R.id.btnNext);
+        nextbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String data = edt_hours.getText().toString();
-                Intent i = new Intent(Mesurement1.this,Measurment.class);
-                i.putExtra("hours",data);
-                startActivity(i);
-            }
-        });
-
-        FirebaseDatabase.getInstance().getReference().child("styles").child(STYLE_NUMBER).child("size").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Log.d("aaa",dataSnapshot.getKey());
-                Log.d("aaa",dataSnapshot.getValue()+"");
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+                Intent i1 = new Intent(Mesurement1.this, Measurement2.class);
+                startActivity(i1);
 
             }
         });

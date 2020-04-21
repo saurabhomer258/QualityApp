@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import customView.DailyFinishingEditText;
+import customView.DailyFinishingEditTextDForMesurement;
 
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
@@ -34,7 +35,7 @@ public class Measurment extends AppCompatActivity
 
     Button next,info_btn;
     LinearLayout layout;
-    ArrayList<DailyFinishingEditText> editTexts = new ArrayList<>();
+    ArrayList<DailyFinishingEditTextDForMesurement> editTexts = new ArrayList<>();
     Button done;
     static MeasurementListModel measurementListModel = new MeasurementListModel();
     @Override
@@ -78,12 +79,12 @@ public class Measurment extends AppCompatActivity
         });
 
         View view_done = findViewById(R.id.btn_done_measurement);
-        done = view_done.findViewById(R.id.btnNext);
+        //done = view_done.findViewById(R.id.btnNext);
       Button nextbtn =  findViewById(R.id.btn_next).findViewById(R.id.btnNext);
         FirebaseDatabase.getInstance().getReference().child("styles").child(STYLE_NUMBER).child("size").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                size(dataSnapshot.getValue()+"");
+                //size(dataSnapshot.getValue()+"");
             }
 
             @Override
@@ -97,21 +98,21 @@ public class Measurment extends AppCompatActivity
                 startActivity(new Intent(Measurment.this,Mesurement1.class));
             }
         });
-        done.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MeasurementModel measurementModel  = new MeasurementModel();
-
-                measurementModel.setEdt_measur(edt_measurement.getText().toString());
-                measurementModel.setEdt_tolerance_plus(edt_tolerance_plus.getText().toString());
-                measurementModel.setEdt_tolerance_minus(edt_tolerance_minus.getText().toString());
-                List<MeasurementModel> measurementModels  = new ArrayList<>();
-                measurementModels.add(measurementModel);
-                measurementListModel.setMeasurementModels(measurementModels);
-
-
-            }
-        });
+//        done.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                MeasurementModel measurementModel  = new MeasurementModel();
+//
+////                measurementModel.setEdt_measur(edt_measurement.getText().toString());
+////                measurementModel.setEdt_tolerance_plus(edt_tolerance_plus.getText().toString());
+////                measurementModel.setEdt_tolerance_minus(edt_tolerance_minus.getText().toString());
+////                List<MeasurementModel> measurementModels  = new ArrayList<>();
+////                measurementModels.add(measurementModel);
+////                measurementListModel.setMeasurementModels(measurementModels);
+//
+//
+//            }
+//        });
     }
     private void senddonedata(MeasurementModel measurementModel)
     {
@@ -128,24 +129,28 @@ public class Measurment extends AppCompatActivity
             else {
                 TextView valueTV = new TextView(this);
                 LinearLayout layout2 = new LinearLayout(this);
+                layout2.setOrientation(LinearLayout.HORIZONTAL);
                 layout2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                layout2.setOrientation(LinearLayout.VERTICAL);
+
                 layout2.setWeightSum(10);
                 layout2.setGravity(Gravity.CENTER);
                 valueTV.setLayoutParams(new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        400,
                         LinearLayout.LayoutParams.WRAP_CONTENT));
+
                 layout2.setPadding(14, 0, 14, 14);
 
                 valueTV.setTextColor(getResources().getColor(R.color.common_text_color));
                 valueTV.setTextSize(16);
 
-                valueTV.setText(string);
-                DailyFinishingEditText dailyFinishingEditText = new DailyFinishingEditText(this);
+                valueTV.setText("45657657t7");
+                DailyFinishingEditTextDForMesurement dailyFinishingEditText = new DailyFinishingEditTextDForMesurement(this);
+                layout2.addView(valueTV);
+                layout2.addView(dailyFinishingEditText);
                 editTexts.add(dailyFinishingEditText);
                 layout.addView(layout2);
-                layout.addView(dailyFinishingEditText);
-                layout2.addView(valueTV);
+
+
             }
 
         }

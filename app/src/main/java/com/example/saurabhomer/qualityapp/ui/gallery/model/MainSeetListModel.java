@@ -13,4 +13,12 @@ public class MainSeetListModel {
     public void setMainSeetModel2(ArrayList<MainSeetModel2> mainSeetModel2) {
         this.mainSeetModel2 = mainSeetModel2;
     }
+
+    public MainSeetListModel() {
+    }
+
+    public MainSeetListModel(ArrayList<MainSeetModel2> mainSeetModel2) {
+        this.mainSeetModel2 = mainSeetModel2;
+
+    }
 }
