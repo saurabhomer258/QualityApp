@@ -89,15 +89,15 @@ public class InsideResultView extends AppCompatActivity
 
 
     TextView textView3 =  findViewById(R.id.data3);
-    textView3.setText("colorShading              :"+ dialyFinishingAnalysisModel.getColorShading());
+    textView3.setText("color Shading              :"+ dialyFinishingAnalysisModel.getColorShading());
 
 
     TextView textView4 =  findViewById(R.id.data4);
-    textView4.setText("BrokenStitches          :"+ dialyFinishingAnalysisModel.getBrokenStitches());
+    textView4.setText("Broken Stitches          :"+ dialyFinishingAnalysisModel.getBrokenStitches());
 
 
     TextView textView5 =  findViewById(R.id.data5);
-    textView5.setText("SlipStitches                :"+ dialyFinishingAnalysisModel.getSlipStitches());
+    textView5.setText("Slip Stitches                :"+ dialyFinishingAnalysisModel.getSlipStitches());
 
 
     TextView textView6 =  findViewById(R.id.data6);
@@ -110,14 +110,14 @@ public class InsideResultView extends AppCompatActivity
 
 
     TextView textView8 =  findViewById(R.id.data8);
-    textView8.setText("LooseTensions          :"+ dialyFinishingAnalysisModel.getLooseTensions());
+    textView8.setText("Loose Tensions          :"+ dialyFinishingAnalysisModel.getLooseTensions());
 
 
     TextView textView9 =  findViewById(R.id.data9);
-    textView9.setText("SnapDefects              :"+ dialyFinishingAnalysisModel.getSnapDefects());
+    textView9.setText("Snap Defects              :"+ dialyFinishingAnalysisModel.getSnapDefects());
 
     TextView textView10 =  findViewById(R.id.data10);
-    textView10.setText("NeedleMark                :"+ dialyFinishingAnalysisModel.getNeedleMark());
+    textView10.setText("Needle Mark                :"+ dialyFinishingAnalysisModel.getNeedleMark());
 
 
     TextView textView11 =  findViewById(R.id.data11);
@@ -134,30 +134,30 @@ public class InsideResultView extends AppCompatActivity
     //    private int uneven;
 
     TextView textView13 =  findViewById(R.id.data13);
-    textView13.setText("MissingStitches         :"+ dialyFinishingAnalysisModel.getMissingStitches());
+    textView13.setText("Missing Stitches         :"+ dialyFinishingAnalysisModel.getMissingStitches());
 
 
 
     TextView textView14 =  findViewById(R.id.data14);
-    textView14.setText("SkipRunOff                  :"+ dialyFinishingAnalysisModel.getSkipRunOff());
+    textView14.setText("Skip/RunOff                  :"+ dialyFinishingAnalysisModel.getSkipRunOff());
 
 
     TextView textView15 =  findViewById(R.id.data15);
-    textView15.setText("IncorrectLabel            :"+ dialyFinishingAnalysisModel.getIncorrectLabel());
+    textView15.setText("Incorrect Label            :"+ dialyFinishingAnalysisModel.getIncorrectLabel());
 
 
     TextView textView16 =  findViewById(R.id.data16);
-    textView16.setText("WrongPlacement       :"+ dialyFinishingAnalysisModel.getWrongPlacement());
+    textView16.setText("Wrong Placement       :"+ dialyFinishingAnalysisModel.getWrongPlacement());
 
 
     TextView textView17 =  findViewById(R.id.data17);
-    textView17.setText("LooseNess                  :"+ dialyFinishingAnalysisModel.getLooseNess());
+    textView17.setText("Loose Ness                  :"+ dialyFinishingAnalysisModel.getLooseNess());
 
     TextView textView171 =  findViewById(R.id.data171);
     textView171.setText("Unevent/Rewedge     :"+ dialyFinishingAnalysisModel.getUneven());
 
     TextView textView18 =  findViewById(R.id.data18);
-    textView18.setText("CutDamage                 :"+ dialyFinishingAnalysisModel.getCutDamage());
+    textView18.setText("Cut Damage                 :"+ dialyFinishingAnalysisModel.getCutDamage());
 
 
     //   private int MissingStitches,SkipRunOff,IncorrectLabel,WrongPlacement,LooseNess,CutDamage,Others,Stain,OilMark,Stickers,UncutThread,;
@@ -168,14 +168,14 @@ public class InsideResultView extends AppCompatActivity
     textView20.setText("Stain                              :"+ dialyFinishingAnalysisModel.getStain());
 
     TextView textView21 =  findViewById(R.id.data21);
-    textView21.setText("OilMark                         :"+ dialyFinishingAnalysisModel.getOilMark());
+    textView21.setText("Oil Mark                         :"+ dialyFinishingAnalysisModel.getOilMark());
 
 
     TextView textView22 =  findViewById(R.id.data22);
     textView22.setText("Stickers                        :"+ dialyFinishingAnalysisModel.getStickers());
 
     TextView textView23 =  findViewById(R.id.data23);
-    textView23.setText("UncutThread               :"+ dialyFinishingAnalysisModel.getUncutThread());
+    textView23.setText("Uncut Thread               :"+ dialyFinishingAnalysisModel.getUncutThread());
 
 
     TextView textView24 =  findViewById(R.id.data24);
@@ -186,16 +186,16 @@ public class InsideResultView extends AppCompatActivity
 
 
     TextView textView25 =  findViewById(R.id.data25);
-    textView25.setText("TotalDefect                  :"+ dialyFinishingAnalysisModel.getTotalDefect());
+    textView25.setText("Total Defect                  :"+ dialyFinishingAnalysisModel.getTotalDefect());
 
 
     TextView textView26 =  findViewById(R.id.data26);
-    textView26.setText("QualityOut                    :"+ dialyFinishingAnalysisModel.getQualityOut());
+    textView26.setText("Quality Out                    :"+ dialyFinishingAnalysisModel.getQualityOut());
 
 
 
     TextView textView27 =  findViewById(R.id.data27);
-    textView27.setText("ProductionOut            :"+ dialyFinishingAnalysisModel.getProductionOut());
+    textView27.setText("Production Out            :"+ dialyFinishingAnalysisModel.getProductionOut());
 
 
     TextView textView28 =  findViewById(R.id.data28);
