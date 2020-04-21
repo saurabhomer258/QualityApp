@@ -24,12 +24,12 @@ import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFin
 import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingAnalysis2.dialyFinishingAnalysisModelForResult;
 
 
-public class InsideResultView extends AppCompatActivity {
+public class InsideResultView extends AppCompatActivity
+{
     TextView data41,data42,data43;
 
-protected void onCreate(Bundle savedInstanceState) {
-
-
+    protected void onCreate(Bundle savedInstanceState)
+    {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.common_total);
     TextView total =  findViewById(R.id.tv_total);
@@ -46,20 +46,16 @@ protected void onCreate(Bundle savedInstanceState) {
 
     for(int i=0;i<DAILYFINIFSHINGMODELLIST.size();i++)
     {
-
        DialyFinishingAnalysisModel dialyFinishingAnalysisModel1 = DAILYFINIFSHINGMODELLIST.get(i);
        dialyFinishingAnalysisModel.setPrintingMRBO(dialyFinishingAnalysisModel.getPrintingMRBO()+dialyFinishingAnalysisModel1.getPrintingMRBO());
        dialyFinishingAnalysisModel.setSlubs_Holes_NAR(dialyFinishingAnalysisModel.getSlubs_Holes_NAR()+dialyFinishingAnalysisModel1.getSlubs_Holes_NAR());
        dialyFinishingAnalysisModel.setColorShading(dialyFinishingAnalysisModel.getColorShading()+dialyFinishingAnalysisModel1.getColorShading());
        dialyFinishingAnalysisModel.setBrokenStitches(dialyFinishingAnalysisModel.getBrokenStitches()+dialyFinishingAnalysisModel1.getBrokenStitches());
-
-
        dialyFinishingAnalysisModel.setSlipStitches(dialyFinishingAnalysisModel.getSlipStitches()+dialyFinishingAnalysisModel1.getSlipStitches());
        dialyFinishingAnalysisModel.setSPI(dialyFinishingAnalysisModel.getSPI()+dialyFinishingAnalysisModel1.getSPI());
        dialyFinishingAnalysisModel.setPukering(dialyFinishingAnalysisModel.getPukering()+dialyFinishingAnalysisModel1.getPukering());
        dialyFinishingAnalysisModel.setLooseTensions(dialyFinishingAnalysisModel.getLooseTensions()+dialyFinishingAnalysisModel1.getLooseTensions());
        dialyFinishingAnalysisModel.setSnapDefects(dialyFinishingAnalysisModel.getSnapDefects()+dialyFinishingAnalysisModel1.getSnapDefects());
-
        dialyFinishingAnalysisModel.setNeedleMark(dialyFinishingAnalysisModel.getNeedleMark()+dialyFinishingAnalysisModel1.getNeedleMark());
        dialyFinishingAnalysisModel.setOpenSeam(dialyFinishingAnalysisModel.getOpenSeam()+dialyFinishingAnalysisModel1.getOpenSeam());
        dialyFinishingAnalysisModel.setPleats(dialyFinishingAnalysisModel.getPleats()+dialyFinishingAnalysisModel1.getPleats());
@@ -81,14 +77,14 @@ protected void onCreate(Bundle savedInstanceState) {
        dialyFinishingAnalysisModel.setDamage(dialyFinishingAnalysisModel.getDamage()+dialyFinishingAnalysisModel1.getDamage());
        dialyFinishingAnalysisModel.setDirty(dialyFinishingAnalysisModel.getDirty()+dialyFinishingAnalysisModel1.getDirty());
        dialyFinishingAnalysisModel.setIron(dialyFinishingAnalysisModel.getIron()+dialyFinishingAnalysisModel1.getIron());
-        dialyFinishingAnalysisModel.setUneven(dialyFinishingAnalysisModel.getUneven() + dialyFinishingAnalysisModel1.getUneven());
+       dialyFinishingAnalysisModel.setUneven(dialyFinishingAnalysisModel.getUneven() + dialyFinishingAnalysisModel1.getUneven());
 
    }
     TextView textView1 =  findViewById(R.id.data1);
-    textView1.setText("PrintingMRBO            :"+ dialyFinishingAnalysisModel.getPrintingMRBO());
+    textView1.setText("Printing/MRBO            :"+ dialyFinishingAnalysisModel.getPrintingMRBO());
 
     TextView textView2 =  findViewById(R.id.data2);
-    textView2.setText("Slubs_Holes_NAR     :"+ dialyFinishingAnalysisModel.getSlubs_Holes_NAR());
+    textView2.setText("Slubs/Holes/NAR     :"+ dialyFinishingAnalysisModel.getSlubs_Holes_NAR());
 
 
 
@@ -109,7 +105,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 
     TextView textView7 =  findViewById(R.id.data7);
-    textView7.setText("Pukering                      :"+ dialyFinishingAnalysisModel.getPukering());
+    textView7.setText("Puckering                      :"+ dialyFinishingAnalysisModel.getPukering());
 
 
 
@@ -167,8 +163,6 @@ protected void onCreate(Bundle savedInstanceState) {
     //   private int MissingStitches,SkipRunOff,IncorrectLabel,WrongPlacement,LooseNess,CutDamage,Others,Stain,OilMark,Stickers,UncutThread,;
 
 
-    TextView textView19 =  findViewById(R.id.data19);
-    textView19.setText("Others                           :"+ dialyFinishingAnalysisModel.getOthers());
 
     TextView textView20 =  findViewById(R.id.data20);
     textView20.setText("Stain                              :"+ dialyFinishingAnalysisModel.getStain());
@@ -214,8 +208,12 @@ protected void onCreate(Bundle savedInstanceState) {
     TextView textView30 =  findViewById(R.id.data30);
     textView30.setText("Iron                                :"+ dialyFinishingAnalysisModel.getIron());
 
+        TextView textView19 =  findViewById(R.id.data19);
+        textView19.setText("Others                           :"+ dialyFinishingAnalysisModel.getOthers());
 
-    String s = dialyFinishingAnalysisModel.getTotal()+"";
+
+
+        String s = dialyFinishingAnalysisModel.getTotal()+"";
     total.setText("Total                             :"+s);
 
 

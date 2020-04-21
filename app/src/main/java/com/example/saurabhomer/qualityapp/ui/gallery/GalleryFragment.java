@@ -90,7 +90,7 @@ public class GalleryFragment extends Fragment implements
                         new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Toast.makeText(getContext(), ""+tDate, Toast.LENGTH_SHORT).show();
+
 
                                 if(!NetworkUtils.isNetworkConnected(getContext()))
                                 {
