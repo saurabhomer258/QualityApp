@@ -93,7 +93,7 @@ public class DailyfinishingOutsideAdmin extends AppCompatActivity {
 
                                 setLayout("Slip Stitches                ", items.getSlipStitches() + "");
                                 setLayout("SPI                                 ", items.getSPI() + "");
-                                setLayout("Pukering                       ", items.getPukering() + "");
+                                setLayout("Puckering                       ", items.getPukering() + "");
                                 setLayout("LooseTensions           ", items.getLooseTensions() + "");
                                 setLayout("SnapDefects               ", items.getSnapDefects() + "");
                                 setLayout("NeedleMark                 ", items.getNeedleMark() + "");
