@@ -27,7 +27,7 @@ import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFin
 public class InsideResultView extends AppCompatActivity
 {
     TextView data41,data42,data43;
-
+    int totalRes = 0;
     protected void onCreate(Bundle savedInstanceState)
     {
     super.onCreate(savedInstanceState);
@@ -39,9 +39,9 @@ public class InsideResultView extends AppCompatActivity
     data43  = findViewById(R.id.data43);
     DialyFinishingAnalysisModel dialyFinishingAnalysisModel  = dialyFinishingAnalysisModelForResult;
     ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST =new ArrayList<>();
-    DAILYFINIFSHINGMODELLIST  =DAILYFINIFSHINGMODELLISTForResult;
+    //DAILYFINIFSHINGMODELLIST  =DAILYFINIFSHINGMODELLISTForResult;
     ArrayList<DialyFinishingAnalysisModel> Dummy = new ArrayList<>();
-    Dummy.addAll(DAILYFINIFSHINGMODELLISTForResult);
+   // Dummy.addAll(DAILYFINIFSHINGMODELLISTForResult);
     Dummy.add(dialyFinishingAnalysisModel);
 
     for(int i=0;i<DAILYFINIFSHINGMODELLIST.size();i++)
@@ -78,7 +78,7 @@ public class InsideResultView extends AppCompatActivity
        dialyFinishingAnalysisModel.setDirty(dialyFinishingAnalysisModel.getDirty()+dialyFinishingAnalysisModel1.getDirty());
        dialyFinishingAnalysisModel.setIron(dialyFinishingAnalysisModel.getIron()+dialyFinishingAnalysisModel1.getIron());
        dialyFinishingAnalysisModel.setUneven(dialyFinishingAnalysisModel.getUneven() + dialyFinishingAnalysisModel1.getUneven());
-
+        totalRes = totalRes + dialyFinishingAnalysisModel.getTotal();
    }
     TextView textView1 =  findViewById(R.id.data1);
     textView1.setText("Printing/MRBO            :"+ dialyFinishingAnalysisModel.getPrintingMRBO());
@@ -213,7 +213,7 @@ public class InsideResultView extends AppCompatActivity
 
 
 
-        String s = dialyFinishingAnalysisModel.getTotal()+"";
+        String s = totalRes+"";
     total.setText("Total                             :"+s);
 
 

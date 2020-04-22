@@ -28,6 +28,7 @@ public class ResultViewForActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.common_total);
+        int totalVal = 0;
         layout = findViewById(R.id.dailyLayout);
         TextView total = findViewById(R.id.tv_total);
         TextView totalPer = findViewById(R.id.tv_Defect_per);
@@ -221,7 +222,13 @@ public class ResultViewForActivity extends AppCompatActivity {
         Button b = findViewById(R.id.btn_ok);
         getMaxThree(Dummy);
         for (int i=0 ; i <DAILYFINIFSHINGMODELLIST.size();i++){
-            setLayout(DAILYFINIFSHINGMODELLIST.get(i).getHours()+"" ,DAILYFINIFSHINGMODELLIST.get(i).getTotal()+"" );
+            if (i == 0) {
+                setLayout(DAILYFINIFSHINGMODELLIST.get(i).getHours() + "", totalVal + "");
+
+            } else {
+
+                setLayout(DAILYFINIFSHINGMODELLIST.get(i).getHours() + "", DAILYFINIFSHINGMODELLIST.get(i).getTotal() + "");
+            }
         }
         b.setOnClickListener(new View.OnClickListener() {
             @Override

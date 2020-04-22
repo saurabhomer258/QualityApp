@@ -24,10 +24,11 @@ import java.util.List;
 public class ResultViewForActivity extends AppCompatActivity {
     TextView data41, data42, data43;
     LinearLayout layout;
+
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
+        int totalVal = 0;
         setContentView(R.layout.common_total);
         TextView total = findViewById(R.id.tv_total);
         TextView totalPer = findViewById(R.id.tv_Defect_per);
@@ -37,6 +38,7 @@ public class ResultViewForActivity extends AppCompatActivity {
         layout = findViewById(R.id.dailyLayout);
 
         DialyFinishingAnalysisModel dialyFinishingAnalysisModel = DailyFinishingAnalysis2.DAILYFINIFSHINGMODELLISTForFinalResut.get(0);
+        totalVal = dialyFinishingAnalysisModel.getTotal();
         ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
         DAILYFINIFSHINGMODELLIST = DailyFinishingAnalysis2.DAILYFINIFSHINGMODELLISTForFinalResut;
         ArrayList<DialyFinishingAnalysisModel> Dummy = new ArrayList<>();
@@ -226,8 +228,13 @@ public class ResultViewForActivity extends AppCompatActivity {
         Button b = findViewById(R.id.btn_ok);
         getMaxThree(Dummy);
 
-      for (int i=0 ; i <DAILYFINIFSHINGMODELLIST.size();i++){
-          setLayout(DAILYFINIFSHINGMODELLIST.get(i).getHours()+"" ,DAILYFINIFSHINGMODELLIST.get(i).getTotal()+"" );
+      for (int i=0 ; i <DAILYFINIFSHINGMODELLIST.size();i++) {
+          if (i == 0) {
+              setLayout(DAILYFINIFSHINGMODELLIST.get(i).getHours() + "", totalVal + "");
+
+          } else {
+              setLayout(DAILYFINIFSHINGMODELLIST.get(i).getHours() + "", DailyFinishingAnalysis2.DAILYFINIFSHINGMODELLISTForFinalResut.get(i).getTotal() + "");
+          }
       }
 
         b.setOnClickListener(new View.OnClickListener() {
