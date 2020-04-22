@@ -335,9 +335,9 @@ public class ResultViewForActivity extends AppCompatActivity {
         Collections.sort(val, Collections.reverseOrder());
         for (int i = 0; i < val.size(); i++) {
             if (val.get(i) == PrintingMRBO) {
-                setString("Printing MRBO", val.get(i));
+                setString("Printing/MRBO", val.get(i));
             }  if (val.get(i) == Slubs_Holes_NAR) {
-                setString("Slubs Holes NAR ", val.get(i));
+                setString("Slubs/Holes/NAR ", val.get(i));
             } if(val.get(i)==colorShading)
             {
                 setString("Color Shading ", val.get(i));
@@ -349,7 +349,7 @@ public class ResultViewForActivity extends AppCompatActivity {
             }  if (val.get(i) == SPI) {
                 setString("SPI", val.get(i));
             }  if (val.get(i) == Pukering) {
-                setString("Pukering", val.get(i));
+                setString("Puckering", val.get(i));
             }  if (val.get(i) == LooseTensions) {
                 setString("Loose Tensions", val.get(i));
             }  if (val.get(i) == SnapDefects) {
@@ -363,7 +363,7 @@ public class ResultViewForActivity extends AppCompatActivity {
             }  if (val.get(i) == MissingStitches) {
                 setString("Missing Stitches", val.get(i));
             }  if (val.get(i) == SkipRunOff) {
-                setString("Skip RunOff", val.get(i));
+                setString("Skip/RunOff", val.get(i));
             }  if (val.get(i) == IncorrectLabel) {
                 setString("Incorrect Label", val.get(i));
             }  if (val.get(i) == CutDamage) {
@@ -371,27 +371,27 @@ public class ResultViewForActivity extends AppCompatActivity {
             }  if (val.get(i) == WrongPlacement) {
                 setString("Wrong Placement", val.get(i));
             }  if (val.get(i) == unEvent) {
-                setString("un Event", val.get(i));
+                setString("Unevent/Rewedge", val.get(i));
             }  if (val.get(i) == LooseNess) {
-                setString("Loose Ness", val.get(i));
+                setString("Looseness", val.get(i));
             }  if (val.get(i) == Others) {
                 setString("Others", val.get(i));
             }  if (val.get(i) == Stain) {
                 setString("Stain", val.get(i));
             }  if (val.get(i) == OilMark) {
-                setString("OilMark", val.get(i));
+                setString("Oil Mark", val.get(i));
             }  if (val.get(i) == Stickers) {
                 setString("Stickers", val.get(i));
             }  if (val.get(i) == UncutThread) {
-                setString("UncutThread", val.get(i));
+                setString("Uncut Thread", val.get(i));
             }  if (val.get(i) == OutOfSpec) {
                 setString("OutOfSpec", val.get(i));
             }  if (val.get(i) == TotalDefect) {
-                setString("TotalDefect", val.get(i));
+                setString("Total Defect", val.get(i));
             } else if (val.get(i) == QualityOut) {
-                setString("QualityOut", val.get(i));
+                setString("Quality Out", val.get(i));
             }  if (val.get(i) == ProductionOut) {
-                setString("ProductionOut", val.get(i));
+                setString("Production Out", val.get(i));
             }  if (val.get(i) == Damage) {
                 setString("Damage", val.get(i));
             }  if (val.get(i) == Dirty) {
