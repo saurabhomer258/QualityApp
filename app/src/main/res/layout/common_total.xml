@@ -321,6 +321,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="TOP 3 RESULT"
+                    style="@style/Animation.AppCompat.Dialog"
                     android:textColor="#000"
                     android:textSize="18sp" />
 
