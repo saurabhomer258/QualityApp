@@ -88,39 +88,39 @@ public class DailyfinishingAdmin extends AppCompatActivity
                             if (list != null) {
                                 for (DialyFinishingAnalysisModel items : list) {
 
-                                    setLayout("Printing MRBO            ",items.getPrintingMRBO()+"");
-                                    setLayout("Slubs Holes NAR        ",items.getSlubs_Holes_NAR()+"");
+                                    setLayout("Printing/MRBO            ",items.getPrintingMRBO()+"");
+                                    setLayout("Slubs/Holes/NAR        ",items.getSlubs_Holes_NAR()+"");
                                     setLayout("Color Shading             ",items.getColorShading()+"");
                                     setLayout("Broken Stitches          ",items.getBrokenStitches()+"");
 
                                     setLayout("Slip Stitches                ",items.getSlipStitches()+"");
                                     setLayout("SPI                                 ",items.getSPI()+"");
-                                    setLayout("Pukering                       ",items.getPukering()+"");
-                                    setLayout("LooseTensions           ",items.getLooseTensions()+"");
+                                    setLayout("Puckering                       ",items.getPukering()+"");
+                                    setLayout("Loose Tensions           ",items.getLooseTensions()+"");
                                     setLayout("SnapDefects               ",items.getSnapDefects()+"");
-                                    setLayout("NeedleMark                 ",items.getNeedleMark()+"");
-                                    setLayout("OpenSeam                   ",items.getOpenSeam()+"");
+                                    setLayout("Needle Mark                 ",items.getNeedleMark()+"");
+                                    setLayout("Open Seam                   ",items.getOpenSeam()+"");
                                     setLayout("Pleats                            ",items.getPleats()+"");
-                                    setLayout("MissingStitches          ",items.getMissingStitches()+"");
-                                    setLayout("SkipRunOff                   ",items.getSkipRunOff()+"");
-                                    setLayout("IncorrectLabel             ",items.getIncorrectLabel()+"");
-                                    setLayout("WrongPlacement        ",items.getWrongPlacement()+"");
-                                    setLayout("LooseNess                   ",items.getLooseNess()+"");
-                                    setLayout("CutDamage                  ",items.getCutDamage()+"");
-                                    setLayout("Others                           ",items.getOthers()+"");
+                                    setLayout("Missing Stitches          ",items.getMissingStitches()+"");
+                                    setLayout("Skip/RunOff                   ",items.getSkipRunOff()+"");
+                                    setLayout("Incorrect Label             ",items.getIncorrectLabel()+"");
+                                    setLayout("Wrong Placement        ",items.getWrongPlacement()+"");
+                                    setLayout("Looseness                   ",items.getLooseNess()+"");
+                                    setLayout("Cut Damage                  ",items.getCutDamage()+"");
                                     setLayout("Stain                              ",items.getStain()+"");
-                                    setLayout("OilMark                         ",items.getOilMark()+"");
+                                    setLayout("Oil Mark                         ",items.getOilMark()+"");
                                     setLayout("Stickers                         ",items.getStickers()+"");
-                                    setLayout("UncutThread                ",items.getUncutThread()+"");
+                                    setLayout("Uncut Thread                ",items.getUncutThread()+"");
                                     setLayout("OutOfSpec                    ",items.getOutOfSpec()+"");
-                                    setLayout("TotalDefect                   ",items.getTotalDefect()+"");
-                                    setLayout("QualityOut                     ",items.getQualityOut()+"");
-                                    setLayout("ProductionOut             ",items.getProductionOut()+"");
+                                    setLayout("Total Defect                   ",items.getTotalDefect()+"");
+                                    setLayout("Quality Out                     ",items.getQualityOut()+"");
+                                    setLayout("Production Out             ",items.getProductionOut()+"");
                                     setLayout("Damage                         ",items.getDamage()+"");
                                     setLayout("Dirty                                ",items.getDirty()+"");
                                     setLayout("Iron                                  ",items.getIron()+"");
                                     setLayout("hours                              ",items.getHours());
                                     setLayout("Uneven                           ",items.getUneven()+"");
+                                    setLayout("Others                           ",items.getOthers()+"");
                                     setLayout("Total Check                   ",items.getTotalCheck()+"");
 
                                     String s = items.getTotal() + "";
@@ -206,38 +206,38 @@ public class DailyfinishingAdmin extends AppCompatActivity
 
         }
 
-        setLayout("Printing MRBO            ",items.getPrintingMRBO()+"");
-        setLayout("Slubs Holes NAR        ",items.getSlubs_Holes_NAR()+"");
+        setLayout("Printing/MRBO            ",items.getPrintingMRBO()+"");
+        setLayout("Slubs/Holes/NAR        ",items.getSlubs_Holes_NAR()+"");
         setLayout("Color Shading             ",items.getColorShading()+"");
         setLayout("Broken Stitches          ",items.getBrokenStitches()+"");
 
         setLayout("Slip Stitches                ",items.getSlipStitches()+"");
         setLayout("SPI                                 ",items.getSPI()+"");
-        setLayout("Pukering                       ",items.getPukering()+"");
-        setLayout("LooseTensions           ",items.getLooseTensions()+"");
-        setLayout("SnapDefects               ",items.getSnapDefects()+"");
-        setLayout("NeedleMark                 ",items.getNeedleMark()+"");
-        setLayout("OpenSeam                   ",items.getOpenSeam()+"");
+        setLayout("Puckering                       ",items.getPukering()+"");
+        setLayout("Loose Tensions           ",items.getLooseTensions()+"");
+        setLayout("Snap Defects               ",items.getSnapDefects()+"");
+        setLayout("Needle Mark                 ",items.getNeedleMark()+"");
+        setLayout("Open Seam                   ",items.getOpenSeam()+"");
         setLayout("Pleats                            ",items.getPleats()+"");
-        setLayout("MissingStitches          ",items.getMissingStitches()+"");
-        setLayout("SkipRunOff                   ",items.getSkipRunOff()+"");
-        setLayout("IncorrectLabel             ",items.getIncorrectLabel()+"");
-        setLayout("WrongPlacement        ",items.getWrongPlacement()+"");
-        setLayout("LooseNess                   ",items.getLooseNess()+"");
-        setLayout("CutDamage                  ",items.getCutDamage()+"");
-        setLayout("Others                           ",items.getOthers()+"");
+        setLayout("Missing Stitches          ",items.getMissingStitches()+"");
+        setLayout("Skip/RunOff                   ",items.getSkipRunOff()+"");
+        setLayout("Incorrect Label             ",items.getIncorrectLabel()+"");
+        setLayout("Wrong Placement        ",items.getWrongPlacement()+"");
+        setLayout("Looseness                   ",items.getLooseNess()+"");
+        setLayout("Cut Damage                  ",items.getCutDamage()+"");
         setLayout("Stain                              ",items.getStain()+"");
-        setLayout("OilMark                         ",items.getOilMark()+"");
+        setLayout("Oil Mark                         ",items.getOilMark()+"");
         setLayout("Stickers                         ",items.getStickers()+"");
-        setLayout("UncutThread                ",items.getUncutThread()+"");
+        setLayout("Uncut Thread                ",items.getUncutThread()+"");
         setLayout("OutOfSpec                    ",items.getOutOfSpec()+"");
-        setLayout("TotalDefect                   ",items.getTotalDefect()+"");
-        setLayout("QualityOut                     ",items.getQualityOut()+"");
-        setLayout("ProductionOut             ",items.getProductionOut()+"");
+        setLayout("Total Defect                   ",items.getTotalDefect()+"");
+        setLayout("Quality Out                     ",items.getQualityOut()+"");
+        setLayout("Production Out             ",items.getProductionOut()+"");
         setLayout("Damage                         ",items.getDamage()+"");
         setLayout("Dirty                                ",items.getDirty()+"");
         setLayout("Iron                                  ",items.getIron()+"");
         setLayout("Uneven                           ",items.getUneven()+"");
+        setLayout("Others                           ",items.getOthers()+"");
         setLayout("Total Check                   ",items.getTotalCheck()+"");
         if (items.getTotalCheck() == 0) {
             setLayout("Total percentage         ",  0 + "");
