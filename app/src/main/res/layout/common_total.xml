@@ -314,6 +314,16 @@
                     android:layout_marginBottom="3dp"
                     android:text="data"
                     android:textColor="#000" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="TOP 3 RESULT"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
                 <TextView
                     android:id="@+id/data41"
                     android:layout_width="match_parent"
