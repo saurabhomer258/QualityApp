@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -27,6 +28,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+
+import customView.AdminResult;
 
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
@@ -97,7 +100,7 @@ public class DailyfinishingAdmin extends AppCompatActivity
                                     setLayout("SPI                                 ",items.getSPI()+"");
                                     setLayout("Puckering                       ",items.getPukering()+"");
                                     setLayout("Loose Tensions           ",items.getLooseTensions()+"");
-                                    setLayout("SnapDefects               ",items.getSnapDefects()+"");
+                                    setLayout("Snap Defects               ",items.getSnapDefects()+"");
                                     setLayout("Needle Mark                 ",items.getNeedleMark()+"");
                                     setLayout("Open Seam                   ",items.getOpenSeam()+"");
                                     setLayout("Pleats                            ",items.getPleats()+"");
@@ -377,15 +380,15 @@ public class DailyfinishingAdmin extends AppCompatActivity
             }  if (val.get(i) == Stickers) {
                 setString("Stickers", val.get(i));
             }  if (val.get(i) == UncutThread) {
-                setString("UncutThread", val.get(i));
+                setString("Uncut Thread", val.get(i));
             }  if (val.get(i) == OutOfSpec) {
-                setString("OutOfSpec", val.get(i));
+                setString("Out Of Spec", val.get(i));
             }  if (val.get(i) == TotalDefect) {
-                setString("TotalDefect", val.get(i));
+                setString("Total Defect", val.get(i));
             } else if (val.get(i) == QualityOut) {
                 setString("QualityOut", val.get(i));
             }  if (val.get(i) == ProductionOut) {
-                setString("ProductionOut", val.get(i));
+                setString("Production Out", val.get(i));
             }  if (val.get(i) == Damage) {
                 setString("Damage", val.get(i));
             }  if (val.get(i) == Dirty) {
@@ -431,12 +434,15 @@ public class DailyfinishingAdmin extends AppCompatActivity
         }
     }
 
-    private void setLayout(String object ,String result)
-    {
-        if(result!=null)
-        {
-            TextView textView = new TextView(DailyfinishingAdmin.this);
-            textView.setText(object + " : " + result);
+    private void setLayout(String object ,String result){
+        if(result!=null) {
+
+
+            AdminResult textView = new AdminResult(DailyfinishingAdmin.this);
+            String res = "";
+
+            textView.setText(object, result);
+
             layout.addView(textView);
         }
     }

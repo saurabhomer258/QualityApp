@@ -29,6 +29,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
+import customView.AdminResult;
+
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
 public class DailyfinishingGetUpAdmin extends AppCompatActivity {
@@ -161,8 +163,10 @@ public class DailyfinishingGetUpAdmin extends AppCompatActivity {
     }
     private void setLayout(String object ,String result){
         if(result!=null) {
-            TextView textView = new TextView(DailyfinishingGetUpAdmin.this);
-            textView.setText(object + " : " + result);
+            AdminResult textView = new AdminResult(DailyfinishingGetUpAdmin.this);
+            String res = "";
+
+            textView.setText(object, result);
             layout.addView(textView);
         }
     }
