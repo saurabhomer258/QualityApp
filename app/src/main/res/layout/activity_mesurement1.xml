@@ -19,7 +19,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Hours"
+            android:text="Size"
 
             android:layout_weight="3"
             android:textColor="@color/common_text_color"
@@ -43,6 +43,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:id="@+id/btn_next1" />
+
+        <customView.DoneButton
+            android:layout_width="0dp"
+            android:padding="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:id="@+id/btn_done" />
     </LinearLayout>
 
     </LinearLayout>

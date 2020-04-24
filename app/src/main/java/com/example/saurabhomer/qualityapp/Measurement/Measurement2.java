@@ -3,6 +3,8 @@ package com.example.saurabhomer.qualityapp.Measurement;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -18,19 +20,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 import customView.DailyFinishingEditTextDForMesurement;
+import customView.DoneButton;
 import customView.DropDownSelectWithSize;
+import customView.NextButton;
 
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
 public class Measurement2 extends AppCompatActivity {
 
     LinearLayout layout;
+    DoneButton btn;
     ArrayList<DailyFinishingEditTextDForMesurement> editTexts = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_measurement2);
         layout = findViewById(R.id.layout);
+        btn = (DoneButton) findViewById(R.id.btn_done);
+        Button doneBtn = (Button)  findViewById(R.id.btnNext);
+        doneBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int tobeAddDataInIndex  =  DropDownSelectWithSize.spinner.getSelectedItemPosition();
+                String res = "";
+                for(int i =0;i< editTexts.size();i++){
+                    if(i==0){
+                        res = editTexts.get(i).getText();
+                    }
+                    else {
+                        res = res + ","+editTexts.get(i).getText();
+                    }
+                }
+                Mesurement1.data.set(tobeAddDataInIndex,res);
+            }
+        });
         // data : for chese
         //DropDownSelectWithSize.spinner.getSelectedItemPosition() //  DropDownSelectWithSize.spinner.getSelectedItem()
         int tobeAddDataInIndex  =  DropDownSelectWithSize.spinner.getSelectedItemPosition();

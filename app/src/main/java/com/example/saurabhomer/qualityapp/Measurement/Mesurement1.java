@@ -21,6 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 import customView.DailyFinishingEditText;
+import customView.DoneButton;
 import customView.DropDownSelectWithSize;
 import customView.NextButton;
 
@@ -29,6 +30,7 @@ import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMB
 
 public class Mesurement1 extends AppCompatActivity {
     NextButton btn;
+    DoneButton doneButton;
     static public ArrayList<String> data = new ArrayList<>();
 
     @Override
@@ -37,13 +39,22 @@ public class Mesurement1 extends AppCompatActivity {
         setContentView(R.layout.activity_mesurement1);
 
         btn = (NextButton) findViewById(R.id.btn_next1);
-        Button nextbtn = (Button)  findViewById(R.id.btnNext);
+        doneButton = (DoneButton) findViewById(R.id.btn_done);
+
+        Button nextbtn = (Button)  btn.findViewById(R.id.btnNext);
+        Button submit  = (Button)  doneButton.findViewById(R.id.btnNext);
         nextbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i1 = new Intent(Mesurement1.this, Measurement2.class);
                 startActivity(i1);
 
+            }
+        });
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // todo check data value
             }
         });
     }
