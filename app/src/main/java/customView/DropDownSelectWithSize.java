@@ -51,6 +51,7 @@ public class DropDownSelectWithSize extends RelativeLayout {
 
 
     void init(Context context) {
+        Mesurement1.data.clear();
         LayoutInflater inflater =
                 (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (inflater != null) {

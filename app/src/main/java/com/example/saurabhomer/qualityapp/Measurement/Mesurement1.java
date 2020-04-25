@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.MainDailyFinishingModel;
 import com.example.saurabhomer.qualityapp.Model.StyleModel.StyleSheetModel;
 import com.example.saurabhomer.qualityapp.R;
+import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenuP;
 import com.example.saurabhomer.qualityapp.ui.gallery.model.MainSeetListModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -26,6 +27,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import customView.DailyFinishingEditText;
 import customView.DailyFinishingEditTextDForMesurement;
@@ -87,71 +89,139 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
         nextbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int tobeAddDataInIndex = DropDownSelectWithSize.spinner.getSelectedItemPosition();
-                String res = "";
-                for (int i = 0; i < editTexts.size(); i++) {
-                    if (i == 0) {
-                        res = editTexts.get(i).getText();
-                    } else {
-                        res = res + "," + editTexts.get(i).getText();
-                    }
-                }
-                Mesurement1.data.set(tobeAddDataInIndex, res);
-                MeasurementModel measurementModel = new MeasurementModel();
-                measurementModel.setHours(hour.getText().toString());
-                measurementModel.setValues(Mesurement1.data);
-                measurementListModelList.add(measurementModel);
+                FirebaseDatabase.getInstance().getReference("mesurement").child(STYLE_NUMBER)
+                        .addListenerForSingleValueEvent(new ValueEventListener() {
+
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                MeasurementListModel measurementListModel = dataSnapshot.getValue(MeasurementListModel.class);
+                                if (measurementListModel == null) {
+                                    measurementListModel = new MeasurementListModel();
+                                }
+                                List<MeasurementModel> measurementListModelList;
+                                if (measurementListModel.getMeasurementModels() != null) {
+                                    measurementListModelList = measurementListModel.getMeasurementModels();
+                                } else {
+                                    measurementListModelList = new ArrayList<MeasurementModel>();
+                                }
+
+                                int tobeAddDataInIndex = DropDownSelectWithSize.spinner.getSelectedItemPosition();
+                                String res = "";
+                                for (int i = 0; i < editTexts.size(); i++) {
+                                    if (i == 0) {
+                                        res = editTexts.get(i).getText();
+                                    } else {
+                                        res = res + "," + editTexts.get(i).getText();
+                                    }
+                                }
+                                Mesurement1.data.set(tobeAddDataInIndex, res);
+                                MeasurementModel measurementModel = new MeasurementModel();
+                                measurementModel.setHours(hour.getText().toString());
+                                measurementModel.setValues(Mesurement1.data);
+                                measurementListModelList.add(measurementModel);
+                                measurementListModel.setMeasurementModels(measurementListModelList);
+                                FirebaseDatabase.getInstance().getReference("mesurement").child(STYLE_NUMBER).setValue(measurementListModel)
+                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                Intent i1 = new Intent(Mesurement1.this, Mesurement1.class);
+                                                startActivity(i1);
+                                            }
+                                        });
 
 
+                            }
 
-                Intent i1 = new Intent(Mesurement1.this, Mesurement1.class);
-                startActivity(i1);
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+                        });
+
+
             }
         });
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("aaaaa", data.size() + "");
-                int tobeAddDataInIndex = DropDownSelectWithSize.spinner.getSelectedItemPosition();
-                String res = "";
-                for (int i = 0; i < editTexts.size(); i++) {
-                    if (i == 0) {
-                        res = editTexts.get(i).getText();
-                    } else {
-                        res = res + "," + editTexts.get(i).getText();
-                    }
-                }
-                Mesurement1.data.set(tobeAddDataInIndex, res);
-                MeasurementModel measurementModel = new MeasurementModel();
-                measurementModel.setHours(hour.getText().toString());
-                measurementModel.setValues(Mesurement1.data);
-                measurementListModelList.add(measurementModel);
-                measurementListModel.setMeasurementModels(measurementListModelList);
+                FirebaseDatabase.getInstance().getReference("mesurement").child(STYLE_NUMBER)
+                        .addListenerForSingleValueEvent(new ValueEventListener() {
 
-                // todo check data value
-                FirebaseDatabase.getInstance().getReference("mesurement").child(STYLE_NUMBER).setValue(measurementListModel)
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
-                            public void onComplete(@NonNull Task<Void> task) {
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                MeasurementListModel measurementListModel = dataSnapshot.getValue(MeasurementListModel.class);
+                                if (measurementListModel == null) {
+                                    measurementListModel = new MeasurementListModel();
+                                }
+                                List<MeasurementModel> measurementListModelList;
+                                if (measurementListModel.getMeasurementModels() != null) {
+                                    measurementListModelList = measurementListModel.getMeasurementModels();
+                                } else {
+                                    measurementListModelList = new ArrayList<MeasurementModel>();
+                                }
+
+                                int tobeAddDataInIndex = DropDownSelectWithSize.spinner.getSelectedItemPosition();
+                                String res = "";
+                                for (int i = 0; i < editTexts.size(); i++) {
+                                    if (i == 0) {
+                                        res = editTexts.get(i).getText();
+                                    } else {
+                                        res = res + "," + editTexts.get(i).getText();
+                                    }
+                                }
+                                Mesurement1.data.set(tobeAddDataInIndex, res);
+                                MeasurementModel measurementModel = new MeasurementModel();
+                                measurementModel.setHours(hour.getText().toString());
+                                measurementModel.setValues(Mesurement1.data);
+                                measurementListModelList.add(measurementModel);
+                                measurementListModel.setMeasurementModels(measurementListModelList);
+                                FirebaseDatabase.getInstance().getReference("mesurement").child(STYLE_NUMBER).setValue(measurementListModel)
+                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                Intent i1 = new Intent(Mesurement1.this, CardMenuP.class);
+                                                startActivity(i1);
+                                                finish();
+                                            }
+                                        });
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
 
                             }
                         });
+
+
+
             }
+
         });
+
     }
 
+    String text ="";
     @Override
     public void change(int position) {
+        String res = "";
         for (int i = 0; i < editTexts.size(); i++) {
-            if (editTexts.get(i).getText().trim().isEmpty()) {
-                Toast.makeText(Mesurement1.this, "opps! some fields are empty please check", Toast.LENGTH_SHORT).show();
-                break;
-
-            }
-            if (i == editTexts.size() - 1) {
-                insertData();
+            if (i == 0) {
+                res = editTexts.get(i).getText();
+            } else {
+                res = res + "," + editTexts.get(i).getText();
             }
         }
+        Mesurement1.data.set(position, res);
+//        for (int i = 0; i < editTexts.size(); i++) {
+//            if (editTexts.get(i).getText().trim().isEmpty()) {
+//                Toast.makeText(Mesurement1.this, "opps! some fields are empty please check", Toast.LENGTH_SHORT).show();
+//                break;
+//
+//            }
+//            if (i == editTexts.size() - 1) {
+//                insertData();
+//            }
+//        }
 
     }
 
@@ -169,7 +239,7 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
         MeasurementModel measurementModel = new MeasurementModel();
         measurementModel.setHours(hour.getText().toString());
         measurementModel.setValues(Mesurement1.data);
-       // measurementListModelList.add(measurementModel);
+        // measurementListModelList.add(measurementModel);
         for (int i = 0; i < editTexts.size(); i++) {
             DailyFinishingEditTextDForMesurement view = editTexts.get(i);
             view.clear();
@@ -206,8 +276,6 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
                 layout2.addView(dailyFinishingEditText);
                 editTexts.add(dailyFinishingEditText);
                 layout.addView(layout2);
-
-
             }
 
         }
