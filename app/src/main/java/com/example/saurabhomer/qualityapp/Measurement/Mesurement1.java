@@ -45,6 +45,7 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
     DoneButton doneButton;
     EditText hour;
     LinearLayout layout;
+    Button infoBtn;
     static public ArrayList<String> data = new ArrayList<>();
     ArrayList<DailyFinishingEditTextDForMesurement> editTexts = new ArrayList<>();
     DropDownSelectWithSize dropDownSelectWithSize;
@@ -53,7 +54,7 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mesurement1);
-
+        infoBtn = findViewById(R.id.info_me);
         View view_measurment = findViewById(R.id.edt_hour);
         hour = view_measurment.findViewById(R.id.atvCommon);
 
@@ -196,6 +197,13 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
 
             }
 
+        });
+        infoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=  new Intent(Mesurement1.this,ResultViewForActivity.class);
+                startActivity(i);
+            }
         });
 
     }

@@ -71,7 +71,9 @@
         <activity android:name=".OutSide.ResultViewForActivity" />
         <activity android:name=".DailyFinishingAnalysis.InsideResultView" />
         <activity android:name=".DailyFinishingAnalysis.ResultViewForActivity" />
-        <activity android:name="com.example.saurabhomer.qualityapp.Measurement.Measurement2"></activity>
+        <activity android:name=".Measurement.Measurement2" />
+        <activity android:name=".Measurement.ResultViewForActivity" />
+        <activity android:name=".admin.MesurementAdmin"></activity>
     </application>
 
 </manifest>
