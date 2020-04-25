@@ -29,7 +29,7 @@ import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMB
 
 public class Measurment extends AppCompatActivity
 {
-    EditText edt_measurement;
+    EditText date;
     EditText edt_tolerance_plus;
     EditText edt_tolerance_minus;
 
@@ -38,6 +38,7 @@ public class Measurment extends AppCompatActivity
     ArrayList<DailyFinishingEditTextDForMesurement> editTexts = new ArrayList<>();
     Button done;
     static MeasurementListModel measurementListModel = new MeasurementListModel();
+    static ArrayList<MeasurementModel> measurementListModelList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -50,14 +51,14 @@ public class Measurment extends AppCompatActivity
        layout = findViewById(R.id.layout);
 
        info_btn = findViewById(R.id.info_me);
-        View  view_measurment= findViewById(R.id.edt_measurment);
-        edt_measurement = view_measurment.findViewById(R.id.atvCommon);
+        View  view_measurment= findViewById(R.id.edt_date);
+        date = view_measurment.findViewById(R.id.atvCommon);
 
-        View  view_tolerance_plus= findViewById(R.id.edt_tolerance_plus);
-        edt_tolerance_plus = view_tolerance_plus.findViewById(R.id.atvCommon);
-
-        View  view_tolerance_minus= findViewById(R.id.edt_tolerance_minus);
-        edt_tolerance_minus = view_tolerance_minus.findViewById(R.id.atvCommon);
+//        View  view_tolerance_plus= findViewById(R.id.edt_tolerance_plus);
+//        edt_tolerance_plus = view_tolerance_plus.findViewById(R.id.atvCommon);
+//
+//        View  view_tolerance_minus= findViewById(R.id.edt_tolerance_minus);
+//        edt_tolerance_minus = view_tolerance_minus.findViewById(R.id.atvCommon);
 
 //        final CheckBox  check40= findViewById(R.id.checkbox_40);
 //
@@ -81,20 +82,21 @@ public class Measurment extends AppCompatActivity
         View view_done = findViewById(R.id.btn_done_measurement);
         //done = view_done.findViewById(R.id.btnNext);
       Button nextbtn =  findViewById(R.id.btn_next).findViewById(R.id.btnNext);
-        FirebaseDatabase.getInstance().getReference().child("styles").child(STYLE_NUMBER).child("size").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                //size(dataSnapshot.getValue()+"");
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
+//        FirebaseDatabase.getInstance().getReference().child("styles").child(STYLE_NUMBER).child("size").addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                //size(dataSnapshot.getValue()+"");
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
         nextbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                measurementListModel.setDate(date.getText().toString());
                 startActivity(new Intent(Measurment.this,Mesurement1.class));
             }
         });

@@ -37,5 +37,8 @@ public class DailyFinishingEditTextDForMesurement extends RelativeLayout {
     public  String getText(){
       return atvCommon.getText().toString();
     }
+    public  void clear(){
+         atvCommon.setText("");
+    }
 
 }

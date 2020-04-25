@@ -52,6 +52,7 @@ public class Measurement2 extends AppCompatActivity {
                     }
                 }
                 Mesurement1.data.set(tobeAddDataInIndex,res);
+                finish();
             }
         });
         // data : for chese
@@ -66,10 +67,11 @@ public class Measurement2 extends AppCompatActivity {
                 MainSeetListModel mainSeetListModel = dataSnapshot.getValue(MainSeetListModel.class);
                 if (mainSeetListModel.getMainSeetModel2() != null) {
                     for(int i=0;i< mainSeetListModel.getMainSeetModel2().size();i++){
-                        s= s+ mainSeetListModel.getMainSeetModel2().get(i).getMeasurementDiscription();
+                        s=  mainSeetListModel.getMainSeetModel2().get(i).getMeasurementDiscription();
+                        size(s);
                     }
                 }
-                size(s);
+
             }
 
             @Override

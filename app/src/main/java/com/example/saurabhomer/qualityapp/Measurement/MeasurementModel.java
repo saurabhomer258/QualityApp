@@ -1,22 +1,38 @@
 package com.example.saurabhomer.qualityapp.Measurement;
 
+import java.util.ArrayList;
+
 public class MeasurementModel {
-    public String mesurementDescription;
-    public String sizeValue;
+    public String hours;
 
-    public String getMesurementDescription() {
-        return mesurementDescription;
+    public ArrayList<String> values;
+
+    public MeasurementModel(String hours, ArrayList<String> values) {
+        this.hours = hours;
+
+        this.values = values;
     }
 
-    public void setMesurementDescription(String mesurementDescription) {
-        this.mesurementDescription = mesurementDescription;
+    public MeasurementModel() {
     }
 
-    public String getSizeValue() {
-        return sizeValue;
+
+
+    public String getHours() {
+        return hours;
     }
 
-    public void setSizeValue(String sizeValue) {
-        this.sizeValue = sizeValue;
+    public void setHours(String hours) {
+        this.hours = hours;
+    }
+
+
+
+    public ArrayList<String> getValues() {
+        return values;
+    }
+
+    public void setValues(ArrayList<String> values) {
+        this.values = values;
     }
 }

@@ -31,7 +31,7 @@ import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMB
 public class DropDownSelectWithSize extends RelativeLayout {
     public static  Spinner spinner;
     public static String selectedItem;
-
+    DropDownListener dropDownListener;
     public DropDownSelectWithSize(Context context) {
         super(context);
         init(context);
@@ -49,13 +49,24 @@ public class DropDownSelectWithSize extends RelativeLayout {
 
     ArrayList<String> list = new ArrayList<>();
 
+
     void init(Context context) {
         LayoutInflater inflater =
                 (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (inflater != null) {
             View view = inflater.inflate(R.layout.common_drop_down, this);
             spinner = (Spinner) findViewById(R.id.spinner);
+            spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    dropDownListener.change(position);
+                }
 
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+
+                }
+            });
             FirebaseDatabase.getInstance().getReference().child("styles").child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
@@ -94,4 +105,12 @@ public class DropDownSelectWithSize extends RelativeLayout {
         spinner.setAdapter(dataAdapter);
 
     }
+
+    public void initListener(DropDownListener mesurement1) {
+        dropDownListener = mesurement1;
+    }
+   public interface DropDownListener{
+        public void change(int position);
+    }
+
 }
