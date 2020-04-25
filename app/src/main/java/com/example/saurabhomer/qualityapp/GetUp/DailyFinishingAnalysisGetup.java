@@ -103,7 +103,7 @@ public class DailyFinishingAnalysisGetup extends AppCompatActivity
 
 
                     String a = total_check.getText().toString().trim().equals("") ? 0 + "" : total_check.getText().toString().trim();
-                    Toast.makeText(DailyFinishingAnalysisGetup.this, "" + hour, Toast.LENGTH_SHORT).show();
+
                     DialyFinishingAnalysisModel dialyFinishingAnalysisModel = new DialyFinishingAnalysisModel(
                             Integer.parseInt(a),
                             printing.getSelectedItemPosition(),
