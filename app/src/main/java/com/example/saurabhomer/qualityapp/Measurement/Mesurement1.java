@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.MainDailyFinishingModel;
 import com.example.saurabhomer.qualityapp.Model.StyleModel.StyleSheetModel;
 import com.example.saurabhomer.qualityapp.R;
+import com.example.saurabhomer.qualityapp.admin.MesurementAdmin;
 import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenuP;
 import com.example.saurabhomer.qualityapp.ui.gallery.model.MainSeetListModel;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -46,6 +47,7 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
     EditText hour;
     LinearLayout layout;
     Button infoBtn;
+    int firstTime=1;
     static public ArrayList<String> data = new ArrayList<>();
     ArrayList<DailyFinishingEditTextDForMesurement> editTexts = new ArrayList<>();
     DropDownSelectWithSize dropDownSelectWithSize;
@@ -57,7 +59,25 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
         infoBtn = findViewById(R.id.info_me);
         View view_measurment = findViewById(R.id.edt_hour);
         hour = view_measurment.findViewById(R.id.atvCommon);
+        Button btn_res =findViewById(R.id.btn_result).findViewById(R.id.btnNext);
+        Button done =findViewById(R.id.btn_done).findViewById(R.id.btnNext);
+        btn_res.setText("Get Result");
 
+        btn_res.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i =new Intent(Mesurement1.this,ResultViewForActivity.class);
+                startActivity(i);
+            }
+        });
+        view_measurment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!hour.isEnabled()){
+                    Toast.makeText(Mesurement1.this,"opps ! Not permission to change date duing fill data.please complete fill and press next/done",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
         layout = findViewById(R.id.layout);
 
         btn = (NextButton) findViewById(R.id.btn_next1);
@@ -215,6 +235,14 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
     String text ="";
     @Override
     public void change(int position) {
+        if(firstTime==1)
+        {
+            firstTime = 0;
+        }
+        else {
+            hour.setEnabled(false);
+        }
+
         String res = "";
         for (int i = 0; i < editTexts.size(); i++) {
             if (i == 0) {
@@ -281,15 +309,17 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
                 layout2.setWeightSum(10);
                 layout2.setGravity(Gravity.CENTER);
                 valueTV.setLayoutParams(new LinearLayout.LayoutParams(
-                        400,
-                        LinearLayout.LayoutParams.WRAP_CONTENT));
+                       350,
+                        LinearLayout.LayoutParams.WRAP_CONTENT,4));
+                valueTV.setGravity(Gravity.LEFT);
 
                 layout2.setPadding(14, 0, 14, 14);
 
                 valueTV.setTextColor(getResources().getColor(R.color.common_text_color));
                 valueTV.setTextSize(16);
+                valueTV.setPadding(10,0,0,0);
 
-                valueTV.setText(string);
+                valueTV.setText("   "+string);
                 DailyFinishingEditTextDForMesurement dailyFinishingEditText = new DailyFinishingEditTextDForMesurement(this);
                 layout2.addView(valueTV);
                 layout2.addView(dailyFinishingEditText);

@@ -47,4 +47,8 @@ public class AdminResult extends RelativeLayout {
 
     }
 
+    public void setTextColor(int textColor) {
+        r1.setTextColor(textColor);
+        r2.setTextColor(textColor);
+    }
 }

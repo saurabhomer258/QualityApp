@@ -1,22 +1,16 @@
 package com.example.saurabhomer.qualityapp.Measurement;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingAnalysis2;
-import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.Model.StyleModel.StyleSheetModel;
 import com.example.saurabhomer.qualityapp.R;
-import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenuP;
+import com.example.saurabhomer.qualityapp.admin.MesurementAdmin;
 import com.example.saurabhomer.qualityapp.ui.gallery.model.MainSeetListModel;
 import com.example.saurabhomer.qualityapp.ui.gallery.model.MainSeetModel2;
-import com.example.saurabhomer.qualityapp.utils.CommonStyleData;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,14 +18,16 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import customView.AdminResult;
 
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
 
-public class ResultViewForActivity extends AppCompatActivity {
+public class ResultViewFinalForActivity extends AppCompatActivity {
     TextView data41, data42, data43;
     LinearLayout layout;
 
@@ -83,17 +79,29 @@ public class ResultViewForActivity extends AppCompatActivity {
         });
 
     }
-    private void setLayout(String object ,String result)
-    {
-        TextView textView= new TextView(ResultViewForActivity.this);
-        textView.setText(object + " : "+result);
-        textView.setTextColor(Color.BLACK);
-        layout.addView(textView);
+
+
+
+    private void setLayout(String object ,String result){
+        if(result!=null) {
+            AdminResult textView = new AdminResult(ResultViewFinalForActivity.this);
+            textView.setText(object, result);
+            textView.setTextColor(Color.BLACK);
+            layout.addView(textView);
+        }
     }
 
+    private void setLayout(){
+
+        TextView textView = new TextView(ResultViewFinalForActivity.this);
+        textView.setText("_____________________________________________");
+        layout.addView(textView);
+
+    }
     public void setNew(final String size1) {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference users = firebaseDatabase.getReference("mainSeet");
+
         users.child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot)
@@ -108,8 +116,10 @@ public class ResultViewForActivity extends AppCompatActivity {
                         int min = Math.min(arr.length,size2.length);
                         for(int j = 0;j<min;j++){
                             setLayout(size2[j],arr[j]);
+
                         }
                         setLayout("tolerance",mainSeetModel2.get(i).getToerance());
+                        setMesurement( size2);
                     }
                 }
 
@@ -125,5 +135,51 @@ public class ResultViewForActivity extends AppCompatActivity {
 
         });
 
+    }
+
+    public void setMesurement(final String[] mesurementsize) {
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference users = firebaseDatabase.getReference("mesurement");
+        users.child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot)
+            {
+
+                MeasurementListModel measurementListModel = dataSnapshot.getValue(MeasurementListModel.class);
+                if(measurementListModel!=null){
+                    setLayout("Date",measurementListModel.getDate());
+                    List<MeasurementModel> measurementModels = measurementListModel.getMeasurementModels();
+                    for(int i=0;i<measurementModels.size();i++){
+                        setLayout("hour",measurementModels.get(i).getHours());
+                        ArrayList<String>  val =  measurementModels.get(i).getValues();
+                        int min = Math.min(mesurementsize.length,val.size());
+                        int c =0;
+                        for(int j = 0;j<min;j++){
+                            if(!val.get(j).equals("-1") && !val.get(j).isEmpty()) {
+                                setLayout(mesurementsize[j], val.get(j));
+                                c++;
+                            }
+                        }
+                        if(c>0) {
+                            setLayout();
+
+                        }
+
+
+
+                    }
+                }
+
+            }
+
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+
+
+
+        });
     }
 }

@@ -128,14 +128,14 @@ public class MesurementAdmin extends AppCompatActivity {
 
                 if(mainSeetListModel!=null){
                     for(int i=0;i<mainSeetModel2.size();i++){
-                        setLayout("Measurement Discription",mainSeetModel2.get(i).getMeasurementDiscription());
+                        setLayout("Measurement Description",mainSeetModel2.get(i).getMeasurementDiscription());
                         String arr[] = mainSeetModel2.get(i).getSize().split(",");
                         String  size2[] = size1.split(",");
                         int min = Math.min(arr.length,size2.length);
                         for(int j = 0;j<min;j++){
                             setLayout(size2[j],arr[j]);
                         }
-                        setLayout("toerance",mainSeetModel2.get(i).getToerance());
+                        setLayout("tolerance",mainSeetModel2.get(i).getToerance());
                         setMesurement( size2);
                     }
                 }
