@@ -29,7 +29,7 @@ import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMB
 
 public class Measurment extends AppCompatActivity
 {
-    EditText date;
+    public  static EditText date;
     EditText edt_tolerance_plus;
     EditText edt_tolerance_minus;
 
@@ -53,6 +53,8 @@ public class Measurment extends AppCompatActivity
        info_btn = findViewById(R.id.info_me);
         View  view_measurment= findViewById(R.id.edt_date);
         date = view_measurment.findViewById(R.id.atvCommon);
+
+        FirebaseDatabase.getInstance().getReference("mesurement").child(STYLE_NUMBER).setValue(new MeasurementListModel());
 
 //        View  view_tolerance_plus= findViewById(R.id.edt_tolerance_plus);
 //        edt_tolerance_plus = view_tolerance_plus.findViewById(R.id.atvCommon);

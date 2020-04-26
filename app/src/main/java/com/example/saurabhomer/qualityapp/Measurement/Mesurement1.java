@@ -49,7 +49,7 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
     static public ArrayList<String> data = new ArrayList<>();
     ArrayList<DailyFinishingEditTextDForMesurement> editTexts = new ArrayList<>();
     DropDownSelectWithSize dropDownSelectWithSize;
-
+        int beforePos= 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,7 +105,7 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
                                 } else {
                                     measurementListModelList = new ArrayList<MeasurementModel>();
                                 }
-
+                                measurementListModel.setDate(Measurment.date.getText().toString());
                                 int tobeAddDataInIndex = DropDownSelectWithSize.spinner.getSelectedItemPosition();
                                 String res = "";
                                 for (int i = 0; i < editTexts.size(); i++) {
@@ -115,7 +115,9 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
                                         res = res + "," + editTexts.get(i).getText();
                                     }
                                 }
-                                Mesurement1.data.set(tobeAddDataInIndex, res);
+                                Log.d("result--", beforePos+"--->"+res+"--");
+                                Mesurement1.data.set(beforePos, res);
+                                beforePos = tobeAddDataInIndex;
                                 MeasurementModel measurementModel = new MeasurementModel();
                                 measurementModel.setHours(hour.getText().toString());
                                 measurementModel.setValues(Mesurement1.data);
@@ -160,7 +162,7 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
                                 } else {
                                     measurementListModelList = new ArrayList<MeasurementModel>();
                                 }
-
+                                measurementListModel.setDate(Measurment.date.getText().toString());
                                 int tobeAddDataInIndex = DropDownSelectWithSize.spinner.getSelectedItemPosition();
                                 String res = "";
                                 for (int i = 0; i < editTexts.size(); i++) {
@@ -170,7 +172,9 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
                                         res = res + "," + editTexts.get(i).getText();
                                     }
                                 }
-                                Mesurement1.data.set(tobeAddDataInIndex, res);
+                                Log.d("result--", beforePos+"--->"+res+"--");
+                                Mesurement1.data.set(beforePos, res);
+                                beforePos = tobeAddDataInIndex;
                                 MeasurementModel measurementModel = new MeasurementModel();
                                 measurementModel.setHours(hour.getText().toString());
                                 measurementModel.setValues(Mesurement1.data);
@@ -219,10 +223,17 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
                 res = res + "," + editTexts.get(i).getText();
             }
         }
-        Mesurement1.data.set(position, res);
+        Log.d("result--", beforePos+"--->"+res+"--");
+        Mesurement1.data.set(beforePos, res);
+        beforePos = position;
+
+        for (int i = 0; i < editTexts.size(); i++) {
+            DailyFinishingEditTextDForMesurement view = editTexts.get(i);
+            view.clear();
+        }
 //        for (int i = 0; i < editTexts.size(); i++) {
 //            if (editTexts.get(i).getText().trim().isEmpty()) {
-//                Toast.makeText(Mesurement1.this, "opps! some fields are empty please check", Toast.LENGTH_SHORT).show();
+//
 //                break;
 //
 //            }

@@ -22,6 +22,7 @@ import com.example.saurabhomer.qualityapp.admin.CartoonAuditAdmin;
 import com.example.saurabhomer.qualityapp.admin.DailyfinishingAdmin;
 import com.example.saurabhomer.qualityapp.admin.DailyfinishingGetUpAdmin;
 import com.example.saurabhomer.qualityapp.admin.DailyfinishingOutsideAdmin;
+import com.example.saurabhomer.qualityapp.admin.MesurementAdmin;
 import com.example.saurabhomer.qualityapp.admin.SkuAdmin;
 import com.example.saurabhomer.qualityapp.pref.LoginPref;
 import com.example.saurabhomer.qualityapp.utils.CommonDailyDateFilter;
@@ -80,7 +81,7 @@ public class CardMenuP extends AppCompatActivity
         measurmentreport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(CardMenuP.this, Measurment.class);
+                Intent i = new Intent(CardMenuP.this, MesurementAdmin.class);
                 startActivity(i);
             }
         });
