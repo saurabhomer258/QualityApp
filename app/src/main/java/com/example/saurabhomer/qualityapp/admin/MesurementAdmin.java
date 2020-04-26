@@ -96,12 +96,25 @@ public class MesurementAdmin extends AppCompatActivity {
     private void setLayout(String object ,String result){
         if(result!=null) {
             AdminResult textView = new AdminResult(MesurementAdmin.this);
-            String res = "";
-
-
             textView.setText(object, result);
             layout.addView(textView);
         }
+    }
+
+    private void setLayout(){
+
+            TextView textView = new TextView(MesurementAdmin.this);
+            textView.setText("_____________________________________________");
+            layout.addView(textView);
+
+    }
+
+    private void setTotalLayout(){
+
+        TextView textView = new TextView(MesurementAdmin.this);
+        textView.setText("________________Total_____________________");
+        layout.addView(textView);
+
     }
     public void setNew(final String size1) {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
@@ -112,6 +125,7 @@ public class MesurementAdmin extends AppCompatActivity {
             {
                 MainSeetListModel mainSeetListModel = dataSnapshot.getValue(MainSeetListModel.class);
                 ArrayList<MainSeetModel2> mainSeetModel2 =  mainSeetListModel.getMainSeetModel2();
+
                 if(mainSeetListModel!=null){
                     for(int i=0;i<mainSeetModel2.size();i++){
                         setLayout("Measurement Discription",mainSeetModel2.get(i).getMeasurementDiscription());
@@ -156,10 +170,17 @@ public class MesurementAdmin extends AppCompatActivity {
                         setLayout("hour",measurementModels.get(i).getHours());
                         ArrayList<String>  val =  measurementModels.get(i).getValues();
                         int min = Math.min(mesurementsize.length,val.size());
+                        int c =0;
                         for(int j = 0;j<min;j++){
-                            if(!val.get(j).equals("-1") && !val.get(j).isEmpty())
-                            setLayout(mesurementsize[j],val.get(j));
+                            if(!val.get(j).equals("-1") && !val.get(j).isEmpty()) {
+                                setLayout(mesurementsize[j], val.get(j));
+                                c++;
+                            }
                         }
+                        if(c>0) {
+                            setLayout();
+                        }
+
 
 
                     }
