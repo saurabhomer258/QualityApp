@@ -44,17 +44,27 @@
                 android:layout_height="wrap_content"
                 android:text="Date"
 
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
-
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
-
+            <EditText
+                android:layout_weight="5"
+                android:layout_marginLeft="48dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/edt_date" />
+                android:id="@+id/in_date" />
+
+            <ImageButton
+                android:src="@drawable/calendar1"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="DATE"
+                android:id="@+id/btn_date"
+                android:layout_alignBottom="@+id/in_date"
+                android:layout_toRightOf="@+id/in_date"
+                android:layout_toEndOf="@+id/in_date" />
 
         </LinearLayout>
         <!--<LinearLayout-->

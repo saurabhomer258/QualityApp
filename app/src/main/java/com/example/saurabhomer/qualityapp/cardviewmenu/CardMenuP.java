@@ -82,8 +82,17 @@ public class CardMenuP extends AppCompatActivity
         measurmentreport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(CardMenuP.this, Measurment.class);
-                startActivity(i);
+                if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
+                    Intent i =  new Intent(CardMenuP.this, MesurementAdmin.class);
+                    i.putExtra("Name","Skutest");
+                    startActivity(i);
+                }
+                else {
+                    Intent i = new Intent(CardMenuP.this, Measurment.class);
+                    startActivity(i);
+
+                }
+                progressDialog.hide();
             }
         });
         hourlyreport.setOnClickListener(new View.OnClickListener() {

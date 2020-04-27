@@ -1,5 +1,6 @@
 package com.example.saurabhomer.qualityapp.Measurement;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -20,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import customView.DailyFinishingEditText;
@@ -27,11 +30,15 @@ import customView.DailyFinishingEditTextDForMesurement;
 
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
-public class Measurment extends AppCompatActivity
+public class Measurment extends AppCompatActivity implements
+        View.OnClickListener
 {
     public  static EditText date;
     EditText edt_tolerance_plus;
     EditText edt_tolerance_minus;
+    private int mYear, mMonth, mDay, mHour, mMinute;
+    ImageButton btnDatePicker;
+    EditText txtDate;
 
     Button next,info_btn;
     LinearLayout layout;
@@ -51,8 +58,13 @@ public class Measurment extends AppCompatActivity
        layout = findViewById(R.id.layout);
 
        info_btn = findViewById(R.id.info_me);
-        View  view_measurment= findViewById(R.id.edt_date);
-        date = view_measurment.findViewById(R.id.atvCommon);
+
+        btnDatePicker=(ImageButton)findViewById(R.id.btn_date);
+        date=(EditText)findViewById(R.id.in_date);
+        btnDatePicker.setOnClickListener(this);
+
+//        View  view_measurment= findViewById(R.id.edt_date);
+//        date = view_measurment.findViewById(R.id.atvCommon);
 
         FirebaseDatabase.getInstance().getReference("mesurement").child(STYLE_NUMBER).setValue(new MeasurementListModel());
 
@@ -157,6 +169,29 @@ public class Measurment extends AppCompatActivity
 
             }
 
+        }
+    }
+    @Override
+    public void onClick(View v) {
+
+        if (v == btnDatePicker) {
+
+            // Get Current Date
+            final Calendar c = Calendar.getInstance();
+            mYear = c.get(Calendar.YEAR);
+            mMonth = c.get(Calendar.MONTH);
+            mDay = c.get(Calendar.DAY_OF_MONTH);
+
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                    new DatePickerDialog.OnDateSetListener()
+                    {
+                        @Override
+                        public void onDateSet(android.widget.DatePicker view, int year, int month, int dayOfMonth)
+                        {
+                            date.setText(dayOfMonth + "-" + (month + 1) + "-" + year);
+                        }
+                    }, mYear, mMonth, mDay);
+            datePickerDialog.show();
         }
     }
 }

@@ -3,6 +3,7 @@ package com.example.saurabhomer.qualityapp.ui.home;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,9 +42,9 @@ public class HomeFragment extends Fragment {
                 progressDialog.show();
                 if(!NetworkUtils.isNetworkConnected(getContext()))
                 {
+                    progressDialog.dismiss();
                     return;
                 }
-
                 FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
                 DatabaseReference users = firebaseDatabase.getReference("mainSeet");
                 users.child(edt_styleno.getText().toString()).addListenerForSingleValueEvent(new ValueEventListener() {
