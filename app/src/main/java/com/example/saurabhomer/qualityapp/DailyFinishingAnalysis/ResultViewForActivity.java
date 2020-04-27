@@ -449,4 +449,10 @@ public class ResultViewForActivity extends AppCompatActivity {
             layout.addView(textView);
         }
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        DailyFinishingAnalysis2.DAILYFINIFSHINGMODELLISTForFinalResut.clear();
+    }
 }

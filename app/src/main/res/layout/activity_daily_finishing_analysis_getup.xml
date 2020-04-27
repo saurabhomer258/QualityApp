@@ -54,7 +54,7 @@
                 android:textSize="@dimen/common_text_size" />
 
 
-            <customView.DailyFinishingIntEditText
+            <customView.DailyFinishingEditText
                 android:id="@+id/edt_total_check"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
