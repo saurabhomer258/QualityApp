@@ -27,6 +27,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import customView.AdminResult;
+
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
 public class SkuAdmin extends AppCompatActivity
@@ -65,7 +67,7 @@ public class SkuAdmin extends AppCompatActivity
                             setLayout("Check quantity        ", skuCheckReport100Model.getSkuCheckReport100Model().getEdt_checkquantity());
                             setLayout("Size                           ", skuCheckReport100Model.getSkuCheckReport100Model().getEdt_size());
                             TextView textView3 = new TextView(SkuAdmin.this);
-                            textView3.setText("__________________________________________________________");
+                            textView3.setText("_____________________________________________________");
                             layout.addView(textView3);
                             ArrayList<SkuCheckReport100ModelList> skuCheckReport100ModelList1 = skuCheckReport100Model.getSkuCheckReport100Model().getSkuCheckReport100ModelList();
                             if (skuCheckReport100ModelList1 != null) {
@@ -77,16 +79,15 @@ public class SkuAdmin extends AppCompatActivity
                                     setLayout("Polybag has been check                 ", skuCheckReport100ModelList.getPolybaghasbeencheck());
                                     setLayout("Price tag has been check                ", skuCheckReport100ModelList.getPricetaghasbeencheck());
                                     setLayout("Polystiker has been check              ", skuCheckReport100ModelList.getPolystikerhasbeencheck());
-                                    setLayout("Size tag has been check                 ", skuCheckReport100ModelList.getSizestickerhasbeencheck());
+                                    setLayout("Hanger/Size has been check              ",skuCheckReport100ModelList.getSizetaghasbeencheck());
                                     setLayout("Hanger has been check                   ", skuCheckReport100ModelList.getHagertaghasbeencheck());
-                                    setLayout("Hager tag has been check              ", skuCheckReport100ModelList.getHagertaghasbeencheck());
-                                    setLayout("Other has been check                      ", skuCheckReport100ModelList.getOtherhasbeencheck());
                                     setLayout("Packing method has been check   ", skuCheckReport100ModelList.getPackingmethodhasbeencheck());
-                                    setLayout("Size sticker has been check           ", skuCheckReport100ModelList.getSizestickerhasbeencheck());
+                                    setLayout("Size Sticker tag has been check             ", skuCheckReport100ModelList.getSizestickerhasbeencheck());
+                                    setLayout("Other has been check                      ", skuCheckReport100ModelList.getOtherhasbeencheck());
                                     setLayout1("Result ", skuCheckReport100ModelList.getResult());
                                     setLayout1("Remark", skuCheckReport100ModelList.getRemark());
                                     TextView textView2 = new TextView(SkuAdmin.this);
-                                    textView2.setText("__________________________________________________________");
+                                    textView2.setText("_____________________________________________________");
                                     layout.addView(textView2);
                                 }
                             }
@@ -114,15 +115,21 @@ public class SkuAdmin extends AppCompatActivity
         });
     }
     private void setLayout(String object ,String result){
-        TextView textView= new TextView(SkuAdmin.this);
-        textView.setText(object + " : "+result);
+
+        AdminResult textView = new AdminResult(SkuAdmin.this);
+        String res = "";
+
+        textView.setText(object, result);
+
         layout.addView(textView);
     }
     private void setLayout1(String object, String result)
     {
-        TextView textView= new TextView(SkuAdmin.this);
-        textView.setText(object + " : "+result);
-        textView.setTextSize(18);
+
+        AdminResult textView = new AdminResult(SkuAdmin.this);
+        String res = "";
+
+        textView.setText(object, result);
         textView.setTextColor(0xFF00FF00);
         layout.addView(textView);
     }
