@@ -1,8 +1,12 @@
 package com.example.saurabhomer.qualityapp.Measurement;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -11,6 +15,7 @@ import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.admin.MesurementAdmin;
 import com.example.saurabhomer.qualityapp.ui.gallery.model.MainSeetListModel;
 import com.example.saurabhomer.qualityapp.ui.gallery.model.MainSeetModel2;
+import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,7 +35,7 @@ import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMB
 public class ResultViewFinalForActivity extends AppCompatActivity {
     TextView data41, data42, data43;
     LinearLayout layout;
-
+    private ProgressDialog progressDialog;
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -38,10 +43,18 @@ public class ResultViewFinalForActivity extends AppCompatActivity {
         setContentView(R.layout.common_total1);
         TextView total = findViewById(R.id.tv_total);
         TextView totalPer = findViewById(R.id.tv_Defect_per);
+        Button Ok = findViewById(R.id.btn_ok);
         data41 = findViewById(R.id.data41);
         data42 = findViewById(R.id.data42);
         data43 = findViewById(R.id.data43);
         layout = findViewById(R.id.dailyLayout);
+        if (!NetworkUtils.isNetworkConnected(ResultViewFinalForActivity.this)) {
+            return;
+        }
+        progressDialog = new ProgressDialog(ResultViewFinalForActivity.this);
+        progressDialog.setMessage("Verificating...");
+        progressDialog.show();
+
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference users = firebaseDatabase.getReference("styles");
         users.child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -65,17 +78,22 @@ public class ResultViewFinalForActivity extends AppCompatActivity {
                 {
 
                 }
-
+                progressDialog.dismiss();
             }
-
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
 
+        });
 
-
+        Ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i =new Intent(ResultViewFinalForActivity.this,Mesurement1.class);
+                startActivity(i);
+            }
         });
 
     }

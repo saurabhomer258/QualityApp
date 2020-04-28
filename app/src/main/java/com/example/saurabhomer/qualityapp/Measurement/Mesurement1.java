@@ -1,5 +1,8 @@
 package com.example.saurabhomer.qualityapp.Measurement;
 
+import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.MainDailyFinishingModel;
@@ -19,6 +23,7 @@ import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.admin.MesurementAdmin;
 import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenuP;
 import com.example.saurabhomer.qualityapp.ui.gallery.model.MainSeetListModel;
+import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -28,6 +33,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import customView.DailyFinishingEditText;
@@ -48,12 +54,14 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
     LinearLayout layout;
     Button infoBtn;
     int firstTime=1;
+    private ProgressDialog progressDialog;
     static public ArrayList<String> data = new ArrayList<>();
     ArrayList<DailyFinishingEditTextDForMesurement> editTexts = new ArrayList<>();
     DropDownSelectWithSize dropDownSelectWithSize;
         int beforePos= 0;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mesurement1);
         infoBtn = findViewById(R.id.info_me);
@@ -86,6 +94,12 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
         dropDownSelectWithSize.initListener(this);
         Button nextbtn = (Button) btn.findViewById(R.id.btnNext);
         Button submit = (Button) doneButton.findViewById(R.id.btnNext);
+        if (!NetworkUtils.isNetworkConnected(Mesurement1.this)) {
+            return;
+        }
+        progressDialog = new ProgressDialog(Mesurement1.this);
+        progressDialog.setMessage("Verificating...");
+        progressDialog.show();
         DatabaseReference users = FirebaseDatabase.getInstance().getReference("mainSeet");
         users.child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -98,7 +112,7 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
                         size(s);
                     }
                 }
-
+                progressDialog.dismiss();
             }
 
             @Override
@@ -329,4 +343,5 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
 
         }
     }
+
 }
