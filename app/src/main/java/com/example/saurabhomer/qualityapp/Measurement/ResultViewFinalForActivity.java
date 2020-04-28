@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.example.saurabhomer.qualityapp.Model.StyleModel.StyleSheetModel;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.admin.MesurementAdmin;
+import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenuP;
 import com.example.saurabhomer.qualityapp.ui.gallery.model.MainSeetListModel;
 import com.example.saurabhomer.qualityapp.ui.gallery.model.MainSeetModel2;
 import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
@@ -91,7 +92,7 @@ public class ResultViewFinalForActivity extends AppCompatActivity {
         Ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i =new Intent(ResultViewFinalForActivity.this,Mesurement1.class);
+                Intent i =new Intent(ResultViewFinalForActivity.this, CardMenuP.class);
                 startActivity(i);
             }
         });
@@ -178,13 +179,10 @@ public class ResultViewFinalForActivity extends AppCompatActivity {
                                 c++;
                             }
                         }
-                        if(c>0) {
+                        if(c>0)
+                        {
                             setLayout();
-
                         }
-
-
-
                     }
                 }
 

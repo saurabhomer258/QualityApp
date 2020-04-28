@@ -118,10 +118,10 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
-
             }
         });
-        nextbtn.setOnClickListener(new View.OnClickListener() {
+        nextbtn.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v) {
                 FirebaseDatabase.getInstance().getReference("mesurement").child(STYLE_NUMBER)
@@ -165,8 +165,6 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
                                                 startActivity(i1);
                                             }
                                         });
-
-
                             }
 
                             @Override
@@ -179,8 +177,16 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
             }
         });
         submit.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+
+                if (!NetworkUtils.isNetworkConnected(Mesurement1.this)) {
+                    return;
+                }
+                progressDialog = new ProgressDialog(Mesurement1.this);
+                progressDialog.setMessage("Verificating...");
+                progressDialog.show();
                 FirebaseDatabase.getInstance().getReference("mesurement").child(STYLE_NUMBER)
                         .addListenerForSingleValueEvent(new ValueEventListener() {
 
@@ -218,11 +224,13 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
                                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
-                                                Intent i1 = new Intent(Mesurement1.this, CardMenuP.class);
+                                                Intent i1 = new Intent(Mesurement1.this, ResultViewFinalForActivity.class);
                                                 startActivity(i1);
                                                 finish();
                                             }
                                         });
+
+                             progressDialog.dismiss();
                             }
 
                             @Override

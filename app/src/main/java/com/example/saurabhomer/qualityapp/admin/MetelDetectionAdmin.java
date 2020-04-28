@@ -21,8 +21,8 @@ import java.util.ArrayList;
 
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
-public class MetelDetectionAdmin extends AppCompatActivity {
-
+public class MetelDetectionAdmin extends AppCompatActivity
+{
     LinearLayout layout;
     private ProgressDialog progressDialog;
     @Override
