@@ -149,11 +149,7 @@ public class ResultViewFinalForActivity extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
 
             }
-
-
-
         });
-
     }
 
     public void setMesurement(final String[] mesurementsize) {
@@ -187,7 +183,6 @@ public class ResultViewFinalForActivity extends AppCompatActivity {
                 }
 
             }
-
 
             @Override
             public void onCancelled(DatabaseError databaseError) {

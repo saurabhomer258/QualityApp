@@ -5,16 +5,20 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100Page2;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.model.MainSkuModel;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.model.SkuCheckReport100Model;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.model.SkuCheckReport100ModelList;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.model.SkuDateModel;
+import com.example.saurabhomer.qualityapp.utils.CommonStyleData;
 import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -31,6 +35,7 @@ public class SkuAdmin extends AppCompatActivity
     SkuCheckReport100Page2 skuCheckReport100Page2 = new SkuCheckReport100Page2();
     String result1;
     String result2;
+    Button info_btn;
     private ProgressDialog progressDialog;
     String str;
     @Override
@@ -40,6 +45,7 @@ public class SkuAdmin extends AppCompatActivity
         setContentView(R.layout.activity_sku_admin);
         layout = findViewById(R.id.dailyLayout);
         progressDialog = new ProgressDialog(this);
+        info_btn = (Button)findViewById(R.id.info_daily);
         if (!NetworkUtils.isNetworkConnected(SkuAdmin.this))
         {
             return;
@@ -74,7 +80,6 @@ public class SkuAdmin extends AppCompatActivity
                                     setLayout("Size tag has been check                 ", skuCheckReport100ModelList.getSizestickerhasbeencheck());
                                     setLayout("Hanger has been check                   ", skuCheckReport100ModelList.getHagertaghasbeencheck());
                                     setLayout("Hager tag has been check              ", skuCheckReport100ModelList.getHagertaghasbeencheck());
-                                    setLayout("Otherhasbeencheck                         ", skuCheckReport100ModelList.getOtherhasbeencheck());
                                     setLayout("Other has been check                      ", skuCheckReport100ModelList.getOtherhasbeencheck());
                                     setLayout("Packing method has been check   ", skuCheckReport100ModelList.getPackingmethodhasbeencheck());
                                     setLayout("Size sticker has been check           ", skuCheckReport100ModelList.getSizestickerhasbeencheck());
@@ -99,6 +104,14 @@ public class SkuAdmin extends AppCompatActivity
                         progressDialog.hide();
                     }
                 });
+
+        info_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SkuAdmin.this, CommonStyleData.class);
+                startActivity(intent);
+            }
+        });
     }
     private void setLayout(String object ,String result){
         TextView textView= new TextView(SkuAdmin.this);
