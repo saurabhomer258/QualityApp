@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingAnalysis2;
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.InsideResultView;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
@@ -453,5 +454,11 @@ public class ResultViewForActivity extends AppCompatActivity {
             textView.setText("Hour "+object + "    : " + result);
             layout.addView(textView);
         }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        DailyFinishingAnalysis2.DAILYFINIFSHINGMODELLISTForFinalResut.clear();
     }
 }
