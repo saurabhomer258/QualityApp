@@ -163,6 +163,7 @@ public class Mesurement1 extends AppCompatActivity implements DropDownSelectWith
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 Intent i1 = new Intent(Mesurement1.this, Mesurement1.class);
                                                 startActivity(i1);
+                                                finish();
                                             }
                                         });
                             }

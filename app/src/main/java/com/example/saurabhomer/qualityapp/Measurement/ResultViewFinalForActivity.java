@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -94,6 +95,7 @@ public class ResultViewFinalForActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i =new Intent(ResultViewFinalForActivity.this, CardMenuP.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -102,13 +104,24 @@ public class ResultViewFinalForActivity extends AppCompatActivity {
 
 
     private void setLayout(String object ,String result){
-        if(result!=null) {
-            AdminResult textView = new AdminResult(ResultViewFinalForActivity.this);
-            textView.setText(object, result);
+
+            TextView textView = new TextView(ResultViewFinalForActivity.this);
+            textView.setText(object +" : "+ result);
             textView.setTextColor(Color.BLACK);
             layout.addView(textView);
-        }
+
     }
+
+    private void setLayout(String object){
+
+            TextView textView = new TextView(ResultViewFinalForActivity.this);
+            textView.setText("Hour :"+object);
+            textView.setTextSize(18);
+            textView.setTextColor(Color.BLACK);
+            layout.addView(textView);
+
+    }
+
 
     private void setLayout(){
 
@@ -125,25 +138,28 @@ public class ResultViewFinalForActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot)
             {
+                String  size2[] = new String[200];
+                String  mesurementName[] = new String[200];
                 MainSeetListModel mainSeetListModel = dataSnapshot.getValue(MainSeetListModel.class);
                 ArrayList<MainSeetModel2> mainSeetModel2 =  mainSeetListModel.getMainSeetModel2();
                 if(mainSeetListModel!=null){
                     for(int i=0;i<mainSeetModel2.size();i++){
                         setLayout("Measurement Description",mainSeetModel2.get(i).getMeasurementDiscription());
+                        mesurementName[i] = mainSeetModel2.get(i).getMeasurementDiscription();
                         String arr[] = mainSeetModel2.get(i).getSize().split(",");
-                        String  size2[] = size1.split(",");
+                        size2 = size1.split(",");
                         int min = Math.min(arr.length,size2.length);
                         for(int j = 0;j<min;j++){
                             setLayout(size2[j],arr[j]);
-
                         }
                         setLayout("tolerance",mainSeetModel2.get(i).getToerance());
-                        setMesurement( size2);
+                      
                     }
                 }
+                Log.d("Aasdadasd","Efksjr");
+               setMesurement(size2,mesurementName);
 
             }
-
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -152,7 +168,7 @@ public class ResultViewFinalForActivity extends AppCompatActivity {
         });
     }
 
-    public void setMesurement(final String[] mesurementsize) {
+    public void setMesurement(final String[] mesurementsize, final  String[] mesurementName) {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference users = firebaseDatabase.getReference("mesurement");
         users.child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -165,19 +181,23 @@ public class ResultViewFinalForActivity extends AppCompatActivity {
                     setLayout("Date",measurementListModel.getDate());
                     List<MeasurementModel> measurementModels = measurementListModel.getMeasurementModels();
                     for(int i=0;i<measurementModels.size();i++){
-                        setLayout("hour",measurementModels.get(i).getHours());
+                        setLayout(measurementModels.get(i).getHours());
                         ArrayList<String>  val =  measurementModels.get(i).getValues();
                         int min = Math.min(mesurementsize.length,val.size());
                         int c =0;
                         for(int j = 0;j<min;j++){
                             if(!val.get(j).equals("-1") && !val.get(j).isEmpty()) {
-                                setLayout(mesurementsize[j], val.get(j));
+
+                                setLayout("Size",mesurementsize[j]);
+                                fun(val.get(j),mesurementName);
+
+
                                 c++;
                             }
                         }
                         if(c>0)
                         {
-                            setLayout();
+                           // setLayout();
                         }
                     }
                 }
@@ -192,5 +212,13 @@ public class ResultViewFinalForActivity extends AppCompatActivity {
 
 
         });
+    }
+
+    private void fun(String v, String[] mesurementName) {
+        String name[] = v.split(",");
+        int size =Math.min(name.length,mesurementName.length);
+        for (int k=0;k< name.length;k++){
+            setLayout(mesurementName[k],name[k] );
+        }
     }
 }
