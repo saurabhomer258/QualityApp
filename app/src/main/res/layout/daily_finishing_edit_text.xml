@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginBottom="20dp"
-        android:inputType="number"
+        android:inputType="text"
         android:background="@drawable/rounded_rect"
         android:drawablePadding="10dp"
         android:paddingStart="10dp"
@@ -20,6 +20,7 @@
         android:textColor="@color/white"
         android:textColorHint="@color/gray"
         android:textSize="15sp"
+
         tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>
