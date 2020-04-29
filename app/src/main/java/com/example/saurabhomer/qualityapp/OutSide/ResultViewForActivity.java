@@ -377,15 +377,18 @@ public class ResultViewForActivity extends AppCompatActivity
         if (count == 0) {
             data41.setText(string + " " + val);
             strings.add(string);
+            data41.setTextSize(18);
             value.add(val);
             count++;
         } else if (count == 1) {
             data42.setText(string + "  " + val);
             strings.add(string);
+            data42.setTextSize(18);
             value.add(val);
             count++;
         } else if (count == 2) {
             data43.setText(string + "  " + val);
+            data43.setTextSize(18);
             strings.add(string);
             value.add(val);
             count++;

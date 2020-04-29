@@ -132,7 +132,6 @@ public class ResultViewForActivity extends AppCompatActivity {
         TextView textView12 = findViewById(R.id.data12);
         textView12.setText("Pleats                           :" + dialyFinishingAnalysisModel.getPleats());
 
-
 //   private int MissingStitches,SkipRunOff,IncorrectLabel,WrongPlacement,LooseNess,CutDamage,Others,Stain,OilMark,Stickers,UncutThread,OutOfSpec;
         //    private int TotalDefect,QualityOut,ProductionOut,Damage,Dirty,Iron;
         //    private String hours;

@@ -435,7 +435,8 @@ public class ResultViewForActivity extends AppCompatActivity {
     }
 
     private void setLayout(String object ,String result){
-        if(result!=null) {
+        if(result!=null)
+        {
             TextView textView = new TextView(ResultViewForActivity.this);
             textView.setTextColor(Color.BLACK);
             textView.setTextSize(18);

@@ -84,6 +84,7 @@ protected void onCreate(Bundle savedInstanceState) {
         dialyFinishingAnalysisModel.setUneven(dialyFinishingAnalysisModel.getUneven() + dialyFinishingAnalysisModel1.getUneven());
 
    }
+
     TextView textView1 =  findViewById(R.id.data1);
     textView1.setText("PrintingMRBO            :"+ dialyFinishingAnalysisModel.getPrintingMRBO());
 
