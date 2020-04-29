@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.utils.CommonStyleData;
@@ -110,8 +111,14 @@ public class Measurment extends AppCompatActivity implements
         nextbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                measurementListModel.setDate(date.getText().toString());
-                startActivity(new Intent(Measurment.this,Mesurement1.class));
+                if(date.getText().toString().trim().isEmpty()){
+                    Toast.makeText(Measurment.this, "Date should not be empty", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    measurementListModel.setDate(date.getText().toString());
+                    startActivity(new Intent(Measurment.this, Mesurement1.class));
+                    finish();
+                }
             }
         });
 //        done.setOnClickListener(new View.OnClickListener() {
@@ -159,7 +166,7 @@ public class Measurment extends AppCompatActivity implements
                 valueTV.setTextColor(getResources().getColor(R.color.common_text_color));
                 valueTV.setTextSize(16);
 
-                valueTV.setText("45657657t7");
+
                 DailyFinishingEditTextDForMesurement dailyFinishingEditText = new DailyFinishingEditTextDForMesurement(this);
                 layout2.addView(valueTV);
                 layout2.addView(dailyFinishingEditText);
