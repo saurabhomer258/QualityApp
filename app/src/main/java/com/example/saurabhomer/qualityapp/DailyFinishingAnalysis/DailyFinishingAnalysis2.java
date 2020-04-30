@@ -286,13 +286,8 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
                                               finish();
                                           }
                                       });
-
                                   }
-
-
                               }
-
-
                               @Override
                               public void onCancelled(DatabaseError databaseError) {
 

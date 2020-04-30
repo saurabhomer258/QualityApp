@@ -49,7 +49,7 @@ public class CartoonAuditAdmin extends AppCompatActivity {
             {
 
                 CartoonAuditModel cartoonAuditModel =dataSnapshot.getValue(CartoonAuditModel.class);
-                setLayout("Cartoon Lot Quantity",cartoonAuditModel.getCartoonlotquantity());
+                setLayout("Carton Lot Quantity",cartoonAuditModel.getCartoonlotquantity());
                 setLayout("Hour1",cartoonAuditModel.getHour1());
                 setLayout("Hour2",cartoonAuditModel.getHour2());
                 setLayout("Hour3",cartoonAuditModel.getHour3());
@@ -66,13 +66,13 @@ public class CartoonAuditAdmin extends AppCompatActivity {
                 for(AreaofOutsideCartoonModel items:list)
                 {
                     setLayout("Hour",items.getHour());
-                    setLayout("Cartoon Lot Quantity",items.getCartoonlotquantity());
-                    setLayout("Cartoon Shiping Mark",items.getCartoonshipingmark());
+                    setLayout("Carton Lot Quantity",items.getCartoonlotquantity());
+                    setLayout("Carton Shiping Mark",items.getCartoonshipingmark());
                     setLayout("Printing",items.getPrinting());
-                    setLayout("Cartoon Size",items.getCartoonsize());
-                    setLayout("Cartoon No",items.getCartoonno());
+                    setLayout("Carton Size",items.getCartoonsize());
+                    setLayout("Carton No",items.getCartoonno());
                     setLayout("Barcode",items.getBarcode());
-                    setLayout("Cartoon Fly",items.getCartoonfly());
+                    setLayout("Carton Fly",items.getCartoonfly());
                     setLayout("Remarks",items.getRemarks());
                     TextView textView1= new TextView(CartoonAuditAdmin.this);
                     textView1.setText("_________________________________________________");
@@ -83,7 +83,7 @@ public class CartoonAuditAdmin extends AppCompatActivity {
                 for (AreaofInsideCartoonModel items:list1)
                 {
                     setLayout("Hour",items.getHour());
-                    setLayout("Cartoon Quantity",items.getCartoonquantity());
+                    setLayout("Carton Quantity",items.getCartoonquantity());
                     setLayout("Total Check Quantity",items.getTotalcheckquantity());
                     setLayout("Blister or Polybag",items.getBlisterorpolybag());
                     setLayout("Assortment",items.getAssortment());
@@ -103,8 +103,8 @@ public class CartoonAuditAdmin extends AppCompatActivity {
                 for(AreaOfPackingMaterialModel items:list3)
                 {
                        setLayout("Hour Inside",items.getHour_inside1());
-                       setLayout("Cartoon Lot Quantity",items.getCartoon_lot());
-                       setLayout("Check Cartoon Quantity",items.getCheckcartoon());
+                       setLayout("Carton Lot Quantity",items.getCartoon_lot());
+                       setLayout("Check Carton Quantity",items.getCheckcartoon());
                        setLayout("Packing Label Or Hangtag",items.getPackinglabel());
                        setLayout("Additional Label Or Hangtag",items.getAdditionlabel());
                        setLayout("Misplace Packing Label Or Hangtag",items.getMisplacelabel());

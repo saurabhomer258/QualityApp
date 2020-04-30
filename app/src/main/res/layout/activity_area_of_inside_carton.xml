@@ -46,7 +46,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Cartoon Lot Quantity"
+                android:text="Carton Lot Quantity"
 
                 android:layout_weight="3"
                 android:textColor="@color/common_text_color"
@@ -74,7 +74,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Check Cartoon Quantity"
+                android:text="Check Carton Quantity"
 
                 android:layout_weight="3"
                 android:textColor="@color/common_text_color"
