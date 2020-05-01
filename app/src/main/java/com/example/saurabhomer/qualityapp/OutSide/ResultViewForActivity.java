@@ -374,7 +374,8 @@ public class ResultViewForActivity extends AppCompatActivity
         else {
             checkmap.put(string,val);
         }
-        if (count == 0) {
+        if (count == 0)
+        {
             data41.setText(string + " " + val);
             strings.add(string);
             data41.setTextSize(18);

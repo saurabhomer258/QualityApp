@@ -27,8 +27,8 @@ import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFin
 public class InsideResultView extends AppCompatActivity {
     TextView data41,data42,data43;
 
-protected void onCreate(Bundle savedInstanceState) {
-
+protected void onCreate(Bundle savedInstanceState)
+{
 
     super.onCreate(savedInstanceState);
     setContentView(R.layout.common_total);
