@@ -169,10 +169,11 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
                   FirebaseDatabase.getInstance().getReference("dailyFinishing").child(STYLE_NUMBER)
                           .addListenerForSingleValueEvent(new ValueEventListener() {
                               @Override
-                              public void onDataChange(DataSnapshot dataSnapshot) {
-
+                              public void onDataChange(DataSnapshot dataSnapshot)
+                              {
                                   MainDailyFinishingModel mainDailyFinishingModel = dataSnapshot.getValue(MainDailyFinishingModel.class);
-                                  if (mainDailyFinishingModel != null) {
+                                  if (mainDailyFinishingModel != null)
+                                  {
                                       ArrayList<DailyFinishinfModels> dailyFinishinfModelslist;
                                       if (mainDailyFinishingModel.getDailyFinishingModels() != null) {
                                           dailyFinishinfModelslist = mainDailyFinishingModel.getDailyFinishingModels();

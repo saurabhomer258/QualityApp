@@ -20,13 +20,18 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
+import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.MainDailyFinishingModel;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.admin.SkuAdmin;
 import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -79,8 +84,8 @@ public class MetelDetectionPage extends AppCompatActivity implements
         View view_done = findViewById(R.id.btn_done_metel);
         done = view_done.findViewById(R.id.btnNext);
 
-        View view_next = findViewById(R.id.btn_next);
-        next = view_next.findViewById(R.id.btnNext);
+//        View view_next = findViewById(R.id.btn_next);
+//        next = view_next.findViewById(R.id.btnNext);
 
         View view_res = findViewById(R.id.result);
         Button remark_btn = view_res.findViewById(R.id.btnNext);
@@ -118,35 +123,35 @@ public class MetelDetectionPage extends AppCompatActivity implements
             }
         });
 
-        next.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                    String remarks1 = remark.getText().toString();
-
-                    if(isNullOrEmpty(remarks1))
-                    {
-                        Toast.makeText(MetelDetectionPage.this, "Click on the Show remark", Toast.LENGTH_SHORT).show();
-                    }
-                    else
-                    {
-                        MetelDetectionPageModel metelDetectionPageModel = new MetelDetectionPageModel();
-                        metelDetectionPageModel.setEdt_date(txtDate.getText().toString());
-                        metelDetectionPageModel.setEdt_time(txtTime.getText().toString());
-                        metelDetectionPageModel.setEdt_garment_pass(edt_garment_pass.getText().toString());
-                        metelDetectionPageModel.setEdt_no_of_garment_check(edt_garment.getText().toString());
-                        metelDetectionPageModel.setEdt_garment_fail(edt_garment_reject.getText().toString());
-                        metelDetectionPageModel.setEdt_calibrated(getStringOfRedio(r_calibrated.isChecked()));
-                        metelDetectionPageModel.setRemark(remark.getText().toString());
-                        METELDETECTIONMODELLIST.add(metelDetectionPageModel);
-                        Intent i = new Intent(MetelDetectionPage.this,MetelDetectionPage.class);
-                        startActivity(i);
-                        finish();
-                    }
-                }
-
-        });
+//        next.setOnClickListener(new View.OnClickListener()
+//        {
+//            @Override
+//            public void onClick(View v)
+//            {
+//                    String remarks1 = remark.getText().toString();
+//
+//                    if(isNullOrEmpty(remarks1))
+//                    {
+//                        Toast.makeText(MetelDetectionPage.this, "Click on the Show remark", Toast.LENGTH_SHORT).show();
+//                    }
+//                    else
+//                    {
+//                        MetelDetectionPageModel metelDetectionPageModel = new MetelDetectionPageModel();
+//                        metelDetectionPageModel.setEdt_date(txtDate.getText().toString());
+//                        metelDetectionPageModel.setEdt_time(txtTime.getText().toString());
+//                        metelDetectionPageModel.setEdt_garment_pass(edt_garment_pass.getText().toString());
+//                        metelDetectionPageModel.setEdt_no_of_garment_check(edt_garment.getText().toString());
+//                        metelDetectionPageModel.setEdt_garment_fail(edt_garment_reject.getText().toString());
+//                        metelDetectionPageModel.setEdt_calibrated(getStringOfRedio(r_calibrated.isChecked()));
+//                        metelDetectionPageModel.setRemark(remark.getText().toString());
+//                        METELDETECTIONMODELLIST.add(metelDetectionPageModel);
+//                        Intent i = new Intent(MetelDetectionPage.this,MetelDetectionPage.class);
+//                        startActivity(i);
+//                        finish();
+//                    }
+//                }
+//
+//        });
 
         done.setOnClickListener(new View.OnClickListener()
         {
@@ -159,32 +164,86 @@ public class MetelDetectionPage extends AppCompatActivity implements
                     Toast.makeText(MetelDetectionPage.this, "Click on the Show remark", Toast.LENGTH_SHORT).show();
                 }
                 else {
+                    FirebaseDatabase.getInstance().getReference("matelDetectionPage").child(STYLE_NUMBER)
+                            .addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot)
+                                {
+                                    MetelDetectionPageListModel metelDetectionPageListModel = dataSnapshot.getValue(MetelDetectionPageListModel.class);
+                                    if(metelDetectionPageListModel!=null)
+                                    {
+                                        ArrayList<MetelDetectionPageModel> metelDetectionPageModels;
+                                        if(metelDetectionPageListModel.getmMetelDetectionPageModel()!=null)
+                                        {
+                                           metelDetectionPageModels = metelDetectionPageListModel.getmMetelDetectionPageModel();
+                                        }
+                                        else
+                                        {
+                                            metelDetectionPageModels = new ArrayList<>();
+                                        }
+                                       // MetelDetectionPageModel metelDetectionPageModel1 = new MetelDetectionPageModel();
+                                        metelDetectionPageModel.setEdt_date(txtDate.getText().toString());
+                                        metelDetectionPageModel.setEdt_time(txtTime.getText().toString());
+                                        metelDetectionPageModel.setEdt_garment_pass(edt_garment_pass.getText().toString());
+                                        metelDetectionPageModel.setEdt_no_of_garment_check(edt_garment.getText().toString());
+                                        metelDetectionPageModel.setEdt_garment_fail(edt_garment_reject.getText().toString());
+                                        metelDetectionPageModel.setEdt_calibrated(getStringOfRedio(r_calibrated.isChecked()));
+                                        metelDetectionPageModel.setRemark(remark.getText().toString());
+                                        METELDETECTIONMODELLIST.add(metelDetectionPageModel);
+                                        MetelDetectionPageListModel metelDetectionPageListModel1 = new MetelDetectionPageListModel();
+                                        metelDetectionPageListModel1.setmMetelDetectionPageModel(metelDetectionPageModels);
+                                        FirebaseDatabase.getInstance().getReference("matelDetectionPage")
+                                                .child(STYLE_NUMBER).setValue(metelDetectionPageListModel1).addOnCompleteListener(new OnCompleteListener<Void>()
+                                        {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task)
+                                            {
+                                                progressDialog.hide();
+                                                finish();
+                                            }
+                                        });
+                                    }
+                                    else
+                                    {
+                                        if (!NetworkUtils.isNetworkConnected(MetelDetectionPage.this))
+                                        {
+                                            return;
+                                        }
+                                            progressDialog.setMessage("Verificating...");
+                                            progressDialog.show();
+                                            metelDetectionPageModel.setEdt_date(txtDate.getText().toString());
+                                            metelDetectionPageModel.setEdt_time(txtTime.getText().toString());
+                                            metelDetectionPageModel.setEdt_garment_pass(edt_garment_pass.getText().toString());
+                                            metelDetectionPageModel.setEdt_no_of_garment_check(edt_garment.getText().toString());
+                                            metelDetectionPageModel.setEdt_garment_fail(edt_garment_reject.getText().toString());
+                                            metelDetectionPageModel.setEdt_calibrated(getStringOfRedio(r_calibrated.isChecked()));
+                                            metelDetectionPageModel.setRemark(remark.getText().toString());
+                                            METELDETECTIONMODELLIST.add(metelDetectionPageModel);
+                                            MetelDetectionPageListModel metelDetectionPageListModel1 = new MetelDetectionPageListModel();
+                                            metelDetectionPageListModel1.setmMetelDetectionPageModel(METELDETECTIONMODELLIST);
+                                            FirebaseDatabase.getInstance().getReference("matelDetectionPage")
+                                            .child(STYLE_NUMBER).setValue(metelDetectionPageListModel1).addOnCompleteListener(new OnCompleteListener<Void>()
+                                            {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task)
+                                                {
+                                                    progressDialog.hide();
+                                                    finish();
+                                                }
+                                            });
+                                    }
+                                }
 
-                    if (!NetworkUtils.isNetworkConnected(MetelDetectionPage.this)) {
-                        return;
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
+                                }
+
+                        });
+
                     }
-                    progressDialog.setMessage("Verificating...");
-                    progressDialog.show();
-                    metelDetectionPageModel.setEdt_date(txtDate.getText().toString());
-                    metelDetectionPageModel.setEdt_time(txtTime.getText().toString());
-                    metelDetectionPageModel.setEdt_garment_pass(edt_garment_pass.getText().toString());
-                    metelDetectionPageModel.setEdt_no_of_garment_check(edt_garment.getText().toString());
-                    metelDetectionPageModel.setEdt_garment_fail(edt_garment_reject.getText().toString());
-                    metelDetectionPageModel.setEdt_calibrated(getStringOfRedio(r_calibrated.isChecked()));
-                    metelDetectionPageModel.setRemark(remark.getText().toString());
-                    METELDETECTIONMODELLIST.add(metelDetectionPageModel);
-                    MetelDetectionPageListModel metelDetectionPageListModel = new MetelDetectionPageListModel();
-                    metelDetectionPageListModel.setmMetelDetectionPageModel(METELDETECTIONMODELLIST);
-                    FirebaseDatabase.getInstance().getReference("matelDetectionPage")
-                            .child(STYLE_NUMBER).setValue(metelDetectionPageListModel).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            progressDialog.hide();
-                            finish();
-                        }
-                    });
                 }
-            }
+
         });
 
 
