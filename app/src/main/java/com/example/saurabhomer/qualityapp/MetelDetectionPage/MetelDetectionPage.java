@@ -181,15 +181,15 @@ public class MetelDetectionPage extends AppCompatActivity implements
                                         {
                                             metelDetectionPageModels = new ArrayList<>();
                                         }
-                                       // MetelDetectionPageModel metelDetectionPageModel1 = new MetelDetectionPageModel();
-                                        metelDetectionPageModel.setEdt_date(txtDate.getText().toString());
-                                        metelDetectionPageModel.setEdt_time(txtTime.getText().toString());
-                                        metelDetectionPageModel.setEdt_garment_pass(edt_garment_pass.getText().toString());
-                                        metelDetectionPageModel.setEdt_no_of_garment_check(edt_garment.getText().toString());
-                                        metelDetectionPageModel.setEdt_garment_fail(edt_garment_reject.getText().toString());
-                                        metelDetectionPageModel.setEdt_calibrated(getStringOfRedio(r_calibrated.isChecked()));
-                                        metelDetectionPageModel.setRemark(remark.getText().toString());
-                                        METELDETECTIONMODELLIST.add(metelDetectionPageModel);
+                                        MetelDetectionPageModel metelDetectionPageModel1 = new MetelDetectionPageModel();
+                                        metelDetectionPageModel1.setEdt_date(txtDate.getText().toString());
+                                        metelDetectionPageModel1.setEdt_time(txtTime.getText().toString());
+                                        metelDetectionPageModel1.setEdt_garment_pass(edt_garment_pass.getText().toString());
+                                        metelDetectionPageModel1.setEdt_no_of_garment_check(edt_garment.getText().toString());
+                                        metelDetectionPageModel1.setEdt_garment_fail(edt_garment_reject.getText().toString());
+                                        metelDetectionPageModel1.setEdt_calibrated(getStringOfRedio(r_calibrated.isChecked()));
+                                        metelDetectionPageModel1.setRemark(remark.getText().toString());
+                                        metelDetectionPageModels.add(metelDetectionPageModel1);
                                         MetelDetectionPageListModel metelDetectionPageListModel1 = new MetelDetectionPageListModel();
                                         metelDetectionPageListModel1.setmMetelDetectionPageModel(metelDetectionPageModels);
                                         FirebaseDatabase.getInstance().getReference("matelDetectionPage")
