@@ -124,7 +124,6 @@ public class DailyFinishingAnalysisOutside extends AppCompatActivity {
                             , edt_pukering.getSelectedItemPosition()
                             , edt_snap_defects.getSelectedItemPosition()
                             , edt_loose_tensions.getSelectedItemPosition()
-
                             , edt_needle_mark.getSelectedItemPosition()
                             , edt_open_seam.getSelectedItemPosition()
                             , edt_pleats.getSelectedItemPosition()

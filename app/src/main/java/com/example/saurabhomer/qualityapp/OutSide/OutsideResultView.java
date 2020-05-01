@@ -53,7 +53,7 @@ public class OutsideResultView extends AppCompatActivity {
             dialyFinishingAnalysisModel.setPukering(dialyFinishingAnalysisModel.getPukering() + dialyFinishingAnalysisModel1.getPukering());
             dialyFinishingAnalysisModel.setLooseTensions(dialyFinishingAnalysisModel.getLooseTensions() + dialyFinishingAnalysisModel1.getLooseTensions());
             dialyFinishingAnalysisModel.setSnapDefects(dialyFinishingAnalysisModel.getSnapDefects() + dialyFinishingAnalysisModel1.getSnapDefects());
-
+            dialyFinishingAnalysisModel.setUneven(dialyFinishingAnalysisModel.getUneven() + dialyFinishingAnalysisModel1.getUneven());
             dialyFinishingAnalysisModel.setNeedleMark(dialyFinishingAnalysisModel.getNeedleMark() + dialyFinishingAnalysisModel1.getNeedleMark());
             dialyFinishingAnalysisModel.setOpenSeam(dialyFinishingAnalysisModel.getOpenSeam() + dialyFinishingAnalysisModel1.getOpenSeam());
             dialyFinishingAnalysisModel.setPleats(dialyFinishingAnalysisModel.getPleats() + dialyFinishingAnalysisModel1.getPleats());
@@ -75,7 +75,7 @@ public class OutsideResultView extends AppCompatActivity {
             dialyFinishingAnalysisModel.setDamage(dialyFinishingAnalysisModel.getDamage() + dialyFinishingAnalysisModel1.getDamage());
             dialyFinishingAnalysisModel.setDirty(dialyFinishingAnalysisModel.getDirty() + dialyFinishingAnalysisModel1.getDirty());
             dialyFinishingAnalysisModel.setIron(dialyFinishingAnalysisModel.getIron() + dialyFinishingAnalysisModel1.getIron());
-            dialyFinishingAnalysisModel.setUneven(dialyFinishingAnalysisModel.getUneven() + dialyFinishingAnalysisModel1.getUneven());
+
         }
         TextView textView1 = findViewById(R.id.data1);
         textView1.setText("PrintingMRBO            :" + dialyFinishingAnalysisModel.getPrintingMRBO());
