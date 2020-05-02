@@ -35,9 +35,9 @@ public class OutsideResultView extends AppCompatActivity {
         data43 = findViewById(R.id.data43);
         DialyFinishingAnalysisModel dialyFinishingAnalysisModel = dialyFinishingAnalysisModelForResult;
         ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
-        DAILYFINIFSHINGMODELLIST = DAILYFINIFSHINGMODELLISTForResult;
+        //DAILYFINIFSHINGMODELLIST = DAILYFINIFSHINGMODELLISTForResult;
         ArrayList<DialyFinishingAnalysisModel> Dummy = new ArrayList<>();
-        Dummy.addAll(DAILYFINIFSHINGMODELLISTForResult);
+        //Dummy.addAll(DAILYFINIFSHINGMODELLISTForResult);
         Dummy.add(dialyFinishingAnalysisModel);
 
         for (int i = 0; i < DAILYFINIFSHINGMODELLIST.size(); i++)

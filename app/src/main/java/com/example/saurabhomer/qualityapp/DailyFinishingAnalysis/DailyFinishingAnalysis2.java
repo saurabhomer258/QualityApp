@@ -102,9 +102,8 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
            {
                Toast.makeText(DailyFinishingAnalysis2.this, "Hour and Total check should not be empty", Toast.LENGTH_SHORT).show();
            }
-           else {
-
-
+           else
+               {
                String a = total_check.getText().toString().trim().equals("") ? 0 + "" : total_check.getText().toString().trim();
                DialyFinishingAnalysisModel dialyFinishingAnalysisModel = new DialyFinishingAnalysisModel(
                        Integer.parseInt(a),
