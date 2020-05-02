@@ -46,6 +46,7 @@ public class ResultViewForActivity extends AppCompatActivity {
         layout = findViewById(R.id.dailyLayout);
 
         DialyFinishingAnalysisModel dialyFinishingAnalysisModel = DAILYFINIFSHINGMODELLISTForFinalResut.get(0);
+        totalVal = dialyFinishingAnalysisModel.getTotal();
         ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
         DAILYFINIFSHINGMODELLIST = DAILYFINIFSHINGMODELLISTForFinalResut;
         ArrayList<DialyFinishingAnalysisModel> Dummy = new ArrayList<>();
@@ -239,6 +240,7 @@ public class ResultViewForActivity extends AppCompatActivity {
 
           } else {
               setLayout(DAILYFINIFSHINGMODELLIST.get(i).getHours() + "", DAILYFINIFSHINGMODELLIST.get(i).getTotal() + "");
+
           }
       }
 

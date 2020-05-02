@@ -40,7 +40,7 @@ public class ResultViewForActivity extends AppCompatActivity {
         ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
         DAILYFINIFSHINGMODELLIST = DailyFinishingAnalysisOutside.DAILYFINIFSHINGMODELLISTForFinalResut1;
         ArrayList<DialyFinishingAnalysisModel> Dummy = new ArrayList<>();
-
+        totalVal = dialyFinishingAnalysisModel.getTotal();
         Dummy.add(dialyFinishingAnalysisModel);
 
         for (int i = 1; i < DAILYFINIFSHINGMODELLIST.size(); i++) {
@@ -228,6 +228,7 @@ public class ResultViewForActivity extends AppCompatActivity {
             } else {
 
                 setLayout(DAILYFINIFSHINGMODELLIST.get(i).getHours() + "", DAILYFINIFSHINGMODELLIST.get(i).getTotal() + "");
+
             }
         }
         b.setOnClickListener(new View.OnClickListener() {
@@ -413,16 +414,19 @@ public class ResultViewForActivity extends AppCompatActivity {
         }
         if (count == 0) {
             data41.setText(string + " " + val);
+            data41.setTextSize(18);
             strings.add(string);
             value.add(val);
             count++;
         } else if (count == 1) {
             data42.setText(string + "  " + val);
+            data42.setTextSize(18);
             strings.add(string);
             value.add(val);
             count++;
         } else if (count == 2) {
             data43.setText(string + "  " + val);
+            data43.setTextSize(18);
             strings.add(string);
             value.add(val);
             count++;
