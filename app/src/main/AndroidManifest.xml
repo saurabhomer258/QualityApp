@@ -33,13 +33,9 @@
         <activity android:name=".OutSide.DailyFinishingAnalysisOutside" />
         <activity android:name=".OutSide.DailyFinishingDefectAnalysisOutside" />
         <activity android:name=".GetUp.DailyFinishingAnalysisGetup" />
-
-
         <activity android:name=".GetUp.ResultViewForActivity" />
-
         <activity android:name=".GetUp.GetupResultView" />
-        <activity android:name=".OutSide.OutsideResultView"/>
-
+        <activity android:name=".OutSide.OutsideResultView" />
         <activity android:name=".GetUp.DailyFinishingDefectAnalysisGetup" />
         <activity android:name=".admin.DailyfinishingOutsideAdmin" />
         <activity android:name=".admin.DailyfinishingGetUpAdmin" />
@@ -75,6 +71,10 @@
         <activity android:name=".OutSide.ResultViewForActivity" />
         <activity android:name=".DailyFinishingAnalysis.InsideResultView" />
         <activity android:name=".DailyFinishingAnalysis.ResultViewForActivity" />
+        <activity android:name=".Measurement.Measurement2" />
+        <activity android:name=".Measurement.ResultViewForActivity" />
+        <activity android:name=".admin.MesurementAdmin"></activity>
+        <activity android:name=".Measurement.ResultViewFinalForActivity" />
     </application>
 
 </manifest>

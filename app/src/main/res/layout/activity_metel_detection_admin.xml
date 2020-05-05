@@ -28,7 +28,6 @@
             app:layout_constraintTop_toBottomOf="@+id/admin"
             android:id="@+id/dailyLayout">
 
-
         </LinearLayout>
 
     </android.support.constraint.ConstraintLayout>

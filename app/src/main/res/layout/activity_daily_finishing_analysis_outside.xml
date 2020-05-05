@@ -52,7 +52,7 @@
                 android:textSize="@dimen/common_text_size" />
 
 
-            <customView.DailyFinishingIntEditText
+            <customView.DailyFinishingEditText
                 android:id="@+id/edt_total_check"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -236,7 +236,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
 
-                android:text="Pukering"
+                android:text="Puckering"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
@@ -575,32 +575,6 @@
 
         </LinearLayout>
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="14dp"
-            android:layout_marginStart="14dp"
-            android:gravity="center"
-            android:weightSum="10">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-
-                android:text="Others"
-                android:textColor="@color/common_text_color"
-                android:textSize="@dimen/common_text_size" />
-
-
-            <customView.DropDownSelect
-                android:id="@+id/edt_others"
-
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="7" />
-
-        </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
@@ -892,6 +866,34 @@
 
             <customView.DropDownSelect
                 android:id="@+id/edt_iron"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="Others"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DropDownSelect
+                android:id="@+id/edt_others"
 
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

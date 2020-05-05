@@ -107,7 +107,7 @@ public class DailyFinishingAnalysisOutside extends AppCompatActivity {
 
                 String hour1 = hour.getText().toString();
                 String total_check1 = total_check.getText().toString();
-                if (isNullOrEmpty(hour1) && isNullOrEmpty(total_check1)) {
+                if (isNullOrEmpty(hour1) || isNullOrEmpty(total_check1)) {
                     Toast.makeText(DailyFinishingAnalysisOutside.this, "Hour and Total Check should not be empty", Toast.LENGTH_SHORT).show();
                 } else {
 
@@ -162,7 +162,7 @@ public class DailyFinishingAnalysisOutside extends AppCompatActivity {
             {
                 String hour1 = hour.getText().toString();
                 String total_check1 = total_check.getText().toString();
-                if(isNullOrEmpty(hour1)&&isNullOrEmpty(total_check1))
+                if(isNullOrEmpty(hour1)||isNullOrEmpty(total_check1))
                 {
                     Toast.makeText(DailyFinishingAnalysisOutside.this, "Hour and Total Check should not be empty", Toast.LENGTH_SHORT).show();
                 }
@@ -316,7 +316,7 @@ public class DailyFinishingAnalysisOutside extends AppCompatActivity {
             public void onClick(View v) {
                 String hour1 = hour.getText().toString();
                 String total_check1 = total_check.getText().toString();
-                if (isNullOrEmpty(hour1) && isNullOrEmpty(total_check1)) {
+                if (isNullOrEmpty(hour1) || isNullOrEmpty(total_check1)) {
                     Toast.makeText(DailyFinishingAnalysisOutside.this, "Hour and Total Check should not be empty", Toast.LENGTH_SHORT).show();
                 } else {
 

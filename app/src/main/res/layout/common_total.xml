@@ -198,13 +198,6 @@
                     android:text="data"
                     android:textColor="#000" />
 
-                <TextView
-                    android:id="@+id/data19"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="3dp"
-                    android:text="data"
-                    android:textColor="#000" />
 
                 <TextView
                     android:id="@+id/data20"
@@ -293,6 +286,15 @@
                     android:textColor="#000" />
 
                 <TextView
+                    android:id="@+id/data19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:text="data"
+                    android:textColor="#000" />
+
+
+                <TextView
                     android:id="@+id/tv_total"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -312,6 +314,17 @@
                     android:layout_marginBottom="3dp"
                     android:text="data"
                     android:textColor="#000" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="TOP 3 RESULT"
+                    style="@style/Animation.AppCompat.Dialog"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
                 <TextView
                     android:id="@+id/data41"
                     android:layout_width="match_parent"
@@ -334,6 +347,7 @@
                     android:text="data"
                     android:layout_marginBottom="3dp"
                     android:textColor="#000" />
+
 
             </LinearLayout>
 

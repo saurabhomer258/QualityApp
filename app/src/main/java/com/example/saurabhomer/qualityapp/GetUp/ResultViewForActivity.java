@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingAnalysis2;
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.InsideResultView;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
@@ -36,6 +37,7 @@ public class ResultViewForActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.common_total);
+        int totalVal = 0;
         TextView total = findViewById(R.id.tv_total);
         TextView totalPer = findViewById(R.id.tv_Defect_per);
         data41 = findViewById(R.id.data41);
@@ -44,6 +46,7 @@ public class ResultViewForActivity extends AppCompatActivity {
         layout = findViewById(R.id.dailyLayout);
 
         DialyFinishingAnalysisModel dialyFinishingAnalysisModel = DAILYFINIFSHINGMODELLISTForFinalResut.get(0);
+        totalVal = dialyFinishingAnalysisModel.getTotal();
         ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
         DAILYFINIFSHINGMODELLIST = DAILYFINIFSHINGMODELLISTForFinalResut;
         ArrayList<DialyFinishingAnalysisModel> Dummy = new ArrayList<>();
@@ -89,22 +92,22 @@ public class ResultViewForActivity extends AppCompatActivity {
             dialyFinishingAnalysisModel.setUneven(dialyFinishingAnalysisModel.getUneven() + dialyFinishingAnalysisModel1.getUneven());
         }
         TextView textView1 = findViewById(R.id.data1);
-        textView1.setText("PrintingMRBO            :" + dialyFinishingAnalysisModel.getPrintingMRBO());
+        textView1.setText("Printing/MRBO            :" + dialyFinishingAnalysisModel.getPrintingMRBO());
 
         TextView textView2 = findViewById(R.id.data2);
-        textView2.setText("Slubs_Holes_NAR     :" + dialyFinishingAnalysisModel.getSlubs_Holes_NAR());
+        textView2.setText("Slubs/Holes/NAR     :" + dialyFinishingAnalysisModel.getSlubs_Holes_NAR());
 
 
         TextView textView3 = findViewById(R.id.data3);
-        textView3.setText("colorShading              :" + dialyFinishingAnalysisModel.getColorShading());
+        textView3.setText("Color Shading              :" + dialyFinishingAnalysisModel.getColorShading());
 
 
         TextView textView4 = findViewById(R.id.data4);
-        textView4.setText("BrokenStitches          :" + dialyFinishingAnalysisModel.getBrokenStitches());
+        textView4.setText("Broken Stitches          :" + dialyFinishingAnalysisModel.getBrokenStitches());
 
 
         TextView textView5 = findViewById(R.id.data5);
-        textView5.setText("SlipStitches                :" + dialyFinishingAnalysisModel.getSlipStitches());
+        textView5.setText("Slip Stitches                :" + dialyFinishingAnalysisModel.getSlipStitches());
 
 
         TextView textView6 = findViewById(R.id.data6);
@@ -112,22 +115,22 @@ public class ResultViewForActivity extends AppCompatActivity {
 
 
         TextView textView7 = findViewById(R.id.data7);
-        textView7.setText("Pukering                      :" + dialyFinishingAnalysisModel.getPukering());
+        textView7.setText("Puckering                      :" + dialyFinishingAnalysisModel.getPukering());
 
 
         TextView textView8 = findViewById(R.id.data8);
-        textView8.setText("LooseTensions          :" + dialyFinishingAnalysisModel.getLooseTensions());
+        textView8.setText("Loose Tensions          :" + dialyFinishingAnalysisModel.getLooseTensions());
 
 
         TextView textView9 = findViewById(R.id.data9);
-        textView9.setText("SnapDefects              :" + dialyFinishingAnalysisModel.getSnapDefects());
+        textView9.setText("Snap Defects              :" + dialyFinishingAnalysisModel.getSnapDefects());
 
         TextView textView10 = findViewById(R.id.data10);
-        textView10.setText("NeedleMark                :" + dialyFinishingAnalysisModel.getNeedleMark());
+        textView10.setText("Needle Mark                :" + dialyFinishingAnalysisModel.getNeedleMark());
 
 
         TextView textView11 = findViewById(R.id.data11);
-        textView11.setText("OpenSeam                  :" + dialyFinishingAnalysisModel.getOpenSeam());
+        textView11.setText("Open Seam                  :" + dialyFinishingAnalysisModel.getOpenSeam());
 
         TextView textView12 = findViewById(R.id.data12);
         textView12.setText("Pleats                           :" + dialyFinishingAnalysisModel.getPleats());
@@ -139,29 +142,29 @@ public class ResultViewForActivity extends AppCompatActivity {
         //    private int uneven;
 
         TextView textView13 = findViewById(R.id.data13);
-        textView13.setText("MissingStitches         :" + dialyFinishingAnalysisModel.getMissingStitches());
+        textView13.setText("Missing Stitches         :" + dialyFinishingAnalysisModel.getMissingStitches());
 
 
         TextView textView14 = findViewById(R.id.data14);
-        textView14.setText("SkipRunOff                  :" + dialyFinishingAnalysisModel.getSkipRunOff());
+        textView14.setText("Skip/RunOff                  :" + dialyFinishingAnalysisModel.getSkipRunOff());
 
 
         TextView textView15 = findViewById(R.id.data15);
-        textView15.setText("IncorrectLabel            :" + dialyFinishingAnalysisModel.getIncorrectLabel());
+        textView15.setText("Incorrect Label            :" + dialyFinishingAnalysisModel.getIncorrectLabel());
 
 
         TextView textView16 = findViewById(R.id.data16);
-        textView16.setText("WrongPlacement       :" + dialyFinishingAnalysisModel.getWrongPlacement());
+        textView16.setText("Wrong Placement       :" + dialyFinishingAnalysisModel.getWrongPlacement());
 
 
         TextView textView17 = findViewById(R.id.data17);
-        textView17.setText("LooseNess                  :" + dialyFinishingAnalysisModel.getLooseNess());
+        textView17.setText("Looseness                  :" + dialyFinishingAnalysisModel.getLooseNess());
 
         TextView textView171 =  findViewById(R.id.data171);
         textView171.setText("Unevent/Rewedge     :"+ dialyFinishingAnalysisModel.getUneven());
 
         TextView textView18 = findViewById(R.id.data18);
-        textView18.setText("CutDamage                 :" + dialyFinishingAnalysisModel.getCutDamage());
+        textView18.setText("Cut Damage                 :" + dialyFinishingAnalysisModel.getCutDamage());
 
 
         //   private int MissingStitches,SkipRunOff,IncorrectLabel,WrongPlacement,LooseNess,CutDamage,Others,Stain,OilMark,Stickers,UncutThread,;
@@ -174,14 +177,14 @@ public class ResultViewForActivity extends AppCompatActivity {
         textView20.setText("Stain                              :" + dialyFinishingAnalysisModel.getStain());
 
         TextView textView21 = findViewById(R.id.data21);
-        textView21.setText("OilMark                         :" + dialyFinishingAnalysisModel.getOilMark());
+        textView21.setText("Oil Mark                         :" + dialyFinishingAnalysisModel.getOilMark());
 
 
         TextView textView22 = findViewById(R.id.data22);
         textView22.setText("Stickers                        :" + dialyFinishingAnalysisModel.getStickers());
 
         TextView textView23 = findViewById(R.id.data23);
-        textView23.setText("UncutThread               :" + dialyFinishingAnalysisModel.getUncutThread());
+        textView23.setText("Uncut Thread               :" + dialyFinishingAnalysisModel.getUncutThread());
 
 
         TextView textView24 = findViewById(R.id.data24);
@@ -191,15 +194,15 @@ public class ResultViewForActivity extends AppCompatActivity {
 
 
         TextView textView25 = findViewById(R.id.data25);
-        textView25.setText("TotalDefect                  :" + dialyFinishingAnalysisModel.getTotalDefect());
+        textView25.setText("Total Defect                  :" + dialyFinishingAnalysisModel.getTotalDefect());
 
 
         TextView textView26 = findViewById(R.id.data26);
-        textView26.setText("QualityOut                    :" + dialyFinishingAnalysisModel.getQualityOut());
+        textView26.setText("Quality Out                    :" + dialyFinishingAnalysisModel.getQualityOut());
 
 
         TextView textView27 = findViewById(R.id.data27);
-        textView27.setText("ProductionOut            :" + dialyFinishingAnalysisModel.getProductionOut());
+        textView27.setText("Production Out            :" + dialyFinishingAnalysisModel.getProductionOut());
 
 
         TextView textView28 = findViewById(R.id.data28);
@@ -231,7 +234,13 @@ public class ResultViewForActivity extends AppCompatActivity {
         getMaxThree(Dummy);
 
       for (int i=0 ; i <DAILYFINIFSHINGMODELLIST.size();i++){
-          setLayout(DAILYFINIFSHINGMODELLIST.get(i).getHours()+"" ,DAILYFINIFSHINGMODELLIST.get(i).getTotal()+"" );
+          if (i == 0) {
+              setLayout(DAILYFINIFSHINGMODELLIST.get(i).getHours() + "", totalVal + "");
+
+          } else {
+              setLayout(DAILYFINIFSHINGMODELLIST.get(i).getHours() + "", DAILYFINIFSHINGMODELLIST.get(i).getTotal() + "");
+
+          }
       }
 
         b.setOnClickListener(new View.OnClickListener() {
@@ -334,9 +343,9 @@ public class ResultViewForActivity extends AppCompatActivity {
         Collections.sort(val, Collections.reverseOrder());
         for (int i = 0; i < val.size(); i++) {
             if (val.get(i) == PrintingMRBO) {
-                setString("Printing MRBO", val.get(i));
+                setString("Printing/MRBO", val.get(i));
             }  if (val.get(i) == Slubs_Holes_NAR) {
-                setString("Slubs Holes NAR ", val.get(i));
+                setString("Slubs/Holes/NAR ", val.get(i));
             } if(val.get(i)==colorShading)
             {
                 setString("Color Shading ", val.get(i));
@@ -348,7 +357,7 @@ public class ResultViewForActivity extends AppCompatActivity {
             }  if (val.get(i) == SPI) {
                 setString("SPI", val.get(i));
             }  if (val.get(i) == Pukering) {
-                setString("Pukering", val.get(i));
+                setString("Puckering", val.get(i));
             }  if (val.get(i) == LooseTensions) {
                 setString("Loose Tensions", val.get(i));
             }  if (val.get(i) == SnapDefects) {
@@ -362,7 +371,7 @@ public class ResultViewForActivity extends AppCompatActivity {
             }  if (val.get(i) == MissingStitches) {
                 setString("Missing Stitches", val.get(i));
             }  if (val.get(i) == SkipRunOff) {
-                setString("Skip RunOff", val.get(i));
+                setString("Skip/RunOff", val.get(i));
             }  if (val.get(i) == IncorrectLabel) {
                 setString("Incorrect Label", val.get(i));
             }  if (val.get(i) == CutDamage) {
@@ -370,27 +379,27 @@ public class ResultViewForActivity extends AppCompatActivity {
             }  if (val.get(i) == WrongPlacement) {
                 setString("Wrong Placement", val.get(i));
             }  if (val.get(i) == unEvent) {
-                setString("un Event", val.get(i));
+                setString("Unevent/Rewedge", val.get(i));
             }  if (val.get(i) == LooseNess) {
-                setString("Loose Ness", val.get(i));
+                setString("Looseness", val.get(i));
             }  if (val.get(i) == Others) {
                 setString("Others", val.get(i));
             }  if (val.get(i) == Stain) {
                 setString("Stain", val.get(i));
             }  if (val.get(i) == OilMark) {
-                setString("OilMark", val.get(i));
+                setString("Oil Mark", val.get(i));
             }  if (val.get(i) == Stickers) {
                 setString("Stickers", val.get(i));
             }  if (val.get(i) == UncutThread) {
-                setString("UncutThread", val.get(i));
+                setString("Uncut Thread", val.get(i));
             }  if (val.get(i) == OutOfSpec) {
                 setString("OutOfSpec", val.get(i));
             }  if (val.get(i) == TotalDefect) {
-                setString("TotalDefect", val.get(i));
+                setString("Total Defect", val.get(i));
             } else if (val.get(i) == QualityOut) {
-                setString("QualityOut", val.get(i));
+                setString("Quality Out", val.get(i));
             }  if (val.get(i) == ProductionOut) {
-                setString("ProductionOut", val.get(i));
+                setString("Production Out", val.get(i));
             }  if (val.get(i) == Damage) {
                 setString("Damage", val.get(i));
             }  if (val.get(i) == Dirty) {
@@ -446,5 +455,11 @@ public class ResultViewForActivity extends AppCompatActivity {
             textView.setText("Hour "+object + "    : " + result);
             layout.addView(textView);
         }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        DailyFinishingAnalysis2.DAILYFINIFSHINGMODELLISTForFinalResut.clear();
     }
 }
