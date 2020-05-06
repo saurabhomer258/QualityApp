@@ -11,6 +11,7 @@ import com.example.saurabhomer.qualityapp.CartoonAudit.AreaOfPackingMaterial;
 import com.example.saurabhomer.qualityapp.CartoonAudit.AreaOfPackingMaterialModel;
 import com.example.saurabhomer.qualityapp.CartoonAudit.AreaofInsideCartoonModel;
 import com.example.saurabhomer.qualityapp.CartoonAudit.AreaofOutsideCartoonModel;
+import com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit;
 import com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAuditModel;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
@@ -22,6 +23,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+
+import customView.AdminResult;
 
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
@@ -65,6 +68,10 @@ public class CartoonAuditAdmin extends AppCompatActivity {
                 ArrayList<AreaofOutsideCartoonModel> list = cartoonAuditModel.getAreaofOutsideCartoonModelArrayList();
                 for(AreaofOutsideCartoonModel items:list)
                 {
+                    TextView text= new TextView(CartoonAuditAdmin.this);
+                    text.setText("Area of Outside Carton");
+                    text.setTextSize(20);
+                    layout.addView(text);
                     setLayout("Hour",items.getHour());
                     setLayout("Carton Lot Quantity",items.getCartoonlotquantity());
                     setLayout("Carton Shiping Mark",items.getCartoonshipingmark());
@@ -82,6 +89,10 @@ public class CartoonAuditAdmin extends AppCompatActivity {
                 ArrayList<AreaofInsideCartoonModel> list1 = cartoonAuditModel.getAreaofInsideCartoonModelArrayList();
                 for (AreaofInsideCartoonModel items:list1)
                 {
+                    TextView text2 = new TextView(CartoonAuditAdmin.this);
+                    text2.setText("Area of Inside Carton");
+                    text2.setTextSize(20);
+                    layout.addView(text2);
                     setLayout("Hour",items.getHour());
                     setLayout("Carton Quantity",items.getCartoonquantity());
                     setLayout("Total Check Quantity",items.getTotalcheckquantity());
@@ -102,6 +113,10 @@ public class CartoonAuditAdmin extends AppCompatActivity {
                 ArrayList<AreaOfPackingMaterialModel> list3 = cartoonAuditModel.getAreaOfPackingMaterialArrayList();
                 for(AreaOfPackingMaterialModel items:list3)
                 {
+                    TextView text3 = new TextView(CartoonAuditAdmin.this);
+                    text3.setText("Area of Packing Material");
+                    text3.setTextSize(20);
+                    layout.addView(text3);
                        setLayout("Hour Inside",items.getHour_inside1());
                        setLayout("Carton Lot Quantity",items.getCartoon_lot());
                        setLayout("Check Carton Quantity",items.getCheckcartoon());
@@ -134,8 +149,10 @@ public class CartoonAuditAdmin extends AppCompatActivity {
     }
     private void setLayout(String object ,String result){
         if(result!=null) {
-            TextView textView = new TextView(CartoonAuditAdmin.this);
-            textView.setText(object + " : " + result);
+            AdminResult textView = new AdminResult(CartoonAuditAdmin.this);
+            String res = "";
+
+            textView.setText(object, result);
             layout.addView(textView);
         }
     }

@@ -484,15 +484,13 @@ public class DailyfinishingAdmin extends AppCompatActivity {
         }
     }
 
+    private void setLayout(String object ,String result){
+        if(result!=null) {
+            AdminResult textView = new AdminResult(DailyfinishingAdmin.this);
+            String res = "";
 
-    private void setLayout(String object ,String result)
-{
-    if(result!=null)
-    {
-        TextView textView = new TextView(DailyfinishingAdmin.this);
-        textView.setText(object + " : " + result);
-        layout.addView(textView);
-
+            textView.setText(object, result);
+            layout.addView(textView);
+        }
     }
-}
 }
