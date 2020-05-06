@@ -1,17 +1,18 @@
 package com.example.saurabhomer.qualityapp.MetelDetectionPage;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MetelDetectionPageListModel
 {
 
-   List<MetelDetectionPageModel> mMetelDetectionPageModel ;
+   ArrayList<MetelDetectionPageModel> mMetelDetectionPageModel ;
 
-    public List<MetelDetectionPageModel> getmMetelDetectionPageModel() {
+    public ArrayList<MetelDetectionPageModel> getmMetelDetectionPageModel() {
         return mMetelDetectionPageModel;
     }
 
-    public void setmMetelDetectionPageModel(List<MetelDetectionPageModel> mMetelDetectionPageModel) {
+    public void setmMetelDetectionPageModel(ArrayList<MetelDetectionPageModel> mMetelDetectionPageModel) {
         this.mMetelDetectionPageModel = mMetelDetectionPageModel;
     }
 }

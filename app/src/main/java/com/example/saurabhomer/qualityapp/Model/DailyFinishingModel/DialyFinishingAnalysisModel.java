@@ -322,10 +322,11 @@ public class DialyFinishingAnalysisModel {
         this.hours = hours;
     }
     public int getTotal(){
+
        int total = PrintingMRBO+Slubs_Holes_NAR + colorShading+BrokenStitches+SlipStitches+SPI+Pukering+LooseTensions+SnapDefects+NeedleMark+OpenSeam+Pleats
      +MissingStitches+SkipRunOff+IncorrectLabel+WrongPlacement+LooseNess+CutDamage+Others+Stain+OilMark+Stickers+UncutThread+OutOfSpec+
-    TotalDefect+QualityOut+ProductionOut+Damage+Dirty+Iron
-    ;
+    TotalDefect+QualityOut+ProductionOut+Damage+Dirty+Iron+uneven;
        return total;
+
     }
 }

@@ -1,5 +1,6 @@
 package com.example.saurabhomer.qualityapp.Measurement;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,8 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.utils.CommonStyleData;
@@ -20,23 +23,30 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import customView.DailyFinishingEditText;
+import customView.DailyFinishingEditTextDForMesurement;
 
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
-public class Measurment extends AppCompatActivity
+public class Measurment extends AppCompatActivity implements
+        View.OnClickListener
 {
-    EditText edt_measurement;
+    public  static EditText date;
     EditText edt_tolerance_plus;
     EditText edt_tolerance_minus;
+    private int mYear, mMonth, mDay, mHour, mMinute;
+    ImageButton btnDatePicker;
+    EditText txtDate;
 
     Button next,info_btn;
     LinearLayout layout;
-    ArrayList<DailyFinishingEditText> editTexts = new ArrayList<>();
+    ArrayList<DailyFinishingEditTextDForMesurement> editTexts = new ArrayList<>();
     Button done;
     static MeasurementListModel measurementListModel = new MeasurementListModel();
+    static ArrayList<MeasurementModel> measurementListModelList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -49,14 +59,21 @@ public class Measurment extends AppCompatActivity
        layout = findViewById(R.id.layout);
 
        info_btn = findViewById(R.id.info_me);
-        View  view_measurment= findViewById(R.id.edt_measurment);
-        edt_measurement = view_measurment.findViewById(R.id.atvCommon);
 
-        View  view_tolerance_plus= findViewById(R.id.edt_tolerance_plus);
-        edt_tolerance_plus = view_tolerance_plus.findViewById(R.id.atvCommon);
+        btnDatePicker=(ImageButton)findViewById(R.id.btn_date);
+        date=(EditText)findViewById(R.id.in_date);
+        btnDatePicker.setOnClickListener(this);
 
-        View  view_tolerance_minus= findViewById(R.id.edt_tolerance_minus);
-        edt_tolerance_minus = view_tolerance_minus.findViewById(R.id.atvCommon);
+//        View  view_measurment= findViewById(R.id.edt_date);
+//        date = view_measurment.findViewById(R.id.atvCommon);
+
+        FirebaseDatabase.getInstance().getReference("mesurement").child(STYLE_NUMBER).setValue(new MeasurementListModel());
+
+//        View  view_tolerance_plus= findViewById(R.id.edt_tolerance_plus);
+//        edt_tolerance_plus = view_tolerance_plus.findViewById(R.id.atvCommon);
+//
+//        View  view_tolerance_minus= findViewById(R.id.edt_tolerance_minus);
+//        edt_tolerance_minus = view_tolerance_minus.findViewById(R.id.atvCommon);
 
 //        final CheckBox  check40= findViewById(R.id.checkbox_40);
 //
@@ -78,40 +95,47 @@ public class Measurment extends AppCompatActivity
         });
 
         View view_done = findViewById(R.id.btn_done_measurement);
-        done = view_done.findViewById(R.id.btnNext);
+        //done = view_done.findViewById(R.id.btnNext);
       Button nextbtn =  findViewById(R.id.btn_next).findViewById(R.id.btnNext);
-        FirebaseDatabase.getInstance().getReference().child("styles").child(STYLE_NUMBER).child("size").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                size(dataSnapshot.getValue()+"");
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
+//        FirebaseDatabase.getInstance().getReference().child("styles").child(STYLE_NUMBER).child("size").addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                //size(dataSnapshot.getValue()+"");
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
         nextbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Measurment.this,Mesurement1.class));
+                if(date.getText().toString().trim().isEmpty()){
+                    Toast.makeText(Measurment.this, "Date should not be empty", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    measurementListModel.setDate(date.getText().toString());
+                    startActivity(new Intent(Measurment.this, Mesurement1.class));
+                    finish();
+                }
             }
         });
-        done.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MeasurementModel measurementModel  = new MeasurementModel();
-
-                measurementModel.setEdt_measur(edt_measurement.getText().toString());
-                measurementModel.setEdt_tolerance_plus(edt_tolerance_plus.getText().toString());
-                measurementModel.setEdt_tolerance_minus(edt_tolerance_minus.getText().toString());
-                List<MeasurementModel> measurementModels  = new ArrayList<>();
-                measurementModels.add(measurementModel);
-                measurementListModel.setMeasurementModels(measurementModels);
-
-
-            }
-        });
+//        done.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                MeasurementModel measurementModel  = new MeasurementModel();
+//
+////                measurementModel.setEdt_measur(edt_measurement.getText().toString());
+////                measurementModel.setEdt_tolerance_plus(edt_tolerance_plus.getText().toString());
+////                measurementModel.setEdt_tolerance_minus(edt_tolerance_minus.getText().toString());
+////                List<MeasurementModel> measurementModels  = new ArrayList<>();
+////                measurementModels.add(measurementModel);
+////                measurementListModel.setMeasurementModels(measurementModels);
+//
+//
+//            }
+//        });
     }
     private void senddonedata(MeasurementModel measurementModel)
     {
@@ -128,26 +152,53 @@ public class Measurment extends AppCompatActivity
             else {
                 TextView valueTV = new TextView(this);
                 LinearLayout layout2 = new LinearLayout(this);
+                layout2.setOrientation(LinearLayout.HORIZONTAL);
                 layout2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                layout2.setOrientation(LinearLayout.VERTICAL);
+
                 layout2.setWeightSum(10);
                 layout2.setGravity(Gravity.CENTER);
                 valueTV.setLayoutParams(new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        400,
                         LinearLayout.LayoutParams.WRAP_CONTENT));
+
                 layout2.setPadding(14, 0, 14, 14);
 
                 valueTV.setTextColor(getResources().getColor(R.color.common_text_color));
                 valueTV.setTextSize(16);
 
-                valueTV.setText(string);
-                DailyFinishingEditText dailyFinishingEditText = new DailyFinishingEditText(this);
+
+                DailyFinishingEditTextDForMesurement dailyFinishingEditText = new DailyFinishingEditTextDForMesurement(this);
+                layout2.addView(valueTV);
+                layout2.addView(dailyFinishingEditText);
                 editTexts.add(dailyFinishingEditText);
                 layout.addView(layout2);
-                layout.addView(dailyFinishingEditText);
-                layout2.addView(valueTV);
+
+
             }
 
+        }
+    }
+    @Override
+    public void onClick(View v) {
+
+        if (v == btnDatePicker) {
+
+            // Get Current Date
+            final Calendar c = Calendar.getInstance();
+            mYear = c.get(Calendar.YEAR);
+            mMonth = c.get(Calendar.MONTH);
+            mDay = c.get(Calendar.DAY_OF_MONTH);
+
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                    new DatePickerDialog.OnDateSetListener()
+                    {
+                        @Override
+                        public void onDateSet(android.widget.DatePicker view, int year, int month, int dayOfMonth)
+                        {
+                            date.setText(dayOfMonth + "-" + (month + 1) + "-" + year);
+                        }
+                    }, mYear, mMonth, mDay);
+            datePickerDialog.show();
         }
     }
 }

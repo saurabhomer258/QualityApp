@@ -42,82 +42,92 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Measurement Description"
+                android:text="Date"
 
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
-
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
-
+            <EditText
+                android:layout_weight="5"
+                android:layout_marginLeft="48dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/edt_measurment" />
+                android:id="@+id/in_date" />
+
+            <ImageButton
+                android:src="@drawable/calendar1"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="DATE"
+                android:id="@+id/btn_date"
+                android:layout_alignBottom="@+id/in_date"
+                android:layout_toRightOf="@+id/in_date"
+                android:layout_toEndOf="@+id/in_date" />
 
         </LinearLayout>
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
-            android:layout_marginEnd="14dp"
-            android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
+        <!--<LinearLayout-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:weightSum="10"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_marginEnd="14dp"-->
+            <!--android:layout_marginStart="14dp"-->
+            <!--xmlns:android="http://schemas.android.com/apk/res/android">-->
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Tolerance +"
+            <!--<TextView-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Tolerance +"-->
 
-                android:layout_weight="3"
-                android:textColor="@color/common_text_color"
-                android:textSize="@dimen/common_text_size" />
-
-
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
-
-                android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/edt_tolerance_plus" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
-            android:layout_marginEnd="14dp"
-            android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Tolerane -"
-
-                android:layout_weight="3"
-                android:textColor="@color/common_text_color"
-                android:textSize="@dimen/common_text_size" />
+                <!--android:layout_weight="3"-->
+                <!--android:textColor="@color/common_text_color"-->
+                <!--android:textSize="@dimen/common_text_size" />-->
 
 
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
+            <!--<customView.DailyFinishingEditText-->
+                <!--android:layout_width="0dp"-->
 
-                android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/edt_tolerance_minus" />
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="7"-->
+                <!--android:id="@+id/edt_tolerance_plus" />-->
 
-        </LinearLayout>
+        <!--</LinearLayout>-->
+        <!--<LinearLayout-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:weightSum="10"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_marginEnd="14dp"-->
+            <!--android:layout_marginStart="14dp"-->
+            <!--xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+            <!--<TextView-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Tolerane -"-->
+
+                <!--android:layout_weight="3"-->
+                <!--android:textColor="@color/common_text_color"-->
+                <!--android:textSize="@dimen/common_text_size" />-->
+
+
+            <!--<customView.DailyFinishingEditText-->
+                <!--android:layout_width="0dp"-->
+
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="7"-->
+                <!--android:id="@+id/edt_tolerance_minus" />-->
+
+        <!--</LinearLayout>-->
 
     </LinearLayout>
 
         <LinearLayout
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:weightSum="6"
+
             android:layout_marginTop="100dp"
             android:orientation="horizontal">
             <customView.NextButton
@@ -127,12 +137,7 @@
                 android:layout_weight="3"
                 android:id="@+id/btn_next" />
 
-            <customView.DoneButton
-                android:layout_width="0dp"
-                android:padding="5dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:id="@+id/btn_done_measurement" />
+
         </LinearLayout>
     </LinearLayout>
 

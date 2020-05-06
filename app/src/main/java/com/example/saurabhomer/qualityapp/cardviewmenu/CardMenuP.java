@@ -13,6 +13,7 @@ import com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAuditModel;
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis;
 import com.example.saurabhomer.qualityapp.GetUp.DailyFinishingDefectAnalysisGetup;
 import com.example.saurabhomer.qualityapp.Measurement.Measurment;
+import com.example.saurabhomer.qualityapp.Measurement.Mesurement1;
 import com.example.saurabhomer.qualityapp.MetelDetectionPage.MetelDetectionPage;
 import com.example.saurabhomer.qualityapp.OutSide.DailyFinishingDefectAnalysisOutside;
 import com.example.saurabhomer.qualityapp.R;
@@ -22,7 +23,11 @@ import com.example.saurabhomer.qualityapp.admin.CartoonAuditAdmin;
 import com.example.saurabhomer.qualityapp.admin.DailyfinishingAdmin;
 import com.example.saurabhomer.qualityapp.admin.DailyfinishingGetUpAdmin;
 import com.example.saurabhomer.qualityapp.admin.DailyfinishingOutsideAdmin;
+
 import com.example.saurabhomer.qualityapp.admin.MetelDetectionAdmin;
+
+import com.example.saurabhomer.qualityapp.admin.MesurementAdmin;
+
 import com.example.saurabhomer.qualityapp.admin.SkuAdmin;
 import com.example.saurabhomer.qualityapp.pref.LoginPref;
 import com.example.saurabhomer.qualityapp.utils.CommonDailyDateFilter;
@@ -81,8 +86,17 @@ public class CardMenuP extends AppCompatActivity
         measurmentreport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(CardMenuP.this, Measurment.class);
-                startActivity(i);
+                if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
+                    Intent i =  new Intent(CardMenuP.this, MesurementAdmin.class);
+                    i.putExtra("Name","Skutest");
+                    startActivity(i);
+                }
+                else {
+                    Intent i = new Intent(CardMenuP.this, Measurment.class);
+                    startActivity(i);
+
+                }
+                progressDialog.hide();
             }
         });
         hourlyreport.setOnClickListener(new View.OnClickListener() {
