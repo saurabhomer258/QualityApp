@@ -52,15 +52,16 @@ public class CartoonAuditAdmin extends AppCompatActivity {
             {
 
                 CartoonAuditModel cartoonAuditModel =dataSnapshot.getValue(CartoonAuditModel.class);
-                setLayout("Carton Lot Quantity",cartoonAuditModel.getCartoonlotquantity());
-                setLayout("Hour1",cartoonAuditModel.getHour1());
-                setLayout("Hour2",cartoonAuditModel.getHour2());
-                setLayout("Hour3",cartoonAuditModel.getHour3());
-                setLayout("Hour4",cartoonAuditModel.getHour4());
-                setLayout("Hour5",cartoonAuditModel.getHour5());
-                setLayout("Hour6",cartoonAuditModel.getHour6());
-                setLayout("Hour7",cartoonAuditModel.getHour7());
-                setLayout("Hour8",cartoonAuditModel.getHour8());
+                  setLayout("Date", cartoonAuditModel.getDate());
+//                setLayout("Carton Lot Quantity",cartoonAuditModel.getCartoonlotquantity());
+//                setLayout("Hour1",cartoonAuditModel.getHour1());
+//                setLayout("Hour2",cartoonAuditModel.getHour2());
+//                setLayout("Hour3",cartoonAuditModel.getHour3());
+//                setLayout("Hour4",cartoonAuditModel.getHour4());
+//                setLayout("Hour5",cartoonAuditModel.getHour5());
+//                setLayout("Hour6",cartoonAuditModel.getHour6());
+//                setLayout("Hour7",cartoonAuditModel.getHour7());
+//                setLayout("Hour8",cartoonAuditModel.getHour8());
 
                 TextView textView= new TextView(CartoonAuditAdmin.this);
                 textView.setText("_________________________________________________");

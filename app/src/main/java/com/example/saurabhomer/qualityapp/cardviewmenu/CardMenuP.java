@@ -150,7 +150,7 @@ public class CardMenuP extends AppCompatActivity
                     startActivity(i);
                 }
                 else {
-                    Intent i = new Intent(CardMenuP.this, AreaofOutsideCartoon.class);
+                    Intent i = new Intent(CardMenuP.this, CartoonAudit.class);
                     startActivity(i);
 
                 }

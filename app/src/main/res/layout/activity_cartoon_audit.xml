@@ -5,7 +5,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:orientation="vertical">
         <LinearLayout
             android:layout_height="wrap_content"
@@ -19,245 +19,28 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Carton Lot Quantity"
-                android:layout_weight="3"
+                android:text="Date"
+                android:layout_weight="4"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
-
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
+            <EditText
+                android:layout_weight="6"
+                android:layout_marginLeft="48dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/edt_cartoonlotquantity" />
-        </LinearLayout>
+                android:id="@+id/in_date" />
 
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
-            android:layout_marginEnd="14dp"
-            android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
-
-            <TextView
-                android:layout_width="0dp"
+            <ImageButton
+                android:src="@drawable/calendar1"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Hour 1"
-
-                android:layout_weight="3"
-                android:textColor="@color/common_text_color"
-                android:textSize="@dimen/common_text_size" />
-
-
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
-
-                android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/edt_hour1" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
-            android:layout_marginEnd="14dp"
-            android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Hour 2"
-                android:layout_weight="3"
-                android:textColor="@color/common_text_color"
-                android:textSize="@dimen/common_text_size" />
-
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
-
-                android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/edt_hour2" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
-            android:layout_marginEnd="14dp"
-            android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Hour 3"
-                android:layout_weight="3"
-                android:textColor="@color/common_text_color"
-                android:textSize="@dimen/common_text_size" />
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
-
-                android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/edt_hour3" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
-            android:layout_marginEnd="14dp"
-            android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Hour 4"
-                android:layout_weight="3"
-                android:textColor="@color/common_text_color"
-                android:textSize="@dimen/common_text_size" />
-
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
-
-                android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/edt_hour4" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
-            android:layout_marginEnd="14dp"
-            android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Hour 5"
-                android:layout_weight="3"
-                android:textColor="@color/common_text_color"
-                android:textSize="@dimen/common_text_size" />
-
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
-
-                android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/edt_hour5" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
-            android:layout_marginEnd="14dp"
-            android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Hour 6"
-                android:layout_weight="3"
-                android:textColor="@color/common_text_color"
-                android:textSize="@dimen/common_text_size" />
-
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
-
-                android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/edt_hour6" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
-            android:layout_marginEnd="14dp"
-            android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Hour 7"
-                android:layout_weight="3"
-                android:textColor="@color/common_text_color"
-                android:textSize="@dimen/common_text_size" />
-
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
-
-                android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/edt_hour7" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
-            android:layout_marginEnd="14dp"
-            android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Hour 8"
-                android:layout_weight="3"
-                android:textColor="@color/common_text_color"
-                android:textSize="@dimen/common_text_size" />
-
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
-
-                android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/edt_hour8" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
-            android:layout_marginEnd="14dp"
-            android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Hour 9"
-                android:layout_weight="3"
-                android:textColor="@color/common_text_color"
-                android:textSize="@dimen/common_text_size" />
-
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
-
-                android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/edt_hour9" />
-
+                android:text="DATE"
+                android:id="@+id/btn_date"
+                android:layout_alignBottom="@+id/in_date"
+                android:layout_toRightOf="@+id/in_date"
+                android:layout_toEndOf="@+id/in_date" />
         </LinearLayout>
 
         <LinearLayout
@@ -273,7 +56,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:id="@+id/btn_next" />
-
         </LinearLayout>
     </LinearLayout>
 
