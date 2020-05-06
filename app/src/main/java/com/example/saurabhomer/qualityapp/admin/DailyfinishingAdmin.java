@@ -150,9 +150,7 @@ public class DailyfinishingAdmin extends AppCompatActivity
                             Toast.makeText(DailyfinishingAdmin.this, "Opps! No data found", Toast.LENGTH_SHORT).show();
                             finish();
                         }
-
                     }
-
                 }
                 progressDialog.hide();
             }
@@ -432,12 +430,12 @@ public class DailyfinishingAdmin extends AppCompatActivity
     }
 
     private void setLayout(String object ,String result)
+{
+    if(result!=null)
     {
-        if(result!=null)
-        {
-            TextView textView = new TextView(DailyfinishingAdmin.this);
-            textView.setText(object + " : " + result);
-            layout.addView(textView);
-        }
+        TextView textView = new TextView(DailyfinishingAdmin.this);
+        textView.setText(object + " : " + result);
+        layout.addView(textView);
     }
+}
 }
