@@ -8,6 +8,7 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.saurabhomer.qualityapp.CartoonAudit.AreaofOutsideCartoon;
 import com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit;
 import com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAuditModel;
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis;
@@ -149,7 +150,7 @@ public class CardMenuP extends AppCompatActivity
                     startActivity(i);
                 }
                 else {
-                    Intent i = new Intent(CardMenuP.this, CartoonAudit.class);
+                    Intent i = new Intent(CardMenuP.this, AreaofOutsideCartoon.class);
                     startActivity(i);
 
                 }

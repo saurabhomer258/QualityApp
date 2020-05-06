@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingAnalysis2;
@@ -24,6 +25,7 @@ import static com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit.areaO
 import static com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit.cartoonAuditModel;
 
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
+import static java.lang.Integer.parseInt;
 
 public class AreaOfPackingMaterial extends AppCompatActivity {
 
@@ -43,8 +45,11 @@ public class AreaOfPackingMaterial extends AppCompatActivity {
         final EditText editText_edt_cartoon = view_edt_cartoon.findViewById(R.id.atvCommon);
 
 
-        View view_edt_check_cartoon = findViewById(R.id.edt_check_cartoon);
-        final EditText editText_edt_check_cartoon = view_edt_check_cartoon.findViewById(R.id.atvCommon);
+//        View view_edt_check_cartoon = findViewById(R.id.edt_check_cartoon);
+//        final EditText editText_edt_check_cartoon = view_edt_check_cartoon.findViewById(R.id.atvCommon);
+
+        //checkquantity
+        final TextView carton_checkquantity = (TextView) findViewById(R.id.checkquantity);
 
 
         View view_edt_packinglabel = findViewById(R.id.edt_packinglabel);
@@ -87,28 +92,82 @@ public class AreaOfPackingMaterial extends AppCompatActivity {
         View btn_done = findViewById(R.id.btn_done_measurement);
         Button bt_done = btn_done.findViewById(R.id.btnNext);
 
+        View btn_result = findViewById(R.id.btn_result);
+        Button remark_btn = btn_result.findViewById(R.id.btnNext);
+
+        final TextView textView_edt_remarks = (TextView) findViewById(R.id.remarks);
+
+
+        remark_btn.setText("Show Remark");
+
+        remark_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String hour1 =  editText_edt_hour.getText().toString();
+                String edt_carton = editText_edt_cartoon.getText().toString();
+                String total_defect = editText_edt_total_defect_count.getText().toString();
+
+                if(isNullOrEmpty(hour1) || isNullOrEmpty(edt_carton) || isNullOrEmpty(total_defect) )
+                {
+                    Toast.makeText(AreaOfPackingMaterial.this, "Please enter hour,carton quantity and total default", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    int res = getIntOfRedio(radioButton_edt_additionallabel.isChecked())
+                            + getIntOfRedio(radioButton_edt_damagelabel.isChecked())
+                            + getIntOfRedio(radioButton_edt_incorrectHanger.isChecked())
+                            + getIntOfRedio(radioButton_edt_incorrectlabel.isChecked())
+                            + getIntOfRedio(radioButton_edt_incorrectSize.isChecked())
+                            + getIntOfRedio(radioButton_edt_incorrectUPC.isChecked())
+                            + getIntOfRedio(radioButton_edt_misplace.isChecked())
+                            + getIntOfRedio(radioButton_edt_polywarning.isChecked())
+                            + getIntOfRedio(radioButton_view_edt_packinglabel.isChecked());
+                    String tot = editText_edt_total_defect_count.getText().toString();
+                    int tot1 = parseInt(tot);
+                    //Toast.makeText(AreaOfPackingMaterial.this, ""+tot1, Toast.LENGTH_SHORT).show();
+                    if(res==0 && tot1 == 0)
+                    {
+                        textView_edt_remarks.setText("Pass");
+                    }else{
+                        textView_edt_remarks.setText("Fail");
+                    }
+                }
+                }
+
+
+
+        });
+
         bt_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                AreaOfPackingMaterialModel areaOfPackingMaterialModel = new AreaOfPackingMaterialModel();
-                areaOfPackingMaterialModel.setHour_inside1(editText_edt_hour.getText().toString());
-                areaOfPackingMaterialModel.setCartoon_lot(editText_edt_cartoon.getText().toString());
-                areaOfPackingMaterialModel.setCheckcartoon(editText_edt_check_cartoon.getText().toString());
-                areaOfPackingMaterialModel.setPackinglabel(getStringOfRedio(radioButton_view_edt_packinglabel.isChecked()));
-                areaOfPackingMaterialModel.setAdditionlabel(getStringOfRedio(radioButton_edt_additionallabel.isChecked()));
-                areaOfPackingMaterialModel.setMisplacelabel(getStringOfRedio(radioButton_edt_misplace.isChecked()));
-                areaOfPackingMaterialModel.setIncorrectlabel(getStringOfRedio(radioButton_edt_incorrectlabel.isChecked()));
-                areaOfPackingMaterialModel.setDamagelabel(getStringOfRedio(radioButton_edt_damagelabel.isChecked()));
-                areaOfPackingMaterialModel.setIncorrectupc(getStringOfRedio(radioButton_edt_incorrectUPC.isChecked()));
-                areaOfPackingMaterialModel.setIncorrectsize(getStringOfRedio(radioButton_edt_incorrectSize.isChecked()));
-                areaOfPackingMaterialModel.setIncorrecthanger(getStringOfRedio(radioButton_edt_incorrectHanger.isChecked()));
-                areaOfPackingMaterialModel.setPolywarning(getStringOfRedio(radioButton_edt_polywarning.isChecked()));
-                areaOfPackingMaterialModel.setTotaldefectcount(editText_edt_total_defect_count.getText().toString());
-                areaOfPackingMaterialArrayList.add(areaOfPackingMaterialModel);
-                Intent i =new Intent(AreaOfPackingMaterial.this, AreaOfPackingMaterial.class);
-                startActivity(i);
-                finish();
+                String remark = textView_edt_remarks.getText().toString();
+                if(isNullOrEmpty(remark))
+                {
+                    Toast.makeText(AreaOfPackingMaterial.this, "Please enter remark", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    AreaOfPackingMaterialModel areaOfPackingMaterialModel = new AreaOfPackingMaterialModel();
+                    areaOfPackingMaterialModel.setHour_inside1(editText_edt_hour.getText().toString());
+                    areaOfPackingMaterialModel.setCartoon_lot(editText_edt_cartoon.getText().toString());
+                    areaOfPackingMaterialModel.setCheckcartoon(carton_checkquantity.getText().toString());
+                    areaOfPackingMaterialModel.setPackinglabel(getStringOfRedio(radioButton_view_edt_packinglabel.isChecked()));
+                    areaOfPackingMaterialModel.setAdditionlabel(getStringOfRedio(radioButton_edt_additionallabel.isChecked()));
+                    areaOfPackingMaterialModel.setMisplacelabel(getStringOfRedio(radioButton_edt_misplace.isChecked()));
+                    areaOfPackingMaterialModel.setIncorrectlabel(getStringOfRedio(radioButton_edt_incorrectlabel.isChecked()));
+                    areaOfPackingMaterialModel.setDamagelabel(getStringOfRedio(radioButton_edt_damagelabel.isChecked()));
+                    areaOfPackingMaterialModel.setIncorrectupc(getStringOfRedio(radioButton_edt_incorrectUPC.isChecked()));
+                    areaOfPackingMaterialModel.setIncorrectsize(getStringOfRedio(radioButton_edt_incorrectSize.isChecked()));
+                    areaOfPackingMaterialModel.setIncorrecthanger(getStringOfRedio(radioButton_edt_incorrectHanger.isChecked()));
+                    areaOfPackingMaterialModel.setPolywarning(getStringOfRedio(radioButton_edt_polywarning.isChecked()));
+                    areaOfPackingMaterialModel.setTotaldefectcount(editText_edt_total_defect_count.getText().toString());
+                    areaOfPackingMaterialArrayList.add(areaOfPackingMaterialModel);
+                    Intent i = new Intent(AreaOfPackingMaterial.this, AreaOfPackingMaterial.class);
+                    startActivity(i);
+                    finish();
+                }
             }
         });
 
@@ -116,38 +175,44 @@ public class AreaOfPackingMaterial extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                AreaOfPackingMaterialModel areaOfPackingMaterialModel = new AreaOfPackingMaterialModel();
-                areaOfPackingMaterialModel.setHour_inside1(editText_edt_hour.getText().toString());
-                areaOfPackingMaterialModel.setCartoon_lot(editText_edt_cartoon.getText().toString());
-                areaOfPackingMaterialModel.setCheckcartoon(editText_edt_check_cartoon.getText().toString());
-                areaOfPackingMaterialModel.setPackinglabel(getStringOfRedio(radioButton_view_edt_packinglabel.isChecked()));
-                areaOfPackingMaterialModel.setAdditionlabel(getStringOfRedio(radioButton_edt_additionallabel.isChecked()));
-                areaOfPackingMaterialModel.setMisplacelabel(getStringOfRedio(radioButton_edt_misplace.isChecked()));
-                areaOfPackingMaterialModel.setIncorrectlabel(getStringOfRedio(radioButton_edt_incorrectlabel.isChecked()));
-                areaOfPackingMaterialModel.setDamagelabel(getStringOfRedio(radioButton_edt_damagelabel.isChecked()));
-                areaOfPackingMaterialModel.setIncorrectupc(getStringOfRedio(radioButton_edt_incorrectUPC.isChecked()));
-                areaOfPackingMaterialModel.setIncorrectsize(getStringOfRedio(radioButton_edt_incorrectSize.isChecked()));
-                areaOfPackingMaterialModel.setIncorrecthanger(getStringOfRedio(radioButton_edt_incorrectHanger.isChecked()));
-                areaOfPackingMaterialModel.setPolywarning(getStringOfRedio(radioButton_edt_polywarning.isChecked()));
-                areaOfPackingMaterialModel.setTotaldefectcount(editText_edt_total_defect_count.getText().toString());
-                areaOfPackingMaterialArrayList.add(areaOfPackingMaterialModel);
-                cartoonAuditModel.setAreaOfPackingMaterialArrayList(areaOfPackingMaterialArrayList);
+                String remark = textView_edt_remarks.getText().toString();
+                if(isNullOrEmpty(remark))
+                {
+                    Toast.makeText(AreaOfPackingMaterial.this, "Please enter remark", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    AreaOfPackingMaterialModel areaOfPackingMaterialModel = new AreaOfPackingMaterialModel();
+                    areaOfPackingMaterialModel.setHour_inside1(editText_edt_hour.getText().toString());
+                    areaOfPackingMaterialModel.setCartoon_lot(editText_edt_cartoon.getText().toString());
+                    areaOfPackingMaterialModel.setCheckcartoon(carton_checkquantity.getText().toString());
+                    areaOfPackingMaterialModel.setPackinglabel(getStringOfRedio(radioButton_view_edt_packinglabel.isChecked()));
+                    areaOfPackingMaterialModel.setAdditionlabel(getStringOfRedio(radioButton_edt_additionallabel.isChecked()));
+                    areaOfPackingMaterialModel.setMisplacelabel(getStringOfRedio(radioButton_edt_misplace.isChecked()));
+                    areaOfPackingMaterialModel.setIncorrectlabel(getStringOfRedio(radioButton_edt_incorrectlabel.isChecked()));
+                    areaOfPackingMaterialModel.setDamagelabel(getStringOfRedio(radioButton_edt_damagelabel.isChecked()));
+                    areaOfPackingMaterialModel.setIncorrectupc(getStringOfRedio(radioButton_edt_incorrectUPC.isChecked()));
+                    areaOfPackingMaterialModel.setIncorrectsize(getStringOfRedio(radioButton_edt_incorrectSize.isChecked()));
+                    areaOfPackingMaterialModel.setIncorrecthanger(getStringOfRedio(radioButton_edt_incorrectHanger.isChecked()));
+                    areaOfPackingMaterialModel.setPolywarning(getStringOfRedio(radioButton_edt_polywarning.isChecked()));
+                    areaOfPackingMaterialModel.setTotaldefectcount(editText_edt_total_defect_count.getText().toString());
+                    areaOfPackingMaterialArrayList.add(areaOfPackingMaterialModel);
+                    cartoonAuditModel.setAreaOfPackingMaterialArrayList(areaOfPackingMaterialArrayList);
 
-                FirebaseDatabase.getInstance().getReference("cartoonaudit").child(STYLE_NUMBER).setValue(cartoonAuditModel).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if(!task.isComplete())
-                        {
-                            Toast.makeText(AreaOfPackingMaterial.this,"opps ! some thing went wrong, please try again",Toast.LENGTH_SHORT).show();
+                    FirebaseDatabase.getInstance().getReference("cartoonaudit").child(STYLE_NUMBER).setValue(cartoonAuditModel).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (!task.isComplete()) {
+                                Toast.makeText(AreaOfPackingMaterial.this, "opps ! some thing went wrong, please try again", Toast.LENGTH_SHORT).show();
+                            }
+                            progressDialog.dismiss();
+                            finish();
                         }
-                        progressDialog.dismiss();
-                        finish();
-                    }
-                });
-                areaOfPackingMaterialArrayList.clear();
-                Intent i =new Intent(AreaOfPackingMaterial.this, CardMenuP.class);
-                startActivity(i);
-                finish();
+                    });
+                    areaOfPackingMaterialArrayList.clear();
+                    Intent i = new Intent(AreaOfPackingMaterial.this, CardMenuP.class);
+                    startActivity(i);
+                    finish();
+                }
             }
         });
     }
@@ -156,5 +221,15 @@ public class AreaOfPackingMaterial extends AppCompatActivity {
     {
         if(okButton) return "ok";
         else return "notOk";
+    }
+
+    private int getIntOfRedio(boolean okButton) {
+        if (okButton) return 0;
+        else return 1;
+    }
+    public static boolean isNullOrEmpty(String str) {
+        if(str != null && !str.trim().isEmpty())
+            return false;
+        return true;
     }
 }

@@ -8,8 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.saurabhomer.qualityapp.R;
+import com.example.saurabhomer.qualityapp.SkuCheckReport.model.SkuCheckReport100ModelList;
 import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenuP;
 
 import java.util.ArrayList;
@@ -57,24 +59,66 @@ public class AreaofOutsideCartoon extends AppCompatActivity
         View btn_done = findViewById(R.id.btn_done_measurement);
         Button bt_done = btn_done.findViewById(R.id.btnNext);
 
+        View btn_result = findViewById(R.id.btn_result);
+        Button remark_btn = btn_result.findViewById(R.id.btnNext);
+
+        remark_btn.setText("Show Remark");
+        remark_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                String hour1 = editText_edt_hour.getText().toString();
+                String edt_carton = editText_edt_cartoon.getText().toString();
+
+                if(isNullOrEmpty(hour1) || isNullOrEmpty(edt_carton))
+                {
+                    Toast.makeText(AreaofOutsideCartoon.this, "Please Enter the Hour and Carton Lot Quantity", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    int res =  getIntOfRedio(radioButton_edt_cartoon_shiping.isChecked())
+                            +getIntOfRedio(radioButton_edt_printing.isChecked())
+                            +getIntOfRedio(radioButton_edt_car_size.isChecked())
+                            +getIntOfRedio(radioButton_edt_cartoon_no.isChecked())
+                            +getIntOfRedio(radioButton_edt_barcode.isChecked())
+                            +getIntOfRedio(radioButton_edt_car_fly.isChecked());
+                    if(res==0) {
+                        textView_edt_remarks.setText("Pass");
+                    }
+                    else {
+                        textView_edt_remarks.setText("Fail");
+                    }
+                }
+            }
+        });
+
         bt_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                AreaofOutsideCartoonModel areaofOutsideCartoonModel = new AreaofOutsideCartoonModel();
-                areaofOutsideCartoonModel.setHour(editText_edt_hour.getText().toString());
-                areaofOutsideCartoonModel.setCartoonlotquantity(editText_edt_cartoon.getText().toString());
-                areaofOutsideCartoonModel.setCartoonshipingmark(getStringOfRedio(radioButton_edt_cartoon_shiping.isChecked()));
-                areaofOutsideCartoonModel.setPrinting(getStringOfRedio(radioButton_edt_printing.isChecked()));
-                areaofOutsideCartoonModel.setCartoonsize(getStringOfRedio(radioButton_edt_car_size.isChecked()));
-                areaofOutsideCartoonModel.setCartoonno(getStringOfRedio(radioButton_edt_cartoon_no.isChecked()));
-                areaofOutsideCartoonModel.setBarcode(getStringOfRedio(radioButton_edt_barcode.isChecked()));
-                areaofOutsideCartoonModel.setCartoonfly(getStringOfRedio(radioButton_edt_car_fly.isChecked()));
-                areaofOutsideCartoonModel.setRemarks(textView_edt_remarks.getText().toString());
-                areaofOutsideCartoonModelArrayList.add(areaofOutsideCartoonModel);
-                Intent i =new Intent(AreaofOutsideCartoon.this, AreaofOutsideCartoon.class);
-                startActivity(i);
-                finish();
+                String remark = textView_edt_remarks.getText().toString();
+
+                if (isNullOrEmpty(remark)) {
+                    Toast.makeText(AreaofOutsideCartoon.this, "Remark should not be null", Toast.LENGTH_SHORT).show();
+                }
+                else {
+
+                    AreaofOutsideCartoonModel areaofOutsideCartoonModel = new AreaofOutsideCartoonModel();
+                    areaofOutsideCartoonModel.setHour(editText_edt_hour.getText().toString());
+                    areaofOutsideCartoonModel.setCartoonlotquantity(editText_edt_cartoon.getText().toString());
+                    areaofOutsideCartoonModel.setCartoonshipingmark(getStringOfRedio(radioButton_edt_cartoon_shiping.isChecked()));
+                    areaofOutsideCartoonModel.setPrinting(getStringOfRedio(radioButton_edt_printing.isChecked()));
+                    areaofOutsideCartoonModel.setCartoonsize(getStringOfRedio(radioButton_edt_car_size.isChecked()));
+                    areaofOutsideCartoonModel.setCartoonno(getStringOfRedio(radioButton_edt_cartoon_no.isChecked()));
+                    areaofOutsideCartoonModel.setBarcode(getStringOfRedio(radioButton_edt_barcode.isChecked()));
+                    areaofOutsideCartoonModel.setCartoonfly(getStringOfRedio(radioButton_edt_car_fly.isChecked()));
+                    areaofOutsideCartoonModel.setRemarks(textView_edt_remarks.getText().toString());
+                    areaofOutsideCartoonModelArrayList.add(areaofOutsideCartoonModel);
+                    Intent i =new Intent(AreaofOutsideCartoon.this, AreaofOutsideCartoon.class);
+                    startActivity(i);
+                    finish();
+                }
+
             }
         });
 
@@ -83,20 +127,28 @@ public class AreaofOutsideCartoon extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                AreaofOutsideCartoonModel areaofOutsideCartoonModel = new AreaofOutsideCartoonModel();
-                areaofOutsideCartoonModel.setHour(editText_edt_hour.getText().toString());
-                areaofOutsideCartoonModel.setCartoonlotquantity(editText_edt_cartoon.getText().toString());
-                areaofOutsideCartoonModel.setCartoonshipingmark(getStringOfRedio(radioButton_edt_cartoon_shiping.isChecked()));
-                areaofOutsideCartoonModel.setPrinting(getStringOfRedio(radioButton_edt_printing.isChecked()));
-                areaofOutsideCartoonModel.setCartoonsize(getStringOfRedio(radioButton_edt_car_size.isChecked()));
-                areaofOutsideCartoonModel.setCartoonno(getStringOfRedio(radioButton_edt_cartoon_no.isChecked()));
-                areaofOutsideCartoonModel.setBarcode(getStringOfRedio(radioButton_edt_barcode.isChecked()));
-                areaofOutsideCartoonModel.setCartoonfly(getStringOfRedio(radioButton_edt_car_fly.isChecked()));
-                areaofOutsideCartoonModel.setRemarks(textView_edt_remarks.getText().toString());
-                areaofOutsideCartoonModelArrayList.add(areaofOutsideCartoonModel);
-                cartoonAuditModel.setAreaofOutsideCartoonModelArrayList(areaofOutsideCartoonModelArrayList);
-                Intent i =new Intent(AreaofOutsideCartoon.this, AreaOfInsideCartoon.class);
-                startActivity(i);
+
+                String remark = textView_edt_remarks.getText().toString();
+
+                if (isNullOrEmpty(remark)) {
+                    Toast.makeText(AreaofOutsideCartoon.this, "Remark should not be null", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    AreaofOutsideCartoonModel areaofOutsideCartoonModel = new AreaofOutsideCartoonModel();
+                    areaofOutsideCartoonModel.setHour(editText_edt_hour.getText().toString());
+                    areaofOutsideCartoonModel.setCartoonlotquantity(editText_edt_cartoon.getText().toString());
+                    areaofOutsideCartoonModel.setCartoonshipingmark(getStringOfRedio(radioButton_edt_cartoon_shiping.isChecked()));
+                    areaofOutsideCartoonModel.setPrinting(getStringOfRedio(radioButton_edt_printing.isChecked()));
+                    areaofOutsideCartoonModel.setCartoonsize(getStringOfRedio(radioButton_edt_car_size.isChecked()));
+                    areaofOutsideCartoonModel.setCartoonno(getStringOfRedio(radioButton_edt_cartoon_no.isChecked()));
+                    areaofOutsideCartoonModel.setBarcode(getStringOfRedio(radioButton_edt_barcode.isChecked()));
+                    areaofOutsideCartoonModel.setCartoonfly(getStringOfRedio(radioButton_edt_car_fly.isChecked()));
+                    areaofOutsideCartoonModel.setRemarks(textView_edt_remarks.getText().toString());
+                    areaofOutsideCartoonModelArrayList.add(areaofOutsideCartoonModel);
+                    cartoonAuditModel.setAreaofOutsideCartoonModelArrayList(areaofOutsideCartoonModelArrayList);
+                    Intent i = new Intent(AreaofOutsideCartoon.this, AreaOfInsideCartoon.class);
+                    startActivity(i);
+                }
             }
         });
     }
@@ -105,5 +157,16 @@ public class AreaofOutsideCartoon extends AppCompatActivity
     {
         if(okButton) return "ok";
         else return "notOk";
+    }
+
+    private int getIntOfRedio(boolean okButton) {
+        if (okButton) return 0;
+        else return 1;
+    }
+
+    public static boolean isNullOrEmpty(String str) {
+        if(str != null && !str.trim().isEmpty())
+            return false;
+        return true;
     }
 }
