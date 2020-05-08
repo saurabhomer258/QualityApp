@@ -98,9 +98,11 @@ public class AreaofOutsideCartoon extends AppCompatActivity
                 String hour1 = editText_edt_hour.getText().toString();
                 String edt_carton = editText_edt_cartoon.getText().toString();
 
+
                 if(isNullOrEmpty(hour1) || isNullOrEmpty(edt_carton))
                 {
                     Toast.makeText(AreaofOutsideCartoon.this, "Please Enter the Hour and Carton Lot Quantity", Toast.LENGTH_SHORT).show();
+
                 }
                 else {
 
@@ -132,9 +134,11 @@ public class AreaofOutsideCartoon extends AppCompatActivity
                 String hour1 = editText_edt_hour.getText().toString();
                 String edt_carton = editText_edt_cartoon.getText().toString();
 
+
                 if(isNullOrEmpty(hour1) || isNullOrEmpty(edt_carton))
                 {
                     Toast.makeText(AreaofOutsideCartoon.this, "Please Enter the Hour and Carton Lot Quantity", Toast.LENGTH_SHORT).show();
+
                 }
                 else {
                     AreaofOutsideCartoonModel areaofOutsideCartoonModel = new AreaofOutsideCartoonModel();
