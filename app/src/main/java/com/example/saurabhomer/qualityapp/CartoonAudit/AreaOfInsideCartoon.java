@@ -3,6 +3,9 @@ package com.example.saurabhomer.qualityapp.CartoonAudit;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.InputType;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,15 +13,14 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.saurabhomer.qualityapp.CartoonAudit.model.AreaofInsideCartoonModel;
 import com.example.saurabhomer.qualityapp.R;
 
-import static com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit.areaOfPackingMaterialArrayList;
 import static com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit.areaofInsideCartoonModelArrayList;
 import static com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit.cartoonAuditModel;
-import static java.lang.Integer.*;
 
 public class AreaOfInsideCartoon extends AppCompatActivity {
-
+    TextView defectCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +32,10 @@ public class AreaOfInsideCartoon extends AppCompatActivity {
 
         View view_edt_cartoon = findViewById(R.id.edt_cartoon);
         final EditText editText_edt_cartoon = view_edt_cartoon.findViewById(R.id.atvCommon);
-
-
+        editText_edt_cartoon.setInputType(InputType.TYPE_CLASS_NUMBER |
+                InputType.TYPE_NUMBER_FLAG_DECIMAL |
+                InputType.TYPE_NUMBER_FLAG_SIGNED);
+        defectCount = findViewById(R.id.total_defect);
 //        View view_edt_check_cartoon = findViewById(R.id.edt_check_cartoon);
 //        final EditText editText_edt_check_cartoon = view_edt_check_cartoon.findViewById(R.id.atvCommon);
 
@@ -46,20 +50,20 @@ public class AreaOfInsideCartoon extends AppCompatActivity {
         final RadioButton radioButton_edt_assorment = view_edt_assorment.findViewById(R.id.ok);
 
         View view_edt_quantity = findViewById(R.id.edt_quantity);
-        final RadioButton radioButton_edt_quantity= view_edt_quantity.findViewById(R.id.ok);
+        final RadioButton radioButton_edt_quantity = view_edt_quantity.findViewById(R.id.ok);
 
         View view_edt_item = findViewById(R.id.edt_item);
-        final RadioButton radioButton_edt_item= view_edt_item.findViewById(R.id.ok);
+        final RadioButton radioButton_edt_item = view_edt_item.findViewById(R.id.ok);
 
 
         View view_edt_colour = findViewById(R.id.edt_colour);
-        final RadioButton radioButton_edt_colour= view_edt_colour.findViewById(R.id.ok);
+        final RadioButton radioButton_edt_colour = view_edt_colour.findViewById(R.id.ok);
 
         View view_edt_ratio = findViewById(R.id.edt_ratio);
-        final RadioButton radioButton_edt_ratio= view_edt_ratio.findViewById(R.id.ok);
+        final RadioButton radioButton_edt_ratio = view_edt_ratio.findViewById(R.id.ok);
 
-        View view_edt_total_defect_count = findViewById(R.id.edt_total_defect_count);
-        final EditText editText_edt_total_defect_count = view_edt_total_defect_count.findViewById(R.id.atvCommon);
+//        View view_edt_total_defect_count = findViewById(R.id.edt_total_defect_count);
+//        final EditText editText_edt_total_defect_count = view_edt_total_defect_count.findViewById(R.id.atvCommon);
 
         View btn_next = findViewById(R.id.btn_next);
         Button bt_next = btn_next.findViewById(R.id.btnNext);
@@ -80,21 +84,43 @@ public class AreaOfInsideCartoon extends AppCompatActivity {
 
 
         remark_btn.setText("Show Remark");
+        editText_edt_cartoon.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                try {
+                   int res =Integer.parseInt(s.toString().trim());
+                    float f = (Integer) res*.20f;
+                    carton_checkquantity.setText(f+"");
+                }
+                catch (Exception e)
+
+                {
+                    Toast.makeText(AreaOfInsideCartoon.this, "Wrong input", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
         remark_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                String hour1 =  editText_edt_hour.getText().toString();
+                String hour1 = editText_edt_hour.getText().toString();
                 String edt_carton = editText_edt_cartoon.getText().toString();
-                String total_defect = editText_edt_total_defect_count.getText().toString();
 
-                if(isNullOrEmpty(hour1) || isNullOrEmpty(edt_carton) || isNullOrEmpty(total_defect) )
-                {
+
+                if (isNullOrEmpty(hour1) || isNullOrEmpty(edt_carton) ) {
                     Toast.makeText(AreaOfInsideCartoon.this, "Please enter hour,carton quantity and total default", Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
+                } else {
                     int res = getIntOfRedio(radioButton_edt_ratio.isChecked())
                             + getIntOfRedio(radioButton_edt_assorment.isChecked())
                             + getIntOfRedio(radioButton_edt_blister.isChecked())
@@ -102,20 +128,19 @@ public class AreaOfInsideCartoon extends AppCompatActivity {
                             + getIntOfRedio(radioButton_edt_damage_blister.isChecked())
                             + getIntOfRedio(radioButton_edt_item.isChecked())
                             + getIntOfRedio(radioButton_edt_quantity.isChecked());
-                    String tot = editText_edt_total_defect_count.getText().toString();
-                    int tot1 = parseInt(tot);
+                   // String tot = editText_edt_total_defect_count.getText().toString();
+                   // int tot1 = parseInt(tot);
                     //Toast.makeText(AreaOfInsideCartoon.this, ""+tot1, Toast.LENGTH_SHORT).show();
 
 
-                    if(res==0 && tot1 == 0)
-                    {
+                    if (res == 0 ) {
                         textView_edt_remarks.setText("Pass");
-                    }
-                    else {
+                    } else {
                         textView_edt_remarks.setText("Fail");
                     }
+                    defectCount.setText(res +"");
                 }
-                }
+            }
 
 
         });
@@ -123,15 +148,17 @@ public class AreaOfInsideCartoon extends AppCompatActivity {
         bt_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                String hour1 = editText_edt_hour.getText().toString();
+                String edt_carton = editText_edt_cartoon.getText().toString();
+                String total_defect = defectCount.getText().toString();
                 String remark = textView_edt_remarks.getText().toString();
-                    if(isNullOrEmpty(remark))
-                    {
-                        Toast.makeText(AreaOfInsideCartoon.this, "Please enter remark", Toast.LENGTH_SHORT).show();
-                    }
-                    else
-                    {
-                    AreaofInsideCartoonModel areaofInsideCartoonModel=new AreaofInsideCartoonModel();
+
+                if (isNullOrEmpty(hour1) || isNullOrEmpty(edt_carton) || isNullOrEmpty(total_defect)) {
+                    Toast.makeText(AreaOfInsideCartoon.this, "Please enter hour,carton quantity and total default", Toast.LENGTH_SHORT).show();
+                }
+                else {
+
+                    AreaofInsideCartoonModel areaofInsideCartoonModel = new AreaofInsideCartoonModel();
                     areaofInsideCartoonModel.setHour(editText_edt_hour.getText().toString());
                     areaofInsideCartoonModel.setCartoonquantity(editText_edt_cartoon.getText().toString());
                     areaofInsideCartoonModel.setCheckcartton(editText_edt_cartoon.getText().toString());
@@ -143,25 +170,26 @@ public class AreaOfInsideCartoon extends AppCompatActivity {
                     areaofInsideCartoonModel.setItem(getStringOfRedio(radioButton_edt_item.isChecked()));
                     areaofInsideCartoonModel.setColour(getStringOfRedio(radioButton_edt_colour.isChecked()));
                     areaofInsideCartoonModel.setRatio(getStringOfRedio(radioButton_edt_ratio.isChecked()));
-                    areaofInsideCartoonModel.setTotaldefectno(editText_edt_total_defect_count.getText().toString());
+                    areaofInsideCartoonModel.setTotaldefectno(defectCount.getText().toString());
                     areaofInsideCartoonModelArrayList.add(areaofInsideCartoonModel);
-                    Intent i =new Intent(AreaOfInsideCartoon.this, AreaOfInsideCartoon.class);
+                    Intent i = new Intent(AreaOfInsideCartoon.this, AreaOfInsideCartoon.class);
                     startActivity(i);
                     finish();
+
                 }
-
-
             }
         });
 
         bt_done.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
+                String hour1 = editText_edt_hour.getText().toString();
+                String edt_carton = editText_edt_cartoon.getText().toString();
+                String total_defect = defectCount.getText().toString();
                 String remark = textView_edt_remarks.getText().toString();
-                if(isNullOrEmpty(remark))
-                {
-                    Toast.makeText(AreaOfInsideCartoon.this, "Please enter remark", Toast.LENGTH_SHORT).show();
+
+                if (isNullOrEmpty(hour1) || isNullOrEmpty(edt_carton) || isNullOrEmpty(total_defect)) {
+                    Toast.makeText(AreaOfInsideCartoon.this, "Please enter hour,carton quantity and total default", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     AreaofInsideCartoonModel areaofInsideCartoonModel = new AreaofInsideCartoonModel();
@@ -176,17 +204,20 @@ public class AreaOfInsideCartoon extends AppCompatActivity {
                     areaofInsideCartoonModel.setItem(getStringOfRedio(radioButton_edt_item.isChecked()));
                     areaofInsideCartoonModel.setColour(getStringOfRedio(radioButton_edt_colour.isChecked()));
                     areaofInsideCartoonModel.setRatio(getStringOfRedio(radioButton_edt_ratio.isChecked()));
-                    areaofInsideCartoonModel.setTotaldefectno(editText_edt_total_defect_count.getText().toString());
+                    areaofInsideCartoonModel.setTotaldefectno(defectCount.getText().toString());
                     areaofInsideCartoonModelArrayList.add(areaofInsideCartoonModel);
                     cartoonAuditModel.setAreaofInsideCartoonModelArrayList(areaofInsideCartoonModelArrayList);
                     Intent i = new Intent(AreaOfInsideCartoon.this, AreaOfPackingMaterial.class);
                     startActivity(i);
                 }
             }
+
+
         });
     }
-    private String getStringOfRedio(boolean okButton){
-        if(okButton) return "ok";
+
+    private String getStringOfRedio(boolean okButton) {
+        if (okButton) return "ok";
         else return "notOk";
     }
 
@@ -195,16 +226,15 @@ public class AreaOfInsideCartoon extends AppCompatActivity {
         else return 1;
     }
 
-    private int getpercentage(int value)
-    {
-        int res = 0 ;
+    private int getpercentage(int value) {
+        int res = 0;
         int x = 20;
-        res = x/100*value;
+        res = x / 100 * value;
         return res;
     }
 
     public static boolean isNullOrEmpty(String str) {
-        if(str != null && !str.trim().isEmpty())
+        if (str != null && !str.trim().isEmpty())
             return false;
         return true;
     }

@@ -1,4 +1,4 @@
-package com.example.saurabhomer.qualityapp.CartoonAudit;
+package com.example.saurabhomer.qualityapp.CartoonAudit.model;
 
 public class AreaOfPackingMaterialModel {
     public String hour_inside1,cartoon_lot,checkcartoon,misplacelabel,packinglabel,additionlabel,incorrectlabel,damagelabel,incorrectupc,incorrectsize,incorrecthanger;

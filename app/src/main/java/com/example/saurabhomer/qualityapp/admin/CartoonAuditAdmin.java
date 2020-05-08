@@ -7,14 +7,10 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.saurabhomer.qualityapp.CartoonAudit.AreaOfPackingMaterial;
-import com.example.saurabhomer.qualityapp.CartoonAudit.AreaOfPackingMaterialModel;
-import com.example.saurabhomer.qualityapp.CartoonAudit.AreaofInsideCartoonModel;
-import com.example.saurabhomer.qualityapp.CartoonAudit.AreaofOutsideCartoonModel;
-import com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit;
-import com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAuditModel;
-import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
-import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
+import com.example.saurabhomer.qualityapp.CartoonAudit.model.AreaOfPackingMaterialModel;
+import com.example.saurabhomer.qualityapp.CartoonAudit.model.AreaofInsideCartoonModel;
+import com.example.saurabhomer.qualityapp.CartoonAudit.model.AreaofOutsideCartoonModel;
+import com.example.saurabhomer.qualityapp.CartoonAudit.model.CartoonAuditModel;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.firebase.database.DataSnapshot;

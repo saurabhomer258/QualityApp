@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.InputType;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,11 +15,9 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingAnalysis2;
+import com.example.saurabhomer.qualityapp.CartoonAudit.model.AreaOfPackingMaterialModel;
 import com.example.saurabhomer.qualityapp.R;
-import com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100Page2;
 import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenuP;
-import com.example.saurabhomer.qualityapp.dialog.DailyFInishingResult;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.FirebaseDatabase;
@@ -29,7 +30,7 @@ import static java.lang.Integer.parseInt;
 
 public class AreaOfPackingMaterial extends AppCompatActivity {
 
-
+    TextView defectCount;
     private ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +44,10 @@ public class AreaOfPackingMaterial extends AppCompatActivity {
 
         View view_edt_cartoon = findViewById(R.id.edt_cartoon);
         final EditText editText_edt_cartoon = view_edt_cartoon.findViewById(R.id.atvCommon);
-
-
+        defectCount = findViewById(R.id.total_defect);
+        editText_edt_cartoon.setInputType(InputType.TYPE_CLASS_NUMBER |
+                InputType.TYPE_NUMBER_FLAG_DECIMAL |
+                InputType.TYPE_NUMBER_FLAG_SIGNED);
 //        View view_edt_check_cartoon = findViewById(R.id.edt_check_cartoon);
 //        final EditText editText_edt_check_cartoon = view_edt_check_cartoon.findViewById(R.id.atvCommon);
 
@@ -82,8 +85,6 @@ public class AreaOfPackingMaterial extends AppCompatActivity {
         final RadioButton radioButton_edt_polywarning= view_edt_polywarning.findViewById(R.id.ok);
 
 
-        View view_edt_total_defect_count = findViewById(R.id.edt_total_defect_count);
-        final EditText editText_edt_total_defect_count = view_edt_total_defect_count.findViewById(R.id.atvCommon);
 
 
         View btn_next = findViewById(R.id.btn_next);
@@ -96,7 +97,31 @@ public class AreaOfPackingMaterial extends AppCompatActivity {
         Button remark_btn = btn_result.findViewById(R.id.btnNext);
 
         final TextView textView_edt_remarks = (TextView) findViewById(R.id.remarks);
+        editText_edt_cartoon.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                try {
+                    int res =Integer.parseInt(s.toString().trim());
+                    float f = (Integer) res*.30f;
+                    carton_checkquantity.setText(f+"");
+                }
+                catch (Exception e)
+
+                {
+                    Toast.makeText(AreaOfPackingMaterial.this, "Wrong input", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
         remark_btn.setText("Show Remark");
 
@@ -106,9 +131,9 @@ public class AreaOfPackingMaterial extends AppCompatActivity {
 
                 String hour1 =  editText_edt_hour.getText().toString();
                 String edt_carton = editText_edt_cartoon.getText().toString();
-                String total_defect = editText_edt_total_defect_count.getText().toString();
 
-                if(isNullOrEmpty(hour1) || isNullOrEmpty(edt_carton) || isNullOrEmpty(total_defect) )
+
+                if(isNullOrEmpty(hour1) || isNullOrEmpty(edt_carton) )
                 {
                     Toast.makeText(AreaOfPackingMaterial.this, "Please enter hour,carton quantity and total default", Toast.LENGTH_SHORT).show();
                 }
@@ -123,10 +148,11 @@ public class AreaOfPackingMaterial extends AppCompatActivity {
                             + getIntOfRedio(radioButton_edt_misplace.isChecked())
                             + getIntOfRedio(radioButton_edt_polywarning.isChecked())
                             + getIntOfRedio(radioButton_view_edt_packinglabel.isChecked());
-                    String tot = editText_edt_total_defect_count.getText().toString();
-                    int tot1 = parseInt(tot);
+
+
+                    defectCount.setText(res+"");
                     //Toast.makeText(AreaOfPackingMaterial.this, ""+tot1, Toast.LENGTH_SHORT).show();
-                    if(res==0 && tot1 == 0)
+                    if(res==0 )
                     {
                         textView_edt_remarks.setText("Pass");
                     }else{
@@ -144,9 +170,11 @@ public class AreaOfPackingMaterial extends AppCompatActivity {
             public void onClick(View v) {
 
                 String remark = textView_edt_remarks.getText().toString();
-                if(isNullOrEmpty(remark))
+                String hour1 =  editText_edt_hour.getText().toString();
+                String edt_carton = editText_edt_cartoon.getText().toString();
+                if(isNullOrEmpty(hour1) || isNullOrEmpty(edt_carton) )
                 {
-                    Toast.makeText(AreaOfPackingMaterial.this, "Please enter remark", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AreaOfPackingMaterial.this, "Please enter hour,carton quantity and total default", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     AreaOfPackingMaterialModel areaOfPackingMaterialModel = new AreaOfPackingMaterialModel();
@@ -162,7 +190,7 @@ public class AreaOfPackingMaterial extends AppCompatActivity {
                     areaOfPackingMaterialModel.setIncorrectsize(getStringOfRedio(radioButton_edt_incorrectSize.isChecked()));
                     areaOfPackingMaterialModel.setIncorrecthanger(getStringOfRedio(radioButton_edt_incorrectHanger.isChecked()));
                     areaOfPackingMaterialModel.setPolywarning(getStringOfRedio(radioButton_edt_polywarning.isChecked()));
-                    areaOfPackingMaterialModel.setTotaldefectcount(editText_edt_total_defect_count.getText().toString());
+                    areaOfPackingMaterialModel.setTotaldefectcount(defectCount.getText().toString());
                     areaOfPackingMaterialArrayList.add(areaOfPackingMaterialModel);
                     Intent i = new Intent(AreaOfPackingMaterial.this, AreaOfPackingMaterial.class);
                     startActivity(i);
@@ -194,7 +222,7 @@ public class AreaOfPackingMaterial extends AppCompatActivity {
                     areaOfPackingMaterialModel.setIncorrectsize(getStringOfRedio(radioButton_edt_incorrectSize.isChecked()));
                     areaOfPackingMaterialModel.setIncorrecthanger(getStringOfRedio(radioButton_edt_incorrectHanger.isChecked()));
                     areaOfPackingMaterialModel.setPolywarning(getStringOfRedio(radioButton_edt_polywarning.isChecked()));
-                    areaOfPackingMaterialModel.setTotaldefectcount(editText_edt_total_defect_count.getText().toString());
+                    areaOfPackingMaterialModel.setTotaldefectcount(defectCount.getText().toString());
                     areaOfPackingMaterialArrayList.add(areaOfPackingMaterialModel);
                     cartoonAuditModel.setAreaOfPackingMaterialArrayList(areaOfPackingMaterialArrayList);
 

@@ -2,7 +2,6 @@ package com.example.saurabhomer.qualityapp.SkuCheckReport;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,24 +11,13 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAuditModel;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.model.MainSkuModel;
-import com.example.saurabhomer.qualityapp.SkuCheckReport.model.SkuCheckReport100Model;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.model.SkuCheckReport100ModelList;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.model.SkuDateModel;
-import com.example.saurabhomer.qualityapp.admin.SkuAdmin;
-import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenuP;
-import com.example.saurabhomer.qualityapp.pref.LoginPref;
-import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
 
 import customView.NextButton;
 

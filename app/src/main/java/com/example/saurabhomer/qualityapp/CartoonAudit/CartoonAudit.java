@@ -8,6 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import com.example.saurabhomer.qualityapp.CartoonAudit.model.AreaOfPackingMaterialModel;
+import com.example.saurabhomer.qualityapp.CartoonAudit.model.AreaofInsideCartoonModel;
+import com.example.saurabhomer.qualityapp.CartoonAudit.model.AreaofOutsideCartoonModel;
+import com.example.saurabhomer.qualityapp.CartoonAudit.model.CartoonAuditModel;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.ui.BaseActivity;
 

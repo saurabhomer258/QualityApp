@@ -1,6 +1,4 @@
-package com.example.saurabhomer.qualityapp.CartoonAudit;
-
-import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
+package com.example.saurabhomer.qualityapp.CartoonAudit.model;
 
 import java.util.ArrayList;
 

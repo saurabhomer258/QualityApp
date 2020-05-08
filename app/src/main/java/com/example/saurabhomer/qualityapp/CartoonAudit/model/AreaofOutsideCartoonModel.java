@@ -1,4 +1,4 @@
-package com.example.saurabhomer.qualityapp.CartoonAudit;
+package com.example.saurabhomer.qualityapp.CartoonAudit.model;
 
 public class AreaofOutsideCartoonModel
 {

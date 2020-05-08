@@ -6,24 +6,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
-import android.widget.Toast;
 
-import com.example.saurabhomer.qualityapp.CartoonAudit.AreaofOutsideCartoon;
 import com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit;
-import com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAuditModel;
+import com.example.saurabhomer.qualityapp.CartoonAudit.model.CartoonAuditModel;
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis;
 import com.example.saurabhomer.qualityapp.GetUp.DailyFinishingDefectAnalysisGetup;
 import com.example.saurabhomer.qualityapp.Measurement.Measurment;
-import com.example.saurabhomer.qualityapp.Measurement.Mesurement1;
 import com.example.saurabhomer.qualityapp.MetelDetectionPage.MetelDetectionPage;
 import com.example.saurabhomer.qualityapp.OutSide.DailyFinishingDefectAnalysisOutside;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100Page1;
-import com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100Page2;
 import com.example.saurabhomer.qualityapp.admin.CartoonAuditAdmin;
-import com.example.saurabhomer.qualityapp.admin.DailyfinishingAdmin;
-import com.example.saurabhomer.qualityapp.admin.DailyfinishingGetUpAdmin;
-import com.example.saurabhomer.qualityapp.admin.DailyfinishingOutsideAdmin;
 
 import com.example.saurabhomer.qualityapp.admin.MetelDetectionAdmin;
 
@@ -32,14 +25,6 @@ import com.example.saurabhomer.qualityapp.admin.MesurementAdmin;
 import com.example.saurabhomer.qualityapp.admin.SkuAdmin;
 import com.example.saurabhomer.qualityapp.pref.LoginPref;
 import com.example.saurabhomer.qualityapp.utils.CommonDailyDateFilter;
-import com.example.saurabhomer.qualityapp.utils.CommonDateFilter;
-import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
 public class CardMenuP extends AppCompatActivity
 {

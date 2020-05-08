@@ -10,17 +10,15 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.saurabhomer.qualityapp.CartoonAudit.model.AreaofOutsideCartoonModel;
 import com.example.saurabhomer.qualityapp.R;
-import com.example.saurabhomer.qualityapp.SkuCheckReport.model.SkuCheckReport100ModelList;
-import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenuP;
-
-import java.util.ArrayList;
 
 import static com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit.areaofOutsideCartoonModelArrayList;
 import static com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit.cartoonAuditModel;
 
 public class AreaofOutsideCartoon extends AppCompatActivity
 {
+        TextView defectCount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +26,7 @@ public class AreaofOutsideCartoon extends AppCompatActivity
 
         View view_edt_hour = findViewById(R.id.edt_hour);
         final EditText editText_edt_hour = view_edt_hour.findViewById(R.id.atvCommon);
-
+        defectCount = findViewById(R.id.total_defect);
         View view_edt_cartoon = findViewById(R.id.edt_cartoon);
         final EditText editText_edt_cartoon = view_edt_cartoon.findViewById(R.id.atvCommon);
 
@@ -88,6 +86,7 @@ public class AreaofOutsideCartoon extends AppCompatActivity
                     else {
                         textView_edt_remarks.setText("Fail");
                     }
+                    defectCount.setText(res +"");
                 }
             }
         });
@@ -96,10 +95,12 @@ public class AreaofOutsideCartoon extends AppCompatActivity
             @Override
             public void onClick(View v) {
 
-                String remark = textView_edt_remarks.getText().toString();
+                String hour1 = editText_edt_hour.getText().toString();
+                String edt_carton = editText_edt_cartoon.getText().toString();
 
-                if (isNullOrEmpty(remark)) {
-                    Toast.makeText(AreaofOutsideCartoon.this, "Remark should not be null", Toast.LENGTH_SHORT).show();
+                if(isNullOrEmpty(hour1) || isNullOrEmpty(edt_carton))
+                {
+                    Toast.makeText(AreaofOutsideCartoon.this, "Please Enter the Hour and Carton Lot Quantity", Toast.LENGTH_SHORT).show();
                 }
                 else {
 
@@ -128,10 +129,12 @@ public class AreaofOutsideCartoon extends AppCompatActivity
             public void onClick(View v)
             {
 
-                String remark = textView_edt_remarks.getText().toString();
+                String hour1 = editText_edt_hour.getText().toString();
+                String edt_carton = editText_edt_cartoon.getText().toString();
 
-                if (isNullOrEmpty(remark)) {
-                    Toast.makeText(AreaofOutsideCartoon.this, "Remark should not be null", Toast.LENGTH_SHORT).show();
+                if(isNullOrEmpty(hour1) || isNullOrEmpty(edt_carton))
+                {
+                    Toast.makeText(AreaofOutsideCartoon.this, "Please Enter the Hour and Carton Lot Quantity", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     AreaofOutsideCartoonModel areaofOutsideCartoonModel = new AreaofOutsideCartoonModel();
