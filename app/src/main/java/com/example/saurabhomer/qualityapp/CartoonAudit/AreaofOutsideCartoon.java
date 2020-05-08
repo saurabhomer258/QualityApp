@@ -99,7 +99,7 @@ public class AreaofOutsideCartoon extends AppCompatActivity
                 String remark = textView_edt_remarks.getText().toString();
 
                 if (isNullOrEmpty(remark)) {
-                    Toast.makeText(AreaofOutsideCartoon.this, "Remark should not be null", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AreaofOutsideCartoon.this, "Please enter remark", Toast.LENGTH_SHORT).show();
                 }
                 else {
 
@@ -131,7 +131,7 @@ public class AreaofOutsideCartoon extends AppCompatActivity
                 String remark = textView_edt_remarks.getText().toString();
 
                 if (isNullOrEmpty(remark)) {
-                    Toast.makeText(AreaofOutsideCartoon.this, "Remark should not be null", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AreaofOutsideCartoon.this, "Please enter remark", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     AreaofOutsideCartoonModel areaofOutsideCartoonModel = new AreaofOutsideCartoonModel();
