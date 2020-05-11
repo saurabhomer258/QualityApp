@@ -11,6 +11,7 @@ import com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit;
 import com.example.saurabhomer.qualityapp.CartoonAudit.model.CartoonAuditModel;
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis;
 import com.example.saurabhomer.qualityapp.GetUp.DailyFinishingDefectAnalysisGetup;
+import com.example.saurabhomer.qualityapp.InlinePrelineFinal.InlinePrelineFinal;
 import com.example.saurabhomer.qualityapp.Measurement.Measurment;
 import com.example.saurabhomer.qualityapp.MetelDetectionPage.MetelDetectionPage;
 import com.example.saurabhomer.qualityapp.OutSide.DailyFinishingDefectAnalysisOutside;
@@ -146,7 +147,8 @@ public class CardMenuP extends AppCompatActivity
         inlinefinal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i =  new Intent(CardMenuP.this, InlinePrelineFinal.class);
+                startActivity(i);
             }
         });
     }

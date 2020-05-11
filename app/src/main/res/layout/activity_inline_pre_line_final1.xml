@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:layout_gravity="center_vertical"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="WARE LABEL"
+                android:layout_weight="5"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.RadioButtonNOTOK
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="5"
+                android:paddingTop="10dp"
+                android:id="@+id/edt_blister" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:layout_gravity="center_vertical"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="  MAIN LABEL"
+                android:layout_weight="5"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.RadioButtonNOTOK
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="5"
+                android:paddingTop="10dp"
+                android:id="@+id/edt_blister" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:layout_gravity="center_vertical"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="SIZE LABEL"
+                android:layout_weight="5"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.RadioButtonNOTOK
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="5"
+                android:paddingTop="10dp"
+                android:id="@+id/edt_blister" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:layout_gravity="center_vertical"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="HANG TAG"
+                android:layout_weight="5"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.RadioButtonNOTOK
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="5"
+                android:paddingTop="10dp"
+                android:id="@+id/edt_blister" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:layout_gravity="center_vertical"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="CARE LABEL"
+                android:layout_weight="5"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.RadioButtonNOTOK
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="5"
+                android:paddingTop="10dp"
+                android:id="@+id/edt_blister" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:layout_gravity="center_vertical"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="PRICE TAG"
+                android:layout_weight="5"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.RadioButtonNOTOK
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="5"
+                android:paddingTop="10dp"
+                android:id="@+id/edt_blister" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="CARTON MARKING"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/edt_hour" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="CARTON MARKING"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/edt_hour" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="CARTON QUALITY"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/edt_hour" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="GROSS WEIGHT"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/edt_hour" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="NET WEIGHT"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/edt_hour" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="BURST WEIGHT"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/edt_hour" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="COLOUR"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/edt_hour" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="CUT QUANTITY"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/edt_hour" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="THREAD COLOUR"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/edt_hour" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="BUTTON COLOUR"
+
+                android:layout_weight="3"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:id="@+id/edt_hour" />
+
+        </LinearLayout>
+
+        <customView.NextButton
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="50dp"
+            android:id="@+id/bt_next"/>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

@@ -5,13 +5,12 @@ import android.os.Bundle;
 
 import com.example.saurabhomer.qualityapp.R;
 
-public class InlinePrelineFinal extends AppCompatActivity {
+public class InlinePreLineFinal1 extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inline_preline_final);
+        setContentView(R.layout.activity_inline_pre_line_final1);
 
     }
 }

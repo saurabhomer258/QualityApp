@@ -73,8 +73,10 @@
         <activity android:name=".DailyFinishingAnalysis.ResultViewForActivity" />
         <activity android:name=".Measurement.Measurement2" />
         <activity android:name=".Measurement.ResultViewForActivity" />
-        <activity android:name=".admin.MesurementAdmin"></activity>
+        <activity android:name=".admin.MesurementAdmin" />
         <activity android:name=".Measurement.ResultViewFinalForActivity" />
+        <activity android:name=".InlinePrelineFinal.InlinePreLineFinal1" />
+        <activity android:name=".InlinePrelineFinal.inlinePreLineFInal2"></activity>
     </application>
 
 </manifest>
