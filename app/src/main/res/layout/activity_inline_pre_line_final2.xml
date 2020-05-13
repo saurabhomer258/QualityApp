@@ -31,7 +31,7 @@
 
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
-                android:id="@+id/edt_hour" />
+                android:id="@+id/edt_quantity" />
 
         </LinearLayout>
 
@@ -60,7 +60,7 @@
 
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
-                android:id="@+id/edt_hour" />
+                android:id="@+id/sel_aql" />
 
         </LinearLayout>
 
@@ -89,7 +89,7 @@
 
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
-                android:id="@+id/edt_hour" />
+                android:id="@+id/inspection_level" />
 
         </LinearLayout>
         <customView.NextButton
