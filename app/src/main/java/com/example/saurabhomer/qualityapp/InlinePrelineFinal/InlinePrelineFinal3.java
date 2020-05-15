@@ -40,21 +40,27 @@ public class InlinePrelineFinal3 extends AppCompatActivity {
         final EditText edt_critical = findViewById(R.id.edt_critical).findViewById(R.id.atvCommon);
         final EditText edt_minor = findViewById(R.id.edt_minor).findViewById(R.id.atvCommon);
         final EditText edt_major = findViewById(R.id.edt_major).findViewById(R.id.atvCommon);
-        final EditText edt_total = findViewById(R.id.edt_total).findViewById(R.id.atvCommon);
         final TextView txt_result = findViewById(R.id.txt_result);
         final TextView txt_remark = findViewById(R.id.txt_remark);
+        final TextView txt_total = findViewById(R.id.txt_total);
         final TextView txt_aql = findViewById(R.id.txt_aql);
         final TextView txt_inspection = findViewById(R.id.txt_inspection);
         final TextView txt_samplesize = findViewById(R.id.txt_samplesize);
         Button next =findViewById(R.id.btn_next).findViewById(R.id.btnNext);
         Button done =findViewById(R.id.btn_done).findViewById(R.id.btnNext);
-        Intent intent = new Intent();
-        String select_1 = intent.getStringExtra("Select_Level");
-        String inspection_1 = intent.getStringExtra("Inspection");
+
+        String select_1 = inlinePrelineFinalModel.getSelect_level();
+        String inspection_1 = inlinePrelineFinalModel.getInspection_level();
         txt_aql.setText(select_1);
         txt_inspection.setText(inspection_1);
 
+//        String minor = edt_minor.getText().toString();
+//        String major = edt_major.getText().toString();
+//        int total = Integer.parseInt(minor)+Integer.parseInt(major);
+//        txt_total.setText(total);
+
         next.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 InlinePrelineFinalModel1 inlinePrelineFinalModel1 = new InlinePrelineFinalModel1();
@@ -67,7 +73,7 @@ public class InlinePrelineFinal3 extends AppCompatActivity {
                 inlinePrelineFinalModel1.setCritical(edt_critical.getText().toString());
                 inlinePrelineFinalModel1.setRemark(txt_remark.getText().toString());
                 inlinePrelineFinalModel1.setResult(txt_result.getText().toString());
-                inlinePrelineFinalModel1.setTotal(edt_total.getText().toString());
+                inlinePrelineFinalModel1.setTotal(txt_total.getText().toString());
                 inlinePrelineFinalModel1List.add(inlinePrelineFinalModel1);
                 Intent i = new Intent(InlinePrelineFinal3.this, InlinePrelineFinal3.class);
                 startActivity(i);
