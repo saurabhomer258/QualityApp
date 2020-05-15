@@ -8,7 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.example.saurabhomer.qualityapp.InlinePrelineFinal.inlinemodel.InlinePrelineFinalModel;
 import com.example.saurabhomer.qualityapp.R;
+
+import static com.example.saurabhomer.qualityapp.InlinePrelineFinal.InlinePrelineFinal.inlinePrelineFinalModel;
 
 public class inlinePreLineFInal2 extends AppCompatActivity {
 
@@ -27,6 +30,10 @@ public class inlinePreLineFInal2 extends AppCompatActivity {
         bt_signin_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                inlinePrelineFinalModel.setQuantity(edt_quantity.getText().toString());
+                inlinePrelineFinalModel.setSelect_level(select_level.getSelectedItem().toString());
+                inlinePrelineFinalModel.setInspection_level(inspection_level.getSelectedItem().toString());
 
             }
         });

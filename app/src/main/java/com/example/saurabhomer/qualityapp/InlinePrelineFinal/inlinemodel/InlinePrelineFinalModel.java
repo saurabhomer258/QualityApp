@@ -6,10 +6,18 @@ public class InlinePrelineFinalModel {
     private String washlabel,mainlabel,sizelabel,hangtag,carelabel,pricetag;
     private String cartoonmarking,cartonmeasurement,cartonquality,grossweight;
     private String netweight, burstweight,colour,cutquantity,threadcolour,buttoncolour;
-    private String select_level,inspection_level;
+    private String select_level,inspection_level,quantity;
 
     public String getDate() {
         return Date;
+    }
+
+    public String getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
     }
 
     public void setDate(String date) {

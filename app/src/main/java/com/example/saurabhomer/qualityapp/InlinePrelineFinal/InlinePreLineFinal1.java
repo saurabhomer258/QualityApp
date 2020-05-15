@@ -8,7 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
+
 import com.example.saurabhomer.qualityapp.R;
+
+import static com.example.saurabhomer.qualityapp.InlinePrelineFinal.InlinePrelineFinal.inlinePrelineFinalModel;
 
 public class InlinePreLineFinal1 extends AppCompatActivity {
 
@@ -52,6 +55,17 @@ public class InlinePreLineFinal1 extends AppCompatActivity {
         bt_signin_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                inlinePrelineFinalModel.setCartoonmarking(edt_cartonmarking.getText().toString());
+                inlinePrelineFinalModel.setCartonmeasurement(edt_cartonmearsurement.getText().toString());
+                inlinePrelineFinalModel.setGrossweight(edt_grossweight.getText().toString());
+                inlinePrelineFinalModel.setCartonquality(edt_cartonquality.getText().toString());
+                inlinePrelineFinalModel.setNetweight(edt_netweight.getText().toString());
+                inlinePrelineFinalModel.setColour(edt_colour.getText().toString());
+                inlinePrelineFinalModel.setBurstweight(edt_burstweight.getText().toString());
+                inlinePrelineFinalModel.setCutquantity(edt_cutquantity.getText().toString());
+                inlinePrelineFinalModel.setButtoncolour(edt_buttoncolour.getText().toString());
+                inlinePrelineFinalModel.setThreadcolour(edt_threadcolour.getText().toString());
+
                 Intent intent = new Intent(InlinePreLineFinal1.this,inlinePreLineFInal2.class);
                 startActivity(intent);
             }

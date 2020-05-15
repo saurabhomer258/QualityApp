@@ -14,6 +14,7 @@ import android.widget.Spinner;
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingAnalysis2;
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis;
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.InsideResultView;
+import com.example.saurabhomer.qualityapp.InlinePrelineFinal.inlinemodel.InlinePrelineFinalModel;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.utils.CommonStyleData;
 
@@ -26,7 +27,7 @@ public class InlinePrelineFinal extends AppCompatActivity  implements View.OnCli
     EditText txtDate;
     Spinner finishing_line;
     Button info_btn;
-
+    static InlinePrelineFinalModel inlinePrelineFinalModel;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -44,9 +45,13 @@ public class InlinePrelineFinal extends AppCompatActivity  implements View.OnCli
 
         finishing_line= findViewById(R.id.edt_finishing).findViewById(R.id.spinner);
 
+
         bt_signin_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                inlinePrelineFinalModel = new InlinePrelineFinalModel();
+                inlinePrelineFinalModel.setDate(txtDate.getText().toString());
+                inlinePrelineFinalModel.setFinishing_line(finishing_line.getSelectedItem().toString());
                 Intent intent = new Intent(InlinePrelineFinal.this,InlinePreLineFinal1.class);
                 startActivity(intent);
             }
