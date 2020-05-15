@@ -1,5 +1,7 @@
 package com.example.saurabhomer.qualityapp.InlinePrelineFinal.inlinemodel;
 
+import java.util.ArrayList;
+
 public class InlinePrelineFinalModel {
 
     private String Date, finishing_line;
@@ -7,6 +9,16 @@ public class InlinePrelineFinalModel {
     private String cartoonmarking,cartonmeasurement,cartonquality,grossweight;
     private String netweight, burstweight,colour,cutquantity,threadcolour,buttoncolour;
     private String select_level,inspection_level,quantity;
+
+    ArrayList<InlinePrelineFinalModel1> inlinePrelineFinalModel1;
+
+    public ArrayList<InlinePrelineFinalModel1> getInlinePrelineFinalModel1() {
+        return inlinePrelineFinalModel1;
+    }
+
+    public void setInlinePrelineFinalModel1(ArrayList<InlinePrelineFinalModel1> inlinePrelineFinalModel1) {
+        this.inlinePrelineFinalModel1 = inlinePrelineFinalModel1;
+    }
 
     public String getDate() {
         return Date;

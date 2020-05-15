@@ -55,7 +55,7 @@
                 android:textSize="@dimen/common_text_size" />
 
 
-            <customView.DropDownSelectGernel
+            <customView.DropDownInspection
                 android:layout_width="0dp"
 
                 android:layout_height="wrap_content"

@@ -13,19 +13,19 @@ import com.example.saurabhomer.qualityapp.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DropDownSelectGernel extends RelativeLayout {
+public class DropDownInspection extends RelativeLayout {
     Spinner spinner;
-    public DropDownSelectGernel(Context context) {
+    public DropDownInspection(Context context) {
         super(context);
         init(context);
     }
 
-    public DropDownSelectGernel(Context context, AttributeSet attrs) {
+    public DropDownInspection(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context);
     }
 
-    public DropDownSelectGernel(Context context, AttributeSet attrs, int defStyleAttr) {
+    public DropDownInspection(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
     }
@@ -37,14 +37,8 @@ public class DropDownSelectGernel extends RelativeLayout {
             View view = inflater.inflate(R.layout.common_drop_down, this);
             spinner = (Spinner) findViewById(R.id.spinner);
             List<String> list = new ArrayList<String>();
-            list.add("GENERAL1");
-            list.add("GENERAL2");
-            list.add("GENERAL3");
-            list.add("Special Inspection");
-            list.add("Special Inspection1");
-            list.add("Special Inspection2");
-            list.add("Special Inspection3");
-
+            list.add("AQL 1.5");
+            list.add("AQL 2.5");
 
             ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,list);
             dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

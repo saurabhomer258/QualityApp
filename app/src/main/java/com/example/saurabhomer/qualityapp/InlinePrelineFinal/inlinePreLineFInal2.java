@@ -34,6 +34,13 @@ public class inlinePreLineFInal2 extends AppCompatActivity {
                 inlinePrelineFinalModel.setQuantity(edt_quantity.getText().toString());
                 inlinePrelineFinalModel.setSelect_level(select_level.getSelectedItem().toString());
                 inlinePrelineFinalModel.setInspection_level(inspection_level.getSelectedItem().toString());
+                String select = select_level.getSelectedItem().toString();
+                String inspection = inspection_level.getSelectedItem().toString();
+
+                Intent intent = new Intent(inlinePreLineFInal2.this,InlinePrelineFinal3.class);
+                intent.putExtra("Select_Level",select);
+                intent.putExtra("Inspection",inspection);
+                startActivity(intent);
 
             }
         });

@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:remove="android:appComponentFactory">
+        <activity android:name=".InlinePrelineFinal.InlinePrelineFinal3"></activity>
         <activity android:name=".utils.CommonDailyDateFilter" />
         <activity android:name=".utils.CommonDateFilter" />
         <activity android:name=".admin.CartoonAuditAdmin" />
@@ -76,7 +77,7 @@
         <activity android:name=".admin.MesurementAdmin" />
         <activity android:name=".Measurement.ResultViewFinalForActivity" />
         <activity android:name=".InlinePrelineFinal.InlinePreLineFinal1" />
-        <activity android:name=".InlinePrelineFinal.inlinePreLineFInal2"></activity>
+        <activity android:name=".InlinePrelineFinal.inlinePreLineFInal2" />
     </application>
 
 </manifest>
