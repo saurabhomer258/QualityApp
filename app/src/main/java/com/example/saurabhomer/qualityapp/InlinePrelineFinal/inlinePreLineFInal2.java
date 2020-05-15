@@ -3,6 +3,7 @@ package com.example.saurabhomer.qualityapp.InlinePrelineFinal;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +23,9 @@ public class inlinePreLineFInal2 extends AppCompatActivity {
         setContentView(R.layout.activity_inline_pre_line_final2);
 
         final EditText edt_quantity = findViewById(R.id.edt_quantity).findViewById(R.id.atvCommon);
+        edt_quantity.setInputType(InputType.TYPE_CLASS_NUMBER |
+                InputType.TYPE_NUMBER_FLAG_DECIMAL |
+                InputType.TYPE_NUMBER_FLAG_SIGNED);
         select_level= findViewById(R.id.sel_aql).findViewById(R.id.spinner);
         inspection_level= findViewById(R.id.inspection_level).findViewById(R.id.spinner);
         View signin_button = findViewById(R.id.bt_next);

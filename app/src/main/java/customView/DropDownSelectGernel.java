@@ -40,10 +40,7 @@ public class DropDownSelectGernel extends RelativeLayout {
             list.add("GENERAL1");
             list.add("GENERAL2");
             list.add("GENERAL3");
-            list.add("Special Inspection");
-            list.add("Special Inspection1");
-            list.add("Special Inspection2");
-            list.add("Special Inspection3");
+
 
 
             ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,list);
