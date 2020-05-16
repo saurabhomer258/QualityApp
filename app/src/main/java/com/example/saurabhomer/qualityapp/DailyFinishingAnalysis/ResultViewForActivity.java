@@ -407,8 +407,6 @@ public class ResultViewForActivity extends AppCompatActivity {
                 setString("Iron", val.get(i));
             }
         }
-
-
     }
 
     int count = 0;

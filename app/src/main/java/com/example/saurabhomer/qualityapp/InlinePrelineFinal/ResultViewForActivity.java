@@ -8,8 +8,14 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.saurabhomer.qualityapp.InlinePrelineFinal.inlinemodel.InlinePrelineFinalModel;
+import com.example.saurabhomer.qualityapp.InlinePrelineFinal.inlinemodel.InlinePrelineFinalModel1;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenuP;
+
+import java.util.ArrayList;
+
+import static com.example.saurabhomer.qualityapp.InlinePrelineFinal.InlinePrelineFinal.inlinePrelineFinalModel;
+import static com.example.saurabhomer.qualityapp.InlinePrelineFinal.InlinePrelineFinal.inlinePrelineFinalModel1ArrayList;
 
 public class ResultViewForActivity extends AppCompatActivity {
 
@@ -19,13 +25,17 @@ public class ResultViewForActivity extends AppCompatActivity {
         setContentView(R.layout.common_total);
 
         Button ok = (Button)findViewById(R.id.btn_ok);
-
-        InlinePrelineFinalModel inlinePrelineFinalModel = new InlinePrelineFinalModel();
+       // InlinePrelineFinalModel inlinePrelineFinalModel = new InlinePrelineFinalModel();
         inlinePrelineFinalModel.setDate(inlinePrelineFinalModel.getDate());
         inlinePrelineFinalModel.setFinishing_line(inlinePrelineFinalModel.getFinishing_line());
         inlinePrelineFinalModel.setQuantity(inlinePrelineFinalModel.getQuantity());
         inlinePrelineFinalModel.setSelect_level(inlinePrelineFinalModel.getSelect_level());
         inlinePrelineFinalModel.setInspection_level(inlinePrelineFinalModel.getInspection_level());
+        inlinePrelineFinalModel.setInlinePrelineFinalModel1(inlinePrelineFinalModel1ArrayList);
+        ArrayList<InlinePrelineFinalModel1> inlinelist = new ArrayList<>();
+        inlinelist = inlinePrelineFinalModel.getInlinePrelineFinalModel1();
+
+
 
         TextView textView1 = findViewById(R.id.data1);
         textView1.setText("Date          :" + inlinePrelineFinalModel.getDate());
