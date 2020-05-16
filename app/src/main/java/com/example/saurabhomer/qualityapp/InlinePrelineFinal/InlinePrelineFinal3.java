@@ -122,7 +122,7 @@ public class InlinePrelineFinal3 extends AppCompatActivity {
                         finish();
                     }
                 });
-                inlinePrelineFinalModel1List.clear();
+//                inlinePrelineFinalModel1List.clear();
                 Intent i = new Intent(InlinePrelineFinal3.this, ResultViewForActivity.class);
                 startActivity(i);
                 finish();
