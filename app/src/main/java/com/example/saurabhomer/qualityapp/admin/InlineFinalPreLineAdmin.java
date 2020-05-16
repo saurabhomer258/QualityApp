@@ -88,19 +88,8 @@ public class InlineFinalPreLineAdmin extends AppCompatActivity {
                 layout.addView(textView2);
 
                 ArrayList<InlinePrelineFinalModel1> list = inlinePrelineFinalModel.getInlinePrelineFinalModel1();
-                for(InlinePrelineFinalModel1 items:list)
-                {
-                    setLayout("AQL",items.getAql());
-                    setLayout("Inspection",items.getInspection());
-                    setLayout("Sample Size", items.getSamplesize());
-                    setLayout("Defect Name", items.getDefectname());
-                    setLayout("Critical", items.getCritical());
-                    setLayout("Major", items.getMajor());
-                    setLayout("Minor", items.getMinor());
-                    setLayout("Total", items.getTotal());
-                    setLayout("Result", items.getResult());
-                    setLayout("Remark", items.getRemark());
-                }
+
+
                 progressDialog.hide();
             }
 

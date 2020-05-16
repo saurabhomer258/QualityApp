@@ -10,12 +10,15 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.saurabhomer.qualityapp.InlinePrelineFinal.inlinemodel.InlinePrelineFinalModel;
+import com.example.saurabhomer.qualityapp.InlinePrelineFinal.inlinemodel.InlinePrelineFinalModel1;
 import com.example.saurabhomer.qualityapp.R;
+
+import java.util.ArrayList;
 
 import static com.example.saurabhomer.qualityapp.InlinePrelineFinal.InlinePrelineFinal.inlinePrelineFinalModel;
 
 public class inlinePreLineFInal2 extends AppCompatActivity {
-
+    public static ArrayList<InlinePrelineFinalModel1> inlinePrelineFinalModel1List = new ArrayList<>();
     Spinner select_level,inspection_level;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,11 +27,12 @@ import java.util.ArrayList;
 
 
 import static com.example.saurabhomer.qualityapp.InlinePrelineFinal.InlinePrelineFinal.inlinePrelineFinalModel;
+import static com.example.saurabhomer.qualityapp.InlinePrelineFinal.inlinePreLineFInal2.inlinePrelineFinalModel1List;
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
 public class InlinePrelineFinal3 extends AppCompatActivity {
 
-    static ArrayList<InlinePrelineFinalModel1> inlinePrelineFinalModel1List = new ArrayList<>();
+
     private ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +42,17 @@ public class InlinePrelineFinal3 extends AppCompatActivity {
 
         final EditText edt_defectname = findViewById(R.id.edt_defectname).findViewById(R.id.atvCommon);
         final EditText edt_critical = findViewById(R.id.edt_critical).findViewById(R.id.atvCommon);
+        edt_critical.setInputType(InputType.TYPE_CLASS_NUMBER |
+                InputType.TYPE_NUMBER_FLAG_DECIMAL |
+                InputType.TYPE_NUMBER_FLAG_SIGNED);
         final EditText edt_minor = findViewById(R.id.edt_minor).findViewById(R.id.atvCommon);
+        edt_minor .setInputType(InputType.TYPE_CLASS_NUMBER |
+                InputType.TYPE_NUMBER_FLAG_DECIMAL |
+                InputType.TYPE_NUMBER_FLAG_SIGNED);
         final EditText edt_major = findViewById(R.id.edt_major).findViewById(R.id.atvCommon);
+        edt_major.setInputType(InputType.TYPE_CLASS_NUMBER |
+                InputType.TYPE_NUMBER_FLAG_DECIMAL |
+                InputType.TYPE_NUMBER_FLAG_SIGNED);
         final TextView txt_result = findViewById(R.id.txt_result);
         final TextView txt_remark = findViewById(R.id.txt_remark);
         final TextView txt_total = findViewById(R.id.txt_total);
@@ -122,7 +133,7 @@ public class InlinePrelineFinal3 extends AppCompatActivity {
                         finish();
                     }
                 });
-                inlinePrelineFinalModel1List.clear();
+
                 Intent i = new Intent(InlinePrelineFinal3.this, ResultViewForActivity.class);
                 startActivity(i);
                 finish();
