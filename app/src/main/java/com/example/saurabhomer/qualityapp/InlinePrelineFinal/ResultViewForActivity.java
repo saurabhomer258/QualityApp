@@ -7,13 +7,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingAnalysis2;
 import com.example.saurabhomer.qualityapp.InlinePrelineFinal.inlinemodel.InlinePrelineFinalModel;
 import com.example.saurabhomer.qualityapp.InlinePrelineFinal.inlinemodel.InlinePrelineFinalModel1;
+import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenuP;
 
 import org.w3c.dom.Text;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import static com.example.saurabhomer.qualityapp.InlinePrelineFinal.InlinePrelineFinal.inlinePrelineFinalModel;
@@ -35,6 +38,14 @@ public class ResultViewForActivity extends AppCompatActivity {
 //        inlinePrelineFinalModel.setInspection_level(inlinePrelineFinalModel.getInspection_level());
 //        inlinePrelineFinalModel.setInlinePrelineFinalModel1(inlinePrelineFinalModel1ArrayList);
 
+
+//        DialyFinishingAnalysisModel dialyFinishingAnalysisModel = DailyFinishingAnalysis2.DAILYFINIFSHINGMODELLISTForFinalResut.get(0);
+//        totalVal = dialyFinishingAnalysisModel.getTotal();
+//        ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
+//        DAILYFINIFSHINGMODELLIST = DailyFinishingAnalysis2.DAILYFINIFSHINGMODELLISTForFinalResut;
+//        ArrayList<DialyFinishingAnalysisModel> Dummy = new ArrayList<>();
+//
+//        Dummy.add(dialyFinishingAnalysisModel);
 
 
 
@@ -100,9 +111,6 @@ public class ResultViewForActivity extends AppCompatActivity {
 
         TextView textView21 = findViewById(R.id.data21);
         textView21.setText("Button Color               :" + inlinePrelineFinalModel.getButtoncolour());
-
-
-
 
         ok.setOnClickListener(new View.OnClickListener()
         {
