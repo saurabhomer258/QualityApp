@@ -24,7 +24,7 @@ public class inlinePreLineFInal2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inline_pre_line_final2);
-
+          inlinePrelineFinalModel1List = new ArrayList<>();
         final EditText edt_quantity = findViewById(R.id.edt_quantity).findViewById(R.id.atvCommon);
         edt_quantity.setInputType(InputType.TYPE_CLASS_NUMBER |
                 InputType.TYPE_NUMBER_FLAG_DECIMAL |
@@ -44,7 +44,7 @@ public class inlinePreLineFInal2 extends AppCompatActivity {
 
                 Intent intent = new Intent(inlinePreLineFInal2.this,InlinePrelineFinal3.class);
                 startActivity(intent);
-
+                finish();
             }
         });
 

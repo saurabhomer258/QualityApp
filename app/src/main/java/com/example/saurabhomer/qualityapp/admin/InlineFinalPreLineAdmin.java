@@ -10,6 +10,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.saurabhomer.qualityapp.CartoonAudit.model.AreaofOutsideCartoonModel;
+import com.example.saurabhomer.qualityapp.InlinePrelineFinal.handles.InlinePreLineHandler;
+import com.example.saurabhomer.qualityapp.InlinePrelineFinal.handles.ResultModel;
+import com.example.saurabhomer.qualityapp.InlinePrelineFinal.inlinePreLineFInal2;
 import com.example.saurabhomer.qualityapp.InlinePrelineFinal.inlinemodel.InlinePrelineFinalModel;
 import com.example.saurabhomer.qualityapp.InlinePrelineFinal.inlinemodel.InlinePrelineFinalModel1;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
@@ -49,50 +52,78 @@ public class InlineFinalPreLineAdmin extends AppCompatActivity {
         FirebaseDatabase.getInstance().getReference("inlinepreline")
                 .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot)
-            {
-                InlinePrelineFinalModel inlinePrelineFinalModel = dataSnapshot.getValue(InlinePrelineFinalModel.class);
-                setLayout("Date", inlinePrelineFinalModel.getDate());
-                setLayout("Finishing line",inlinePrelineFinalModel.getFinishing_line());
-                TextView textView= new TextView(InlineFinalPreLineAdmin.this);
-                textView.setText("_________________________________________________");
-                layout.addView(textView);
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot != null) {
+                    InlinePrelineFinalModel inlinePrelineFinalModel = dataSnapshot.getValue(InlinePrelineFinalModel.class);
+                    if(inlinePrelineFinalModel!=null) {
+                        setLayout("Date", inlinePrelineFinalModel.getDate());
+                        setLayout("Finishing line", inlinePrelineFinalModel.getFinishing_line());
+                        TextView textView = new TextView(InlineFinalPreLineAdmin.this);
+                        textView.setText("_________________________________________________");
+                        layout.addView(textView);
 
-                setLayout("Wash Label ",inlinePrelineFinalModel.getWashlabel());
-                setLayout("Main Label ",inlinePrelineFinalModel.getMainlabel());
-                setLayout("Size Label ",inlinePrelineFinalModel.getSizelabel());
-                setLayout("Hang Tag",inlinePrelineFinalModel.getHangtag());
-                setLayout("Care Label ",inlinePrelineFinalModel.getCarelabel());
-                setLayout("Price Tag",inlinePrelineFinalModel.getPricetag());
-                setLayout("Carton Marking",inlinePrelineFinalModel.getCartoonmarking());
-                setLayout("Carton Measurement",inlinePrelineFinalModel.getCartonmeasurement());
-                setLayout("Carton Quality",inlinePrelineFinalModel.getCartonquality());
-                setLayout("Gross Weight",inlinePrelineFinalModel.getGrossweight());
-                setLayout("Net Weight",inlinePrelineFinalModel.getNetweight());
-                setLayout("Brust Weight",inlinePrelineFinalModel.getBurstweight());
-                setLayout("Colour",inlinePrelineFinalModel.getColour());
-                setLayout("Cut Quantity",inlinePrelineFinalModel.getCutquantity());
-                setLayout("Thread Colour",inlinePrelineFinalModel.getThreadcolour());
-                setLayout("Button Colour",inlinePrelineFinalModel.getButtoncolour());
+                        setLayout("Wash Label ", inlinePrelineFinalModel.getWashlabel());
+                        setLayout("Main Label ", inlinePrelineFinalModel.getMainlabel());
+                        setLayout("Size Label ", inlinePrelineFinalModel.getSizelabel());
+                        setLayout("Hang Tag", inlinePrelineFinalModel.getHangtag());
+                        setLayout("Care Label ", inlinePrelineFinalModel.getCarelabel());
+                        setLayout("Price Tag", inlinePrelineFinalModel.getPricetag());
+                        setLayout("Carton Marking", inlinePrelineFinalModel.getCartoonmarking());
+                        setLayout("Carton Measurement", inlinePrelineFinalModel.getCartonmeasurement());
+                        setLayout("Carton Quality", inlinePrelineFinalModel.getCartonquality());
+                        setLayout("Gross Weight", inlinePrelineFinalModel.getGrossweight());
+                        setLayout("Net Weight", inlinePrelineFinalModel.getNetweight());
+                        setLayout("Brust Weight", inlinePrelineFinalModel.getBurstweight());
+                        setLayout("Colour", inlinePrelineFinalModel.getColour());
+                        setLayout("Cut Quantity", inlinePrelineFinalModel.getCutquantity());
+                        setLayout("Thread Colour", inlinePrelineFinalModel.getThreadcolour());
+                        setLayout("Button Colour", inlinePrelineFinalModel.getButtoncolour());
 
-                TextView textView1= new TextView(InlineFinalPreLineAdmin.this);
-                textView1.setText("_________________________________________________");
-                layout.addView(textView1);
+                        TextView textView1 = new TextView(InlineFinalPreLineAdmin.this);
+                        textView1.setText("_________________________________________________");
+                        layout.addView(textView1);
 
-                setLayout("Quantity",inlinePrelineFinalModel.getQuantity());
-                setLayout("Select Level",inlinePrelineFinalModel.getSelect_level());
-                setLayout("Inspection Level",inlinePrelineFinalModel.getInspection_level());
+                        setLayout("Quantity", inlinePrelineFinalModel.getQuantity());
+                        setLayout("Select Level", inlinePrelineFinalModel.getSelect_level());
+                        setLayout("Inspection Level", inlinePrelineFinalModel.getInspection_level());
 
-                TextView textView2= new TextView(InlineFinalPreLineAdmin.this);
-                textView2.setText("_________________________________________________");
-                layout.addView(textView2);
+                        TextView textView2 = new TextView(InlineFinalPreLineAdmin.this);
+                        textView2.setText("_________________________________________________");
+                        layout.addView(textView2);
 
-                ArrayList<InlinePrelineFinalModel1> list = inlinePrelineFinalModel.getInlinePrelineFinalModel1();
+                        ArrayList<InlinePrelineFinalModel1> list = inlinePrelineFinalModel.getInlinePrelineFinalModel1();
+                        int sum = 0;
+                        for (InlinePrelineFinalModel1 items : list) {
+                            textView2.setText("_________________________________________________");
+                            setLayout("AQL", items.getAql());
+                            setLayout("Inspection", items.getInspection());
+                            setLayout("Sample Size", items.getSamplesize());
+                            setLayout("Defect Name", items.getDefectname());
+                            setLayout("Critical", items.getCritical());
+                            setLayout("Major", items.getMajor());
+                            setLayout("Minor", items.getMinor());
+                            setLayout("Total", items.getTotal());
+                            sum = sum + Integer.parseInt(items.getTotal());
 
+                        }
+                        textView2.setText("   ");
+                        textView2.setText("_________________________________________________");
+                        InlinePreLineHandler inlinePreLineHandler = new InlinePreLineHandler(inlinePrelineFinalModel.getSelect_level(), inlinePrelineFinalModel.getInspection_level(), Integer.parseInt(inlinePrelineFinalModel.getQuantity()));
 
-                progressDialog.hide();
+                        final ResultModel resultModel = inlinePreLineHandler.getResult();
+
+                        setLayout("Total ", "" + sum);
+                        if (sum <= resultModel.getCRITICAL_ACE()) {
+                            setLayout("REMARK ", "  PASS");
+                        } else {
+                            setLayout("REMARK ", " FAIL");
+                        }
+                        progressDialog.hide();
+                        textView2.setText("   ");
+                        textView2.setText("   ");
+                    }
+                }
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 progressDialog.hide();

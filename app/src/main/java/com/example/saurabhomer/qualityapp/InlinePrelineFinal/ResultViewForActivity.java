@@ -9,6 +9,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingAnalysis2;
+import com.example.saurabhomer.qualityapp.InlinePrelineFinal.handles.InlinePreLineHandler;
+import com.example.saurabhomer.qualityapp.InlinePrelineFinal.handles.ResultModel;
 import com.example.saurabhomer.qualityapp.InlinePrelineFinal.inlinemodel.InlinePrelineFinalModel;
 import com.example.saurabhomer.qualityapp.InlinePrelineFinal.inlinemodel.InlinePrelineFinalModel1;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
@@ -28,12 +30,13 @@ import static com.example.saurabhomer.qualityapp.InlinePrelineFinal.InlinePrelin
 
 public class ResultViewForActivity extends AppCompatActivity {
     LinearLayout layout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.common_total2);
         layout = findViewById(R.id.dailyLayout);
-        Button ok = (Button)findViewById(R.id.btn_ok);
+        Button ok = (Button) findViewById(R.id.btn_ok);
 //       // InlinePrelineFinalModel inlinePrelineFinalModel = new InlinePrelineFinalModel();
 //        inlinePrelineFinalModel.setDate(inlinePrelineFinalModel.getDate());
 //        inlinePrelineFinalModel.setFinishing_line(inlinePrelineFinalModel.getFinishing_line());
@@ -52,118 +55,90 @@ public class ResultViewForActivity extends AppCompatActivity {
 //        Dummy.add(dialyFinishingAnalysisModel);
 
 
-
-
-
         setLayout("Date       ", inlinePrelineFinalModel.getDate());
 
-        setLayout("Finishing Line     :" , inlinePrelineFinalModel.getFinishing_line());
+        setLayout("Finishing Line     :", inlinePrelineFinalModel.getFinishing_line());
 
 
-        setLayout("Quantity             :" , inlinePrelineFinalModel.getQuantity());
+        setLayout("Quantity             :", inlinePrelineFinalModel.getQuantity());
 
-        setLayout("Select Level        :" , inlinePrelineFinalModel.getSelect_level());
+        setLayout("Select Level        :", inlinePrelineFinalModel.getSelect_level());
 
 
-        setLayout("Inspection Level               :" , inlinePrelineFinalModel.getInspection_level());
+        setLayout("Inspection Level               :", inlinePrelineFinalModel.getInspection_level());
 
-        setLayout("Wash Label ",inlinePrelineFinalModel.getWashlabel());
-        setLayout("Main Label ",inlinePrelineFinalModel.getMainlabel());
-        setLayout("Size Label ",inlinePrelineFinalModel.getSizelabel());
-        setLayout("Hang Tag",inlinePrelineFinalModel.getHangtag());
-        setLayout("Care Label ",inlinePrelineFinalModel.getCarelabel());
-        setLayout("Price Tag",inlinePrelineFinalModel.getPricetag());
-        setLayout("Carton Marking",inlinePrelineFinalModel.getCartoonmarking());
-        setLayout("Carton Measurement",inlinePrelineFinalModel.getCartonmeasurement());
-        setLayout("Carton Quality",inlinePrelineFinalModel.getCartonquality());
-        setLayout("Gross Weight",inlinePrelineFinalModel.getGrossweight());
-        setLayout("Net Weight",inlinePrelineFinalModel.getNetweight());
-        setLayout("Brust Weight",inlinePrelineFinalModel.getBurstweight());
-        setLayout("Colour",inlinePrelineFinalModel.getColour());
-        setLayout("Cut Quantity",inlinePrelineFinalModel.getCutquantity());
-        setLayout("Thread Colour",inlinePrelineFinalModel.getThreadcolour());
-        setLayout("Button Colour",inlinePrelineFinalModel.getButtoncolour());
-
-        for(InlinePrelineFinalModel1 items:inlinePreLineFInal2.inlinePrelineFinalModel1List)
-        {
-            setLayout("AQL",items.getAql());
-            setLayout("Inspection",items.getInspection());
+        setLayout("Wash Label ", inlinePrelineFinalModel.getWashlabel());
+        setLayout("Main Label ", inlinePrelineFinalModel.getMainlabel());
+        setLayout("Size Label ", inlinePrelineFinalModel.getSizelabel());
+        setLayout("Hang Tag", inlinePrelineFinalModel.getHangtag());
+        setLayout("Care Label ", inlinePrelineFinalModel.getCarelabel());
+        setLayout("Price Tag", inlinePrelineFinalModel.getPricetag());
+        setLayout("Carton Marking", inlinePrelineFinalModel.getCartoonmarking());
+        setLayout("Carton Measurement", inlinePrelineFinalModel.getCartonmeasurement());
+        setLayout("Carton Quality", inlinePrelineFinalModel.getCartonquality());
+        setLayout("Gross Weight", inlinePrelineFinalModel.getGrossweight());
+        setLayout("Net Weight", inlinePrelineFinalModel.getNetweight());
+        setLayout("Brust Weight", inlinePrelineFinalModel.getBurstweight());
+        setLayout("Colour", inlinePrelineFinalModel.getColour());
+        setLayout("Cut Quantity", inlinePrelineFinalModel.getCutquantity());
+        setLayout("Thread Colour", inlinePrelineFinalModel.getThreadcolour());
+        setLayout("Button Colour", inlinePrelineFinalModel.getButtoncolour());
+        int sum = 0;
+        for (InlinePrelineFinalModel1 items : inlinePreLineFInal2.inlinePrelineFinalModel1List) {
+            setLayout();
+            setLayout("AQL", items.getAql());
+            setLayout("Inspection", items.getInspection());
             setLayout("Sample Size", items.getSamplesize());
             setLayout("Defect Name", items.getDefectname());
             setLayout("Critical", items.getCritical());
             setLayout("Major", items.getMajor());
             setLayout("Minor", items.getMinor());
             setLayout("Total", items.getTotal());
-            setLayout("Result", items.getResult());
-            setLayout("Remark", items.getRemark());
+            sum = sum + Integer.parseInt(items.getTotal());
+
+        }
+        setLayout();
+        InlinePreLineHandler inlinePreLineHandler = new InlinePreLineHandler(inlinePrelineFinalModel.getSelect_level(), inlinePrelineFinalModel.getInspection_level(), Integer.parseInt(inlinePrelineFinalModel.getQuantity()));
+
+        final ResultModel resultModel = inlinePreLineHandler.getResult();
+
+        setLayout("Total ", ""+sum);
+        if (sum <= resultModel.getCRITICAL_ACE()) {
+            setLayout("REMARK ", "  PASS");
+        } else {
+            setLayout("REMARK ", " FAIL");
         }
 
-        TextView textView6 = findViewById(R.id.data6);
-        textView6.setText("Wash Label               :" + inlinePrelineFinalModel.getWashlabel());
 
-        TextView textView7 = findViewById(R.id.data7);
-        textView7.setText("Main Label              :" + inlinePrelineFinalModel.getMainlabel());
-
-        TextView textView8 = findViewById(R.id.data8);
-        textView8.setText("Size Label               :" + inlinePrelineFinalModel.getSizelabel());
-
-        TextView textView9 = findViewById(R.id.data9);
-        textView9.setText("Hang Tag              :" + inlinePrelineFinalModel.getHangtag());
-
-        TextView textView10 = findViewById(R.id.data10);
-        textView10.setText("Price Tag               :" + inlinePrelineFinalModel.getPricetag());
-
-        TextView textView11 = findViewById(R.id.data11);
-        textView11.setText("Care Label               :" + inlinePrelineFinalModel.getCarelabel());
-
-        TextView textView12 = findViewById(R.id.data12);
-        textView12.setText("Carton Marking               :" + inlinePrelineFinalModel.getCartoonmarking());
-
-        TextView textView13 = findViewById(R.id.data13);
-        textView13.setText("Carton Measurement               :" + inlinePrelineFinalModel.getCartonmeasurement());
-
-        TextView textView14 = findViewById(R.id.data14);
-        textView14.setText("Carton Quality               :" + inlinePrelineFinalModel.getCartonquality());
-
-        TextView textView15 = findViewById(R.id.data15);
-        textView15.setText("Gross Weight               :" + inlinePrelineFinalModel.getGrossweight());
-
-        TextView textView16 = findViewById(R.id.data16);
-        textView16.setText("Net Weight               :" + inlinePrelineFinalModel.getNetweight());
-
-        TextView textView17 = findViewById(R.id.data17);
-        textView17.setText("Burst Weight               :" + inlinePrelineFinalModel.getBurstweight());
-
-        TextView textView18 = findViewById(R.id.data18);
-        textView18.setText("Color              :" + inlinePrelineFinalModel.getColour());
-
-        TextView textView19 = findViewById(R.id.data19);
-        textView19.setText("Cut Quantity               :" + inlinePrelineFinalModel.getCutquantity());
-
-        TextView textView20 = findViewById(R.id.data20);
-        textView20.setText("Thread Color               :" + inlinePrelineFinalModel.getThreadcolour());
-
-        TextView textView21 = findViewById(R.id.data21);
-        textView21.setText("Button Color               :" + inlinePrelineFinalModel.getButtoncolour());
-
-        ok.setOnClickListener(new View.OnClickListener()
-        {
+        ok.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Intent intent = new Intent(ResultViewForActivity.this, CardMenuP.class);
                 startActivity(intent);
+                finish();
+
             }
         });
 
     }
-    private void setLayout(String object ,String result){
-        if(result!=null) {
+
+    private void setLayout(String object, String result) {
+        if (result != null) {
             TextView textView = new TextView(ResultViewForActivity.this);
             String res = "";
 
-            textView.setText(object +" : "+ result);
+            textView.setText(object + " : " + result);
             layout.addView(textView);
         }
+    }
+
+    private void setLayout() {
+
+        TextView textView = new TextView(ResultViewForActivity.this);
+
+
+        textView.setText("______________________");
+        layout.addView(textView);
+
     }
 }

@@ -77,6 +77,7 @@ public class InlinePreLineFinal1 extends AppCompatActivity {
 
                 Intent intent = new Intent(InlinePreLineFinal1.this,inlinePreLineFInal2.class);
                 startActivity(intent);
+                finish();
             }
         });
 
