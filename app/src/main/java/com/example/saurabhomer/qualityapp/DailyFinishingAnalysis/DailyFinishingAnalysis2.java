@@ -162,8 +162,8 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
               {
                   Toast.makeText(DailyFinishingAnalysis2.this, "Hour and Total Check should not be empty", Toast.LENGTH_SHORT).show();
               }
-              else {
-
+              else
+                  {
 
                   FirebaseDatabase.getInstance().getReference("dailyFinishing").child(STYLE_NUMBER)
                           .addListenerForSingleValueEvent(new ValueEventListener() {

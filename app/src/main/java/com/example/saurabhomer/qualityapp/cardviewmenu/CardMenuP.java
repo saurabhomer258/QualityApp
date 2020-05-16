@@ -19,6 +19,7 @@ import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100Page1;
 import com.example.saurabhomer.qualityapp.admin.CartoonAuditAdmin;
 
+import com.example.saurabhomer.qualityapp.admin.InlineFinalPreLineAdmin;
 import com.example.saurabhomer.qualityapp.admin.MetelDetectionAdmin;
 
 import com.example.saurabhomer.qualityapp.admin.MesurementAdmin;
@@ -147,8 +148,17 @@ public class CardMenuP extends AppCompatActivity
         inlinefinal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i =  new Intent(CardMenuP.this, InlinePrelineFinal.class);
-                startActivity(i);
+
+                if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
+                    Intent i =  new Intent(CardMenuP.this, InlineFinalPreLineAdmin.class);
+                    startActivity(i);
+                }
+                else {
+                    Intent i = new Intent(CardMenuP.this, InlinePrelineFinal.class);
+                    startActivity(i);
+
+                }
+                progressDialog.hide();
             }
         });
     }

@@ -10,7 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:remove="android:appComponentFactory">
-        <activity android:name=".InlinePrelineFinal.InlinePrelineFinal3"></activity>
+        <activity android:name=".InlinePrelineFinal.ResultViewForActivity"></activity>
+        <activity android:name=".admin.InlineFinalPreLineAdmin" />
+        <activity android:name=".InlinePrelineFinal.InlinePrelineFinal3" />
         <activity android:name=".utils.CommonDailyDateFilter" />
         <activity android:name=".utils.CommonDateFilter" />
         <activity android:name=".admin.CartoonAuditAdmin" />
