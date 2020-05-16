@@ -107,7 +107,7 @@ public class AreaOfPackingMaterial extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 try {
                     int res =Integer.parseInt(s.toString().trim());
-                    float f = (Integer) res*.30f;
+                    float f = (Integer) res*.10f;
                     carton_checkquantity.setText(f+"");
                 }
                 catch (Exception e)

@@ -45,8 +45,8 @@ public class ResultViewForActivity extends AppCompatActivity {
 
         Dummy.add(dialyFinishingAnalysisModel);
 
-        for (int i = 1; i < DAILYFINIFSHINGMODELLIST.size(); i++) {
-
+        for (int i = 1; i < DAILYFINIFSHINGMODELLIST.size(); i++)
+        {
             DialyFinishingAnalysisModel dialyFinishingAnalysisModel1 = DAILYFINIFSHINGMODELLIST.get(i);
             dialyFinishingAnalysisModel.setPrintingMRBO(dialyFinishingAnalysisModel.getPrintingMRBO() + dialyFinishingAnalysisModel1.getPrintingMRBO());
             dialyFinishingAnalysisModel.setSlubs_Holes_NAR(dialyFinishingAnalysisModel.getSlubs_Holes_NAR() + dialyFinishingAnalysisModel1.getSlubs_Holes_NAR());
@@ -193,7 +193,7 @@ public class ResultViewForActivity extends AppCompatActivity {
 
 
         TextView textView26 = findViewById(R.id.data26);
-        textView26.setText("Quality Out                    :" + dialyFinishingAnalysisModel.getQualityOut());
+        textView26.setText("Quality Out                   :" + dialyFinishingAnalysisModel.getQualityOut());
 
 
         TextView textView27 = findViewById(R.id.data27);
@@ -228,18 +228,23 @@ public class ResultViewForActivity extends AppCompatActivity {
         Button b = findViewById(R.id.btn_ok);
         getMaxThree(Dummy);
 
-      for (int i=0 ; i <DAILYFINIFSHINGMODELLIST.size();i++) {
-          if (i == 0) {
+      for (int i=0 ; i <DAILYFINIFSHINGMODELLIST.size();i++)
+      {
+          if (i == 0)
+          {
               setLayout(DAILYFINIFSHINGMODELLIST.get(i).getHours() + "", totalVal + "");
-
-          } else {
+          }
+          else
+          {
               setLayout(DAILYFINIFSHINGMODELLIST.get(i).getHours() + "", DailyFinishingAnalysis2.DAILYFINIFSHINGMODELLISTForFinalResut.get(i).getTotal() + "");
           }
       }
 
-        b.setOnClickListener(new View.OnClickListener() {
+      b.setOnClickListener(new View.OnClickListener()
+      {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 clear();
                 Intent i = new Intent(ResultViewForActivity.this, CardMenuP.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -248,7 +253,7 @@ public class ResultViewForActivity extends AppCompatActivity {
                 finish();
             }
         });
-    }
+      }
 
     private void clear() {
         DailyFinishingAnalysis2.DAILYFINIFSHINGMODELLIST.clear();

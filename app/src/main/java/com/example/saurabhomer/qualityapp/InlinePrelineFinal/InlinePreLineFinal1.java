@@ -41,6 +41,8 @@ public class InlinePreLineFinal1 extends AppCompatActivity {
         View signin_button = findViewById(R.id.bt_next);
         Button bt_signin_button= signin_button.findViewById(R.id.btnNext);
 
+
+
         final EditText edt_cartonmarking = findViewById(R.id.edt_cartonmarking).findViewById(R.id.atvCommon);
         final EditText edt_cartonmearsurement = findViewById(R.id.edt_cartonmearsurement).findViewById(R.id.atvCommon);
         final EditText edt_grossweight = findViewById(R.id.edt_grossweight).findViewById(R.id.atvCommon);
@@ -65,6 +67,13 @@ public class InlinePreLineFinal1 extends AppCompatActivity {
                 inlinePrelineFinalModel.setCutquantity(edt_cutquantity.getText().toString());
                 inlinePrelineFinalModel.setButtoncolour(edt_buttoncolour.getText().toString());
                 inlinePrelineFinalModel.setThreadcolour(edt_threadcolour.getText().toString());
+                inlinePrelineFinalModel.setWashlabel(getStringOfRedio(rad_washlabel.isChecked()));
+                inlinePrelineFinalModel.setMainlabel(getStringOfRedio(rad_mainlabel.isChecked()));
+                inlinePrelineFinalModel.setSizelabel(getStringOfRedio(rad_sizelabel.isChecked()));
+                inlinePrelineFinalModel.setHangtag(getStringOfRedio(rad_hanglabel.isChecked()));
+                inlinePrelineFinalModel.setCarelabel(getStringOfRedio(rad_carelabel.isChecked()));
+                inlinePrelineFinalModel.setPricetag(getStringOfRedio(rad_pricelabel.isChecked()));
+
 
                 Intent intent = new Intent(InlinePreLineFinal1.this,inlinePreLineFInal2.class);
                 startActivity(intent);
@@ -72,4 +81,10 @@ public class InlinePreLineFinal1 extends AppCompatActivity {
         });
 
     }
+
+    private String getStringOfRedio(boolean okButton) {
+        if (okButton) return "ok";
+        else return "notOk";
+    }
+
 }

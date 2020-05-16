@@ -1,300 +1,534 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_height="wrap_content"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:weightSum="10">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="3"
+
                 android:text="AQL"
-
-                android:layout_weight="3"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
 
             <TextView
+                android:id="@+id/txt_aql"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/txt_aql" />
+                android:layout_weight="7" />
 
         </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_height="wrap_content"
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:weightSum="10">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="3"
+
                 android:text="INSPECTION"
-
-                android:layout_weight="3"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
 
             <TextView
-                android:layout_width="0dp"
+                android:id="@+id/txt_inspection"
 
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/txt_inspection" />
+                android:layout_weight="7" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_height="wrap_content"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:weightSum="10">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="3"
+
                 android:text="SAMPLE SIZE"
-
-                android:layout_weight="3"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
 
             <TextView
-                android:layout_width="0dp"
+                android:id="@+id/txt_samplesize"
 
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/txt_samplesize" />
+                android:layout_weight="7" />
 
         </LinearLayout>
 
-
-
-
-        <LinearLayout
-            android:layout_height="wrap_content"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:weightSum="10">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="DEFECT NAME"
+                android:layout_weight="8"
 
-                android:layout_weight="3"
-                android:textColor="@color/common_text_color"
-                android:textSize="@dimen/common_text_size" />
-
-
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
-
-                android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/edt_defectname" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
-            android:layout_marginEnd="14dp"
-            android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:text="CRITICAL"
-
-                android:layout_weight="3"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
 
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
-
-                android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/edt_critical" />
-
         </LinearLayout>
-        <LinearLayout
-            android:layout_height="wrap_content"
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:weightSum="10">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="ACCEPT"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <TextView
+                android:id="@+id/txt_critical_Accept"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+
+                android:textSize="@dimen/common_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="REJECT"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <TextView
+                android:id="@+id/txt_critical_reject"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:text="nfjkv"
+                android:textSize="@dimen/common_text_size" />
+
+        </LinearLayout>
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+
                 android:text="MAJOR"
-
-                android:layout_weight="3"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
 
-            <customView.DailyFinishingEditText
-                android:layout_width="0dp"
-
-                android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/edt_major" />
-
         </LinearLayout>
-        <LinearLayout
-            android:layout_height="wrap_content"
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:weightSum="10">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="ACCEPT"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <TextView
+                android:id="@+id/txt_major_Accept"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:text="nfjkv"
+                android:textSize="@dimen/common_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="REJECT"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <TextView
+                android:id="@+id/txt_major_reject"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:text="nfjkv"
+                android:textSize="@dimen/common_text_size" />
+
+        </LinearLayout>
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+
                 android:text="MINOR"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
 
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="3"
+
+                android:text="ACCEPT"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <TextView
+                android:id="@+id/txt_minor_Accept"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:text="nfjkv"
+                android:textSize="@dimen/common_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="REJECT"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <TextView
+                android:id="@+id/txt_minor_reject"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:text="nfjkv"
+                android:textSize="@dimen/common_text_size" />
+
+        </LinearLayout>
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="DEFECT NAME"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
 
             <customView.DailyFinishingEditText
-                android:layout_width="0dp"
+                android:id="@+id/edt_defectname"
 
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/edt_minor" />
+                android:layout_weight="7" />
 
         </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_height="wrap_content"
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
+            android:gravity="center"
+            android:weightSum="10">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="CRITICAL"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:id="@+id/edt_critical"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="MAJOR"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:id="@+id/edt_major"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
+                android:text="MINOR"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+
+            <customView.DailyFinishingEditText
+                android:id="@+id/edt_minor"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+
                 android:text="TOTAL"
-
-                android:layout_weight="3"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
 
             <TextView
-                android:layout_width="0dp"
+                android:id="@+id/txt_total"
 
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/txt_total" />
+                android:layout_weight="7" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_height="wrap_content"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:weightSum="10"
-            android:gravity="center"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:weightSum="10">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="3"
+
                 android:text="RESULT"
-
-                android:layout_weight="3"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
 
             <TextView
-                android:layout_width="0dp"
+                android:id="@+id/txt_result"
 
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/txt_result" />
+                android:layout_weight="7" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_height="wrap_content"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:weightSum="10"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="14dp"
-            xmlns:android="http://schemas.android.com/apk/res/android">
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:weightSum="10">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="REMARK"
-
                 android:layout_weight="3"
+
+                android:text="REMARK"
                 android:textColor="@color/common_text_color"
                 android:textSize="@dimen/common_text_size" />
 
 
             <TextView
-                android:layout_width="0dp"
+                android:id="@+id/txt_remark"
 
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:id="@+id/txt_remark" />
+                android:layout_weight="7" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal"
             android:weightSum="6">
 

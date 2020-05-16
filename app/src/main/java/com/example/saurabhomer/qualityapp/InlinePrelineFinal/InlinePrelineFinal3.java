@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import com.example.saurabhomer.qualityapp.CartoonAudit.AreaOfPackingMaterial;
 import com.example.saurabhomer.qualityapp.CartoonAudit.model.AreaOfPackingMaterialModel;
+import com.example.saurabhomer.qualityapp.InlinePrelineFinal.handles.InlinePreLineHandler;
+import com.example.saurabhomer.qualityapp.InlinePrelineFinal.handles.ResultModel;
 import com.example.saurabhomer.qualityapp.InlinePrelineFinal.inlinemodel.InlinePrelineFinalModel1;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.cardviewmenu.CardMenuP;
@@ -48,12 +50,26 @@ public class InlinePrelineFinal3 extends AppCompatActivity {
         final TextView txt_samplesize = findViewById(R.id.txt_samplesize);
         Button next =findViewById(R.id.btn_next).findViewById(R.id.btnNext);
         Button done =findViewById(R.id.btn_done).findViewById(R.id.btnNext);
+        TextView text_critical_acc = findViewById(R.id.txt_critical_Accept);
+        TextView text_critical_rej = findViewById(R.id.txt_critical_reject);
+        TextView text_major_acc = findViewById(R.id.txt_major_Accept);
+        TextView text_major_rej = findViewById(R.id.txt_major_reject);
+        TextView text_minor_acc = findViewById(R.id.txt_minor_Accept);
+        TextView text_minor_rej = findViewById(R.id.txt_minor_reject);
+        InlinePreLineHandler inlinePreLineHandler = new InlinePreLineHandler(inlinePrelineFinalModel.getSelect_level(),inlinePrelineFinalModel.getInspection_level(),Integer.parseInt(inlinePrelineFinalModel.getQuantity()));
+        ResultModel resultModel = inlinePreLineHandler.getResult();
 
         String select_1 = inlinePrelineFinalModel.getSelect_level();
         String inspection_1 = inlinePrelineFinalModel.getInspection_level();
         txt_aql.setText(select_1);
         txt_inspection.setText(inspection_1);
-
+        txt_samplesize.setText(resultModel.getSAMPLESIZE());
+        text_critical_acc.setText(resultModel.getCRITICAL_ACE()+"");
+        text_major_acc.setText(resultModel.getCRITICAL_ACE()+"");
+        text_minor_acc.setText(resultModel.getCRITICAL_ACE()+"");
+        text_critical_rej.setText(resultModel.getCRITICAL_REJ()+"");
+        text_major_rej.setText(resultModel.getCRITICAL_REJ()+"");
+        text_minor_rej.setText(resultModel.getCRITICAL_REJ()+"");
 //        String minor = edt_minor.getText().toString();
 //        String major = edt_major.getText().toString();
 //        int total = Integer.parseInt(minor)+Integer.parseInt(major);
@@ -107,7 +123,7 @@ public class InlinePrelineFinal3 extends AppCompatActivity {
                     }
                 });
                 inlinePrelineFinalModel1List.clear();
-                Intent i = new Intent(InlinePrelineFinal3.this, CardMenuP.class);
+                Intent i = new Intent(InlinePrelineFinal3.this, ResultViewForActivity.class);
                 startActivity(i);
                 finish();
 
