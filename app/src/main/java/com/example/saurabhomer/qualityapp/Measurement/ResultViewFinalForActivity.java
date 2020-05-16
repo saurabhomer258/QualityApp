@@ -126,7 +126,7 @@ public class ResultViewFinalForActivity extends AppCompatActivity {
     private void setLayout(){
 
         TextView textView = new TextView(ResultViewFinalForActivity.this);
-        textView.setText("_____________________________________________");
+        textView.setText("________________________________________");
         layout.addView(textView);
 
     }
@@ -156,7 +156,7 @@ public class ResultViewFinalForActivity extends AppCompatActivity {
                       
                     }
                 }
-                Log.d("Aasdadasd","Efksjr");
+
                setMesurement(size2,mesurementName);
 
             }
@@ -167,7 +167,7 @@ public class ResultViewFinalForActivity extends AppCompatActivity {
             }
         });
     }
-
+    HashMap<String,Integer> map = new HashMap<>();
     public void setMesurement(final String[] mesurementsize, final  String[] mesurementName) {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference users = firebaseDatabase.getReference("mesurement");
@@ -195,11 +195,30 @@ public class ResultViewFinalForActivity extends AppCompatActivity {
                                 c++;
                             }
                         }
+
+                        Log.d("aaaaaa",map+"");
                         if(c>0)
                         {
                            // setLayout();
                         }
                     }
+                    setLayout();
+                    setLayout("------Total And Remark ------- ");
+                    for (Map.Entry<String, Integer> entry : map.entrySet()) {
+                        setLayout("------Total ---------- ");
+                        setLayout(entry.getKey() , entry.getValue()+"");
+
+                        if(entry.getValue()<=1){
+                            setLayout("Remark" , "Pass");
+                        }
+
+                        else {
+                            setLayout("Remark" , "Fail");
+                        }
+                    }
+
+
+                    setLayout();
                 }
 
             }
@@ -219,6 +238,13 @@ public class ResultViewFinalForActivity extends AppCompatActivity {
         int size =Math.min(name.length,mesurementName.length);
         for (int k=0;k< name.length;k++){
             setLayout(mesurementName[k],name[k] );
+            if(!name[k].equals(-1)) {
+                if (map.containsKey(mesurementName[k])) {
+                    map.put(mesurementName[k], map.get(mesurementName[k]) + Integer.parseInt(name[k]));
+                } else {
+                    map.put(mesurementName[k], Integer.parseInt(name[k]));
+                }
+            }
         }
     }
 }
