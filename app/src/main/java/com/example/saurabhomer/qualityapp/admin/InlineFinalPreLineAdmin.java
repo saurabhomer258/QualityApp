@@ -111,8 +111,10 @@ public class InlineFinalPreLineAdmin extends AppCompatActivity {
                         InlinePreLineHandler inlinePreLineHandler = new InlinePreLineHandler(inlinePrelineFinalModel.getSelect_level(), inlinePrelineFinalModel.getInspection_level(), Integer.parseInt(inlinePrelineFinalModel.getQuantity()));
 
                         final ResultModel resultModel = inlinePreLineHandler.getResult();
-
-                        setLayout("Total ", "" + sum);
+                        textView2.setText("   ");
+                        textView2.setText("   ");
+                        setLayout1("","");
+                        setLayout("Grand Total ", "" + sum);
                         if (sum <= resultModel.getCRITICAL_ACE()) {
                             setLayout("REMARK ", "  PASS");
                         } else {
@@ -140,4 +142,17 @@ public class InlineFinalPreLineAdmin extends AppCompatActivity {
             layout.addView(textView);
         }
     }
+
+
+    private void setLayout1(String object ,String result){
+        if(result!=null) {
+            TextView textView = new TextView(InlineFinalPreLineAdmin.this);
+            String res = "";
+
+            textView.setText("       ");
+            layout.addView(textView);
+        }
+    }
+
+
 }

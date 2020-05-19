@@ -379,7 +379,7 @@
                 android:textSize="@dimen/common_text_size" />
 
 
-            <customView.DailyFinishingEditText
+            <customView.DropDown1to10
                 android:id="@+id/edt_critical"
 
                 android:layout_width="0dp"
@@ -406,7 +406,7 @@
                 android:textSize="@dimen/common_text_size" />
 
 
-            <customView.DailyFinishingEditText
+            <customView.DropDown1to10
                 android:id="@+id/edt_major"
 
                 android:layout_width="0dp"
@@ -433,7 +433,7 @@
                 android:textSize="@dimen/common_text_size" />
 
 
-            <customView.DailyFinishingEditText
+            <customView.DropDown1to10
                 android:id="@+id/edt_minor"
 
                 android:layout_width="0dp"

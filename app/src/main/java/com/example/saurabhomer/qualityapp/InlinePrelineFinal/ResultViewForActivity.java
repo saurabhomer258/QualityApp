@@ -102,7 +102,7 @@ public class ResultViewForActivity extends AppCompatActivity {
 
         final ResultModel resultModel = inlinePreLineHandler.getResult();
 
-        setLayout("Total ", ""+sum);
+        setLayout(" Grand Total ", ""+sum);
         if (sum <= resultModel.getCRITICAL_ACE()) {
             setLayout("REMARK ", "  PASS");
         } else {

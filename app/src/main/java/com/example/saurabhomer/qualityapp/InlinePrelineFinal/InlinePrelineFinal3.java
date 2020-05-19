@@ -9,6 +9,7 @@ import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +27,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 
 
+import customView.DropDown1to10;
+
 import static com.example.saurabhomer.qualityapp.InlinePrelineFinal.InlinePrelineFinal.inlinePrelineFinalModel;
 import static com.example.saurabhomer.qualityapp.InlinePrelineFinal.inlinePreLineFInal2.inlinePrelineFinalModel1List;
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
@@ -42,19 +45,13 @@ public class InlinePrelineFinal3 extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
 
         final EditText edt_defectname = findViewById(R.id.edt_defectname).findViewById(R.id.atvCommon);
-        final EditText edt_critical = findViewById(R.id.edt_critical).findViewById(R.id.atvCommon);
-        edt_critical.setInputType(InputType.TYPE_CLASS_NUMBER |
-                InputType.TYPE_NUMBER_FLAG_DECIMAL |
-                InputType.TYPE_NUMBER_FLAG_SIGNED);
-        final EditText edt_minor = findViewById(R.id.edt_minor).findViewById(R.id.atvCommon);
-        edt_minor .setInputType(InputType.TYPE_CLASS_NUMBER |
-                InputType.TYPE_NUMBER_FLAG_DECIMAL |
-                InputType.TYPE_NUMBER_FLAG_SIGNED);
-        final EditText edt_major = findViewById(R.id.edt_major).findViewById(R.id.atvCommon);
+        final Spinner edt_critical = findViewById(R.id.edt_critical).findViewById(R.id.spinner);
 
-        edt_major.setInputType(InputType.TYPE_CLASS_NUMBER |
-                InputType.TYPE_NUMBER_FLAG_DECIMAL |
-                InputType.TYPE_NUMBER_FLAG_SIGNED);
+        final Spinner edt_minor = findViewById(R.id.edt_minor).findViewById(R.id.spinner);
+
+        final Spinner edt_major = findViewById(R.id.edt_major).findViewById(R.id.spinner);
+
+
        // final TextView txt_result = findViewById(R.id.txt_result);
 
         final TextView txt_total = findViewById(R.id.txt_total);
@@ -99,19 +96,15 @@ public class InlinePrelineFinal3 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(edt_major.getText().toString().isEmpty() || edt_critical.getText().toString() .isEmpty()|| edt_minor.getText().toString().isEmpty() )
-                {
-                    Toast.makeText(InlinePrelineFinal3.this,"All fields must not be empty",Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                else {
-                    int a = Integer.parseInt(edt_major.getText().toString());
-                    int b = Integer.parseInt(edt_critical.getText().toString());
-                    int c = Integer.parseInt(edt_minor.getText().toString());
+
+
+                    int a = Integer.parseInt(edt_major.getSelectedItem().toString());
+                    int b = Integer.parseInt(edt_critical.getSelectedItem().toString());
+                    int c = Integer.parseInt(edt_minor.getSelectedItem().toString());
                     int sum = (a + b + c);
 
                     txt_total.setText("TOTAL    " + sum);
-                }
+
 //                if (sum <= resultModel.getCRITICAL_ACE()) {
 //                    txt_remark.setText("REMARK   PASS");
 //                } else {
@@ -123,24 +116,20 @@ public class InlinePrelineFinal3 extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                if(edt_major.getText().toString().isEmpty() || edt_critical.getText().toString() .isEmpty()|| edt_minor.getText().toString().isEmpty() )
-                {
-                    Toast.makeText(InlinePrelineFinal3.this,"All fields must not be empty",Toast.LENGTH_SHORT).show();
-                    return;
-                }
+
                 InlinePrelineFinalModel1 inlinePrelineFinalModel1 = new InlinePrelineFinalModel1();
                 inlinePrelineFinalModel1.setAql(txt_aql.getText().toString());
                 inlinePrelineFinalModel1.setInspection(txt_inspection.getText().toString());
                 inlinePrelineFinalModel1.setSamplesize(txt_samplesize.getText().toString());
                 inlinePrelineFinalModel1.setDefectname(edt_defectname.getText().toString());
-                inlinePrelineFinalModel1.setMajor(edt_major.getText().toString());
-                inlinePrelineFinalModel1.setMinor(edt_minor.getText().toString());
-                inlinePrelineFinalModel1.setCritical(edt_critical.getText().toString());
+                inlinePrelineFinalModel1.setMajor(edt_major.getSelectedItem().toString());
+                inlinePrelineFinalModel1.setMinor(edt_minor.getSelectedItem().toString());
+                inlinePrelineFinalModel1.setCritical(edt_critical.getSelectedItem().toString());
 
 //                inlinePrelineFinalModel1.setResult(txt_result.getText().toString());
-                int a = Integer.parseInt(edt_major.getText().toString());
-                int b = Integer.parseInt(edt_critical.getText().toString());
-                int c = Integer.parseInt(edt_minor.getText().toString());
+                int a = Integer.parseInt(edt_major.getSelectedItem().toString());
+                int b = Integer.parseInt(edt_critical.getSelectedItem().toString());
+                int c = Integer.parseInt(edt_minor.getSelectedItem().toString());
                 int sum = (a + b + c);
                 inlinePrelineFinalModel1.setTotal(sum + "");
 //                if (sum <= resultModel.getCRITICAL_ACE()) {
@@ -159,23 +148,19 @@ public class InlinePrelineFinal3 extends AppCompatActivity {
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(edt_major.getText().toString().isEmpty() || edt_critical.getText().toString() .isEmpty()|| edt_minor.getText().toString().isEmpty() )
-                {
-                    Toast.makeText(InlinePrelineFinal3.this,"All fields must not be empty",Toast.LENGTH_SHORT).show();
-                    return;
-                }
+
                 InlinePrelineFinalModel1 inlinePrelineFinalModel1 = new InlinePrelineFinalModel1();
                 inlinePrelineFinalModel1.setAql(txt_aql.getText().toString());
                 inlinePrelineFinalModel1.setInspection(txt_inspection.getText().toString());
                 inlinePrelineFinalModel1.setSamplesize(txt_samplesize.getText().toString());
                 inlinePrelineFinalModel1.setDefectname(edt_defectname.getText().toString());
-                inlinePrelineFinalModel1.setMajor(edt_major.getText().toString());
-                inlinePrelineFinalModel1.setMinor(edt_minor.getText().toString());
-                inlinePrelineFinalModel1.setCritical(edt_critical.getText().toString());
+                inlinePrelineFinalModel1.setMajor(edt_major.getSelectedItem().toString());
+                inlinePrelineFinalModel1.setMinor(edt_minor.getSelectedItem().toString());
+                inlinePrelineFinalModel1.setCritical(edt_critical.getSelectedItem().toString());
                 // inlinePrelineFinalModel1.setResult(txt_result.getText().toString());
-                int a = Integer.parseInt(edt_major.getText().toString());
-                int b = Integer.parseInt(edt_critical.getText().toString());
-                int c = Integer.parseInt(edt_minor.getText().toString());
+                int a = Integer.parseInt(edt_major.getSelectedItem().toString());
+                int b = Integer.parseInt(edt_critical.getSelectedItem().toString());
+                int c = Integer.parseInt(edt_minor.getSelectedItem().toString());
                 int sum = (a + b + c);
 
                 inlinePrelineFinalModel1.setTotal(sum + "");
