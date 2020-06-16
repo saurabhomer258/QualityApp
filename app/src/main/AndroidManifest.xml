@@ -28,6 +28,15 @@
         <activity android:name=".Measurement.Measurment" />
         <activity android:name=".DailyFinishingAnalysis.DailyFinishingAnalysis2" />
         <activity android:name=".DailyFinishingAnalysis.DailyFinishingDefectAnalysis" />
+        <activity android:name=".OutSide.DailyFinishingAnalysisOutside"/>
+        <activity android:name=".OutSide.DailyFinishingDefectAnalysisOutside"/>
+        <activity android:name=".GetUp.DailyFinishingAnalysisGetup"/>
+        <activity android:name=".GetUp.DailyFinishingDefectAnalysisGetup"/>
+        <activity android:name=".admin.DailyfinishingOutsideAdmin"/>
+        <activity android:name=".admin.DailyfinishingGetUpAdmin"/>
+        <activity android:name=".dialog.DailyFinishingGetupResult"/>
+        <activity android:name=".dialog.DailyFinishingOutsideResult"/>
+
         <activity
             android:name=".SignUpActivity"
             android:label="@string/title_activity_sign_up"

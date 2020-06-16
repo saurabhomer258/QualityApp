@@ -11,12 +11,17 @@ import android.widget.Toast;
 import com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAudit;
 import com.example.saurabhomer.qualityapp.CartoonAudit.CartoonAuditModel;
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis;
+import com.example.saurabhomer.qualityapp.GetUp.DailyFinishingDefectAnalysisGetup;
 import com.example.saurabhomer.qualityapp.Measurement.Measurment;
 import com.example.saurabhomer.qualityapp.MetelDetectionPage.MetelDetectionPage;
+import com.example.saurabhomer.qualityapp.OutSide.DailyFinishingDefectAnalysisOutside;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100Page1;
+import com.example.saurabhomer.qualityapp.SkuCheckReport.SkuCheckReport100Page2;
 import com.example.saurabhomer.qualityapp.admin.CartoonAuditAdmin;
 import com.example.saurabhomer.qualityapp.admin.DailyfinishingAdmin;
+import com.example.saurabhomer.qualityapp.admin.DailyfinishingGetUpAdmin;
+import com.example.saurabhomer.qualityapp.admin.DailyfinishingOutsideAdmin;
 import com.example.saurabhomer.qualityapp.admin.SkuAdmin;
 import com.example.saurabhomer.qualityapp.pref.LoginPref;
 import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
@@ -27,11 +32,13 @@ import com.google.firebase.database.ValueEventListener;
 
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
-public class CardMenuP extends AppCompatActivity {
+public class CardMenuP extends AppCompatActivity
+{
     private ProgressDialog progressDialog;
     static CartoonAuditModel cartoonAuditModel;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_menu_p);
         CardView inside = findViewById(R.id.cardview_inside);
@@ -54,19 +61,19 @@ public class CardMenuP extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                openDailyFinishing();
+                openDailyFinishingcheck();
             }
         });
         outside.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openDailyFinishing();
+                openDailyFinishingOutsidecheck();
             }
         });
         getup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openDailyFinishing();
+                openDailyFinishingGetupcheck();
             }
         });
         measurmentreport.setOnClickListener(new View.OnClickListener() {
@@ -89,38 +96,20 @@ public class CardMenuP extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
         skutest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseDatabase.getInstance().getReference("100perSKU")
-                        .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        if(!NetworkUtils.isNetworkConnected(CardMenuP.this))
-                        {
-                            progressDialog.hide();
-                            return;
-                        }
-                        if (dataSnapshot.getValue() == null) {
-                            Intent i = new Intent(CardMenuP.this, SkuCheckReport100Page1.class);
-                            startActivity(i);
-                        }
-                        else if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
-                            Intent i = new Intent(CardMenuP.this, SkuAdmin.class);
-                            startActivity(i);
+                if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
+                    Intent i =  new Intent(CardMenuP.this, SkuAdmin.class);
+                    startActivity(i);
+                }
+                else {
+                    Intent i = new Intent(CardMenuP.this, SkuCheckReport100Page1.class);
+                    startActivity(i);
 
-                        }
-                        else {
-                            Toast.makeText(CardMenuP.this,"This is completed.",Toast.LENGTH_LONG).show();
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
-
+                }
+                progressDialog.hide();
             }
 
         });
@@ -129,37 +118,19 @@ public class CardMenuP extends AppCompatActivity {
         cartoonaudit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseDatabase.getInstance().getReference("cartoonaudit")
-                        .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        if(!NetworkUtils.isNetworkConnected(CardMenuP.this))
-                        {
-                            progressDialog.hide();
-                            return;
-                        }
-                        if (dataSnapshot.getValue() == null) {
-                            Intent i = new Intent(CardMenuP.this, CartoonAudit.class);
-                            startActivity(i);
-                        }
-                        else if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
-                            Intent i = new Intent(CardMenuP.this, CartoonAuditAdmin.class);
-                            startActivity(i);
+                if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
+                    Intent i =  new Intent(CardMenuP.this, CartoonAuditAdmin.class);
+                    startActivity(i);
+                }
+                else {
+                    Intent i = new Intent(CardMenuP.this, CartoonAudit.class);
+                    startActivity(i);
 
-                        }
-                        else {
-                            Toast.makeText(CardMenuP.this,"This is completed.",Toast.LENGTH_LONG).show();
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
-
+                }
+                progressDialog.hide();
             }
         });
+
         inlinefinal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -168,37 +139,50 @@ public class CardMenuP extends AppCompatActivity {
         });
     }
 
-    void openDailyFinishing(){
+    void openDailyFinishingcheck(){
         progressDialog.setMessage("Verificating...");
         progressDialog.show();
-        FirebaseDatabase.getInstance().getReference("dailyFinishing")
-                .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+        if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
+            Intent i =  new Intent(CardMenuP.this, DailyfinishingAdmin.class);
+            startActivity(i);
+        }
+        else {
+            Intent i = new Intent(CardMenuP.this, DailyFinishingDefectAnalysis.class);
+            startActivity(i);
 
-                if(!NetworkUtils.isNetworkConnected(CardMenuP.this))
-                {
-                    progressDialog.hide();
-                    return;
-                }
-                if (dataSnapshot.getValue() == null) {
-                    Intent i = new Intent(CardMenuP.this, DailyFinishingDefectAnalysis.class);
-                    startActivity(i);
-                } else if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
-                    Intent i =  new Intent(CardMenuP.this, DailyfinishingAdmin.class);
-                    startActivity(i);
+        }
+        progressDialog.hide();
 
-                }
-                else {
-                    Toast.makeText(CardMenuP.this,"This is completed.",Toast.LENGTH_LONG).show();
-                }
-                progressDialog.hide();
-            }
+    }
+    void openDailyFinishingGetupcheck(){
+        progressDialog.setMessage("Verificating...");
+        progressDialog.show();
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+        if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
+            Intent i =  new Intent(CardMenuP.this, DailyfinishingGetUpAdmin.class);
+            startActivity(i);
+        }
+        else {
+            Intent i = new Intent(CardMenuP.this, DailyFinishingDefectAnalysisGetup.class);
+            startActivity(i);
 
-            }
-        });
+        }
+        progressDialog.hide();
+    }
+
+    void openDailyFinishingOutsidecheck(){
+        progressDialog.setMessage("Verificating...");
+        progressDialog.show();
+        if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
+            Intent i =  new Intent(CardMenuP.this, DailyfinishingOutsideAdmin.class);
+            startActivity(i);
+        }
+        else {
+            Intent i = new Intent(CardMenuP.this, DailyFinishingDefectAnalysisOutside.class);
+            startActivity(i);
+
+        }
+        progressDialog.hide();
+
     }
 }

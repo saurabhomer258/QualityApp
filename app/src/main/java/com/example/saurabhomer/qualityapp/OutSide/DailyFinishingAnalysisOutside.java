@@ -10,16 +10,18 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.example.saurabhomer.qualityapp.GetUp.DailyFinishingAnalysisGetup;
+import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingAnalysis2;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.dialog.DailyFInishingResult;
+import com.example.saurabhomer.qualityapp.dialog.DailyFinishingOutsideResult;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.FirebaseDatabase;
 
-import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis.DAILYFINIFSHINGMODELLIST;
-import static com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis.dailyFinishinfModels;
+
+import static com.example.saurabhomer.qualityapp.OutSide.DailyFinishingDefectAnalysisOutside.DAILYFINIFSHINGMODELLIST;
+import static com.example.saurabhomer.qualityapp.OutSide.DailyFinishingDefectAnalysisOutside.dailyFinishinfModels1;
 import static com.example.saurabhomer.qualityapp.ui.home.HomeFragment.STYLE_NUMBER;
 
 public class DailyFinishingAnalysisOutside extends AppCompatActivity {
@@ -28,6 +30,7 @@ public class DailyFinishingAnalysisOutside extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_finishing_analysis_outside);
+
         final EditText hour = findViewById(R.id.edt_hours).findViewById(R.id.atvCommon);
         final EditText total_check = findViewById(R.id.edt_total_check).findViewById(R.id.atvCommon);
         final Spinner printing = findViewById(R.id.edt_printing_mrbo).findViewById(R.id.spinner);
@@ -168,9 +171,9 @@ public class DailyFinishingAnalysisOutside extends AppCompatActivity {
                         ,edt_uneven.getSelectedItemPosition()
                 );
                 DAILYFINIFSHINGMODELLIST.add(dialyFinishingAnalysisModel);
-                dailyFinishinfModels.setDialyFinishingAnalysisModels(DAILYFINIFSHINGMODELLIST);
+                dailyFinishinfModels1.setDialyFinishingAnalysisModels(DAILYFINIFSHINGMODELLIST);
                 FirebaseDatabase.getInstance().getReference("dailyFinishingoutside")
-                        .child(STYLE_NUMBER).setValue(dailyFinishinfModels).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        .child(STYLE_NUMBER).setValue(dailyFinishinfModels1).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
 
@@ -178,7 +181,7 @@ public class DailyFinishingAnalysisOutside extends AppCompatActivity {
                 });
 
                 DAILYFINIFSHINGMODELLIST.clear();
-                Intent i =new Intent(DailyFinishingAnalysisOutside.this, DailyFInishingResult.class);
+                Intent i =new Intent(DailyFinishingAnalysisOutside.this, DailyFinishingOutsideResult.class);
                 startActivity(i);
                 finish();
             }

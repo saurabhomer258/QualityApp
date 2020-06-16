@@ -67,7 +67,8 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity implements
                         .child(STYLE_NUMBER).child(0+"").
                         addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
-                            public void onDataChange(DataSnapshot dataSnapshot) {
+                            public void onDataChange(DataSnapshot dataSnapshot)
+                            {
                                 if(dataSnapshot.getValue()==null)
                                 {
 //                                    DailyFinishingModel1 model = new DailyFinishingModel1(editText_hour.getText().toString(),
