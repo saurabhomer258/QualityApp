@@ -7,6 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="400dp"
         android:orientation="vertical">
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -378,7 +379,7 @@
                 android:textSize="@dimen/common_text_size" />
 
 
-            <customView.DailyFinishingEditText
+            <customView.DropDown1to10
                 android:id="@+id/edt_critical"
 
                 android:layout_width="0dp"
@@ -405,7 +406,7 @@
                 android:textSize="@dimen/common_text_size" />
 
 
-            <customView.DailyFinishingEditText
+            <customView.DropDown1to10
                 android:id="@+id/edt_major"
 
                 android:layout_width="0dp"
@@ -432,7 +433,7 @@
                 android:textSize="@dimen/common_text_size" />
 
 
-            <customView.DailyFinishingEditText
+            <customView.DropDown1to10
                 android:id="@+id/edt_minor"
 
                 android:layout_width="0dp"
@@ -466,28 +467,7 @@
 
 
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="14dp"
-            android:layout_marginStart="14dp"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:weightSum="10">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="10"
-                android:id="@+id/txt_remark"
-                android:text="REMARK"
-                android:textColor="@color/common_text_color"
-                android:textSize="@dimen/common_text_size" />
-
-
-
-
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

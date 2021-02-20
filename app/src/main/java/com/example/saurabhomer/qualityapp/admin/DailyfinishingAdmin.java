@@ -40,7 +40,8 @@ public class DailyfinishingAdmin extends AppCompatActivity {
     private ProgressDialog progressDialog;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dailyfinishing_admin);
         layout = findViewById(R.id.dailyLayout);
@@ -48,7 +49,8 @@ public class DailyfinishingAdmin extends AppCompatActivity {
         data42 = findViewById(R.id.data42);
         data43 = findViewById(R.id.data43);
         Button btn = findViewById(R.id.btn_ok);
-        if (!NetworkUtils.isNetworkConnected(DailyfinishingAdmin.this)) {
+        if (!NetworkUtils.isNetworkConnected(DailyfinishingAdmin.this))
+        {
             return;
         }
         progressDialog = new ProgressDialog(DailyfinishingAdmin.this);
@@ -63,7 +65,8 @@ public class DailyfinishingAdmin extends AppCompatActivity {
         FirebaseDatabase.getInstance().getReference("dailyFinishing")
                 .child(STYLE_NUMBER).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(DataSnapshot dataSnapshot)
+            {
                 MainDailyFinishingModel mainDailyFinishingModel = dataSnapshot.getValue(MainDailyFinishingModel.class);
                 if (mainDailyFinishingModel != null) {
                     ArrayList<DailyFinishinfModels> dailyFinishinfModels = mainDailyFinishingModel.getDailyFinishingModels();

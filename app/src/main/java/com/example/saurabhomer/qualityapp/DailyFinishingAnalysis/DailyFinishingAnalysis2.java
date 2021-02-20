@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -53,7 +54,11 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_finishing_analysis2);
         final EditText hour = findViewById(R.id.edt_hours).findViewById(R.id.atvCommon);
+
         final EditText total_check = findViewById(R.id.edt_total_check).findViewById(R.id.atvCommon);
+        total_check.setInputType(InputType.TYPE_CLASS_NUMBER |
+                InputType.TYPE_NUMBER_FLAG_DECIMAL |
+                InputType.TYPE_NUMBER_FLAG_SIGNED);
        final Spinner printing = findViewById(R.id.edt_printing_mrbo).findViewById(R.id.spinner);
        final Spinner slube_hole = findViewById(R.id.edt_slubes_holes).findViewById(R.id.spinner);
        final Spinner edt_color_shading = findViewById(R.id.edt_color_shading).findViewById(R.id.spinner);
@@ -162,8 +167,8 @@ public class DailyFinishingAnalysis2 extends AppCompatActivity
               {
                   Toast.makeText(DailyFinishingAnalysis2.this, "Hour and Total Check should not be empty", Toast.LENGTH_SHORT).show();
               }
-              else {
-
+              else
+                  {
 
                   FirebaseDatabase.getInstance().getReference("dailyFinishing").child(STYLE_NUMBER)
                           .addListenerForSingleValueEvent(new ValueEventListener() {

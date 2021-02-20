@@ -418,54 +418,54 @@ public class InlinePreLineHandler {
 
                 }
                 else  if(mQUANTITY<150){
-                    resultModel.setSAMPLESIZE(5+"");
+                    resultModel.setSAMPLESIZE(20+"");
                     resultModel.setCRITICAL_ACE(0);
                     resultModel.setCRITICAL_REJ(1);
 
                 }
                 else  if(mQUANTITY<280){
-                    resultModel.setSAMPLESIZE(20+"");
+                    resultModel.setSAMPLESIZE(32+"");
                     resultModel.setCRITICAL_ACE(1);
                     resultModel.setCRITICAL_REJ(2);
 
                 }
                 else  if(mQUANTITY<500){
-                    resultModel.setSAMPLESIZE(20+"");
+                    resultModel.setSAMPLESIZE(50+"");
                     resultModel.setCRITICAL_ACE(1);
                     resultModel.setCRITICAL_REJ(2);
 
                 }
                 else  if(mQUANTITY<1200){
-                    resultModel.setSAMPLESIZE(32+"");
+                    resultModel.setSAMPLESIZE(80+"");
                     resultModel.setCRITICAL_ACE(2);
                     resultModel.setCRITICAL_REJ(3);
 
                 }else  if(mQUANTITY<3200){
 
-                    resultModel.setSAMPLESIZE(50+"");
+                    resultModel.setSAMPLESIZE(125+"");
                     resultModel.setCRITICAL_ACE(3);
                     resultModel.setCRITICAL_REJ(4);
                 }
 
 
                 else  if(mQUANTITY<10000){
-                    resultModel.setSAMPLESIZE(80+"");
+                    resultModel.setSAMPLESIZE(200+"");
                     resultModel.setCRITICAL_ACE(5);
                     resultModel.setCRITICAL_REJ(6);
                 }
                 else  if(mQUANTITY<35000){
-                    resultModel.setSAMPLESIZE(125+"");
+                    resultModel.setSAMPLESIZE(315+"");
                     resultModel.setCRITICAL_ACE(7);
                     resultModel.setCRITICAL_REJ(8);
                 }
 
                 else  if(mQUANTITY<150000){
-                    resultModel.setSAMPLESIZE(200+"");
+                    resultModel.setSAMPLESIZE(500+"");
                     resultModel.setCRITICAL_ACE(10);
                     resultModel.setCRITICAL_REJ(11);
                 }
                 else  if(mQUANTITY<500000){
-                    resultModel.setSAMPLESIZE(315+"");
+                    resultModel.setSAMPLESIZE(500+"");
                     resultModel.setCRITICAL_ACE(14);
                     resultModel.setCRITICAL_REJ(15);
                 }
@@ -496,60 +496,60 @@ public class InlinePreLineHandler {
 
                 }
                 else  if(mQUANTITY<50){
-                    resultModel.setSAMPLESIZE(5+"");
+                    resultModel.setSAMPLESIZE(20+"");
                     resultModel.setCRITICAL_ACE(0);
                     resultModel.setCRITICAL_REJ(1);
 
                 }
                 else  if(mQUANTITY<150){
-                    resultModel.setSAMPLESIZE(5+"");
+                    resultModel.setSAMPLESIZE(32+"");
                     resultModel.setCRITICAL_ACE(0);
                     resultModel.setCRITICAL_REJ(1);
 
                 }
                 else  if(mQUANTITY<280){
-                    resultModel.setSAMPLESIZE(20+"");
+                    resultModel.setSAMPLESIZE(50+"");
                     resultModel.setCRITICAL_ACE(1);
                     resultModel.setCRITICAL_REJ(2);
 
                 }
                 else  if(mQUANTITY<500){
-                    resultModel.setSAMPLESIZE(20+"");
+                    resultModel.setSAMPLESIZE(80+"");
                     resultModel.setCRITICAL_ACE(1);
                     resultModel.setCRITICAL_REJ(2);
 
                 }
                 else  if(mQUANTITY<1200){
-                    resultModel.setSAMPLESIZE(32+"");
+                    resultModel.setSAMPLESIZE(125+"");
                     resultModel.setCRITICAL_ACE(2);
                     resultModel.setCRITICAL_REJ(3);
 
                 }else  if(mQUANTITY<3200){
 
-                    resultModel.setSAMPLESIZE(50+"");
+                    resultModel.setSAMPLESIZE(200+"");
                     resultModel.setCRITICAL_ACE(3);
                     resultModel.setCRITICAL_REJ(4);
                 }
 
 
                 else  if(mQUANTITY<10000){
-                    resultModel.setSAMPLESIZE(80+"");
+                    resultModel.setSAMPLESIZE(315+"");
                     resultModel.setCRITICAL_ACE(5);
                     resultModel.setCRITICAL_REJ(6);
                 }
                 else  if(mQUANTITY<35000){
-                    resultModel.setSAMPLESIZE(125+"");
+                    resultModel.setSAMPLESIZE(500+"");
                     resultModel.setCRITICAL_ACE(7);
                     resultModel.setCRITICAL_REJ(8);
                 }
 
-                else  if(mQUANTITY<150000){
-                    resultModel.setSAMPLESIZE(200+"");
+                else  if(mQUANTITY<150000) {
+                    resultModel.setSAMPLESIZE(500+"");
                     resultModel.setCRITICAL_ACE(10);
                     resultModel.setCRITICAL_REJ(11);
                 }
                 else  if(mQUANTITY<500000){
-                    resultModel.setSAMPLESIZE(315+"");
+                    resultModel.setSAMPLESIZE(500+"");
                     resultModel.setCRITICAL_ACE(14);
                     resultModel.setCRITICAL_REJ(15);
                 }

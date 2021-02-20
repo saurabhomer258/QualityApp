@@ -10,18 +10,21 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.saurabhomer.qualityapp.InlinePrelineFinal.inlinemodel.InlinePrelineFinalModel;
+import com.example.saurabhomer.qualityapp.InlinePrelineFinal.inlinemodel.InlinePrelineFinalModel1;
 import com.example.saurabhomer.qualityapp.R;
+
+import java.util.ArrayList;
 
 import static com.example.saurabhomer.qualityapp.InlinePrelineFinal.InlinePrelineFinal.inlinePrelineFinalModel;
 
 public class inlinePreLineFInal2 extends AppCompatActivity {
-
+    public static ArrayList<InlinePrelineFinalModel1> inlinePrelineFinalModel1List = new ArrayList<>();
     Spinner select_level,inspection_level;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inline_pre_line_final2);
-
+          inlinePrelineFinalModel1List = new ArrayList<>();
         final EditText edt_quantity = findViewById(R.id.edt_quantity).findViewById(R.id.atvCommon);
         edt_quantity.setInputType(InputType.TYPE_CLASS_NUMBER |
                 InputType.TYPE_NUMBER_FLAG_DECIMAL |
@@ -41,7 +44,7 @@ public class inlinePreLineFInal2 extends AppCompatActivity {
 
                 Intent intent = new Intent(inlinePreLineFInal2.this,InlinePrelineFinal3.class);
                 startActivity(intent);
-
+                finish();
             }
         });
 

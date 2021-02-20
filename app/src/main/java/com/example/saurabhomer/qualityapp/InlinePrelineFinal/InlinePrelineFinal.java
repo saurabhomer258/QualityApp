@@ -15,9 +15,11 @@ import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingA
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.DailyFinishingDefectAnalysis;
 import com.example.saurabhomer.qualityapp.DailyFinishingAnalysis.InsideResultView;
 import com.example.saurabhomer.qualityapp.InlinePrelineFinal.inlinemodel.InlinePrelineFinalModel;
+import com.example.saurabhomer.qualityapp.InlinePrelineFinal.inlinemodel.InlinePrelineFinalModel1;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.utils.CommonStyleData;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class InlinePrelineFinal extends AppCompatActivity  implements View.OnClickListener {
@@ -28,6 +30,7 @@ public class InlinePrelineFinal extends AppCompatActivity  implements View.OnCli
     Spinner finishing_line;
     Button info_btn;
     static InlinePrelineFinalModel inlinePrelineFinalModel;
+    static ArrayList<InlinePrelineFinalModel1> inlinePrelineFinalModel1ArrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
