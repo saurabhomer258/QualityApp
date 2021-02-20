@@ -8,10 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishinfModels;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DailyFinishingModel1;
 import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.DialyFinishingAnalysisModel;
+import com.example.saurabhomer.qualityapp.Model.DailyFinishingModel.MainDailyFinishingModel;
 import com.example.saurabhomer.qualityapp.R;
 import com.example.saurabhomer.qualityapp.pref.LoginPref;
 import com.example.saurabhomer.qualityapp.utils.CommonStyleData;
@@ -40,8 +40,12 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity implements
     static String total_Check="";
     static String total_defect_per="";
     static DailyFinishingModel1 model;
-    static DailyFinishinfModels dailyFinishinfModels = new DailyFinishinfModels();
-    static ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
+
+   static ArrayList<DialyFinishingAnalysisModel> DAILYFINIFSHINGMODELLIST = new ArrayList<>();
+    static MainDailyFinishingModel mainDailyFinishingModel = new MainDailyFinishingModel();
+    static DailyFinishinfModels sDailyFinishinfModels = new DailyFinishinfModels();
+
+    static Spinner finishing;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -55,40 +59,51 @@ public class DailyFinishingDefectAnalysis extends AppCompatActivity implements
         txtDate=(EditText)findViewById(R.id.in_date);
         btnDatePicker.setOnClickListener(this);
 
-        final Spinner spinner =(Spinner)    findViewById(R.id.edt_finishing).findViewById(R.id.spinner);
+        final  Spinner finishing =(Spinner)    findViewById(R.id.edt_finishing).findViewById(R.id.spinner);
 
         View signin_button = findViewById(R.id.bt_next);
         Button bt_signin_button= signin_button.findViewById(R.id.btnNext);
         bt_signin_button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
+//                skuCheckReport100Model.setEdt_checkquantity(editText_checkquantity.getText().toString());
+//                skuCheckReport100Model.setEdt_readyquantity(editText_readyquantity.getText().toString());
+//                skuCheckReport100Model.setEdt_size(editText_size.getText().toString());
 
-                FirebaseDatabase.getInstance().getReference("dailyFinishing")
-                        .child(STYLE_NUMBER).child(0+"").
-                        addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(DataSnapshot dataSnapshot)
-                            {
-                                if(dataSnapshot.getValue()==null)
-                                {
-//                                    DailyFinishingModel1 model = new DailyFinishingModel1(editText_hour.getText().toString(),
-//                                            editText_edt_total_check.getText().toString()
-//                                    );
-
-                                    dailyFinishinfModels.setDate(txtDate.getText().toString());
-                                    int val = spinner.getSelectedItemPosition();
-                                    dailyFinishinfModels.setFinishingLine(val+1+"");
-                                    Intent intent = new Intent(DailyFinishingDefectAnalysis.this,DailyFinishingAnalysis2.class);
-                                    startActivity(intent);
-                                    finish();
-                                }
-                            }
-                            @Override
-                            public void onCancelled(DatabaseError databaseError)
-                            {
-
-                            }
-                        });
+                String strdate = txtDate.getText().toString();
+                String text = finishing.getSelectedItem().toString();
+                sDailyFinishinfModels.setDate(strdate);
+                sDailyFinishinfModels.setFinishingLine(text);
+                Intent intent = new Intent(DailyFinishingDefectAnalysis.this,DailyFinishingAnalysis2.class);
+                startActivity(intent);
+//
+//                FirebaseDatabase.getInstance().getReference("dailyFinishing")
+//                        .child(STYLE_NUMBER).child(0+"").
+//                        addListenerForSingleValueEvent(new ValueEventListener() {
+//                            @Override
+//                            public void onDataChange(DataSnapshot dataSnapshot)
+//                            {
+//                                if(dataSnapshot.getValue()==null)
+//                                {
+////                                    DailyFinishingModel1 model = new DailyFinishingModel1(editText_hour.getText().toString(),
+////                                            editText_edt_total_check.getText().toString()
+////                                    );
+//
+//                                    dailyFinishinfModels.setDate(txtDate.getText().toString());
+//                                    int val = spinner.getSelectedItemPosition();
+//                                    dailyFinishinfModels.setFinishingLine(val+1+"");
+//                                    Intent intent = new Intent(DailyFinishingDefectAnalysis.this,DailyFinishingAnalysis2.class);
+//                                    startActivity(intent);
+//                                    finish();
+//                                }
+//                            }
+//                            @Override
+//                            public void onCancelled(DatabaseError databaseError)
+//                            {
+//
+//                            }
+//                        });
             }
         });
 

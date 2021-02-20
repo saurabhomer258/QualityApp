@@ -24,6 +24,7 @@ import com.example.saurabhomer.qualityapp.admin.DailyfinishingGetUpAdmin;
 import com.example.saurabhomer.qualityapp.admin.DailyfinishingOutsideAdmin;
 import com.example.saurabhomer.qualityapp.admin.SkuAdmin;
 import com.example.saurabhomer.qualityapp.pref.LoginPref;
+import com.example.saurabhomer.qualityapp.utils.CommonDateFilter;
 import com.example.saurabhomer.qualityapp.utils.NetworkUtils;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -101,7 +102,8 @@ public class CardMenuP extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 if (LoginPref.getInstance(getApplicationContext()).getAdmin().equals(1 + "")) {
-                    Intent i =  new Intent(CardMenuP.this, SkuAdmin.class);
+                    Intent i =  new Intent(CardMenuP.this, CommonDateFilter.class);
+                    i.putExtra("Name","Skutest");
                     startActivity(i);
                 }
                 else {

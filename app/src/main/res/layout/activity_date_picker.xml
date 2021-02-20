@@ -12,7 +12,7 @@ tools:context=".utils.DatePicker">
         android:layout_marginTop="82dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true" />p
 
     <Button
         android:layout_width="wrap_content"

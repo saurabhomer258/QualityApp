@@ -90,49 +90,7 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
         if (v != null) {
             btn_next = v.getbutton();
         }
-//        btn_done.setOnClickListener(new View.OnClickListener()
-//        {
-//            @Override
-//            public void onClick(View v)
-//            {
-//                if (!NetworkUtils.isNetworkConnected(SkuCheckReport100Page2.this))
-//                {
-//                    return;
-//                }
-//                progressDialog.setMessage("Verificating...");
-//                progressDialog.show();
-//                SkuCheckReport100ModelList skuCheckReport100ModelList = new SkuCheckReport100ModelList();
-//
-//                skuCheckReport100ModelList.setCountryhasbeencheck(getStringOfRedio(radio_country_hbc.isChecked()));
-//                skuCheckReport100ModelList.setLabelhasbeencheck(getStringOfRedio(radio_label_hbc.isChecked()));
-//                skuCheckReport100ModelList.setBarcodehasbeencheck(getStringOfRedio(radio_barcode_hbc.isChecked()));
-//                skuCheckReport100ModelList.setColorhasbeencheck(getStringOfRedio(radio_color_hbc.isChecked()));
-//                skuCheckReport100ModelList.setPolybaghasbeencheck(getStringOfRedio(radio_polybag_hbc.isChecked()));
-//                skuCheckReport100ModelList.setPolystikerhasbeencheck(getStringOfRedio(radio_polysticker_hbc.isChecked()));
-//                skuCheckReport100ModelList.setPricetaghasbeencheck(getStringOfRedio(radio_pricetag_hbc.isChecked()));
-//                skuCheckReport100ModelList.setHangerhasbeencheck(getStringOfRedio(radio_hanger_hbc.isChecked()));
-//                skuCheckReport100ModelList.setHagertaghasbeencheck(getStringOfRedio(radio_hangertag_hbc.isChecked()));
-//                skuCheckReport100ModelList.setOtherhasbeencheck(getStringOfRedio(radio_othertag_hbc.isChecked()));
-//                skuCheckReport100ModelList.setPackingmethodhasbeencheck(getStringOfRedio(radio_packingmethod_hbc.isChecked()));
-//                skuCheckReport100ModelList.setSizestickerhasbeencheck(getStringOfRedio(radio_sizesticker_hbc.isChecked()));
-//                skuCheckReport100ModelList1.add(skuCheckReport100ModelList);
-//                skuCheckReport100Model.setSkuCheckReport100ModelList(skuCheckReport100ModelList1);
-//                FirebaseDatabase.getInstance().getReference("100perSKU").child(STYLE_NUMBER).setValue(skuCheckReport100Model).addOnCompleteListener(new OnCompleteListener<Void>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<Void> task) {
-//                        if(!task.isComplete())
-//                        {
-//                            Toast.makeText(SkuCheckReport100Page2.this,"opps ! some thing went wrong, please try again",Toast.LENGTH_SHORT).show();
-//                        }
-//                        progressDialog.dismiss();
-//                        finish();
-//                    }
-//                });
-//                skuCheckReport100ModelList1.clear();
-//
-//
-//            }
-//        });
+
         btn_done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -150,7 +108,8 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
                             {
                                 skuDateModelArrayList = mainSkuModel.getSkuDateModels();
                             }
-                            else {
+                            else
+                                {
                                 skuDateModelArrayList = new ArrayList<>();
                             }
 
@@ -193,7 +152,8 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
                             });
                             skuCheckReport100ModelList1.clear();
                         }
-                        else{
+                        else
+                            {
                             mainSkuModel = new MainSkuModel();
                             ArrayList<SkuDateModel> skuDateModelArrayList = mainSkuModel.getSkuDateModels();
 
@@ -237,8 +197,6 @@ public class SkuCheckReport100Page2 extends AppCompatActivity {
                             });
                             skuCheckReport100ModelList1.clear();
                         }
-
-
                     }
                     @Override
                     public void onCancelled(DatabaseError databaseError)
